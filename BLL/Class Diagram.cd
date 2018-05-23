@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BLL.Animal">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAIAABAAAgACEgAAAgIAAAAAAAIAAQAAECABABhg=</HashCode>
+      <FileName>Animal.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="species" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.AnimalCriteriaNotMeetException">
+    <Position X="9.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.NegativeAnimalsException">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.FarmerOutOfBoundException">
+    <Position X="11" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Farm">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAgAAEgIAAAAAAAAAAAIAAAAAAAABAAgQ=</HashCode>
+      <FileName>Farm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Farmer">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAAAIAwACEAEAIgAQAAAAGBAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Farmer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="farmerStyle" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BLL.Location">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAgAAAgAIEgIACAAMAQAAHAMAAhACgRAAAIkQ=</HashCode>
+      <FileName>Location.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="path" />
+      <Field Name="feedArea" />
+      <Field Name="cage" />
+    </ShowAsAssociation>
+  </Class>
+  <Struct Name="BLL.AnimalsSelected">
+    <Position X="5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAACAEAAAAAIACAAAAAgAAAABAAAAAAAA=</HashCode>
+      <FileName>AnimalsSelected.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BLL.Cage">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cage.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BLL.FeedingArea">
+    <Position X="3" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>FeedingArea.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BLL.Path">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Path.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BLL.Species">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAIgAAAEAACAAAABAAAAAYAAAAAAAgAAAAA=</HashCode>
+      <FileName>Species.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BLL.Style">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAgAgAA=</HashCode>
+      <FileName>Style.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Delegate Name="BLL.AnimalRandom">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BLL.DetermineMateState">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BLL.DetermineEatingTime">
+    <Position X="2" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAQAAAA=</HashCode>
+      <FileName>Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
