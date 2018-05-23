@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D516EC2C-F67B-444B-BCB8-31FC31098B19}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FarmManagement</RootNamespace>
+    <AssemblyName>FarmManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_Species.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Species.Designer.cs">
+      <DependentUpon>Add_Species.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Animal_Selection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animal_Selection.Designer.cs">
+      <DependentUpon>Animal_Selection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmer_Creation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmer_Creation.Designer.cs">
+      <DependentUpon>Farmer_Creation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farmer_Selection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farmer_Selection.designer.cs">
+      <DependentUpon>Farmer_Selection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farm_Creation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farm_Creation.Designer.cs">
+      <DependentUpon>Farm_Creation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Farm_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Farm_View.Designer.cs">
+      <DependentUpon>Farm_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Add_Species.resx">
+      <DependentUpon>Add_Species.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Animal_Selection.resx">
+      <DependentUpon>Animal_Selection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmer_Creation.resx">
+      <DependentUpon>Farmer_Creation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farmer_Selection.resx">
+      <DependentUpon>Farmer_Selection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farm_Creation.resx">
+      <DependentUpon>Farm_Creation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Farm_View.resx">
+      <DependentUpon>Farm_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BlackGirlLayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\GirlBlueEyes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\GirlGreenEyes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\GirlBrownEyes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BlackGirlSkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\WhiteGirlSkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BlackHairGirl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BlondHairGirl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BrownHairGirl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\RedHairGirl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\GirlOutfit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\GirlOutfit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\GirlOutfit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\GirlOutfit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BlackBoyLayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BoyBlackHair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BoyBlondHair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BoyBrownHair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BoyOutfit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BoyOutfit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BoyOutfit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BoyOutfit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\BoyRedHair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\WhiteBoyLayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{f0c215c0-db41-4c2a-80e9-7d87bf1e1cdc}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnterButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OkButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewFarmerSelection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewFarmerSelection1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExistingFarmerSelection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExistingFarmerSelection1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExistingFarmerSelection2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconFarmer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfarmer_5vE_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundFarmerCreaton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FarmerCreation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundFarmerCreaton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundFarmerCreaton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundFarmerCreation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundFarmerCreation1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NextButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FarmerSelectionNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Cow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Horse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Lion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Tiger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sheep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarnPictureBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarnPictureBG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarnBGNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarnBGNew1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnimalCreationBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrameBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrameBGNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PanelFarmerSelection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PanelFarmerSelection1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PanelFarmerSelection2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewSpeciesButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PanelNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddSpeciesBG.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
