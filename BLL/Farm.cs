@@ -107,7 +107,7 @@ namespace BLL
         {
             DataHandler handler = new DataHandler();
             List<Farm> farms = new List<Farm>();
-            DataTable rawData = handler.SelectFarmOrLocationOrAnimal(6,"SelectFarm");
+            DataTable rawData = handler.SelectFarmOrLocationOrAnimal(id,"SelectFarm");
             foreach (DataRow item in rawData.Rows)
             {
                 farms.Add(new Farm(int.Parse(item["FarmId"].ToString()),item["FarmName"].ToString(),double.Parse(item["FarmSize"].ToString())));
