@@ -191,7 +191,7 @@ namespace FarmManagement
                         animal.AddAnimal(animalsSelected);
                         Farm_View navFarmView = new Farm_View(ID);
                         navFarmView.Show();
-                        this.Close();
+                        this.Hide();
                     }
                     else
                     {
@@ -204,6 +204,10 @@ namespace FarmManagement
                 }
             }
             catch (AnimalCriteriaNotMeetException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }

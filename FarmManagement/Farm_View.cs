@@ -61,7 +61,7 @@ namespace FarmManagement
 
         private void Farm_View_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(0);
+            //Environment.Exit(0);
         }
 
         private void returnToFarmerSelectionToolStripMenuItem_Click(object sender, EventArgs e)

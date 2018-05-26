@@ -14,6 +14,7 @@ namespace FarmManagement
     public partial class Farm_Creation : Form
     {
         Farmer farmer = new Farmer();
+        int farmerID = 0;
 
         public Farm_Creation()
         {
@@ -24,6 +25,8 @@ namespace FarmManagement
         public Farm_Creation(int id)
         {
             InitializeComponent();
+            farmer.ID = id;
+
         }
 
         private void button1_Click(object sender, EventArgs e)

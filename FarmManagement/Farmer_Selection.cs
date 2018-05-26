@@ -43,7 +43,7 @@ namespace FarmManagement
             pbxNewFarmer4.Cursor = Cursors.Hand;
             pbxNewFarmer5.Cursor = Cursors.Hand;
 
-          
+
             AllFarmers = farmer.FarmerSelection();
 
             if (AllFarmers[0] != null)
@@ -496,9 +496,9 @@ namespace FarmManagement
         private void pbxFarmer1_Click(object sender, EventArgs e)
         {
             CurrentFarmer = (Farmer)AllFarmers[0];
-            if (CurrentFarmer.numOfAnimals()>0)
+            if (CurrentFarmer.GetFarmSize() > 0)
             {
-                if (CurrentFarmer.GetFarmSize()>0)
+                if (CurrentFarmer.numOfAnimals() > 0)
                 {
                     Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
                     navFarmView.Show();
@@ -506,55 +506,127 @@ namespace FarmManagement
                 }
                 else
                 {
-                    //Load Animal Selection
+                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
+                    assd.Show();
+                    this.Hide();
                 }
             }
             else
             {
-                //Load Farm Creation
+                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
+                fc.Show();
+                this.Hide();
             }
-           
+
             //MessageBox.Show("Load farmer One");
         }
 
         private void pbxFarmer2_Click(object sender, EventArgs e)
         {
             CurrentFarmer = (Farmer)AllFarmers[1];
-            Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-            navFarmView.Show();
-            this.Hide();
-           // MessageBox.Show("Load farmer Two");
+            if (CurrentFarmer.GetFarmSize() > 0)
+            {
+                if (CurrentFarmer.numOfAnimals() > 0)
+                {
+                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
+                    navFarmView.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
+                    assd.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
+                fc.Show();
+                this.Hide();
+            }
+            // MessageBox.Show("Load farmer Two");
         }
 
         private void pbxFarmer3_Click(object sender, EventArgs e)
         {
             CurrentFarmer = (Farmer)AllFarmers[2];
-           
-           
-            Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-            navFarmView.Show();
-            this.Hide();
-          //  MessageBox.Show("Load farmer Three");
+            if (CurrentFarmer.GetFarmSize() > 0)
+            {
+                if (CurrentFarmer.numOfAnimals() > 0)
+                {
+                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
+                    navFarmView.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
+                    assd.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
+                fc.Show();
+                this.Hide();
+            }
+            //  MessageBox.Show("Load farmer Three");
         }
 
         private void pbxFarmer4_Click(object sender, EventArgs e)
         {
             CurrentFarmer = (Farmer)AllFarmers[3];
-
-            
-            Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-            navFarmView.Show();
-            this.Hide();
-          //  MessageBox.Show("Load farmer Four");
+            if (CurrentFarmer.GetFarmSize() > 0)
+            {
+                if (CurrentFarmer.numOfAnimals() > 0)
+                {
+                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
+                    navFarmView.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
+                    assd.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
+                fc.Show();
+                this.Hide();
+            }
+            //  MessageBox.Show("Load farmer Four");
         }
 
         private void pbxFarmer5_Click(object sender, EventArgs e)
         {
             CurrentFarmer = (Farmer)AllFarmers[4];
-            Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-            navFarmView.Show();
-            this.Hide();
-          //  MessageBox.Show("Load farmer Five");
+            if (CurrentFarmer.GetFarmSize() > 0)
+            {
+                if (CurrentFarmer.numOfAnimals() > 0)
+                {
+                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
+                    navFarmView.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
+                    assd.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
+                fc.Show();
+                this.Hide();
+            }
+            //  MessageBox.Show("Load farmer Five");
         }
 
         private void pbxCross1_Click(object sender, EventArgs e)
