@@ -378,5 +378,36 @@ namespace DAL
 
             return datatable;
         }
+
+        public int DeleteFarmer(int FarmerID)
+        {
+            int success;
+            string storedProcedureName = "DeleteFarmer";
+
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                command = new SqlCommand(storedProcedureName, connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add(new SqlParameter("@FarmerId", FarmerID));
+
+
+                success = command.ExecuteNonQuery();
+               
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return success;
+        }
     }
 }
