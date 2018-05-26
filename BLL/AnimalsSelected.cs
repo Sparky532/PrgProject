@@ -51,5 +51,10 @@ namespace BLL
             double eatTIME = animaal.AnimalName == "Lion" ? 4 : animaal.AnimalName == "Cow" ? 2 : animaal.AnimalName == "Sheep" ? 2:animaal.AnimalName == "Horse" ? 1:animaal.AnimalName == "Tiger" ? 3 : rnd.Next(1,6);
             return eatTIME;
         }
+        public void NullReferenceExpetion(string toWrite)
+        {
+            FileHandler handler = new FileHandler();
+            handler.WriteData("No user file exception was caught at: " + DateTime.UtcNow.ToShortDateString() + " " + DateTime.UtcNow.ToShortTimeString());
+        }
     }
 }

@@ -51,6 +51,7 @@
             this.pbxBody = new System.Windows.Forms.PictureBox();
             this.pbxBackground = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious3)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -319,12 +321,26 @@
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
+            // pbxBack
+            // 
+            this.pbxBack.BackColor = System.Drawing.Color.Transparent;
+            this.pbxBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxBack.Image = global::FarmManagement.Properties.Resources.BackButton;
+            this.pbxBack.Location = new System.Drawing.Point(0, 0);
+            this.pbxBack.Name = "pbxBack";
+            this.pbxBack.Size = new System.Drawing.Size(54, 50);
+            this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBack.TabIndex = 32;
+            this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
+            // 
             // Farmer_Creation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(111)))), ((int)(((byte)(147)))));
             this.ClientSize = new System.Drawing.Size(1222, 657);
+            this.Controls.Add(this.pbxBack);
             this.Controls.Add(this.pbxNext);
             this.Controls.Add(this.pbxPrevious4);
             this.Controls.Add(this.pbxPrevious3);
@@ -370,6 +386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxBody)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +416,6 @@
         private System.Windows.Forms.PictureBox pbxNext4;
         private System.Windows.Forms.TextBox txtSkin;
         private System.Windows.Forms.PictureBox pbxNext;
+        private System.Windows.Forms.PictureBox pbxBack;
     }
 }

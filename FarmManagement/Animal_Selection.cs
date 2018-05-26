@@ -75,26 +75,6 @@ namespace FarmManagement
             pbxChange.Location = new Point(450, 60);
         }
 
-        private void btnAnimalAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAnimalRemove_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNewSpecies_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddAnimal_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Make the change part visible
@@ -108,8 +88,10 @@ namespace FarmManagement
             {
                 txtSelectedAnimalAmount.Text = ((AnimalsSelected)lstAnimalsSelected.SelectedItem).AnimalAmount.ToString();
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException nulls)
             {
+                AnimalsSelected selected = new AnimalsSelected();
+                selected.NullReferenceExpetion(nulls.Message.ToString());
             }
 
         }
@@ -153,7 +135,7 @@ namespace FarmManagement
                 else
                 {
                     String DirectoryPath = Environment.CurrentDirectory;
-                    //    MessageBox.Show(DirectoryPath);
+                    //  MessageBox.Show(DirectoryPath);
                     //  DirectoryPath = DirectoryPath.Substring(0, DirectoryPath.Length - 10)+"\\Resources";
                     Image NewAnimal = Image.FromFile(DirectoryPath + @"\" + speciesSelected.AnimalName + ".png");
                     pbxAnimal.Image = NewAnimal;
@@ -196,9 +178,10 @@ namespace FarmManagement
                         //adding the animals
                         Animal animal = new Animal();
                         animal.AddAnimal(animalsSelected);
-                        Farm_View navFarmView = new Farm_View(ID);
-                        navFarmView.Show();
+                        Farm_View form = new Farm_View(ID);
                         this.Hide();
+                        form.ShowDialog();
+                        this.Close();
                     }
                     else
                     {
@@ -349,9 +332,10 @@ namespace FarmManagement
         private void pbxAddNew_Click(object sender, EventArgs e)
         {
             //Go to add species form
-            Add_Species addSpecies = new Add_Species();
-            addSpecies.Show();
+            Add_Species form = new Add_Species();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void cbxAnimals_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -361,7 +345,7 @@ namespace FarmManagement
 
         private void Animal_Selection_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(0);
+            //Environment.Exit(0);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

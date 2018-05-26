@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Farmer_Selection));
-            this.txtFarmerName1 = new System.Windows.Forms.Label();
-            this.txtFarmSize1 = new System.Windows.Forms.Label();
-            this.txtFarmerGender1 = new System.Windows.Forms.Label();
-            this.txtNumOfAnimals1 = new System.Windows.Forms.Label();
-            this.txtFarmerAge1 = new System.Windows.Forms.Label();
-            this.txtFarmerAge2 = new System.Windows.Forms.Label();
-            this.txtNumOfAnimals2 = new System.Windows.Forms.Label();
-            this.txtFarmerGender2 = new System.Windows.Forms.Label();
-            this.txtFarmSize2 = new System.Windows.Forms.Label();
-            this.txtFarmerName2 = new System.Windows.Forms.Label();
-            this.txtFarmerAge3 = new System.Windows.Forms.Label();
-            this.txtNumOfAnimals3 = new System.Windows.Forms.Label();
-            this.txtFarmerGender3 = new System.Windows.Forms.Label();
-            this.txtFarmSize3 = new System.Windows.Forms.Label();
-            this.txtFarmerName3 = new System.Windows.Forms.Label();
-            this.txtFarmerAge4 = new System.Windows.Forms.Label();
-            this.txtNumOfAnimals4 = new System.Windows.Forms.Label();
-            this.txtFarmerGender4 = new System.Windows.Forms.Label();
-            this.txtFarmSize4 = new System.Windows.Forms.Label();
-            this.txtFarmerName4 = new System.Windows.Forms.Label();
-            this.txtFarmerAge5 = new System.Windows.Forms.Label();
-            this.txtNumOfAnimals5 = new System.Windows.Forms.Label();
-            this.txtFarmerGender5 = new System.Windows.Forms.Label();
-            this.txtFarmSize5 = new System.Windows.Forms.Label();
-            this.txtFarmerName5 = new System.Windows.Forms.Label();
+            this.lblFarmerName1 = new System.Windows.Forms.Label();
+            this.lblFarmSize1 = new System.Windows.Forms.Label();
+            this.lblFarmerGender1 = new System.Windows.Forms.Label();
+            this.lblNumOfAnimals1 = new System.Windows.Forms.Label();
+            this.lblFarmerAge1 = new System.Windows.Forms.Label();
+            this.lblFarmerAge2 = new System.Windows.Forms.Label();
+            this.lblNumOfAnimals2 = new System.Windows.Forms.Label();
+            this.lblFarmerGender2 = new System.Windows.Forms.Label();
+            this.l = new System.Windows.Forms.Label();
+            this.lblFarmerName2 = new System.Windows.Forms.Label();
+            this.lblFarmerAge3 = new System.Windows.Forms.Label();
+            this.lblNumOfAnimals3 = new System.Windows.Forms.Label();
+            this.lblFarmerGender3 = new System.Windows.Forms.Label();
+            this.lblFarmSize3 = new System.Windows.Forms.Label();
+            this.lblFarmerName3 = new System.Windows.Forms.Label();
+            this.lblFarmerAge4 = new System.Windows.Forms.Label();
+            this.lblNumOfAnimals4 = new System.Windows.Forms.Label();
+            this.lblFarmerGender4 = new System.Windows.Forms.Label();
+            this.lblFarmSize4 = new System.Windows.Forms.Label();
+            this.lblFarmerName4 = new System.Windows.Forms.Label();
+            this.lblFarmerAge5 = new System.Windows.Forms.Label();
+            this.lblNumOfAnimals5 = new System.Windows.Forms.Label();
+            this.lblFarmerGender5 = new System.Windows.Forms.Label();
+            this.lblFarmSize5 = new System.Windows.Forms.Label();
+            this.lblFarmerName5 = new System.Windows.Forms.Label();
             this.pbxCross1 = new System.Windows.Forms.PictureBox();
             this.pbxOutfitFive = new System.Windows.Forms.PictureBox();
             this.pbxEyesFive = new System.Windows.Forms.PictureBox();
@@ -136,305 +136,305 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxCross5)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtFarmerName1
+            // lblFarmerName1
             // 
-            this.txtFarmerName1.AutoSize = true;
-            this.txtFarmerName1.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerName1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerName1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerName1.Location = new System.Drawing.Point(274, 27);
-            this.txtFarmerName1.Name = "txtFarmerName1";
-            this.txtFarmerName1.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerName1.TabIndex = 45;
-            this.txtFarmerName1.Text = "label1";
+            this.lblFarmerName1.AutoSize = true;
+            this.lblFarmerName1.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerName1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerName1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerName1.Location = new System.Drawing.Point(274, 27);
+            this.lblFarmerName1.Name = "lblFarmerName1";
+            this.lblFarmerName1.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName1.TabIndex = 45;
+            this.lblFarmerName1.Text = "label1";
             // 
-            // txtFarmSize1
+            // lblFarmSize1
             // 
-            this.txtFarmSize1.AutoSize = true;
-            this.txtFarmSize1.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmSize1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmSize1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmSize1.Location = new System.Drawing.Point(496, 38);
-            this.txtFarmSize1.Name = "txtFarmSize1";
-            this.txtFarmSize1.Size = new System.Drawing.Size(18, 20);
-            this.txtFarmSize1.TabIndex = 46;
-            this.txtFarmSize1.Text = "0";
+            this.lblFarmSize1.AutoSize = true;
+            this.lblFarmSize1.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmSize1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmSize1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmSize1.Location = new System.Drawing.Point(496, 38);
+            this.lblFarmSize1.Name = "lblFarmSize1";
+            this.lblFarmSize1.Size = new System.Drawing.Size(18, 20);
+            this.lblFarmSize1.TabIndex = 46;
+            this.lblFarmSize1.Text = "0";
             // 
-            // txtFarmerGender1
+            // lblFarmerGender1
             // 
-            this.txtFarmerGender1.AutoSize = true;
-            this.txtFarmerGender1.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerGender1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerGender1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerGender1.Location = new System.Drawing.Point(274, 59);
-            this.txtFarmerGender1.Name = "txtFarmerGender1";
-            this.txtFarmerGender1.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerGender1.TabIndex = 47;
-            this.txtFarmerGender1.Text = "label1";
+            this.lblFarmerGender1.AutoSize = true;
+            this.lblFarmerGender1.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerGender1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerGender1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerGender1.Location = new System.Drawing.Point(274, 59);
+            this.lblFarmerGender1.Name = "lblFarmerGender1";
+            this.lblFarmerGender1.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender1.TabIndex = 47;
+            this.lblFarmerGender1.Text = "label1";
             // 
-            // txtNumOfAnimals1
+            // lblNumOfAnimals1
             // 
-            this.txtNumOfAnimals1.AutoSize = true;
-            this.txtNumOfAnimals1.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumOfAnimals1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumOfAnimals1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtNumOfAnimals1.Location = new System.Drawing.Point(496, 76);
-            this.txtNumOfAnimals1.Name = "txtNumOfAnimals1";
-            this.txtNumOfAnimals1.Size = new System.Drawing.Size(18, 20);
-            this.txtNumOfAnimals1.TabIndex = 48;
-            this.txtNumOfAnimals1.Text = "0";
+            this.lblNumOfAnimals1.AutoSize = true;
+            this.lblNumOfAnimals1.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumOfAnimals1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumOfAnimals1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblNumOfAnimals1.Location = new System.Drawing.Point(496, 76);
+            this.lblNumOfAnimals1.Name = "lblNumOfAnimals1";
+            this.lblNumOfAnimals1.Size = new System.Drawing.Size(18, 20);
+            this.lblNumOfAnimals1.TabIndex = 48;
+            this.lblNumOfAnimals1.Text = "0";
             // 
-            // txtFarmerAge1
+            // lblFarmerAge1
             // 
-            this.txtFarmerAge1.AutoSize = true;
-            this.txtFarmerAge1.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerAge1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerAge1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerAge1.Location = new System.Drawing.Point(274, 91);
-            this.txtFarmerAge1.Name = "txtFarmerAge1";
-            this.txtFarmerAge1.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerAge1.TabIndex = 49;
-            this.txtFarmerAge1.Text = "label1";
+            this.lblFarmerAge1.AutoSize = true;
+            this.lblFarmerAge1.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerAge1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerAge1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerAge1.Location = new System.Drawing.Point(274, 91);
+            this.lblFarmerAge1.Name = "lblFarmerAge1";
+            this.lblFarmerAge1.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerAge1.TabIndex = 49;
+            this.lblFarmerAge1.Text = "label1";
             // 
-            // txtFarmerAge2
+            // lblFarmerAge2
             // 
-            this.txtFarmerAge2.AutoSize = true;
-            this.txtFarmerAge2.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerAge2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerAge2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerAge2.Location = new System.Drawing.Point(274, 216);
-            this.txtFarmerAge2.Name = "txtFarmerAge2";
-            this.txtFarmerAge2.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerAge2.TabIndex = 54;
-            this.txtFarmerAge2.Text = "label1";
+            this.lblFarmerAge2.AutoSize = true;
+            this.lblFarmerAge2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerAge2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerAge2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerAge2.Location = new System.Drawing.Point(274, 216);
+            this.lblFarmerAge2.Name = "lblFarmerAge2";
+            this.lblFarmerAge2.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerAge2.TabIndex = 54;
+            this.lblFarmerAge2.Text = "label1";
             // 
-            // txtNumOfAnimals2
+            // lblNumOfAnimals2
             // 
-            this.txtNumOfAnimals2.AutoSize = true;
-            this.txtNumOfAnimals2.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumOfAnimals2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumOfAnimals2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtNumOfAnimals2.Location = new System.Drawing.Point(496, 204);
-            this.txtNumOfAnimals2.Name = "txtNumOfAnimals2";
-            this.txtNumOfAnimals2.Size = new System.Drawing.Size(18, 20);
-            this.txtNumOfAnimals2.TabIndex = 53;
-            this.txtNumOfAnimals2.Text = "0";
+            this.lblNumOfAnimals2.AutoSize = true;
+            this.lblNumOfAnimals2.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumOfAnimals2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumOfAnimals2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblNumOfAnimals2.Location = new System.Drawing.Point(496, 204);
+            this.lblNumOfAnimals2.Name = "lblNumOfAnimals2";
+            this.lblNumOfAnimals2.Size = new System.Drawing.Size(18, 20);
+            this.lblNumOfAnimals2.TabIndex = 53;
+            this.lblNumOfAnimals2.Text = "0";
             // 
-            // txtFarmerGender2
+            // lblFarmerGender2
             // 
-            this.txtFarmerGender2.AutoSize = true;
-            this.txtFarmerGender2.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerGender2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerGender2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerGender2.Location = new System.Drawing.Point(274, 187);
-            this.txtFarmerGender2.Name = "txtFarmerGender2";
-            this.txtFarmerGender2.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerGender2.TabIndex = 52;
-            this.txtFarmerGender2.Text = "label1";
+            this.lblFarmerGender2.AutoSize = true;
+            this.lblFarmerGender2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerGender2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerGender2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerGender2.Location = new System.Drawing.Point(274, 187);
+            this.lblFarmerGender2.Name = "lblFarmerGender2";
+            this.lblFarmerGender2.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender2.TabIndex = 52;
+            this.lblFarmerGender2.Text = "label1";
             // 
-            // txtFarmSize2
+            // l
             // 
-            this.txtFarmSize2.AutoSize = true;
-            this.txtFarmSize2.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmSize2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmSize2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmSize2.Location = new System.Drawing.Point(496, 173);
-            this.txtFarmSize2.Name = "txtFarmSize2";
-            this.txtFarmSize2.Size = new System.Drawing.Size(18, 20);
-            this.txtFarmSize2.TabIndex = 51;
-            this.txtFarmSize2.Text = "0";
+            this.l.AutoSize = true;
+            this.l.BackColor = System.Drawing.Color.Transparent;
+            this.l.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l.ForeColor = System.Drawing.Color.DarkGreen;
+            this.l.Location = new System.Drawing.Point(496, 173);
+            this.l.Name = "l";
+            this.l.Size = new System.Drawing.Size(18, 20);
+            this.l.TabIndex = 51;
+            this.l.Text = "0";
             // 
-            // txtFarmerName2
+            // lblFarmerName2
             // 
-            this.txtFarmerName2.AutoSize = true;
-            this.txtFarmerName2.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerName2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerName2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerName2.Location = new System.Drawing.Point(273, 156);
-            this.txtFarmerName2.Name = "txtFarmerName2";
-            this.txtFarmerName2.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerName2.TabIndex = 50;
-            this.txtFarmerName2.Text = "label1";
+            this.lblFarmerName2.AutoSize = true;
+            this.lblFarmerName2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerName2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerName2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerName2.Location = new System.Drawing.Point(273, 156);
+            this.lblFarmerName2.Name = "lblFarmerName2";
+            this.lblFarmerName2.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName2.TabIndex = 50;
+            this.lblFarmerName2.Text = "label1";
             // 
-            // txtFarmerAge3
+            // lblFarmerAge3
             // 
-            this.txtFarmerAge3.AutoSize = true;
-            this.txtFarmerAge3.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerAge3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerAge3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerAge3.Location = new System.Drawing.Point(276, 340);
-            this.txtFarmerAge3.Name = "txtFarmerAge3";
-            this.txtFarmerAge3.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerAge3.TabIndex = 59;
-            this.txtFarmerAge3.Text = "label6";
+            this.lblFarmerAge3.AutoSize = true;
+            this.lblFarmerAge3.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerAge3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerAge3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerAge3.Location = new System.Drawing.Point(276, 340);
+            this.lblFarmerAge3.Name = "lblFarmerAge3";
+            this.lblFarmerAge3.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerAge3.TabIndex = 59;
+            this.lblFarmerAge3.Text = "label6";
             // 
-            // txtNumOfAnimals3
+            // lblNumOfAnimals3
             // 
-            this.txtNumOfAnimals3.AutoSize = true;
-            this.txtNumOfAnimals3.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumOfAnimals3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumOfAnimals3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtNumOfAnimals3.Location = new System.Drawing.Point(496, 324);
-            this.txtNumOfAnimals3.Name = "txtNumOfAnimals3";
-            this.txtNumOfAnimals3.Size = new System.Drawing.Size(18, 20);
-            this.txtNumOfAnimals3.TabIndex = 58;
-            this.txtNumOfAnimals3.Text = "0";
+            this.lblNumOfAnimals3.AutoSize = true;
+            this.lblNumOfAnimals3.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumOfAnimals3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumOfAnimals3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblNumOfAnimals3.Location = new System.Drawing.Point(496, 324);
+            this.lblNumOfAnimals3.Name = "lblNumOfAnimals3";
+            this.lblNumOfAnimals3.Size = new System.Drawing.Size(18, 20);
+            this.lblNumOfAnimals3.TabIndex = 58;
+            this.lblNumOfAnimals3.Text = "0";
             // 
-            // txtFarmerGender3
+            // lblFarmerGender3
             // 
-            this.txtFarmerGender3.AutoSize = true;
-            this.txtFarmerGender3.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerGender3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerGender3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerGender3.Location = new System.Drawing.Point(274, 311);
-            this.txtFarmerGender3.Name = "txtFarmerGender3";
-            this.txtFarmerGender3.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerGender3.TabIndex = 57;
-            this.txtFarmerGender3.Text = "label1";
+            this.lblFarmerGender3.AutoSize = true;
+            this.lblFarmerGender3.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerGender3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerGender3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerGender3.Location = new System.Drawing.Point(274, 311);
+            this.lblFarmerGender3.Name = "lblFarmerGender3";
+            this.lblFarmerGender3.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender3.TabIndex = 57;
+            this.lblFarmerGender3.Text = "label1";
             // 
-            // txtFarmSize3
+            // lblFarmSize3
             // 
-            this.txtFarmSize3.AutoSize = true;
-            this.txtFarmSize3.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmSize3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmSize3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmSize3.Location = new System.Drawing.Point(496, 293);
-            this.txtFarmSize3.Name = "txtFarmSize3";
-            this.txtFarmSize3.Size = new System.Drawing.Size(18, 20);
-            this.txtFarmSize3.TabIndex = 56;
-            this.txtFarmSize3.Text = "0";
+            this.lblFarmSize3.AutoSize = true;
+            this.lblFarmSize3.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmSize3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmSize3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmSize3.Location = new System.Drawing.Point(496, 293);
+            this.lblFarmSize3.Name = "lblFarmSize3";
+            this.lblFarmSize3.Size = new System.Drawing.Size(18, 20);
+            this.lblFarmSize3.TabIndex = 56;
+            this.lblFarmSize3.Text = "0";
             // 
-            // txtFarmerName3
+            // lblFarmerName3
             // 
-            this.txtFarmerName3.AutoSize = true;
-            this.txtFarmerName3.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerName3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerName3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerName3.Location = new System.Drawing.Point(275, 280);
-            this.txtFarmerName3.Name = "txtFarmerName3";
-            this.txtFarmerName3.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerName3.TabIndex = 55;
-            this.txtFarmerName3.Text = "label1";
+            this.lblFarmerName3.AutoSize = true;
+            this.lblFarmerName3.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerName3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerName3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerName3.Location = new System.Drawing.Point(275, 280);
+            this.lblFarmerName3.Name = "lblFarmerName3";
+            this.lblFarmerName3.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName3.TabIndex = 55;
+            this.lblFarmerName3.Text = "label1";
             // 
-            // txtFarmerAge4
+            // lblFarmerAge4
             // 
-            this.txtFarmerAge4.AutoSize = true;
-            this.txtFarmerAge4.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerAge4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerAge4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerAge4.Location = new System.Drawing.Point(273, 464);
-            this.txtFarmerAge4.Name = "txtFarmerAge4";
-            this.txtFarmerAge4.Size = new System.Drawing.Size(62, 20);
-            this.txtFarmerAge4.TabIndex = 64;
-            this.txtFarmerAge4.Text = "label11";
+            this.lblFarmerAge4.AutoSize = true;
+            this.lblFarmerAge4.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerAge4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerAge4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerAge4.Location = new System.Drawing.Point(273, 464);
+            this.lblFarmerAge4.Name = "lblFarmerAge4";
+            this.lblFarmerAge4.Size = new System.Drawing.Size(62, 20);
+            this.lblFarmerAge4.TabIndex = 64;
+            this.lblFarmerAge4.Text = "label11";
             // 
-            // txtNumOfAnimals4
+            // lblNumOfAnimals4
             // 
-            this.txtNumOfAnimals4.AutoSize = true;
-            this.txtNumOfAnimals4.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumOfAnimals4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumOfAnimals4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtNumOfAnimals4.Location = new System.Drawing.Point(496, 450);
-            this.txtNumOfAnimals4.Name = "txtNumOfAnimals4";
-            this.txtNumOfAnimals4.Size = new System.Drawing.Size(18, 20);
-            this.txtNumOfAnimals4.TabIndex = 63;
-            this.txtNumOfAnimals4.Text = "0";
+            this.lblNumOfAnimals4.AutoSize = true;
+            this.lblNumOfAnimals4.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumOfAnimals4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumOfAnimals4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblNumOfAnimals4.Location = new System.Drawing.Point(496, 450);
+            this.lblNumOfAnimals4.Name = "lblNumOfAnimals4";
+            this.lblNumOfAnimals4.Size = new System.Drawing.Size(18, 20);
+            this.lblNumOfAnimals4.TabIndex = 63;
+            this.lblNumOfAnimals4.Text = "0";
             // 
-            // txtFarmerGender4
+            // lblFarmerGender4
             // 
-            this.txtFarmerGender4.AutoSize = true;
-            this.txtFarmerGender4.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerGender4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerGender4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerGender4.Location = new System.Drawing.Point(273, 435);
-            this.txtFarmerGender4.Name = "txtFarmerGender4";
-            this.txtFarmerGender4.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerGender4.TabIndex = 62;
-            this.txtFarmerGender4.Text = "label1";
+            this.lblFarmerGender4.AutoSize = true;
+            this.lblFarmerGender4.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerGender4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerGender4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerGender4.Location = new System.Drawing.Point(273, 435);
+            this.lblFarmerGender4.Name = "lblFarmerGender4";
+            this.lblFarmerGender4.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender4.TabIndex = 62;
+            this.lblFarmerGender4.Text = "label1";
             // 
-            // txtFarmSize4
+            // lblFarmSize4
             // 
-            this.txtFarmSize4.AutoSize = true;
-            this.txtFarmSize4.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmSize4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmSize4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmSize4.Location = new System.Drawing.Point(496, 419);
-            this.txtFarmSize4.Name = "txtFarmSize4";
-            this.txtFarmSize4.Size = new System.Drawing.Size(18, 20);
-            this.txtFarmSize4.TabIndex = 61;
-            this.txtFarmSize4.Text = "0";
+            this.lblFarmSize4.AutoSize = true;
+            this.lblFarmSize4.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmSize4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmSize4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmSize4.Location = new System.Drawing.Point(496, 419);
+            this.lblFarmSize4.Name = "lblFarmSize4";
+            this.lblFarmSize4.Size = new System.Drawing.Size(18, 20);
+            this.lblFarmSize4.TabIndex = 61;
+            this.lblFarmSize4.Text = "0";
             // 
-            // txtFarmerName4
+            // lblFarmerName4
             // 
-            this.txtFarmerName4.AutoSize = true;
-            this.txtFarmerName4.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerName4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerName4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerName4.Location = new System.Drawing.Point(272, 404);
-            this.txtFarmerName4.Name = "txtFarmerName4";
-            this.txtFarmerName4.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerName4.TabIndex = 60;
-            this.txtFarmerName4.Text = "label1";
+            this.lblFarmerName4.AutoSize = true;
+            this.lblFarmerName4.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerName4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerName4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerName4.Location = new System.Drawing.Point(272, 404);
+            this.lblFarmerName4.Name = "lblFarmerName4";
+            this.lblFarmerName4.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName4.TabIndex = 60;
+            this.lblFarmerName4.Text = "label1";
             // 
-            // txtFarmerAge5
+            // lblFarmerAge5
             // 
-            this.txtFarmerAge5.AutoSize = true;
-            this.txtFarmerAge5.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerAge5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerAge5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerAge5.Location = new System.Drawing.Point(272, 586);
-            this.txtFarmerAge5.Name = "txtFarmerAge5";
-            this.txtFarmerAge5.Size = new System.Drawing.Size(62, 20);
-            this.txtFarmerAge5.TabIndex = 69;
-            this.txtFarmerAge5.Text = "label16";
+            this.lblFarmerAge5.AutoSize = true;
+            this.lblFarmerAge5.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerAge5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerAge5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerAge5.Location = new System.Drawing.Point(272, 586);
+            this.lblFarmerAge5.Name = "lblFarmerAge5";
+            this.lblFarmerAge5.Size = new System.Drawing.Size(62, 20);
+            this.lblFarmerAge5.TabIndex = 69;
+            this.lblFarmerAge5.Text = "label16";
             // 
-            // txtNumOfAnimals5
+            // lblNumOfAnimals5
             // 
-            this.txtNumOfAnimals5.AutoSize = true;
-            this.txtNumOfAnimals5.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumOfAnimals5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumOfAnimals5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtNumOfAnimals5.Location = new System.Drawing.Point(496, 571);
-            this.txtNumOfAnimals5.Name = "txtNumOfAnimals5";
-            this.txtNumOfAnimals5.Size = new System.Drawing.Size(18, 20);
-            this.txtNumOfAnimals5.TabIndex = 68;
-            this.txtNumOfAnimals5.Text = "0";
+            this.lblNumOfAnimals5.AutoSize = true;
+            this.lblNumOfAnimals5.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumOfAnimals5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumOfAnimals5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblNumOfAnimals5.Location = new System.Drawing.Point(496, 571);
+            this.lblNumOfAnimals5.Name = "lblNumOfAnimals5";
+            this.lblNumOfAnimals5.Size = new System.Drawing.Size(18, 20);
+            this.lblNumOfAnimals5.TabIndex = 68;
+            this.lblNumOfAnimals5.Text = "0";
             // 
-            // txtFarmerGender5
+            // lblFarmerGender5
             // 
-            this.txtFarmerGender5.AutoSize = true;
-            this.txtFarmerGender5.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerGender5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerGender5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerGender5.Location = new System.Drawing.Point(272, 557);
-            this.txtFarmerGender5.Name = "txtFarmerGender5";
-            this.txtFarmerGender5.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerGender5.TabIndex = 67;
-            this.txtFarmerGender5.Text = "label1";
+            this.lblFarmerGender5.AutoSize = true;
+            this.lblFarmerGender5.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerGender5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerGender5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerGender5.Location = new System.Drawing.Point(272, 557);
+            this.lblFarmerGender5.Name = "lblFarmerGender5";
+            this.lblFarmerGender5.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender5.TabIndex = 67;
+            this.lblFarmerGender5.Text = "label1";
             // 
-            // txtFarmSize5
+            // lblFarmSize5
             // 
-            this.txtFarmSize5.AutoSize = true;
-            this.txtFarmSize5.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmSize5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmSize5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmSize5.Location = new System.Drawing.Point(496, 540);
-            this.txtFarmSize5.Name = "txtFarmSize5";
-            this.txtFarmSize5.Size = new System.Drawing.Size(18, 20);
-            this.txtFarmSize5.TabIndex = 66;
-            this.txtFarmSize5.Text = "0";
+            this.lblFarmSize5.AutoSize = true;
+            this.lblFarmSize5.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmSize5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmSize5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmSize5.Location = new System.Drawing.Point(496, 540);
+            this.lblFarmSize5.Name = "lblFarmSize5";
+            this.lblFarmSize5.Size = new System.Drawing.Size(18, 20);
+            this.lblFarmSize5.TabIndex = 66;
+            this.lblFarmSize5.Text = "0";
             // 
-            // txtFarmerName5
+            // lblFarmerName5
             // 
-            this.txtFarmerName5.AutoSize = true;
-            this.txtFarmerName5.BackColor = System.Drawing.Color.Transparent;
-            this.txtFarmerName5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFarmerName5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtFarmerName5.Location = new System.Drawing.Point(271, 526);
-            this.txtFarmerName5.Name = "txtFarmerName5";
-            this.txtFarmerName5.Size = new System.Drawing.Size(53, 20);
-            this.txtFarmerName5.TabIndex = 65;
-            this.txtFarmerName5.Text = "label1";
+            this.lblFarmerName5.AutoSize = true;
+            this.lblFarmerName5.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmerName5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmerName5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmerName5.Location = new System.Drawing.Point(271, 526);
+            this.lblFarmerName5.Name = "lblFarmerName5";
+            this.lblFarmerName5.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName5.TabIndex = 65;
+            this.lblFarmerName5.Text = "label1";
             // 
             // pbxCross1
             // 
@@ -942,31 +942,31 @@
             this.Controls.Add(this.pbxHairOne);
             this.Controls.Add(this.pbxBodyOne);
             this.Controls.Add(this.pbxOne);
-            this.Controls.Add(this.txtFarmerAge5);
-            this.Controls.Add(this.txtNumOfAnimals5);
-            this.Controls.Add(this.txtFarmerGender5);
-            this.Controls.Add(this.txtFarmSize5);
-            this.Controls.Add(this.txtFarmerName5);
-            this.Controls.Add(this.txtFarmerAge4);
-            this.Controls.Add(this.txtNumOfAnimals4);
-            this.Controls.Add(this.txtFarmerGender4);
-            this.Controls.Add(this.txtFarmSize4);
-            this.Controls.Add(this.txtFarmerName4);
-            this.Controls.Add(this.txtFarmerAge3);
-            this.Controls.Add(this.txtNumOfAnimals3);
-            this.Controls.Add(this.txtFarmerGender3);
-            this.Controls.Add(this.txtFarmSize3);
-            this.Controls.Add(this.txtFarmerName3);
-            this.Controls.Add(this.txtFarmerAge2);
-            this.Controls.Add(this.txtNumOfAnimals2);
-            this.Controls.Add(this.txtFarmerGender2);
-            this.Controls.Add(this.txtFarmSize2);
-            this.Controls.Add(this.txtFarmerName2);
-            this.Controls.Add(this.txtFarmerAge1);
-            this.Controls.Add(this.txtNumOfAnimals1);
-            this.Controls.Add(this.txtFarmerGender1);
-            this.Controls.Add(this.txtFarmSize1);
-            this.Controls.Add(this.txtFarmerName1);
+            this.Controls.Add(this.lblFarmerAge5);
+            this.Controls.Add(this.lblNumOfAnimals5);
+            this.Controls.Add(this.lblFarmerGender5);
+            this.Controls.Add(this.lblFarmSize5);
+            this.Controls.Add(this.lblFarmerName5);
+            this.Controls.Add(this.lblFarmerAge4);
+            this.Controls.Add(this.lblNumOfAnimals4);
+            this.Controls.Add(this.lblFarmerGender4);
+            this.Controls.Add(this.lblFarmSize4);
+            this.Controls.Add(this.lblFarmerName4);
+            this.Controls.Add(this.lblFarmerAge3);
+            this.Controls.Add(this.lblNumOfAnimals3);
+            this.Controls.Add(this.lblFarmerGender3);
+            this.Controls.Add(this.lblFarmSize3);
+            this.Controls.Add(this.lblFarmerName3);
+            this.Controls.Add(this.lblFarmerAge2);
+            this.Controls.Add(this.lblNumOfAnimals2);
+            this.Controls.Add(this.lblFarmerGender2);
+            this.Controls.Add(this.l);
+            this.Controls.Add(this.lblFarmerName2);
+            this.Controls.Add(this.lblFarmerAge1);
+            this.Controls.Add(this.lblNumOfAnimals1);
+            this.Controls.Add(this.lblFarmerGender1);
+            this.Controls.Add(this.lblFarmSize1);
+            this.Controls.Add(this.lblFarmerName1);
             this.Controls.Add(this.pbxFarmer5);
             this.Controls.Add(this.pbxFarmer4);
             this.Controls.Add(this.pbxFarmer1);
@@ -1040,31 +1040,31 @@
         private System.Windows.Forms.PictureBox pbxFarmer1;
         private System.Windows.Forms.PictureBox pbxFarmer4;
         private System.Windows.Forms.PictureBox pbxFarmer5;
-        private System.Windows.Forms.Label txtFarmerName1;
-        private System.Windows.Forms.Label txtFarmSize1;
-        private System.Windows.Forms.Label txtFarmerGender1;
-        private System.Windows.Forms.Label txtNumOfAnimals1;
-        private System.Windows.Forms.Label txtFarmerAge1;
-        private System.Windows.Forms.Label txtFarmerAge2;
-        private System.Windows.Forms.Label txtNumOfAnimals2;
-        private System.Windows.Forms.Label txtFarmerGender2;
-        private System.Windows.Forms.Label txtFarmSize2;
-        private System.Windows.Forms.Label txtFarmerName2;
-        private System.Windows.Forms.Label txtFarmerAge3;
-        private System.Windows.Forms.Label txtNumOfAnimals3;
-        private System.Windows.Forms.Label txtFarmerGender3;
-        private System.Windows.Forms.Label txtFarmSize3;
-        private System.Windows.Forms.Label txtFarmerName3;
-        private System.Windows.Forms.Label txtFarmerAge4;
-        private System.Windows.Forms.Label txtNumOfAnimals4;
-        private System.Windows.Forms.Label txtFarmerGender4;
-        private System.Windows.Forms.Label txtFarmSize4;
-        private System.Windows.Forms.Label txtFarmerName4;
-        private System.Windows.Forms.Label txtFarmerAge5;
-        private System.Windows.Forms.Label txtNumOfAnimals5;
-        private System.Windows.Forms.Label txtFarmerGender5;
-        private System.Windows.Forms.Label txtFarmSize5;
-        private System.Windows.Forms.Label txtFarmerName5;
+        private System.Windows.Forms.Label lblFarmerName1;
+        private System.Windows.Forms.Label lblFarmSize1;
+        private System.Windows.Forms.Label lblFarmerGender1;
+        private System.Windows.Forms.Label lblNumOfAnimals1;
+        private System.Windows.Forms.Label lblFarmerAge1;
+        private System.Windows.Forms.Label lblFarmerAge2;
+        private System.Windows.Forms.Label lblNumOfAnimals2;
+        private System.Windows.Forms.Label lblFarmerGender2;
+        private System.Windows.Forms.Label l;
+        private System.Windows.Forms.Label lblFarmerName2;
+        private System.Windows.Forms.Label lblFarmerAge3;
+        private System.Windows.Forms.Label lblNumOfAnimals3;
+        private System.Windows.Forms.Label lblFarmerGender3;
+        private System.Windows.Forms.Label lblFarmSize3;
+        private System.Windows.Forms.Label lblFarmerName3;
+        private System.Windows.Forms.Label lblFarmerAge4;
+        private System.Windows.Forms.Label lblNumOfAnimals4;
+        private System.Windows.Forms.Label lblFarmerGender4;
+        private System.Windows.Forms.Label lblFarmSize4;
+        private System.Windows.Forms.Label lblFarmerName4;
+        private System.Windows.Forms.Label lblFarmerAge5;
+        private System.Windows.Forms.Label lblNumOfAnimals5;
+        private System.Windows.Forms.Label lblFarmerGender5;
+        private System.Windows.Forms.Label lblFarmSize5;
+        private System.Windows.Forms.Label lblFarmerName5;
         private System.Windows.Forms.PictureBox pbxOne;
         private System.Windows.Forms.PictureBox pbxBodyOne;
         private System.Windows.Forms.PictureBox pbxHairOne;
