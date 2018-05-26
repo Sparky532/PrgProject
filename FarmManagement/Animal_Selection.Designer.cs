@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Animal_Selection));
             this.txtAnimalAmount = new System.Windows.Forms.TextBox();
             this.cbxAnimals = new System.Windows.Forms.ComboBox();
             this.lstAnimalsSelected = new System.Windows.Forms.ListBox();
@@ -245,6 +246,7 @@
             this.Controls.Add(this.pbxPanel);
             this.Controls.Add(this.pbxBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Animal_Selection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

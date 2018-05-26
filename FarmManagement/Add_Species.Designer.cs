@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Species));
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblType = new System.Windows.Forms.Label();
@@ -248,6 +249,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pbxSpeciesBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Add_Species";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
