@@ -83,6 +83,16 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddSpecies {
+            get {
+                object obj = ResourceManager.GetObject("AddSpecies", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddSpeciesBG {
             get {
                 object obj = ResourceManager.GetObject("AddSpeciesBG", resourceCulture);

@@ -29,25 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Farm_Creation));
-            this.btnCreateFarm = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtFarmName = new System.Windows.Forms.TextBox();
+            this.btnCreateFarm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCreateFarm
-            // 
-            this.btnCreateFarm.Location = new System.Drawing.Point(342, 245);
-            this.btnCreateFarm.Name = "btnCreateFarm";
-            this.btnCreateFarm.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateFarm.TabIndex = 0;
-            this.btnCreateFarm.Text = "Create";
-            this.btnCreateFarm.UseVisualStyleBackColor = true;
-            this.btnCreateFarm.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -82,6 +72,16 @@
             this.txtFarmName.Size = new System.Drawing.Size(690, 38);
             this.txtFarmName.TabIndex = 2;
             // 
+            // btnCreateFarm
+            // 
+            this.btnCreateFarm.Location = new System.Drawing.Point(342, 245);
+            this.btnCreateFarm.Name = "btnCreateFarm";
+            this.btnCreateFarm.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateFarm.TabIndex = 0;
+            this.btnCreateFarm.Text = "Create";
+            this.btnCreateFarm.UseVisualStyleBackColor = true;
+            this.btnCreateFarm.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Farm_Creation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,11 +107,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCreateFarm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtFarmName;
+        private System.Windows.Forms.Button btnCreateFarm;
     }
 }

@@ -16,7 +16,7 @@ namespace FarmManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Animal_Selection());
+            Application.Run(new Add_Species());
         }
     }
 }
