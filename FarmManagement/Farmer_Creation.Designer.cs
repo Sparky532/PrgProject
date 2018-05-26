@@ -124,6 +124,7 @@
             // 
             this.cmbGender.BackColor = System.Drawing.Color.White;
             this.cmbGender.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {

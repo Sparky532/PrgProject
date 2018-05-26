@@ -28,19 +28,13 @@ namespace FarmManagement
             farmer.ID = id;
 
         }
-        
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            string name = txtFarmName.Text;
-            double size = 400;
-            Farm SmallFarm = new Farm(name, size);
-            MessageBox.Show(SmallFarm.insertFarm());
+            string name = txtName.Text;
+            double size = double.Parse(txtSize.Text);
+            Farm f = new Farm(name,size);
+            f.insertFarm();
             Animal_Selection assd = new Animal_Selection(farmer.ID);
             assd.Show();
             this.Hide();
