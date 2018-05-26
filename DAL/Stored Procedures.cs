@@ -180,6 +180,41 @@ END
          * 
          */
 
+        /*
+         CREATE PROCEDURE [dbo].[SelectNewestFarmer]
+AS
+BEGIN
+SELECT top 1 FarmerId from Farmer
+ORDER BY FarmerId DESC
+END
+         */
+
+        /*
+         CREATE PROCEDURE DeleteFarmer
+	@FarmerId int
+AS
+BEGIN
+	DELETE FROM Animal
+	WHERE LocationId in (SELECT LocationId from Location
+						WHERE FarmId = (SELECT FarmId FROM Farm
+										WHERE FarmerId = @FarmerId))
+
+    DELETE FROM Location 
+	WHERE FarmId = (SELECT FarmId FROM Farm
+										WHERE FarmerId = @FarmerId)
+
+    DELETE FROM Farm
+    WHERE FarmerId = @FarmerId
+
+	DELETE FROM Style
+	WHERE StyleId = (SELECT StyleId FROM Farmer
+					 WHERE FarmerId = @FarmerId)
+
+    DELETE FROM Farmer
+	WHERE FarmerId = @FarmerId
+END
+         */
+
 
 
 
