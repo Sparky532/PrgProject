@@ -335,6 +335,7 @@ namespace FarmManagement
             pbxFarmer1.Controls.Add(txtFarmerAge1);
             pbxFarmer1.Controls.Add(txtNumOfAnimals1);
             pbxFarmer1.Controls.Add(txtFarmSize1);
+            pbxFarmer1.Controls.Add(pbxCross1);
 
             #region avatars
             pbxFarmer1.Controls.Add(pbxOne);
@@ -393,6 +394,7 @@ namespace FarmManagement
             txtFarmerAge1.Location = new Point(240, 80);
             txtNumOfAnimals1.Location = new Point(475, 70);
             txtFarmSize1.Location = new Point(475, 30);
+            pbxCross1.Location = new Point(508, 5);
 
             pbxFarmer2.Controls.Add(txtFarmerName2);
             pbxFarmer2.Controls.Add(txtFarmerGender2);
@@ -530,6 +532,11 @@ namespace FarmManagement
             navFarmView.Show();
             this.Hide();
           //  MessageBox.Show("Load farmer Five");
+        }
+
+        private void pbxCross1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You clicked the delete button");
         }
     }
 }

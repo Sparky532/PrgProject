@@ -54,6 +54,31 @@
             this.txtFarmerGender5 = new System.Windows.Forms.Label();
             this.txtFarmSize5 = new System.Windows.Forms.Label();
             this.txtFarmerName5 = new System.Windows.Forms.Label();
+            this.pbxOutfitFive = new System.Windows.Forms.PictureBox();
+            this.pbxEyesFive = new System.Windows.Forms.PictureBox();
+            this.pbxHairFive = new System.Windows.Forms.PictureBox();
+            this.pbxBodyFive = new System.Windows.Forms.PictureBox();
+            this.pbxFive = new System.Windows.Forms.PictureBox();
+            this.pbxOutfitFour = new System.Windows.Forms.PictureBox();
+            this.pbxEyesFour = new System.Windows.Forms.PictureBox();
+            this.pbxHairFour = new System.Windows.Forms.PictureBox();
+            this.pbxBodyFour = new System.Windows.Forms.PictureBox();
+            this.pbxFour = new System.Windows.Forms.PictureBox();
+            this.pbxOutfitThree = new System.Windows.Forms.PictureBox();
+            this.pbxEyesThree = new System.Windows.Forms.PictureBox();
+            this.pbxHairThree = new System.Windows.Forms.PictureBox();
+            this.pbxBodyThree = new System.Windows.Forms.PictureBox();
+            this.pbxThree = new System.Windows.Forms.PictureBox();
+            this.pbxOutfitTwo = new System.Windows.Forms.PictureBox();
+            this.pbxEyesTwo = new System.Windows.Forms.PictureBox();
+            this.pbxHairTwo = new System.Windows.Forms.PictureBox();
+            this.pbxBodyTwo = new System.Windows.Forms.PictureBox();
+            this.pbxTwo = new System.Windows.Forms.PictureBox();
+            this.pbxOutfitOne = new System.Windows.Forms.PictureBox();
+            this.pbxEyesOne = new System.Windows.Forms.PictureBox();
+            this.pbxHairOne = new System.Windows.Forms.PictureBox();
+            this.pbxBodyOne = new System.Windows.Forms.PictureBox();
+            this.pbxOne = new System.Windows.Forms.PictureBox();
             this.pbxFarmer5 = new System.Windows.Forms.PictureBox();
             this.pbxFarmer4 = new System.Windows.Forms.PictureBox();
             this.pbxFarmer1 = new System.Windows.Forms.PictureBox();
@@ -64,31 +89,31 @@
             this.pbxNewFarmer3 = new System.Windows.Forms.PictureBox();
             this.pbxNewFarmer2 = new System.Windows.Forms.PictureBox();
             this.pbxNewFarmer1 = new System.Windows.Forms.PictureBox();
-            this.pbxOne = new System.Windows.Forms.PictureBox();
-            this.pbxBodyOne = new System.Windows.Forms.PictureBox();
-            this.pbxHairOne = new System.Windows.Forms.PictureBox();
-            this.pbxEyesOne = new System.Windows.Forms.PictureBox();
-            this.pbxOutfitOne = new System.Windows.Forms.PictureBox();
-            this.pbxOutfitTwo = new System.Windows.Forms.PictureBox();
-            this.pbxEyesTwo = new System.Windows.Forms.PictureBox();
-            this.pbxHairTwo = new System.Windows.Forms.PictureBox();
-            this.pbxBodyTwo = new System.Windows.Forms.PictureBox();
-            this.pbxTwo = new System.Windows.Forms.PictureBox();
-            this.pbxOutfitThree = new System.Windows.Forms.PictureBox();
-            this.pbxEyesThree = new System.Windows.Forms.PictureBox();
-            this.pbxHairThree = new System.Windows.Forms.PictureBox();
-            this.pbxBodyThree = new System.Windows.Forms.PictureBox();
-            this.pbxThree = new System.Windows.Forms.PictureBox();
-            this.pbxOutfitFour = new System.Windows.Forms.PictureBox();
-            this.pbxEyesFour = new System.Windows.Forms.PictureBox();
-            this.pbxHairFour = new System.Windows.Forms.PictureBox();
-            this.pbxBodyFour = new System.Windows.Forms.PictureBox();
-            this.pbxFour = new System.Windows.Forms.PictureBox();
-            this.pbxOutfitFive = new System.Windows.Forms.PictureBox();
-            this.pbxEyesFive = new System.Windows.Forms.PictureBox();
-            this.pbxHairFive = new System.Windows.Forms.PictureBox();
-            this.pbxBodyFive = new System.Windows.Forms.PictureBox();
-            this.pbxFive = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairFive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyFive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairFour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyFour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitThree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesThree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairThree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyThree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxThree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFarmer5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFarmer4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFarmer1)).BeginInit();
@@ -99,31 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyOne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairOne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesOne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitOne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitTwo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesTwo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairTwo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyTwo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxTwo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitThree)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesThree)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairThree)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyThree)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxThree)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairFour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyFour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxFour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairFive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyFive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxFive)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFarmerName1
@@ -426,6 +426,306 @@
             this.txtFarmerName5.TabIndex = 65;
             this.txtFarmerName5.Text = "label1";
             // 
+            // pbxOutfitFive
+            // 
+            this.pbxOutfitFive.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxOutfitFive.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
+            this.pbxOutfitFive.Location = new System.Drawing.Point(36, 579);
+            this.pbxOutfitFive.Name = "pbxOutfitFive";
+            this.pbxOutfitFive.Size = new System.Drawing.Size(120, 116);
+            this.pbxOutfitFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOutfitFive.TabIndex = 94;
+            this.pbxOutfitFive.TabStop = false;
+            this.pbxOutfitFive.Click += new System.EventHandler(this.pbxFarmer5_Click);
+            // 
+            // pbxEyesFive
+            // 
+            this.pbxEyesFive.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxEyesFive.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
+            this.pbxEyesFive.Location = new System.Drawing.Point(36, 526);
+            this.pbxEyesFive.Name = "pbxEyesFive";
+            this.pbxEyesFive.Size = new System.Drawing.Size(120, 34);
+            this.pbxEyesFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEyesFive.TabIndex = 93;
+            this.pbxEyesFive.TabStop = false;
+            this.pbxEyesFive.Click += new System.EventHandler(this.pbxFarmer5_Click);
+            // 
+            // pbxHairFive
+            // 
+            this.pbxHairFive.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxHairFive.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
+            this.pbxHairFive.Location = new System.Drawing.Point(36, 526);
+            this.pbxHairFive.Name = "pbxHairFive";
+            this.pbxHairFive.Size = new System.Drawing.Size(120, 73);
+            this.pbxHairFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxHairFive.TabIndex = 92;
+            this.pbxHairFive.TabStop = false;
+            this.pbxHairFive.Click += new System.EventHandler(this.pbxFarmer5_Click);
+            // 
+            // pbxBodyFive
+            // 
+            this.pbxBodyFive.BackColor = System.Drawing.Color.Transparent;
+            this.pbxBodyFive.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pbxBodyFive.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
+            this.pbxBodyFive.ImageLocation = "";
+            this.pbxBodyFive.Location = new System.Drawing.Point(36, 526);
+            this.pbxBodyFive.Name = "pbxBodyFive";
+            this.pbxBodyFive.Size = new System.Drawing.Size(120, 195);
+            this.pbxBodyFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBodyFive.TabIndex = 91;
+            this.pbxBodyFive.TabStop = false;
+            // 
+            // pbxFive
+            // 
+            this.pbxFive.BackColor = System.Drawing.Color.Transparent;
+            this.pbxFive.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxFive.Location = new System.Drawing.Point(36, 526);
+            this.pbxFive.Name = "pbxFive";
+            this.pbxFive.Size = new System.Drawing.Size(90, 81);
+            this.pbxFive.TabIndex = 90;
+            this.pbxFive.TabStop = false;
+            this.pbxFive.Click += new System.EventHandler(this.pbxFarmer5_Click);
+            // 
+            // pbxOutfitFour
+            // 
+            this.pbxOutfitFour.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxOutfitFour.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
+            this.pbxOutfitFour.Location = new System.Drawing.Point(36, 457);
+            this.pbxOutfitFour.Name = "pbxOutfitFour";
+            this.pbxOutfitFour.Size = new System.Drawing.Size(120, 116);
+            this.pbxOutfitFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOutfitFour.TabIndex = 89;
+            this.pbxOutfitFour.TabStop = false;
+            this.pbxOutfitFour.Click += new System.EventHandler(this.pbxFarmer4_Click);
+            // 
+            // pbxEyesFour
+            // 
+            this.pbxEyesFour.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxEyesFour.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
+            this.pbxEyesFour.Location = new System.Drawing.Point(36, 404);
+            this.pbxEyesFour.Name = "pbxEyesFour";
+            this.pbxEyesFour.Size = new System.Drawing.Size(120, 34);
+            this.pbxEyesFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEyesFour.TabIndex = 88;
+            this.pbxEyesFour.TabStop = false;
+            this.pbxEyesFour.Click += new System.EventHandler(this.pbxFarmer4_Click);
+            // 
+            // pbxHairFour
+            // 
+            this.pbxHairFour.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxHairFour.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
+            this.pbxHairFour.Location = new System.Drawing.Point(36, 404);
+            this.pbxHairFour.Name = "pbxHairFour";
+            this.pbxHairFour.Size = new System.Drawing.Size(120, 73);
+            this.pbxHairFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxHairFour.TabIndex = 87;
+            this.pbxHairFour.TabStop = false;
+            this.pbxHairFour.Click += new System.EventHandler(this.pbxFarmer4_Click);
+            // 
+            // pbxBodyFour
+            // 
+            this.pbxBodyFour.BackColor = System.Drawing.Color.Transparent;
+            this.pbxBodyFour.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pbxBodyFour.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
+            this.pbxBodyFour.ImageLocation = "";
+            this.pbxBodyFour.Location = new System.Drawing.Point(36, 404);
+            this.pbxBodyFour.Name = "pbxBodyFour";
+            this.pbxBodyFour.Size = new System.Drawing.Size(120, 195);
+            this.pbxBodyFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBodyFour.TabIndex = 86;
+            this.pbxBodyFour.TabStop = false;
+            // 
+            // pbxFour
+            // 
+            this.pbxFour.BackColor = System.Drawing.Color.Transparent;
+            this.pbxFour.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxFour.Location = new System.Drawing.Point(36, 404);
+            this.pbxFour.Name = "pbxFour";
+            this.pbxFour.Size = new System.Drawing.Size(90, 81);
+            this.pbxFour.TabIndex = 85;
+            this.pbxFour.TabStop = false;
+            this.pbxFour.Click += new System.EventHandler(this.pbxFarmer4_Click);
+            // 
+            // pbxOutfitThree
+            // 
+            this.pbxOutfitThree.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxOutfitThree.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
+            this.pbxOutfitThree.Location = new System.Drawing.Point(36, 333);
+            this.pbxOutfitThree.Name = "pbxOutfitThree";
+            this.pbxOutfitThree.Size = new System.Drawing.Size(120, 116);
+            this.pbxOutfitThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOutfitThree.TabIndex = 84;
+            this.pbxOutfitThree.TabStop = false;
+            this.pbxOutfitThree.Click += new System.EventHandler(this.pbxFarmer3_Click);
+            // 
+            // pbxEyesThree
+            // 
+            this.pbxEyesThree.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxEyesThree.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
+            this.pbxEyesThree.Location = new System.Drawing.Point(36, 280);
+            this.pbxEyesThree.Name = "pbxEyesThree";
+            this.pbxEyesThree.Size = new System.Drawing.Size(120, 34);
+            this.pbxEyesThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEyesThree.TabIndex = 83;
+            this.pbxEyesThree.TabStop = false;
+            this.pbxEyesThree.Click += new System.EventHandler(this.pbxFarmer3_Click);
+            // 
+            // pbxHairThree
+            // 
+            this.pbxHairThree.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxHairThree.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
+            this.pbxHairThree.Location = new System.Drawing.Point(36, 280);
+            this.pbxHairThree.Name = "pbxHairThree";
+            this.pbxHairThree.Size = new System.Drawing.Size(120, 73);
+            this.pbxHairThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxHairThree.TabIndex = 82;
+            this.pbxHairThree.TabStop = false;
+            this.pbxHairThree.Click += new System.EventHandler(this.pbxFarmer3_Click);
+            // 
+            // pbxBodyThree
+            // 
+            this.pbxBodyThree.BackColor = System.Drawing.Color.Transparent;
+            this.pbxBodyThree.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pbxBodyThree.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
+            this.pbxBodyThree.ImageLocation = "";
+            this.pbxBodyThree.Location = new System.Drawing.Point(36, 280);
+            this.pbxBodyThree.Name = "pbxBodyThree";
+            this.pbxBodyThree.Size = new System.Drawing.Size(120, 195);
+            this.pbxBodyThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBodyThree.TabIndex = 81;
+            this.pbxBodyThree.TabStop = false;
+            // 
+            // pbxThree
+            // 
+            this.pbxThree.BackColor = System.Drawing.Color.Transparent;
+            this.pbxThree.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxThree.Location = new System.Drawing.Point(36, 280);
+            this.pbxThree.Name = "pbxThree";
+            this.pbxThree.Size = new System.Drawing.Size(90, 81);
+            this.pbxThree.TabIndex = 80;
+            this.pbxThree.TabStop = false;
+            this.pbxThree.Click += new System.EventHandler(this.pbxFarmer3_Click);
+            // 
+            // pbxOutfitTwo
+            // 
+            this.pbxOutfitTwo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxOutfitTwo.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
+            this.pbxOutfitTwo.Location = new System.Drawing.Point(36, 212);
+            this.pbxOutfitTwo.Name = "pbxOutfitTwo";
+            this.pbxOutfitTwo.Size = new System.Drawing.Size(120, 116);
+            this.pbxOutfitTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOutfitTwo.TabIndex = 79;
+            this.pbxOutfitTwo.TabStop = false;
+            this.pbxOutfitTwo.Click += new System.EventHandler(this.pbxFarmer2_Click);
+            // 
+            // pbxEyesTwo
+            // 
+            this.pbxEyesTwo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxEyesTwo.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
+            this.pbxEyesTwo.Location = new System.Drawing.Point(36, 159);
+            this.pbxEyesTwo.Name = "pbxEyesTwo";
+            this.pbxEyesTwo.Size = new System.Drawing.Size(120, 34);
+            this.pbxEyesTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEyesTwo.TabIndex = 78;
+            this.pbxEyesTwo.TabStop = false;
+            this.pbxEyesTwo.Click += new System.EventHandler(this.pbxFarmer2_Click);
+            // 
+            // pbxHairTwo
+            // 
+            this.pbxHairTwo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxHairTwo.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
+            this.pbxHairTwo.Location = new System.Drawing.Point(36, 159);
+            this.pbxHairTwo.Name = "pbxHairTwo";
+            this.pbxHairTwo.Size = new System.Drawing.Size(120, 73);
+            this.pbxHairTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxHairTwo.TabIndex = 77;
+            this.pbxHairTwo.TabStop = false;
+            this.pbxHairTwo.Click += new System.EventHandler(this.pbxFarmer2_Click);
+            // 
+            // pbxBodyTwo
+            // 
+            this.pbxBodyTwo.BackColor = System.Drawing.Color.Transparent;
+            this.pbxBodyTwo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pbxBodyTwo.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
+            this.pbxBodyTwo.ImageLocation = "";
+            this.pbxBodyTwo.Location = new System.Drawing.Point(36, 159);
+            this.pbxBodyTwo.Name = "pbxBodyTwo";
+            this.pbxBodyTwo.Size = new System.Drawing.Size(120, 195);
+            this.pbxBodyTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBodyTwo.TabIndex = 76;
+            this.pbxBodyTwo.TabStop = false;
+            // 
+            // pbxTwo
+            // 
+            this.pbxTwo.BackColor = System.Drawing.Color.Transparent;
+            this.pbxTwo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxTwo.Location = new System.Drawing.Point(36, 159);
+            this.pbxTwo.Name = "pbxTwo";
+            this.pbxTwo.Size = new System.Drawing.Size(90, 81);
+            this.pbxTwo.TabIndex = 75;
+            this.pbxTwo.TabStop = false;
+            this.pbxTwo.Click += new System.EventHandler(this.pbxFarmer2_Click);
+            // 
+            // pbxOutfitOne
+            // 
+            this.pbxOutfitOne.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxOutfitOne.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
+            this.pbxOutfitOne.Location = new System.Drawing.Point(36, 74);
+            this.pbxOutfitOne.Name = "pbxOutfitOne";
+            this.pbxOutfitOne.Size = new System.Drawing.Size(120, 116);
+            this.pbxOutfitOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOutfitOne.TabIndex = 74;
+            this.pbxOutfitOne.TabStop = false;
+            this.pbxOutfitOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
+            // 
+            // pbxEyesOne
+            // 
+            this.pbxEyesOne.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxEyesOne.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
+            this.pbxEyesOne.Location = new System.Drawing.Point(36, 21);
+            this.pbxEyesOne.Name = "pbxEyesOne";
+            this.pbxEyesOne.Size = new System.Drawing.Size(120, 34);
+            this.pbxEyesOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEyesOne.TabIndex = 73;
+            this.pbxEyesOne.TabStop = false;
+            this.pbxEyesOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
+            // 
+            // pbxHairOne
+            // 
+            this.pbxHairOne.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxHairOne.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
+            this.pbxHairOne.Location = new System.Drawing.Point(36, 21);
+            this.pbxHairOne.Name = "pbxHairOne";
+            this.pbxHairOne.Size = new System.Drawing.Size(120, 73);
+            this.pbxHairOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxHairOne.TabIndex = 72;
+            this.pbxHairOne.TabStop = false;
+            this.pbxHairOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
+            // 
+            // pbxBodyOne
+            // 
+            this.pbxBodyOne.BackColor = System.Drawing.Color.Transparent;
+            this.pbxBodyOne.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pbxBodyOne.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
+            this.pbxBodyOne.ImageLocation = "";
+            this.pbxBodyOne.Location = new System.Drawing.Point(36, 21);
+            this.pbxBodyOne.Name = "pbxBodyOne";
+            this.pbxBodyOne.Size = new System.Drawing.Size(120, 195);
+            this.pbxBodyOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBodyOne.TabIndex = 71;
+            this.pbxBodyOne.TabStop = false;
+            this.pbxBodyOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
+            // 
+            // pbxOne
+            // 
+            this.pbxOne.BackColor = System.Drawing.Color.Transparent;
+            this.pbxOne.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxOne.Location = new System.Drawing.Point(36, 21);
+            this.pbxOne.Name = "pbxOne";
+            this.pbxOne.Size = new System.Drawing.Size(90, 81);
+            this.pbxOne.TabIndex = 70;
+            this.pbxOne.TabStop = false;
+            // 
             // pbxFarmer5
             // 
             this.pbxFarmer5.Image = global::FarmManagement.Properties.Resources.FarmerSelectionNew;
@@ -536,306 +836,6 @@
             this.pbxNewFarmer1.TabStop = false;
             this.pbxNewFarmer1.Click += new System.EventHandler(this.pbxNewFarmer1_Click);
             // 
-            // pbxOne
-            // 
-            this.pbxOne.BackColor = System.Drawing.Color.Transparent;
-            this.pbxOne.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxOne.Location = new System.Drawing.Point(36, 21);
-            this.pbxOne.Name = "pbxOne";
-            this.pbxOne.Size = new System.Drawing.Size(90, 81);
-            this.pbxOne.TabIndex = 70;
-            this.pbxOne.TabStop = false;
-            // 
-            // pbxBodyOne
-            // 
-            this.pbxBodyOne.BackColor = System.Drawing.Color.Transparent;
-            this.pbxBodyOne.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbxBodyOne.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
-            this.pbxBodyOne.ImageLocation = "";
-            this.pbxBodyOne.Location = new System.Drawing.Point(36, 21);
-            this.pbxBodyOne.Name = "pbxBodyOne";
-            this.pbxBodyOne.Size = new System.Drawing.Size(120, 195);
-            this.pbxBodyOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxBodyOne.TabIndex = 71;
-            this.pbxBodyOne.TabStop = false;
-            this.pbxBodyOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
-            // 
-            // pbxHairOne
-            // 
-            this.pbxHairOne.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxHairOne.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
-            this.pbxHairOne.Location = new System.Drawing.Point(36, 21);
-            this.pbxHairOne.Name = "pbxHairOne";
-            this.pbxHairOne.Size = new System.Drawing.Size(120, 73);
-            this.pbxHairOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxHairOne.TabIndex = 72;
-            this.pbxHairOne.TabStop = false;
-            this.pbxHairOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
-            // 
-            // pbxEyesOne
-            // 
-            this.pbxEyesOne.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxEyesOne.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
-            this.pbxEyesOne.Location = new System.Drawing.Point(36, 21);
-            this.pbxEyesOne.Name = "pbxEyesOne";
-            this.pbxEyesOne.Size = new System.Drawing.Size(120, 34);
-            this.pbxEyesOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxEyesOne.TabIndex = 73;
-            this.pbxEyesOne.TabStop = false;
-            this.pbxEyesOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
-            // 
-            // pbxOutfitOne
-            // 
-            this.pbxOutfitOne.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxOutfitOne.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
-            this.pbxOutfitOne.Location = new System.Drawing.Point(36, 74);
-            this.pbxOutfitOne.Name = "pbxOutfitOne";
-            this.pbxOutfitOne.Size = new System.Drawing.Size(120, 116);
-            this.pbxOutfitOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOutfitOne.TabIndex = 74;
-            this.pbxOutfitOne.TabStop = false;
-            this.pbxOutfitOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
-            // 
-            // pbxOutfitTwo
-            // 
-            this.pbxOutfitTwo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxOutfitTwo.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
-            this.pbxOutfitTwo.Location = new System.Drawing.Point(36, 212);
-            this.pbxOutfitTwo.Name = "pbxOutfitTwo";
-            this.pbxOutfitTwo.Size = new System.Drawing.Size(120, 116);
-            this.pbxOutfitTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOutfitTwo.TabIndex = 79;
-            this.pbxOutfitTwo.TabStop = false;
-            this.pbxOutfitTwo.Click += new System.EventHandler(this.pbxFarmer2_Click);
-            // 
-            // pbxEyesTwo
-            // 
-            this.pbxEyesTwo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxEyesTwo.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
-            this.pbxEyesTwo.Location = new System.Drawing.Point(36, 159);
-            this.pbxEyesTwo.Name = "pbxEyesTwo";
-            this.pbxEyesTwo.Size = new System.Drawing.Size(120, 34);
-            this.pbxEyesTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxEyesTwo.TabIndex = 78;
-            this.pbxEyesTwo.TabStop = false;
-            this.pbxEyesTwo.Click += new System.EventHandler(this.pbxFarmer2_Click);
-            // 
-            // pbxHairTwo
-            // 
-            this.pbxHairTwo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxHairTwo.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
-            this.pbxHairTwo.Location = new System.Drawing.Point(36, 159);
-            this.pbxHairTwo.Name = "pbxHairTwo";
-            this.pbxHairTwo.Size = new System.Drawing.Size(120, 73);
-            this.pbxHairTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxHairTwo.TabIndex = 77;
-            this.pbxHairTwo.TabStop = false;
-            this.pbxHairTwo.Click += new System.EventHandler(this.pbxFarmer2_Click);
-            // 
-            // pbxBodyTwo
-            // 
-            this.pbxBodyTwo.BackColor = System.Drawing.Color.Transparent;
-            this.pbxBodyTwo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbxBodyTwo.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
-            this.pbxBodyTwo.ImageLocation = "";
-            this.pbxBodyTwo.Location = new System.Drawing.Point(36, 159);
-            this.pbxBodyTwo.Name = "pbxBodyTwo";
-            this.pbxBodyTwo.Size = new System.Drawing.Size(120, 195);
-            this.pbxBodyTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxBodyTwo.TabIndex = 76;
-            this.pbxBodyTwo.TabStop = false;
-            // 
-            // pbxTwo
-            // 
-            this.pbxTwo.BackColor = System.Drawing.Color.Transparent;
-            this.pbxTwo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxTwo.Location = new System.Drawing.Point(36, 159);
-            this.pbxTwo.Name = "pbxTwo";
-            this.pbxTwo.Size = new System.Drawing.Size(90, 81);
-            this.pbxTwo.TabIndex = 75;
-            this.pbxTwo.TabStop = false;
-            this.pbxTwo.Click += new System.EventHandler(this.pbxFarmer2_Click);
-            // 
-            // pbxOutfitThree
-            // 
-            this.pbxOutfitThree.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxOutfitThree.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
-            this.pbxOutfitThree.Location = new System.Drawing.Point(36, 333);
-            this.pbxOutfitThree.Name = "pbxOutfitThree";
-            this.pbxOutfitThree.Size = new System.Drawing.Size(120, 116);
-            this.pbxOutfitThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOutfitThree.TabIndex = 84;
-            this.pbxOutfitThree.TabStop = false;
-            this.pbxOutfitThree.Click += new System.EventHandler(this.pbxFarmer3_Click);
-            // 
-            // pbxEyesThree
-            // 
-            this.pbxEyesThree.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxEyesThree.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
-            this.pbxEyesThree.Location = new System.Drawing.Point(36, 280);
-            this.pbxEyesThree.Name = "pbxEyesThree";
-            this.pbxEyesThree.Size = new System.Drawing.Size(120, 34);
-            this.pbxEyesThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxEyesThree.TabIndex = 83;
-            this.pbxEyesThree.TabStop = false;
-            this.pbxEyesThree.Click += new System.EventHandler(this.pbxFarmer3_Click);
-            // 
-            // pbxHairThree
-            // 
-            this.pbxHairThree.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxHairThree.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
-            this.pbxHairThree.Location = new System.Drawing.Point(36, 280);
-            this.pbxHairThree.Name = "pbxHairThree";
-            this.pbxHairThree.Size = new System.Drawing.Size(120, 73);
-            this.pbxHairThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxHairThree.TabIndex = 82;
-            this.pbxHairThree.TabStop = false;
-            this.pbxHairThree.Click += new System.EventHandler(this.pbxFarmer3_Click);
-            // 
-            // pbxBodyThree
-            // 
-            this.pbxBodyThree.BackColor = System.Drawing.Color.Transparent;
-            this.pbxBodyThree.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbxBodyThree.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
-            this.pbxBodyThree.ImageLocation = "";
-            this.pbxBodyThree.Location = new System.Drawing.Point(36, 280);
-            this.pbxBodyThree.Name = "pbxBodyThree";
-            this.pbxBodyThree.Size = new System.Drawing.Size(120, 195);
-            this.pbxBodyThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxBodyThree.TabIndex = 81;
-            this.pbxBodyThree.TabStop = false;
-            // 
-            // pbxThree
-            // 
-            this.pbxThree.BackColor = System.Drawing.Color.Transparent;
-            this.pbxThree.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxThree.Location = new System.Drawing.Point(36, 280);
-            this.pbxThree.Name = "pbxThree";
-            this.pbxThree.Size = new System.Drawing.Size(90, 81);
-            this.pbxThree.TabIndex = 80;
-            this.pbxThree.TabStop = false;
-            this.pbxThree.Click += new System.EventHandler(this.pbxFarmer3_Click);
-            // 
-            // pbxOutfitFour
-            // 
-            this.pbxOutfitFour.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxOutfitFour.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
-            this.pbxOutfitFour.Location = new System.Drawing.Point(36, 457);
-            this.pbxOutfitFour.Name = "pbxOutfitFour";
-            this.pbxOutfitFour.Size = new System.Drawing.Size(120, 116);
-            this.pbxOutfitFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOutfitFour.TabIndex = 89;
-            this.pbxOutfitFour.TabStop = false;
-            this.pbxOutfitFour.Click += new System.EventHandler(this.pbxFarmer4_Click);
-            // 
-            // pbxEyesFour
-            // 
-            this.pbxEyesFour.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxEyesFour.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
-            this.pbxEyesFour.Location = new System.Drawing.Point(36, 404);
-            this.pbxEyesFour.Name = "pbxEyesFour";
-            this.pbxEyesFour.Size = new System.Drawing.Size(120, 34);
-            this.pbxEyesFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxEyesFour.TabIndex = 88;
-            this.pbxEyesFour.TabStop = false;
-            this.pbxEyesFour.Click += new System.EventHandler(this.pbxFarmer4_Click);
-            // 
-            // pbxHairFour
-            // 
-            this.pbxHairFour.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxHairFour.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
-            this.pbxHairFour.Location = new System.Drawing.Point(36, 404);
-            this.pbxHairFour.Name = "pbxHairFour";
-            this.pbxHairFour.Size = new System.Drawing.Size(120, 73);
-            this.pbxHairFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxHairFour.TabIndex = 87;
-            this.pbxHairFour.TabStop = false;
-            this.pbxHairFour.Click += new System.EventHandler(this.pbxFarmer4_Click);
-            // 
-            // pbxBodyFour
-            // 
-            this.pbxBodyFour.BackColor = System.Drawing.Color.Transparent;
-            this.pbxBodyFour.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbxBodyFour.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
-            this.pbxBodyFour.ImageLocation = "";
-            this.pbxBodyFour.Location = new System.Drawing.Point(36, 404);
-            this.pbxBodyFour.Name = "pbxBodyFour";
-            this.pbxBodyFour.Size = new System.Drawing.Size(120, 195);
-            this.pbxBodyFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxBodyFour.TabIndex = 86;
-            this.pbxBodyFour.TabStop = false;
-            // 
-            // pbxFour
-            // 
-            this.pbxFour.BackColor = System.Drawing.Color.Transparent;
-            this.pbxFour.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxFour.Location = new System.Drawing.Point(36, 404);
-            this.pbxFour.Name = "pbxFour";
-            this.pbxFour.Size = new System.Drawing.Size(90, 81);
-            this.pbxFour.TabIndex = 85;
-            this.pbxFour.TabStop = false;
-            this.pbxFour.Click += new System.EventHandler(this.pbxFarmer4_Click);
-            // 
-            // pbxOutfitFive
-            // 
-            this.pbxOutfitFive.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxOutfitFive.Image = global::FarmManagement.Properties.Resources.GirlOutfit1;
-            this.pbxOutfitFive.Location = new System.Drawing.Point(36, 579);
-            this.pbxOutfitFive.Name = "pbxOutfitFive";
-            this.pbxOutfitFive.Size = new System.Drawing.Size(120, 116);
-            this.pbxOutfitFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxOutfitFive.TabIndex = 94;
-            this.pbxOutfitFive.TabStop = false;
-            this.pbxOutfitFive.Click += new System.EventHandler(this.pbxFarmer5_Click);
-            // 
-            // pbxEyesFive
-            // 
-            this.pbxEyesFive.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxEyesFive.Image = global::FarmManagement.Properties.Resources.GirlBlueEyes;
-            this.pbxEyesFive.Location = new System.Drawing.Point(36, 526);
-            this.pbxEyesFive.Name = "pbxEyesFive";
-            this.pbxEyesFive.Size = new System.Drawing.Size(120, 34);
-            this.pbxEyesFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxEyesFive.TabIndex = 93;
-            this.pbxEyesFive.TabStop = false;
-            this.pbxEyesFive.Click += new System.EventHandler(this.pbxFarmer5_Click);
-            // 
-            // pbxHairFive
-            // 
-            this.pbxHairFive.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxHairFive.Image = global::FarmManagement.Properties.Resources.BrownHairGirl;
-            this.pbxHairFive.Location = new System.Drawing.Point(36, 526);
-            this.pbxHairFive.Name = "pbxHairFive";
-            this.pbxHairFive.Size = new System.Drawing.Size(120, 73);
-            this.pbxHairFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxHairFive.TabIndex = 92;
-            this.pbxHairFive.TabStop = false;
-            this.pbxHairFive.Click += new System.EventHandler(this.pbxFarmer5_Click);
-            // 
-            // pbxBodyFive
-            // 
-            this.pbxBodyFive.BackColor = System.Drawing.Color.Transparent;
-            this.pbxBodyFive.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbxBodyFive.Image = global::FarmManagement.Properties.Resources.WhiteGirlSkin;
-            this.pbxBodyFive.ImageLocation = "";
-            this.pbxBodyFive.Location = new System.Drawing.Point(36, 526);
-            this.pbxBodyFive.Name = "pbxBodyFive";
-            this.pbxBodyFive.Size = new System.Drawing.Size(120, 195);
-            this.pbxBodyFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxBodyFive.TabIndex = 91;
-            this.pbxBodyFive.TabStop = false;
-            // 
-            // pbxFive
-            // 
-            this.pbxFive.BackColor = System.Drawing.Color.Transparent;
-            this.pbxFive.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxFive.Location = new System.Drawing.Point(36, 526);
-            this.pbxFive.Name = "pbxFive";
-            this.pbxFive.Size = new System.Drawing.Size(90, 81);
-            this.pbxFive.TabIndex = 90;
-            this.pbxFive.TabStop = false;
-            this.pbxFive.Click += new System.EventHandler(this.pbxFarmer5_Click);
-            // 
             // Farmer_Selection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -909,6 +909,31 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmer Selection";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairFive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyFive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairFour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyFour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitThree)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesThree)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairThree)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyThree)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxThree)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxHairOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFarmer5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFarmer4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFarmer1)).EndInit();
@@ -919,31 +944,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyOne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairOne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesOne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitOne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitTwo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesTwo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairTwo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyTwo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxTwo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitThree)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesThree)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairThree)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyThree)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxThree)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairFour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyFour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxFour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxHairFive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxBodyFive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxFive)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
