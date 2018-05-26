@@ -47,6 +47,11 @@ namespace DAL
                 //If its network related, change the connectionString to that of your computer
                 throw;
             }
+            catch (Exception)
+            {
+                //If its network related, change the connectionString to that of your computer
+                throw;
+            }
             finally
             {
                 connection.Close();

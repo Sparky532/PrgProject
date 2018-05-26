@@ -14,7 +14,7 @@ namespace BLL
         private int id;
         private string name;
         private string gender;
-        private string age;
+        private int age;
         private Style farmerStyle;
 
         public Style FarmerStyle {
@@ -22,7 +22,7 @@ namespace BLL
             set { farmerStyle = value; }
         }
 
-        public Farmer(int idP, string nameP, string genderP, string ageP, Style farmerStyleP)
+        public Farmer(int idP, string nameP, string genderP, int ageP, Style farmerStyleP)
         {
             this.ID = idP;
             this.Name = nameP;
@@ -30,7 +30,7 @@ namespace BLL
             this.Age = ageP;
             this.FarmerStyle = farmerStyleP;
         }
-        public Farmer(string nameP, string genderP, string ageP, Style farmerStyleP)
+        public Farmer(string nameP, string genderP, int ageP, Style farmerStyleP)
         {
 
             this.Name = nameP;
@@ -49,7 +49,7 @@ namespace BLL
 
         }
 
-        public string Age {
+        public int Age {
             get { return age; }
             set { age = value; }
         }
@@ -112,7 +112,7 @@ namespace BLL
                         ListOfFarmers[count] = new Farmer(int.Parse(item["FarmerId"].ToString()),
                                            item["FarmerName"].ToString(),
                                            item["FarmerGender"].ToString(),
-                                           item["FarmerAge"].ToString(),
+                                           int.Parse(item["FarmerAge"].ToString()),
                                            new Style(int.Parse(item["StyleId"].ToString()),
                                                       item["EyeColour"].ToString(),
                                                        item["HairColour"].ToString(),

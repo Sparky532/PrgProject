@@ -306,27 +306,41 @@ namespace FarmManagement
 
         private void pbxNext_Click(object sender, EventArgs e)
         {
-            int success = 0;
-            Style FarmerStyle = new Style();
-            FarmerStyle.Eyecolour = txtEye.Text;
-            FarmerStyle.OutfitType = txtOutfit.Text;
-            FarmerStyle.SkinColour = txtSkin.Text;
-            FarmerStyle.HairColour = txtHair.Text;
-
-            Farmer farmer = new Farmer(txtName.Text, cmbGender.Text, txtAge.Text, FarmerStyle);
-            success = farmer.InsertFarmer();
-
-
-            if (success == 2)
+            try
             {
-                Farm_Creation fc = new Farm_Creation();
-                fc.Show();
-                this.Hide();
+                if (txtName.Text == "")
+                {
+                    throw new NoFarmerNameException();
+                }
+                int success = 0;
+                Style FarmerStyle = new Style();
+                FarmerStyle.Eyecolour = txtEye.Text;
+                FarmerStyle.OutfitType = txtOutfit.Text;
+                FarmerStyle.SkinColour = txtSkin.Text;
+                FarmerStyle.HairColour = txtHair.Text;
+                Farmer farmer = new Farmer(txtName.Text, cmbGender.Text, int.Parse(txtAge.Text), FarmerStyle);
+                success = farmer.InsertFarmer();
+
+
+                if (success == 2)
+                {
+                    Farm_Creation fc = new Farm_Creation();
+                    fc.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Insert Failed");
+
+                }
             }
-            else
+            catch (NoFarmerNameException)
             {
-                MessageBox.Show("Insert Failed");
-
+                MessageBox.Show("Your Farmer needs a Name!");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Age has to be a number!");
             }
         }
     }

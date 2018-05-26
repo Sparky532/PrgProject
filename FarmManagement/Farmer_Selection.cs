@@ -54,7 +54,7 @@ namespace FarmManagement
                 CurrentFarmer = (Farmer)AllFarmers[0];
                 txtFarmerName1.Text = CurrentFarmer.Name;
                 txtFarmerGender1.Text = CurrentFarmer.Gender;
-                txtFarmerAge1.Text = CurrentFarmer.Age;
+                txtFarmerAge1.Text = CurrentFarmer.Age+"";
                 txtNumOfAnimals1.Text = CurrentFarmer.numOfAnimals().ToString();
                 txtFarmSize1.Text = CurrentFarmer.GetFarmSize().ToString();
 
@@ -74,7 +74,7 @@ namespace FarmManagement
                 CurrentFarmer = (Farmer)AllFarmers[1];
                 txtFarmerName2.Text = CurrentFarmer.Name;
                 txtFarmerGender2.Text = CurrentFarmer.Gender;
-                txtFarmerAge2.Text = CurrentFarmer.Age;
+                txtFarmerAge2.Text = CurrentFarmer.Age + "";
                 txtNumOfAnimals2.Text = CurrentFarmer.numOfAnimals().ToString();
                 txtFarmSize2.Text = CurrentFarmer.GetFarmSize().ToString();
 
@@ -94,7 +94,7 @@ namespace FarmManagement
                 CurrentFarmer = (Farmer)AllFarmers[2];
                 txtFarmerName3.Text = CurrentFarmer.Name;
                 txtFarmerGender3.Text = CurrentFarmer.Gender;
-                txtFarmerAge3.Text = CurrentFarmer.Age;
+                txtFarmerAge3.Text = CurrentFarmer.Age + "";
                 txtFarmSize3.Text = CurrentFarmer.GetFarmSize().ToString();
                 txtNumOfAnimals3.Text = CurrentFarmer.numOfAnimals().ToString();
 
@@ -114,7 +114,7 @@ namespace FarmManagement
                 CurrentFarmer = (Farmer)AllFarmers[3];
                 txtFarmerName4.Text = CurrentFarmer.Name;
                 txtFarmerGender4.Text = CurrentFarmer.Gender;
-                txtFarmerAge4.Text = CurrentFarmer.Age;
+                txtFarmerAge4.Text = CurrentFarmer.Age + "";
                 txtFarmSize4.Text = CurrentFarmer.GetFarmSize().ToString();
                 txtNumOfAnimals4.Text = CurrentFarmer.numOfAnimals().ToString();
 
@@ -134,7 +134,7 @@ namespace FarmManagement
                 CurrentFarmer = (Farmer)AllFarmers[4];
                 txtFarmerName5.Text = CurrentFarmer.Name;
                 txtFarmerGender5.Text = CurrentFarmer.Gender;
-                txtFarmerAge5.Text = CurrentFarmer.Age;
+                txtFarmerAge5.Text = CurrentFarmer.Age + "";
                 txtFarmSize5.Text = CurrentFarmer.GetFarmSize().ToString();
                 txtNumOfAnimals5.Text = CurrentFarmer.numOfAnimals().ToString();
 

@@ -39,4 +39,15 @@ namespace BLL
           System.Runtime.Serialization.SerializationInfo info,
           System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
     }
+
+    [Serializable]
+    public class NoFarmerNameException : Exception
+    {
+        public NoFarmerNameException() { }
+        public NoFarmerNameException(string message) : base(message) { }
+        public NoFarmerNameException(string message, Exception inner) : base(message, inner) { }
+        protected NoFarmerNameException(
+          System.Runtime.Serialization.SerializationInfo info,
+          System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
+    }
 }
