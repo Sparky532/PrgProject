@@ -23,11 +23,14 @@ namespace FarmManagement
             pbxSpeciesBackground.Controls.Add(pbxBack);
             pbxSpeciesBackground.Controls.Add(pbxAdd);
             pbxSpeciesBackground.Controls.Add(pbxBrowse);
+            pbxSpeciesBackground.Controls.Add(pbxNewAnimal);
+            pbxSpeciesBackground.Controls.Add(pbxAddSpecies);
 
-            pbxBack.Location = new Point(323, 410);
             pbxBack.Location = new Point(23, 2);
             pbxBrowse.Location = new Point(530, 310);
-            
+            pbxNewAnimal.Location = new Point(545, 99);
+            pbxAddSpecies.Location = new Point(250, 12);
+           
         }
 
         private void btnWriteToTxt_Click(object sender, EventArgs e)
@@ -75,14 +78,12 @@ namespace FarmManagement
         {
             pbxSpeciesBackground.Controls.Add(lblName);
             pbxSpeciesBackground.Controls.Add(lblChooseImage);
-            pbxSpeciesBackground.Controls.Add(lblAddSpecies);
             pbxSpeciesBackground.Controls.Add(lblSpaceNeeded);
             pbxSpeciesBackground.Controls.Add(lblSpeed);
             pbxSpeciesBackground.Controls.Add(lblType);
 
             lblName.Location = new Point(110, 99);
             lblChooseImage.Location = new Point(40, 322);
-            lblAddSpecies.Location = new Point(256, 28);
             lblType.Location = new Point(115, 154);
             lblSpaceNeeded.Location = new Point(40, 263);
             lblSpeed.Location = new Point(93, 213);
