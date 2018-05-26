@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Farmer_Creation));
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.txtHair = new System.Windows.Forms.TextBox();
@@ -346,6 +347,7 @@
             this.Controls.Add(this.pbxBackground);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Farmer_Creation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

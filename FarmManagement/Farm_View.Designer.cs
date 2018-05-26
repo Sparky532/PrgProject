@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Farm_View));
             this.lstFarm = new System.Windows.Forms.ListBox();
             this.lstLocations = new System.Windows.Forms.ListBox();
             this.lstAnimals = new System.Windows.Forms.ListBox();
@@ -110,42 +111,42 @@
             // lionToolStripMenuItem
             // 
             this.lionToolStripMenuItem.Name = "lionToolStripMenuItem";
-            this.lionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lionToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.lionToolStripMenuItem.Text = "Lion";
             this.lionToolStripMenuItem.Click += new System.EventHandler(this.lionToolStripMenuItem_Click);
             // 
             // tigerToolStripMenuItem
             // 
             this.tigerToolStripMenuItem.Name = "tigerToolStripMenuItem";
-            this.tigerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tigerToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.tigerToolStripMenuItem.Text = "Tiger";
             this.tigerToolStripMenuItem.Click += new System.EventHandler(this.tigerToolStripMenuItem_Click);
             // 
             // cowToolStripMenuItem
             // 
             this.cowToolStripMenuItem.Name = "cowToolStripMenuItem";
-            this.cowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cowToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.cowToolStripMenuItem.Text = "Cow";
             this.cowToolStripMenuItem.Click += new System.EventHandler(this.cowToolStripMenuItem_Click);
             // 
             // sheepToolStripMenuItem
             // 
             this.sheepToolStripMenuItem.Name = "sheepToolStripMenuItem";
-            this.sheepToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sheepToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.sheepToolStripMenuItem.Text = "Sheep";
             this.sheepToolStripMenuItem.Click += new System.EventHandler(this.sheepToolStripMenuItem_Click);
             // 
             // horseToolStripMenuItem
             // 
             this.horseToolStripMenuItem.Name = "horseToolStripMenuItem";
-            this.horseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.horseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.horseToolStripMenuItem.Text = "Horse";
             this.horseToolStripMenuItem.Click += new System.EventHandler(this.horseToolStripMenuItem_Click);
             // 
             // allAnimalsToolStripMenuItem
             // 
             this.allAnimalsToolStripMenuItem.Name = "allAnimalsToolStripMenuItem";
-            this.allAnimalsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.allAnimalsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.allAnimalsToolStripMenuItem.Text = "All Animals";
             this.allAnimalsToolStripMenuItem.Click += new System.EventHandler(this.allAnimalsToolStripMenuItem_Click);
             // 
@@ -158,6 +159,7 @@
             this.Controls.Add(this.lstLocations);
             this.Controls.Add(this.lstFarm);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Farm_View";
             this.Text = "Farm_View";
