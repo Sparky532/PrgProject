@@ -487,9 +487,23 @@ namespace FarmManagement
         private void pbxFarmer1_Click(object sender, EventArgs e)
         {
             CurrentFarmer = (Farmer)AllFarmers[0];
-            Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-            navFarmView.Show();
-            this.Hide();
+            if (CurrentFarmer.numOfAnimals()>0)
+            {
+                if (CurrentFarmer.GetFarmSize()>0)
+                {
+                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
+                    navFarmView.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    //Load Animal Selection
+                }
+            }
+            else
+            {
+                //Load Farm Creation
+            }
            
             //MessageBox.Show("Load farmer One");
         }
