@@ -146,8 +146,8 @@ namespace FarmManagement
                 else
                 {
                     String DirectoryPath = Environment.CurrentDirectory;
-                    MessageBox.Show(DirectoryPath);
-                    DirectoryPath = DirectoryPath.Substring(0, DirectoryPath.Length - 10)+"\\Resources";
+                //    MessageBox.Show(DirectoryPath);
+                  //  DirectoryPath = DirectoryPath.Substring(0, DirectoryPath.Length - 10)+"\\Resources";
                     Image NewAnimal = Image.FromFile(DirectoryPath + @"\" + speciesSelected.AnimalName + ".png");
                     pbxAnimal.Image = NewAnimal;
                 }
@@ -345,6 +345,11 @@ namespace FarmManagement
         private void cbxAnimals_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void Animal_Selection_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

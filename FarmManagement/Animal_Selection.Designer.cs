@@ -249,6 +249,7 @@
             this.Name = "Animal_Selection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Animal_Selection";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Animal_Selection_FormClosing);
             this.Load += new System.EventHandler(this.Animal_Selection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChange)).EndInit();

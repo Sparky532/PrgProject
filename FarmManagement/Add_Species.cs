@@ -96,5 +96,17 @@ namespace FarmManagement
             lblSpaceNeeded.Location = new Point(40, 263);
             lblSpeed.Location = new Point(93, 213);
         }
+
+        private void btnBackToAnimalSelection_Click(object sender, EventArgs e)
+        {
+            Animal_Selection navanimalselection = new Animal_Selection();
+            navanimalselection.Show();
+            this.Hide();
+        }
+
+        private void Add_Species_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
