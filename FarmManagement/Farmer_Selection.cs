@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BLL;
 using System.Reflection;
 using System.IO;
+using System.Threading;
 
 namespace FarmManagement
 {
@@ -632,6 +633,76 @@ namespace FarmManagement
         private void pbxCross1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("You clicked the delete button");
+        }
+
+        private void pbxCross1_Click_1(object sender, EventArgs e)
+        {
+            CurrentFarmer = (Farmer)AllFarmers[0];
+            int succes = CurrentFarmer.DeleteFarmer();
+            MessageBox.Show(succes.ToString());
+            
+            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+
+            RefreshThread.Start();
+
+            this.Close();
+
+        }
+
+        private void pbxCross2_Click(object sender, EventArgs e)
+        {
+            CurrentFarmer = (Farmer)AllFarmers[1];
+            int succes = CurrentFarmer.DeleteFarmer();
+            MessageBox.Show(succes.ToString());
+           
+            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+
+            RefreshThread.Start();
+
+            this.Close();
+        }
+
+        private void pbxCross3_Click(object sender, EventArgs e)
+        {
+            CurrentFarmer = (Farmer)AllFarmers[2];
+            int succes = CurrentFarmer.DeleteFarmer();
+            MessageBox.Show(succes.ToString());
+            Farmer_Selection refreashFarmer = new Farmer_Selection();
+            refreashFarmer.Refresh();
+            
+            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+
+            RefreshThread.Start();
+
+            this.Close();
+
+        }
+
+        private void pbxCross4_Click(object sender, EventArgs e)
+        {
+            CurrentFarmer = (Farmer)AllFarmers[3];
+            int succes = CurrentFarmer.DeleteFarmer();
+            MessageBox.Show(succes.ToString());
+           
+            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+
+            RefreshThread.Start();
+
+            this.Close();
+
+        }
+
+        private void pbxCross5_Click(object sender, EventArgs e)
+        {
+            CurrentFarmer = (Farmer)AllFarmers[4];
+            int succes = CurrentFarmer.DeleteFarmer();
+            MessageBox.Show(succes.ToString());
+           
+            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+
+            RefreshThread.Start();
+
+            this.Close();
         }
     }
 }
