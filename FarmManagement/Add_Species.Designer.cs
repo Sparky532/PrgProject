@@ -36,17 +36,20 @@
             this.lblSpeed = new System.Windows.Forms.Label();
             this.txtChooseimage = new System.Windows.Forms.TextBox();
             this.lblChooseImage = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnWriteToTxt = new System.Windows.Forms.Button();
             this.cbxType = new System.Windows.Forms.ComboBox();
             this.lblSpaceNeeded = new System.Windows.Forms.Label();
             this.txtSpace = new System.Windows.Forms.TextBox();
-            this.btnChooseFile = new System.Windows.Forms.Button();
             this.OpfdChooseImage = new System.Windows.Forms.OpenFileDialog();
+            this.lblAddSpecies = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.pbxBrowse = new System.Windows.Forms.PictureBox();
+            this.pbxAdd = new System.Windows.Forms.PictureBox();
+            this.pbxBack = new System.Windows.Forms.PictureBox();
             this.pbxNewAnimal = new System.Windows.Forms.PictureBox();
             this.pbxSpeciesBackground = new System.Windows.Forms.PictureBox();
-            this.lblAddSpecies = new System.Windows.Forms.Label();
-            this.btnBackToAnimalSelection = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBrowse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewAnimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSpeciesBackground)).BeginInit();
             this.SuspendLayout();
@@ -119,26 +122,6 @@
             this.lblChooseImage.TabIndex = 6;
             this.lblChooseImage.Text = "Choose Image";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(598, 488);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 51);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnWriteToTxt
-            // 
-            this.btnWriteToTxt.Location = new System.Drawing.Point(521, 410);
-            this.btnWriteToTxt.Name = "btnWriteToTxt";
-            this.btnWriteToTxt.Size = new System.Drawing.Size(217, 51);
-            this.btnWriteToTxt.TabIndex = 9;
-            this.btnWriteToTxt.Text = "Let Game Developers Add the Details";
-            this.btnWriteToTxt.UseVisualStyleBackColor = true;
-            this.btnWriteToTxt.Click += new System.EventHandler(this.btnWriteToTxt_Click);
-            // 
             // cbxType
             // 
             this.cbxType.BackColor = System.Drawing.Color.White;
@@ -172,19 +155,68 @@
             this.txtSpace.Size = new System.Drawing.Size(236, 45);
             this.txtSpace.TabIndex = 7;
             // 
-            // btnChooseFile
-            // 
-            this.btnChooseFile.Location = new System.Drawing.Point(521, 322);
-            this.btnChooseFile.Name = "btnChooseFile";
-            this.btnChooseFile.Size = new System.Drawing.Size(75, 42);
-            this.btnChooseFile.TabIndex = 11;
-            this.btnChooseFile.Text = "...";
-            this.btnChooseFile.UseVisualStyleBackColor = true;
-            this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
-            // 
             // OpfdChooseImage
             // 
             this.OpfdChooseImage.FileName = "openFileDialog1";
+            // 
+            // lblAddSpecies
+            // 
+            this.lblAddSpecies.AutoSize = true;
+            this.lblAddSpecies.BackColor = System.Drawing.Color.Transparent;
+            this.lblAddSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddSpecies.Location = new System.Drawing.Point(284, 28);
+            this.lblAddSpecies.Name = "lblAddSpecies";
+            this.lblAddSpecies.Size = new System.Drawing.Size(211, 39);
+            this.lblAddSpecies.TabIndex = 14;
+            this.lblAddSpecies.Text = "Add Species";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(567, 433);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(105, 37);
+            this.btnAdd.TabIndex = 18;
+            this.btnAdd.Text = "button1";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            // 
+            // pbxBrowse
+            // 
+            this.pbxBrowse.BackColor = System.Drawing.Color.Transparent;
+            this.pbxBrowse.Image = global::FarmManagement.Properties.Resources.DotDotDotBtn1;
+            this.pbxBrowse.Location = new System.Drawing.Point(521, 310);
+            this.pbxBrowse.Name = "pbxBrowse";
+            this.pbxBrowse.Size = new System.Drawing.Size(79, 55);
+            this.pbxBrowse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBrowse.TabIndex = 19;
+            this.pbxBrowse.TabStop = false;
+            this.pbxBrowse.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pbxAdd
+            // 
+            this.pbxAdd.BackColor = System.Drawing.Color.Transparent;
+            this.pbxAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxAdd.Image = global::FarmManagement.Properties.Resources.AddButton;
+            this.pbxAdd.Location = new System.Drawing.Point(323, 410);
+            this.pbxAdd.Name = "pbxAdd";
+            this.pbxAdd.Size = new System.Drawing.Size(156, 83);
+            this.pbxAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxAdd.TabIndex = 17;
+            this.pbxAdd.TabStop = false;
+            this.pbxAdd.Click += new System.EventHandler(this.pbxAdd_Click);
+            // 
+            // pbxBack
+            // 
+            this.pbxBack.BackColor = System.Drawing.Color.Transparent;
+            this.pbxBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxBack.Image = global::FarmManagement.Properties.Resources.BackButton;
+            this.pbxBack.Location = new System.Drawing.Point(0, 0);
+            this.pbxBack.Name = "pbxBack";
+            this.pbxBack.Size = new System.Drawing.Size(54, 50);
+            this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBack.TabIndex = 16;
+            this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
             // pbxNewAnimal
             // 
@@ -204,40 +236,20 @@
             this.pbxSpeciesBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSpeciesBackground.TabIndex = 13;
             this.pbxSpeciesBackground.TabStop = false;
-            // 
-            // lblAddSpecies
-            // 
-            this.lblAddSpecies.AutoSize = true;
-            this.lblAddSpecies.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddSpecies.Location = new System.Drawing.Point(256, 28);
-            this.lblAddSpecies.Name = "lblAddSpecies";
-            this.lblAddSpecies.Size = new System.Drawing.Size(211, 39);
-            this.lblAddSpecies.TabIndex = 14;
-            this.lblAddSpecies.Text = "Add Species";
-            // 
-            // btnBackToAnimalSelection
-            // 
-            this.btnBackToAnimalSelection.Location = new System.Drawing.Point(31, 488);
-            this.btnBackToAnimalSelection.Name = "btnBackToAnimalSelection";
-            this.btnBackToAnimalSelection.Size = new System.Drawing.Size(95, 50);
-            this.btnBackToAnimalSelection.TabIndex = 15;
-            this.btnBackToAnimalSelection.Text = "Back";
-            this.btnBackToAnimalSelection.UseVisualStyleBackColor = true;
-            this.btnBackToAnimalSelection.Click += new System.EventHandler(this.btnBackToAnimalSelection_Click);
+            this.pbxSpeciesBackground.Click += new System.EventHandler(this.pbxSpeciesBackground_Click);
             // 
             // Add_Species
             // 
+            this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 579);
-            this.Controls.Add(this.btnBackToAnimalSelection);
+            this.Controls.Add(this.pbxBrowse);
+            this.Controls.Add(this.pbxAdd);
+            this.Controls.Add(this.pbxBack);
             this.Controls.Add(this.lblAddSpecies);
             this.Controls.Add(this.pbxNewAnimal);
-            this.Controls.Add(this.btnChooseFile);
             this.Controls.Add(this.cbxType);
-            this.Controls.Add(this.btnWriteToTxt);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSpace);
             this.Controls.Add(this.txtChooseimage);
             this.Controls.Add(this.lblSpaceNeeded);
@@ -248,6 +260,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pbxSpeciesBackground);
+            this.Controls.Add(this.btnAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -255,6 +268,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Species_FormClosing);
             this.Load += new System.EventHandler(this.Add_Species_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBrowse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewAnimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSpeciesBackground)).EndInit();
             this.ResumeLayout(false);
@@ -271,16 +287,16 @@
         private System.Windows.Forms.Label lblSpeed;
         private System.Windows.Forms.TextBox txtChooseimage;
         private System.Windows.Forms.Label lblChooseImage;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnWriteToTxt;
         private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.Label lblSpaceNeeded;
         private System.Windows.Forms.TextBox txtSpace;
-        private System.Windows.Forms.Button btnChooseFile;
         private System.Windows.Forms.OpenFileDialog OpfdChooseImage;
         private System.Windows.Forms.PictureBox pbxNewAnimal;
         private System.Windows.Forms.PictureBox pbxSpeciesBackground;
         private System.Windows.Forms.Label lblAddSpecies;
-        private System.Windows.Forms.Button btnBackToAnimalSelection;
+        private System.Windows.Forms.PictureBox pbxBack;
+        private System.Windows.Forms.PictureBox pbxAdd;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.PictureBox pbxBrowse;
     }
 }
