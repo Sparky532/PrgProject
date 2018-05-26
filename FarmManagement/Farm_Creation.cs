@@ -53,22 +53,23 @@ namespace FarmManagement
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            pbxSmallClicked.Visible = true;
+            pbxMediumClicked.Visible = false;
+            pbxLargeClicked.Visible = false;
             string name = txtFarmName.Text;
-             size = 400;
+            size = 400;
             
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            string name = txtFarmName.Text;
-             size = 900;
+           
            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            string name = txtFarmName.Text;
-             size = 1600;
+            
             
         }
 
@@ -82,6 +83,50 @@ namespace FarmManagement
             txtFarmName.Text = "";
             txtFarmName.ForeColor = Color.Black;
             txtFarmName.Font = new Font(this.txtFarmName.Font,FontStyle.Regular);
+        }
+
+        private void Farm_Creation_Load(object sender, EventArgs e)
+        {
+            pbxSmallClicked.Visible = false;
+            pbxMediumClicked.Visible = false;
+            pbxLargeClicked.Visible = false;
+        }
+
+        private void pbxSmallClicked_Click(object sender, EventArgs e)
+        {
+            pbxSmallClicked.Visible = false;
+            size = 0;
+        }
+
+        private void pbxMedium_Click(object sender, EventArgs e)
+        {
+            pbxSmallClicked.Visible = false;
+            pbxMediumClicked.Visible = true;
+            pbxLargeClicked.Visible = false;
+            string name = txtFarmName.Text;
+            size = 900;
+        }
+
+        private void pbxMediumClicked_Click(object sender, EventArgs e)
+        {
+            pbxMediumClicked.Visible = false;
+            size = 0;
+
+        }
+
+        private void pbxLarge_Click(object sender, EventArgs e)
+        {
+            pbxSmallClicked.Visible = false;
+            pbxMediumClicked.Visible = false;
+            pbxLargeClicked.Visible = true;
+            string name = txtFarmName.Text;
+            size = 1600;
+        }
+
+        private void pbxLargeClicked_Click(object sender, EventArgs e)
+        {
+            pbxLargeClicked.Visible = false;
+            size = 0;
         }
     }
 }

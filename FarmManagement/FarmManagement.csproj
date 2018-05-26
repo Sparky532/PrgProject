@@ -349,6 +349,30 @@
   <ItemGroup>
     <None Include="Resources\AddSpecies.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LargeFarmChoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LargeFarmChoiceClicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MediumFarmChoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MediumFarmChoiceClicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallFarmChoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallFarmChoiceClicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallFarmChoice1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallFarmChoiceClicked1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
