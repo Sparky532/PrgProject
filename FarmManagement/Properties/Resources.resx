@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BlondHairGirl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BlondHairGirl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FrameBG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FrameBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,9 +151,6 @@
   <data name="BackgroundFarmerCreaton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundFarmerCreaton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BoyBlondHair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>BoyBlondHair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BackgroundFarmerCreaton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundFarmerCreaton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,8 +175,8 @@
   <data name="GirlOutfit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>GirlOutfit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BoyOutfit4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>BoyOutfit4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BoyBlondHair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BoyBlondHair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BlackHairGirl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BlackHairGirl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,11 +217,14 @@
   <data name="Horse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Horse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BoyOutfit4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BoyOutfit4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Previous.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BlondHairGirl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>BlondHairGirl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddSpeciesBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddSpeciesBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FrameBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FrameBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,9 +262,6 @@
   <data name="BarnPictureBG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BarnPictureBG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddSpeciesBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddSpeciesBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Sheep" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sheep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -282,6 +282,9 @@
   </data>
   <data name="ExistingFarmerSelection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExistingFarmerSelection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PanelFarmerSelection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PanelFarmerSelection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,7 +316,7 @@
   <data name="iconfarmer_5vE_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfarmer_5vE_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cross1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cross1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

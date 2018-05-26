@@ -54,6 +54,7 @@
             this.txtFarmerGender5 = new System.Windows.Forms.Label();
             this.txtFarmSize5 = new System.Windows.Forms.Label();
             this.txtFarmerName5 = new System.Windows.Forms.Label();
+            this.pbxCross1 = new System.Windows.Forms.PictureBox();
             this.pbxOutfitFive = new System.Windows.Forms.PictureBox();
             this.pbxEyesFive = new System.Windows.Forms.PictureBox();
             this.pbxHairFive = new System.Windows.Forms.PictureBox();
@@ -89,6 +90,11 @@
             this.pbxNewFarmer3 = new System.Windows.Forms.PictureBox();
             this.pbxNewFarmer2 = new System.Windows.Forms.PictureBox();
             this.pbxNewFarmer1 = new System.Windows.Forms.PictureBox();
+            this.pbxCross2 = new System.Windows.Forms.PictureBox();
+            this.pbxCross3 = new System.Windows.Forms.PictureBox();
+            this.pbxCross4 = new System.Windows.Forms.PictureBox();
+            this.pbxCross5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHairFive)).BeginInit();
@@ -124,6 +130,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross5)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFarmerName1
@@ -425,6 +435,17 @@
             this.txtFarmerName5.Size = new System.Drawing.Size(53, 20);
             this.txtFarmerName5.TabIndex = 65;
             this.txtFarmerName5.Text = "label1";
+            // 
+            // pbxCross1
+            // 
+            this.pbxCross1.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCross1.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross1.Location = new System.Drawing.Point(532, 17);
+            this.pbxCross1.Name = "pbxCross1";
+            this.pbxCross1.Size = new System.Drawing.Size(35, 32);
+            this.pbxCross1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCross1.TabIndex = 95;
+            this.pbxCross1.TabStop = false;
             // 
             // pbxOutfitFive
             // 
@@ -836,12 +857,61 @@
             this.pbxNewFarmer1.TabStop = false;
             this.pbxNewFarmer1.Click += new System.EventHandler(this.pbxNewFarmer1_Click);
             // 
+            // pbxCross2
+            // 
+            this.pbxCross2.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCross2.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross2.Location = new System.Drawing.Point(530, 148);
+            this.pbxCross2.Name = "pbxCross2";
+            this.pbxCross2.Size = new System.Drawing.Size(35, 32);
+            this.pbxCross2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCross2.TabIndex = 97;
+            this.pbxCross2.TabStop = false;
+            // 
+            // pbxCross3
+            // 
+            this.pbxCross3.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCross3.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross3.Location = new System.Drawing.Point(531, 271);
+            this.pbxCross3.Name = "pbxCross3";
+            this.pbxCross3.Size = new System.Drawing.Size(35, 32);
+            this.pbxCross3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCross3.TabIndex = 98;
+            this.pbxCross3.TabStop = false;
+            // 
+            // pbxCross4
+            // 
+            this.pbxCross4.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCross4.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross4.Location = new System.Drawing.Point(530, 393);
+            this.pbxCross4.Name = "pbxCross4";
+            this.pbxCross4.Size = new System.Drawing.Size(35, 32);
+            this.pbxCross4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCross4.TabIndex = 99;
+            this.pbxCross4.TabStop = false;
+            // 
+            // pbxCross5
+            // 
+            this.pbxCross5.BackColor = System.Drawing.Color.Transparent;
+            this.pbxCross5.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross5.Location = new System.Drawing.Point(533, 516);
+            this.pbxCross5.Name = "pbxCross5";
+            this.pbxCross5.Size = new System.Drawing.Size(35, 32);
+            this.pbxCross5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCross5.TabIndex = 100;
+            this.pbxCross5.TabStop = false;
+            // 
             // Farmer_Selection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(235)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(588, 645);
+            this.Controls.Add(this.pbxCross5);
+            this.Controls.Add(this.pbxCross4);
+            this.Controls.Add(this.pbxCross3);
+            this.Controls.Add(this.pbxCross2);
+            this.Controls.Add(this.pbxCross1);
             this.Controls.Add(this.pbxOutfitFive);
             this.Controls.Add(this.pbxEyesFive);
             this.Controls.Add(this.pbxHairFive);
@@ -909,6 +979,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmer Selection";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHairFive)).EndInit();
@@ -944,6 +1015,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewFarmer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCross5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1010,6 +1085,11 @@
         private System.Windows.Forms.PictureBox pbxHairFive;
         private System.Windows.Forms.PictureBox pbxBodyFive;
         private System.Windows.Forms.PictureBox pbxFive;
+        private System.Windows.Forms.PictureBox pbxCross1;
+        private System.Windows.Forms.PictureBox pbxCross2;
+        private System.Windows.Forms.PictureBox pbxCross3;
+        private System.Windows.Forms.PictureBox pbxCross4;
+        private System.Windows.Forms.PictureBox pbxCross5;
     }
 }
 

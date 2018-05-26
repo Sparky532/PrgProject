@@ -401,38 +401,44 @@ namespace FarmManagement
             pbxFarmer2.Controls.Add(txtFarmerAge2);
             pbxFarmer2.Controls.Add(txtNumOfAnimals2);
             pbxFarmer2.Controls.Add(txtFarmSize2);
+            pbxFarmer2.Controls.Add(pbxCross2);
+
 
             txtFarmerName2.Location = new Point(240, 13);
             txtFarmerGender2.Location = new Point(240, 48);
             txtFarmerAge2.Location = new Point(240, 80);
             txtNumOfAnimals2.Location = new Point(475, 70);
             txtFarmSize2.Location = new Point(475, 30);
-
+            pbxCross2.Location = new Point(508, 5);
 
             pbxFarmer3.Controls.Add(txtFarmerName3);
             pbxFarmer3.Controls.Add(txtFarmerGender3);
             pbxFarmer3.Controls.Add(txtFarmerAge3);
             pbxFarmer3.Controls.Add(txtNumOfAnimals3);
             pbxFarmer3.Controls.Add(txtFarmSize3);
+            pbxFarmer3.Controls.Add(pbxCross3);
 
             txtFarmerName3.Location = new Point(240, 13);
             txtFarmerGender3.Location = new Point(240, 48);
             txtFarmerAge3.Location = new Point(240, 80);
             txtNumOfAnimals3.Location = new Point(475, 70);
             txtFarmSize3.Location = new Point(475, 30);
-
+            pbxCross3.Location = new Point(508, 5);
 
             pbxFarmer4.Controls.Add(txtFarmerName4);
             pbxFarmer4.Controls.Add(txtFarmerGender4);
             pbxFarmer4.Controls.Add(txtFarmerAge4);
             pbxFarmer4.Controls.Add(txtNumOfAnimals4);
             pbxFarmer4.Controls.Add(txtFarmSize4);
+            pbxFarmer4.Controls.Add(pbxCross4);
+
 
             txtFarmerName4.Location = new Point(240, 13);
             txtFarmerGender4.Location = new Point(240, 48);
             txtFarmerAge4.Location = new Point(240, 80);
             txtNumOfAnimals4.Location = new Point(475, 70);
             txtFarmSize4.Location = new Point(475, 30);
+            pbxCross4.Location = new Point(508, 5);
 
 
             pbxFarmer5.Controls.Add(txtFarmerName5);
@@ -440,12 +446,15 @@ namespace FarmManagement
             pbxFarmer5.Controls.Add(txtFarmerAge5);
             pbxFarmer5.Controls.Add(txtNumOfAnimals5);
             pbxFarmer5.Controls.Add(txtFarmSize5);
+            pbxFarmer5.Controls.Add(pbxCross5);
 
             txtFarmerName5.Location = new Point(240, 13);
             txtFarmerGender5.Location = new Point(240, 48);
             txtFarmerAge5.Location = new Point(240, 80);
             txtNumOfAnimals5.Location = new Point(475, 70);
             txtFarmSize5.Location = new Point(475, 30);
+            pbxCross5.Location = new Point(508, 5);
+
         }
 
 
