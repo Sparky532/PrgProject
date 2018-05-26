@@ -639,7 +639,6 @@ namespace FarmManagement
         {
             CurrentFarmer = (Farmer)AllFarmers[0];
             int succes = CurrentFarmer.DeleteFarmer();
-            MessageBox.Show(succes.ToString());
             
             Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
@@ -653,7 +652,6 @@ namespace FarmManagement
         {
             CurrentFarmer = (Farmer)AllFarmers[1];
             int succes = CurrentFarmer.DeleteFarmer();
-            MessageBox.Show(succes.ToString());
            
             Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
@@ -666,9 +664,6 @@ namespace FarmManagement
         {
             CurrentFarmer = (Farmer)AllFarmers[2];
             int succes = CurrentFarmer.DeleteFarmer();
-            MessageBox.Show(succes.ToString());
-            Farmer_Selection refreashFarmer = new Farmer_Selection();
-            refreashFarmer.Refresh();
             
             Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
@@ -682,7 +677,6 @@ namespace FarmManagement
         {
             CurrentFarmer = (Farmer)AllFarmers[3];
             int succes = CurrentFarmer.DeleteFarmer();
-            MessageBox.Show(succes.ToString());
            
             Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
@@ -696,7 +690,6 @@ namespace FarmManagement
         {
             CurrentFarmer = (Farmer)AllFarmers[4];
             int succes = CurrentFarmer.DeleteFarmer();
-            MessageBox.Show(succes.ToString());
            
             Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 

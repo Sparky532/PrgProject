@@ -100,10 +100,17 @@ namespace FarmManagement
             //Make the change part visible
             txtSelectedAnimalAmount.Visible = true;
             pbxChange.Visible = true;
+            btnRemove.Visible = true;
             pbxAddNew.Visible = false;
 
             //Change the amount of specific species
-            txtSelectedAnimalAmount.Text = ((AnimalsSelected)lstAnimalsSelected.SelectedItem).AnimalAmount.ToString();
+            try
+            {
+                txtSelectedAnimalAmount.Text = ((AnimalsSelected)lstAnimalsSelected.SelectedItem).AnimalAmount.ToString();
+            }
+            catch (NullReferenceException)
+            {
+            }
 
         }
 
@@ -218,6 +225,8 @@ namespace FarmManagement
             //Make the change part not visible
             txtSelectedAnimalAmount.Visible = false;
             pbxChange.Visible = false;
+            btnRemove.Visible = false;
+            pbxAddNew.Visible = true;
 
             //As soon as an animal is added make sure the binding source gets linked
             animalsAdded = true;
@@ -296,6 +305,10 @@ namespace FarmManagement
 
         private void pbxChange_Click(object sender, EventArgs e)
         {
+            txtSelectedAnimalAmount.Visible = false;
+            pbxChange.Visible = false;
+            btnRemove.Visible = false;
+            pbxAddNew.Visible = true;
             try
             {
                 int newAmount = int.Parse(txtSelectedAnimalAmount.Text);
@@ -315,17 +328,13 @@ namespace FarmManagement
 
                             //Remove old instance of the animal
                             animalsSelected.RemoveAt(counter);
+                            //Reset List
+                            bs1.ResetBindings(false);
                             return;
                         }
                         counter++;
                     }
 
-                    //Reset List
-                    bs1.ResetBindings(false);
-
-                    //Make the change part invisible again
-                    txtSelectedAnimalAmount.Visible = false;
-                    pbxChange.Visible = false;
                 }
                 else
                 {
@@ -354,6 +363,34 @@ namespace FarmManagement
         private void Animal_Selection_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            txtSelectedAnimalAmount.Visible = false;
+            pbxChange.Visible = false;
+            btnRemove.Visible = false;
+            pbxAddNew.Visible = true;
+            AnimalsSelected assd = (AnimalsSelected)lstAnimalsSelected.SelectedItem;
+            animalsSelected.Remove(assd);
+            //Refresh the List
+            bs1.ResetBindings(false);
+
+            //Remove option of animal already added
+            animalSpecies.Add(assd.Animaal);
+
+            //Refresh the combo box
+            bs2.ResetBindings(false);
+
+            txtAnimalAmount.Text = "0";
+        }
+
+        private void pbxAnimal_Click(object sender, EventArgs e)
+        {
+            txtSelectedAnimalAmount.Visible = false;
+            pbxChange.Visible = false;
+            btnRemove.Visible = false;
+            pbxAddNew.Visible = true;
         }
     }
 }

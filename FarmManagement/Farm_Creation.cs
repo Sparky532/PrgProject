@@ -34,7 +34,7 @@ namespace FarmManagement
             string name = txtName.Text;
             double size = double.Parse(txtSize.Text);
             Farm f = new Farm(name,size);
-            MessageBox.Show(f.insertFarm());
+            f.insertFarm();
             Animal_Selection assd = new Animal_Selection(farmer.ID);
             assd.Show();
             this.Hide();
