@@ -190,8 +190,9 @@ END
          */
 
         /*
-         CREATE PROCEDURE DeleteFarmer
-	@FarmerId int
+       CREATE PROCEDURE DeleteFarmer
+	@FarmerId int,
+	@StyleID int
 AS
 BEGIN
 	DELETE FROM Animal
@@ -206,12 +207,12 @@ BEGIN
     DELETE FROM Farm
     WHERE FarmerId = @FarmerId
 
-	DELETE FROM Style
-	WHERE StyleId = (SELECT StyleId FROM Farmer
-					 WHERE FarmerId = @FarmerId)
-
-    DELETE FROM Farmer
+	DELETE FROM Farmer
 	WHERE FarmerId = @FarmerId
+
+	DELETE FROM Style
+	WHERE StyleId = @StyleID
+
 END
          */
 
