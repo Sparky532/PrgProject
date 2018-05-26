@@ -22,7 +22,7 @@ namespace FarmManagement
         {
             InitializeComponent();
             farmer = farmer.NewestFarmer();
-
+            
         }
         public Farm_Creation(int id)
         {
@@ -53,11 +53,7 @@ namespace FarmManagement
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            pbxSmallClicked.Visible = true;
-            pbxMediumClicked.Visible = false;
-            pbxLargeClicked.Visible = false;
-            string name = txtFarmName.Text;
-            size = 400;
+            
             
         }
 
@@ -87,19 +83,31 @@ namespace FarmManagement
 
         private void Farm_Creation_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = null;
             pbxSmallClicked.Visible = false;
             pbxMediumClicked.Visible = false;
             pbxLargeClicked.Visible = false;
-        }
 
-        private void pbxSmallClicked_Click(object sender, EventArgs e)
-        {
-            pbxSmallClicked.Visible = false;
-            size = 0;
+            pbxBackground.Controls.Add(pbxSmallClicked);
+            pbxBackground.Controls.Add(pbxSmall);
+            pbxBackground.Controls.Add(pbxMediumClicked);
+            pbxBackground.Controls.Add(pbxMedium);
+            pbxBackground.Controls.Add(pbxLargeClicked);
+            pbxBackground.Controls.Add(pbxLarge);
+            pbxBackground.Controls.Add(pbxCreate);
+
+            pbxSmallClicked.Location = new Point(12, 64);
+            pbxSmall.Location = new Point(12, 64);
+            pbxMediumClicked.Location = new Point(247, 64);
+            pbxMedium.Location = new Point(247, 64);
+            pbxLargeClicked.Location = new Point(482, 64);
+            pbxLarge.Location = new Point(482, 64);
+            pbxCreate.Location = new Point(257, 225);
         }
 
         private void pbxMedium_Click(object sender, EventArgs e)
         {
+            this.ActiveControl = null;
             pbxSmallClicked.Visible = false;
             pbxMediumClicked.Visible = true;
             pbxLargeClicked.Visible = false;
@@ -116,6 +124,7 @@ namespace FarmManagement
 
         private void pbxLarge_Click(object sender, EventArgs e)
         {
+            this.ActiveControl = null;
             pbxSmallClicked.Visible = false;
             pbxMediumClicked.Visible = false;
             pbxLargeClicked.Visible = true;
@@ -127,6 +136,37 @@ namespace FarmManagement
         {
             pbxLargeClicked.Visible = false;
             size = 0;
+        }
+
+        private void txtFarmName_Leave(object sender, EventArgs e)
+        {
+            if (txtFarmName.Text == "")
+            {
+                txtFarmName.Text = "Farm name";
+                txtFarmName.ForeColor = Color.Gray;
+                txtFarmName.Font = new Font(this.txtFarmName.Font, FontStyle.Italic);
+            }
+        }
+
+        private void pbxSmall_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+            pbxSmallClicked.Visible = true;
+            pbxMediumClicked.Visible = false;
+            pbxLargeClicked.Visible = false;
+            string name = txtFarmName.Text;
+            size = 400;
+        }
+
+        private void pbxSmallClicked_Click_1(object sender, EventArgs e)
+        {
+            pbxSmallClicked.Visible = false;
+            size = 0;
+        }
+
+        private void Farm_Creation_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
     }
 }

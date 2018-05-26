@@ -373,6 +373,16 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CreateButton {
+            get {
+                object obj = ResourceManager.GetObject("CreateButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cross {
             get {
                 object obj = ResourceManager.GetObject("Cross", resourceCulture);
@@ -446,6 +456,16 @@ namespace FarmManagement.Properties {
         internal static System.Drawing.Bitmap ExistingFarmerSelection2 {
             get {
                 object obj = ResourceManager.GetObject("ExistingFarmerSelection2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FarmBackground {
+            get {
+                object obj = ResourceManager.GetObject("FarmBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
