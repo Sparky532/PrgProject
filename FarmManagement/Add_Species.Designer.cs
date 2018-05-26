@@ -45,6 +45,7 @@
             this.pbxNewAnimal = new System.Windows.Forms.PictureBox();
             this.pbxSpeciesBackground = new System.Windows.Forms.PictureBox();
             this.lblAddSpecies = new System.Windows.Forms.Label();
+            this.btnBackToAnimalSelection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewAnimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSpeciesBackground)).BeginInit();
             this.SuspendLayout();
@@ -207,18 +208,29 @@
             // 
             this.lblAddSpecies.AutoSize = true;
             this.lblAddSpecies.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddSpecies.Font = new System.Drawing.Font("HeeHaw", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddSpecies.Location = new System.Drawing.Point(256, 28);
             this.lblAddSpecies.Name = "lblAddSpecies";
-            this.lblAddSpecies.Size = new System.Drawing.Size(270, 36);
+            this.lblAddSpecies.Size = new System.Drawing.Size(211, 39);
             this.lblAddSpecies.TabIndex = 14;
             this.lblAddSpecies.Text = "Add Species";
+            // 
+            // btnBackToAnimalSelection
+            // 
+            this.btnBackToAnimalSelection.Location = new System.Drawing.Point(31, 488);
+            this.btnBackToAnimalSelection.Name = "btnBackToAnimalSelection";
+            this.btnBackToAnimalSelection.Size = new System.Drawing.Size(95, 50);
+            this.btnBackToAnimalSelection.TabIndex = 15;
+            this.btnBackToAnimalSelection.Text = "Back";
+            this.btnBackToAnimalSelection.UseVisualStyleBackColor = true;
+            this.btnBackToAnimalSelection.Click += new System.EventHandler(this.btnBackToAnimalSelection_Click);
             // 
             // Add_Species
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 579);
+            this.Controls.Add(this.btnBackToAnimalSelection);
             this.Controls.Add(this.lblAddSpecies);
             this.Controls.Add(this.pbxNewAnimal);
             this.Controls.Add(this.btnChooseFile);
@@ -239,6 +251,7 @@
             this.MaximizeBox = false;
             this.Name = "Add_Species";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Species_FormClosing);
             this.Load += new System.EventHandler(this.Add_Species_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxNewAnimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSpeciesBackground)).EndInit();
@@ -266,5 +279,6 @@
         private System.Windows.Forms.PictureBox pbxNewAnimal;
         private System.Windows.Forms.PictureBox pbxSpeciesBackground;
         private System.Windows.Forms.Label lblAddSpecies;
+        private System.Windows.Forms.Button btnBackToAnimalSelection;
     }
 }
