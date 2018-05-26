@@ -379,7 +379,7 @@ namespace DAL
             return datatable;
         }
 
-        public int DeleteFarmer(int FarmerID)
+        public int DeleteFarmer(int FarmerID,int StyleId)
         {
             int success;
             string storedProcedureName = "DeleteFarmer";
@@ -394,6 +394,7 @@ namespace DAL
                 command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.Add(new SqlParameter("@FarmerId", FarmerID));
+                command.Parameters.Add(new SqlParameter("@StyleID", StyleId));
 
 
                 success = command.ExecuteNonQuery();

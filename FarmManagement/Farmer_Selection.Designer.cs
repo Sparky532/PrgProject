@@ -446,6 +446,7 @@
             this.pbxCross1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCross1.TabIndex = 95;
             this.pbxCross1.TabStop = false;
+            this.pbxCross1.Click += new System.EventHandler(this.pbxCross1_Click_1);
             // 
             // pbxOutfitFive
             // 
@@ -867,6 +868,7 @@
             this.pbxCross2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCross2.TabIndex = 97;
             this.pbxCross2.TabStop = false;
+            this.pbxCross2.Click += new System.EventHandler(this.pbxCross2_Click);
             // 
             // pbxCross3
             // 
@@ -878,6 +880,7 @@
             this.pbxCross3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCross3.TabIndex = 98;
             this.pbxCross3.TabStop = false;
+            this.pbxCross3.Click += new System.EventHandler(this.pbxCross3_Click);
             // 
             // pbxCross4
             // 
@@ -889,6 +892,7 @@
             this.pbxCross4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCross4.TabIndex = 99;
             this.pbxCross4.TabStop = false;
+            this.pbxCross4.Click += new System.EventHandler(this.pbxCross4_Click);
             // 
             // pbxCross5
             // 
@@ -900,6 +904,7 @@
             this.pbxCross5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCross5.TabIndex = 100;
             this.pbxCross5.TabStop = false;
+            this.pbxCross5.Click += new System.EventHandler(this.pbxCross5_Click);
             // 
             // Farmer_Selection
             // 

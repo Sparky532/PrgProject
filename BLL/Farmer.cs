@@ -190,5 +190,13 @@ namespace BLL
 
             return newestFarmer;
         }
+
+        public int DeleteFarmer()
+        {
+            DataHandler dbhandler = new DataHandler();
+            return dbhandler.DeleteFarmer(this.ID,this.farmerStyle.StyleId);
+        }
     }
+
+    
 }
