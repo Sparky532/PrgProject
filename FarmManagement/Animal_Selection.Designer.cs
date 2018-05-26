@@ -92,7 +92,6 @@
             this.lstAnimalsSelected.MultiColumn = true;
             this.lstAnimalsSelected.Name = "lstAnimalsSelected";
             this.lstAnimalsSelected.Size = new System.Drawing.Size(233, 210);
-            this.lstAnimalsSelected.Sorted = true;
             this.lstAnimalsSelected.TabIndex = 23;
             this.lstAnimalsSelected.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 

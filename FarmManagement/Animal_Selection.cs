@@ -29,7 +29,7 @@ namespace FarmManagement
             pbxBackground.Controls.Add(pbxAnimal);
             txtSelectedAnimalAmount.Visible = false;
             pbxChange.Visible = false;
-            
+
         }
         public Animal_Selection(int id)
         {
@@ -67,9 +67,9 @@ namespace FarmManagement
             pbxPanel.Controls.Add(pbxAddNew);
             pbxPanel.Controls.Add(pbxChange);
 
-            pbxPrevious.Location = new Point(75,100);
-            pbxNext1.Location = new Point(228,100);
-            pbxAdd.Location = new Point(104,150);
+            pbxPrevious.Location = new Point(75, 100);
+            pbxNext1.Location = new Point(228, 100);
+            pbxAdd.Location = new Point(104, 150);
             pbxNext.Location = new Point(443, 150);
             pbxAddNew.Location = new Point(443, 30);
             pbxChange.Location = new Point(450, 60);
@@ -77,22 +77,22 @@ namespace FarmManagement
 
         private void btnAnimalAdd_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnAnimalRemove_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnNewSpecies_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnAddAnimal_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,18 +116,18 @@ namespace FarmManagement
 
         private void btnChangeValues_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            
+
         }
- 
+
         private void cbxAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-          
+
 
 
 
@@ -135,7 +135,7 @@ namespace FarmManagement
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void cbxAnimals_SelectedValueChanged(object sender, EventArgs e)
@@ -153,8 +153,8 @@ namespace FarmManagement
                 else
                 {
                     String DirectoryPath = Environment.CurrentDirectory;
-                //    MessageBox.Show(DirectoryPath);
-                  //  DirectoryPath = DirectoryPath.Substring(0, DirectoryPath.Length - 10)+"\\Resources";
+                    //    MessageBox.Show(DirectoryPath);
+                    //  DirectoryPath = DirectoryPath.Substring(0, DirectoryPath.Length - 10)+"\\Resources";
                     Image NewAnimal = Image.FromFile(DirectoryPath + @"\" + speciesSelected.AnimalName + ".png");
                     pbxAnimal.Image = NewAnimal;
                 }
@@ -228,12 +228,7 @@ namespace FarmManagement
             btnRemove.Visible = false;
             pbxAddNew.Visible = true;
 
-            //As soon as an animal is added make sure the binding source gets linked
-            animalsAdded = true;
-            if (animalsAdded)
-            {
-                lstAnimalsSelected.DataSource = bs1;
-            }
+            lstAnimalsSelected.DataSource = bs1;
 
             try
             {
@@ -254,14 +249,15 @@ namespace FarmManagement
                         animalsSelected.Add(selects);
 
                         //Refresh the List
+                        quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
                         bs1.ResetBindings(false);
-
                         int currentIndex = cbxAnimals.SelectedIndex;
 
                         //Remove option of animal already added
                         animalSpecies.RemoveAt(currentIndex);
 
                         //Refresh the combo box
+                        quickSortSpecies(animalSpecies, 0, animalSpecies.Count - 1);
                         bs2.ResetBindings(false);
                     }
                     else
@@ -328,8 +324,11 @@ namespace FarmManagement
 
                             //Remove old instance of the animal
                             animalsSelected.RemoveAt(counter);
+
+                            quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
                             //Reset List
                             bs1.ResetBindings(false);
+                            quickSortSpecies(animalSpecies, 0, animalSpecies.Count - 1);
                             return;
                         }
                         counter++;
@@ -374,12 +373,13 @@ namespace FarmManagement
             AnimalsSelected assd = (AnimalsSelected)lstAnimalsSelected.SelectedItem;
             animalsSelected.Remove(assd);
             //Refresh the List
+            quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
             bs1.ResetBindings(false);
-
             //Remove option of animal already added
             animalSpecies.Add(assd.Animaal);
 
             //Refresh the combo box
+            quickSortSpecies(animalSpecies, 0, animalSpecies.Count-1);
             bs2.ResetBindings(false);
 
             txtAnimalAmount.Text = "0";
@@ -392,5 +392,89 @@ namespace FarmManagement
             btnRemove.Visible = false;
             pbxAddNew.Visible = true;
         }
+
+        //List<AnimalsSelected> animalsSelected = new List<AnimalsSelected>();
+        //List<Species> animalSpecies = new List<Species>();
+
+        void quickSortSelected(List<AnimalsSelected> animalsSelected, int indexLow, int indexHigh)
+        {
+            if (indexLow < indexHigh)
+            {
+                /* pi is partitioning index, arr[p] is now
+                   at right place */
+                int pi = partitionSelected(animalsSelected, indexLow, indexHigh);
+
+                // Separately sort elements before
+                // partition and after partition
+                quickSortSelected(animalsSelected, indexLow, pi - 1);
+                quickSortSelected(animalsSelected, pi + 1, indexHigh);
+            }
+        }
+
+        int partitionSelected(List<AnimalsSelected> animalsSelected, int indexLow, int indexHigh)
+        {
+            AnimalsSelected pivot = animalsSelected[indexHigh];    // pivot
+            int i = (indexLow - 1);  // Index of smaller element
+            AnimalsSelected temp;
+            for (int j = indexLow; j <= indexHigh - 1; j++)
+            {
+                // If current element is smaller than or
+                // equal to pivot
+                //animals[j] <= pivot
+                if (animalsSelected[j].Animaal.AnimalName.CompareTo(pivot.Animaal.AnimalName) <= 0)
+                {
+                    i++;    // increment index of smaller element
+                    temp = animalsSelected[i];
+                    animalsSelected[i] = animalsSelected[j];
+                    animalsSelected[j] = temp;
+                }
+            }
+            temp = animalsSelected[i + 1];
+            animalsSelected[i + 1] = animalsSelected[indexHigh];
+            animalsSelected[indexHigh] = temp;
+            return (i + 1);
+        }
+
+
+        void quickSortSpecies(List<Species> animalSpecies, int indexLow, int indexHigh)
+        {
+            if (indexLow < indexHigh)
+            {
+                /* pi is partitioning index, arr[p] is now
+                   at right place */
+                int pi = partitionSpecies(animalSpecies, indexLow, indexHigh);
+
+                // Separately sort elements before
+                // partition and after partition
+                quickSortSpecies(animalSpecies, indexLow, pi - 1);
+                quickSortSpecies(animalSpecies, pi + 1, indexHigh);
+            }
+        }
+
+        int partitionSpecies(List<Species> animalSpecies, int indexLow, int indexHigh)
+        {
+            Species pivot = animalSpecies[indexHigh];    // pivot
+            int i = (indexLow - 1);  // Index of smaller element
+            Species temp;
+            for (int j = indexLow; j <= indexHigh - 1; j++)
+            {
+                // If current element is smaller than or
+                // equal to pivot
+                //animals[j] <= pivot
+                if (animalSpecies[j].AnimalName.CompareTo(pivot.AnimalName) <= 0)
+                {
+                    i++;    // increment index of smaller element
+                    temp = animalSpecies[i];
+                    animalSpecies[i] = animalSpecies[j];
+                    animalSpecies[j] = temp;
+                }
+            }
+            temp = animalSpecies[i + 1];
+            animalSpecies[i + 1] = animalSpecies[indexHigh];
+            animalSpecies[indexHigh] = temp;
+            return (i + 1);
+        }
+
+
     }
 }
