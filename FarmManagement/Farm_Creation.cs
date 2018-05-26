@@ -168,5 +168,10 @@ namespace FarmManagement
         {
             this.ActiveControl = null;
         }
+
+        private void pbxCreate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

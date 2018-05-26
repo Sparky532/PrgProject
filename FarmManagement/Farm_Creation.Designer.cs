@@ -83,6 +83,7 @@
             this.pbxCreate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCreate.TabIndex = 9;
             this.pbxCreate.TabStop = false;
+            this.pbxCreate.Click += new System.EventHandler(this.pbxCreate_Click);
             // 
             // pbxSmallClicked
             // 
