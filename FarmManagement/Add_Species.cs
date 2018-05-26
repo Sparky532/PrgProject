@@ -69,6 +69,8 @@ namespace FarmManagement
                 catch (Exception)
                 {
                     MessageBox.Show("Could not find the file you want");
+                    Species species = new Species();
+                    species.NewSpeciesException();
                     throw;
                 }
             }
@@ -96,14 +98,15 @@ namespace FarmManagement
 
         private void Add_Species_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Environment.Exit(0);
+            //Environment.Exit(0);
         }
 
         private void pbxBack_Click(object sender, EventArgs e)
         {
-            Animal_Selection navanimalselection = new Animal_Selection();
-            navanimalselection.Show();
+            Animal_Selection form = new Animal_Selection();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void pbxSpeciesBackground_Click(object sender, EventArgs e)
@@ -128,9 +131,10 @@ namespace FarmManagement
                 }
 
             }
-            Animal_Selection assd = new Animal_Selection();
-            assd.Show();
+            Animal_Selection form = new Animal_Selection();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)
@@ -150,9 +154,10 @@ namespace FarmManagement
                 }
 
             }
-            Animal_Selection assd = new Animal_Selection();
-            assd.Show();
+            Animal_Selection form = new Animal_Selection();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -182,9 +187,11 @@ namespace FarmManagement
                         pbxNewAnimal.Image = NewAnimal;
                     }
                 }
-                catch (Exception)
+                catch (FileNotFoundException)
                 {
                     MessageBox.Show("Could not find the file you want");
+                    Species species = new Species();
+                    species.NewSpeciesException();
                     throw;
                 }
             }

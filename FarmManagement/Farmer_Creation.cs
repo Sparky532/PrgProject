@@ -144,7 +144,8 @@ namespace FarmManagement
 
         private void Farmer_Creation_Load(object sender, EventArgs e)
         {
-
+            pbxBackground.Controls.Add(pbxBack);
+            pbxBack.Location = new Point(0, 0);
         }
 
         private void Farmer_Creation_FormClosing(object sender, FormClosingEventArgs e)
@@ -324,9 +325,11 @@ namespace FarmManagement
 
                 if (success == 2)
                 {
-                    Farm_Creation fc = new Farm_Creation();
-                    fc.Show();
+                    Farm_Creation form = new Farm_Creation();
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+
                 }
                 else
                 {
@@ -336,11 +339,23 @@ namespace FarmManagement
             }
             catch (NoFarmerNameException)
             {
-                MessageBox.Show("Your Farmer needs a Name!");
+                MessageBox.Show("Your Farmer needs a Name");
             }
             catch (FormatException)
             {
-                MessageBox.Show("Age has to be a number!");
+                MessageBox.Show("Age has to be a number");
+            }
+        }
+
+        private void pbxBack_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Are you sure you want to cancel?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                Farmer_Selection form = new Farmer_Selection();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
         }
     }

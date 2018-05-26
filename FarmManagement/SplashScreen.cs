@@ -21,8 +21,9 @@ namespace FarmManagement
         {
             timer.Stop();
             Farmer_Selection form = new Farmer_Selection();
-            form.Show();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void SplashScreen_Shown(object sender, EventArgs e)

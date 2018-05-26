@@ -14,12 +14,12 @@ namespace DAL
         private StreamWriter writer;
         private StreamReader reader;
 
-        public FileHandler(string fileParam = "SpeciesSuggestions.txt")
+        public FileHandler(string fileParam = "Problems.txt")
         {
             this.filePath = fileParam;
         }
 
-        public void WriteData(string species)
+        public void WriteData(string toWrite)
         {
             try
             {
@@ -29,21 +29,24 @@ namespace DAL
                 }
                 stream = new FileStream(filePath, FileMode.Append, FileAccess.Write);
                 writer = new StreamWriter(stream);
-                writer.WriteLine(species);
+                writer.WriteLine(toWrite);
                 writer.Flush();
             }
             catch (FileNotFoundException)
             {
-                File.Create(filePath);
+                FileHandler handler = new FileHandler();
+                handler.WriteData("File: " + this.filePath + "was not found at: " + DateTime.UtcNow.ToShortDateString() + " " + DateTime.UtcNow.ToShortTimeString());
             }
             catch (DirectoryNotFoundException)
             {
                 Directory.CreateDirectory(filePath);
+                FileHandler handler = new FileHandler();
+                handler.WriteData("Directory for: " + this.filePath + "was not found at: " + DateTime.UtcNow.ToShortDateString() + " " + DateTime.UtcNow.ToShortTimeString());
             }
-            catch (IOException)
+            catch (IOException e)
             {
-                File.Create(filePath);
-                File.AppendText(filePath);
+                FileHandler handler = new FileHandler();
+                handler.WriteData("Exception: " + e.ToString() + "was caught at: " + DateTime.UtcNow.ToShortDateString() + " " + DateTime.UtcNow.ToShortTimeString());
             }
             finally
             {

@@ -52,11 +52,11 @@ namespace FarmManagement
                 pbxNewFarmer1.Visible = false;
                 pbxFarmer1.Visible = true;
                 CurrentFarmer = (Farmer)AllFarmers[0];
-                txtFarmerName1.Text = CurrentFarmer.Name;
-                txtFarmerGender1.Text = CurrentFarmer.Gender;
-                txtFarmerAge1.Text = CurrentFarmer.Age+"";
-                txtNumOfAnimals1.Text = CurrentFarmer.numOfAnimals().ToString();
-                txtFarmSize1.Text = CurrentFarmer.GetFarmSize().ToString();
+                lblFarmerName1.Text = CurrentFarmer.Name;
+                lblFarmerGender1.Text = CurrentFarmer.Gender;
+                lblFarmerAge1.Text = CurrentFarmer.Age+"";
+                lblNumOfAnimals1.Text = CurrentFarmer.numOfAnimals().ToString();
+                lblFarmSize1.Text = CurrentFarmer.GetFarmSize().ToString();
 
                 if (AllFarmers[0].Gender == "Male")
                 {
@@ -72,11 +72,11 @@ namespace FarmManagement
                 pbxNewFarmer2.Visible = false;
                 pbxFarmer2.Visible = true;
                 CurrentFarmer = (Farmer)AllFarmers[1];
-                txtFarmerName2.Text = CurrentFarmer.Name;
-                txtFarmerGender2.Text = CurrentFarmer.Gender;
-                txtFarmerAge2.Text = CurrentFarmer.Age + "";
-                txtNumOfAnimals2.Text = CurrentFarmer.numOfAnimals().ToString();
-                txtFarmSize2.Text = CurrentFarmer.GetFarmSize().ToString();
+                lblFarmerName2.Text = CurrentFarmer.Name;
+                lblFarmerGender2.Text = CurrentFarmer.Gender;
+                lblFarmerAge2.Text = CurrentFarmer.Age + "";
+                lblNumOfAnimals2.Text = CurrentFarmer.numOfAnimals().ToString();
+                l.Text = CurrentFarmer.GetFarmSize().ToString();
 
                 if (AllFarmers[1].Gender == "Male")
                 {
@@ -92,11 +92,11 @@ namespace FarmManagement
                 pbxNewFarmer3.Visible = false;
                 pbxFarmer3.Visible = true;
                 CurrentFarmer = (Farmer)AllFarmers[2];
-                txtFarmerName3.Text = CurrentFarmer.Name;
-                txtFarmerGender3.Text = CurrentFarmer.Gender;
-                txtFarmerAge3.Text = CurrentFarmer.Age + "";
-                txtFarmSize3.Text = CurrentFarmer.GetFarmSize().ToString();
-                txtNumOfAnimals3.Text = CurrentFarmer.numOfAnimals().ToString();
+                lblFarmerName3.Text = CurrentFarmer.Name;
+                lblFarmerGender3.Text = CurrentFarmer.Gender;
+                lblFarmerAge3.Text = CurrentFarmer.Age + "";
+                lblFarmSize3.Text = CurrentFarmer.GetFarmSize().ToString();
+                lblNumOfAnimals3.Text = CurrentFarmer.numOfAnimals().ToString();
 
                 if (AllFarmers[2].Gender == "Male")
                 {
@@ -112,11 +112,11 @@ namespace FarmManagement
                 pbxNewFarmer4.Visible = false;
                 pbxFarmer4.Visible = true;
                 CurrentFarmer = (Farmer)AllFarmers[3];
-                txtFarmerName4.Text = CurrentFarmer.Name;
-                txtFarmerGender4.Text = CurrentFarmer.Gender;
-                txtFarmerAge4.Text = CurrentFarmer.Age + "";
-                txtFarmSize4.Text = CurrentFarmer.GetFarmSize().ToString();
-                txtNumOfAnimals4.Text = CurrentFarmer.numOfAnimals().ToString();
+                lblFarmerName4.Text = CurrentFarmer.Name;
+                lblFarmerGender4.Text = CurrentFarmer.Gender;
+                lblFarmerAge4.Text = CurrentFarmer.Age + "";
+                lblFarmSize4.Text = CurrentFarmer.GetFarmSize().ToString();
+                lblNumOfAnimals4.Text = CurrentFarmer.numOfAnimals().ToString();
 
                 if (AllFarmers[3].Gender == "Male")
                 {
@@ -132,11 +132,11 @@ namespace FarmManagement
                 pbxNewFarmer5.Visible = false;
                 pbxFarmer5.Visible = true;
                 CurrentFarmer = (Farmer)AllFarmers[4];
-                txtFarmerName5.Text = CurrentFarmer.Name;
-                txtFarmerGender5.Text = CurrentFarmer.Gender;
-                txtFarmerAge5.Text = CurrentFarmer.Age + "";
-                txtFarmSize5.Text = CurrentFarmer.GetFarmSize().ToString();
-                txtNumOfAnimals5.Text = CurrentFarmer.numOfAnimals().ToString();
+                lblFarmerName5.Text = CurrentFarmer.Name;
+                lblFarmerGender5.Text = CurrentFarmer.Gender;
+                lblFarmerAge5.Text = CurrentFarmer.Age + "";
+                lblFarmSize5.Text = CurrentFarmer.GetFarmSize().ToString();
+                lblNumOfAnimals5.Text = CurrentFarmer.numOfAnimals().ToString();
 
                 if (AllFarmers[4].Gender == "Male")
                 {
@@ -320,22 +320,13 @@ namespace FarmManagement
             }
         }
 
-        //private void PcbLoadFarmer1_Click(object sender, EventArgs e)
-        //{
-        //    //Going to the screen to created the farmer
-        //    Farmer_Creation creation = new Farmer_Creation();
-        //    creation.Show();
-
-        //    this.Hide();
-        //}
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            pbxFarmer1.Controls.Add(txtFarmerName1);
-            pbxFarmer1.Controls.Add(txtFarmerGender1);
-            pbxFarmer1.Controls.Add(txtFarmerAge1);
-            pbxFarmer1.Controls.Add(txtNumOfAnimals1);
-            pbxFarmer1.Controls.Add(txtFarmSize1);
+            pbxFarmer1.Controls.Add(lblFarmerName1);
+            pbxFarmer1.Controls.Add(lblFarmerGender1);
+            pbxFarmer1.Controls.Add(lblFarmerAge1);
+            pbxFarmer1.Controls.Add(lblNumOfAnimals1);
+            pbxFarmer1.Controls.Add(lblFarmSize1);
             pbxFarmer1.Controls.Add(pbxCross1);
 
             #region avatars
@@ -390,70 +381,70 @@ namespace FarmManagement
             pbxOutfitFive.Location = new Point(0, 70);
             #endregion
 
-            txtFarmerName1.Location = new Point(240, 13);
-            txtFarmerGender1.Location = new Point(240, 48);
-            txtFarmerAge1.Location = new Point(240, 80);
-            txtNumOfAnimals1.Location = new Point(475, 70);
-            txtFarmSize1.Location = new Point(475, 30);
+            lblFarmerName1.Location = new Point(240, 13);
+            lblFarmerGender1.Location = new Point(240, 48);
+            lblFarmerAge1.Location = new Point(240, 80);
+            lblNumOfAnimals1.Location = new Point(470, 70);
+            lblFarmSize1.Location = new Point(470, 30);
             pbxCross1.Location = new Point(508, 5);
 
-            pbxFarmer2.Controls.Add(txtFarmerName2);
-            pbxFarmer2.Controls.Add(txtFarmerGender2);
-            pbxFarmer2.Controls.Add(txtFarmerAge2);
-            pbxFarmer2.Controls.Add(txtNumOfAnimals2);
-            pbxFarmer2.Controls.Add(txtFarmSize2);
+            pbxFarmer2.Controls.Add(lblFarmerName2);
+            pbxFarmer2.Controls.Add(lblFarmerGender2);
+            pbxFarmer2.Controls.Add(lblFarmerAge2);
+            pbxFarmer2.Controls.Add(lblNumOfAnimals2);
+            pbxFarmer2.Controls.Add(l);
             pbxFarmer2.Controls.Add(pbxCross2);
 
 
-            txtFarmerName2.Location = new Point(240, 13);
-            txtFarmerGender2.Location = new Point(240, 48);
-            txtFarmerAge2.Location = new Point(240, 80);
-            txtNumOfAnimals2.Location = new Point(475, 70);
-            txtFarmSize2.Location = new Point(475, 30);
+            lblFarmerName2.Location = new Point(240, 13);
+            lblFarmerGender2.Location = new Point(240, 48);
+            lblFarmerAge2.Location = new Point(240, 80);
+            lblNumOfAnimals2.Location = new Point(470, 70);
+            l.Location = new Point(470, 30);
             pbxCross2.Location = new Point(508, 5);
 
-            pbxFarmer3.Controls.Add(txtFarmerName3);
-            pbxFarmer3.Controls.Add(txtFarmerGender3);
-            pbxFarmer3.Controls.Add(txtFarmerAge3);
-            pbxFarmer3.Controls.Add(txtNumOfAnimals3);
-            pbxFarmer3.Controls.Add(txtFarmSize3);
+            pbxFarmer3.Controls.Add(lblFarmerName3);
+            pbxFarmer3.Controls.Add(lblFarmerGender3);
+            pbxFarmer3.Controls.Add(lblFarmerAge3);
+            pbxFarmer3.Controls.Add(lblNumOfAnimals3);
+            pbxFarmer3.Controls.Add(lblFarmSize3);
             pbxFarmer3.Controls.Add(pbxCross3);
 
-            txtFarmerName3.Location = new Point(240, 13);
-            txtFarmerGender3.Location = new Point(240, 48);
-            txtFarmerAge3.Location = new Point(240, 80);
-            txtNumOfAnimals3.Location = new Point(475, 70);
-            txtFarmSize3.Location = new Point(475, 30);
+            lblFarmerName3.Location = new Point(240, 13);
+            lblFarmerGender3.Location = new Point(240, 48);
+            lblFarmerAge3.Location = new Point(240, 80);
+            lblNumOfAnimals3.Location = new Point(470, 70);
+            lblFarmSize3.Location = new Point(470, 30);
             pbxCross3.Location = new Point(508, 5);
 
-            pbxFarmer4.Controls.Add(txtFarmerName4);
-            pbxFarmer4.Controls.Add(txtFarmerGender4);
-            pbxFarmer4.Controls.Add(txtFarmerAge4);
-            pbxFarmer4.Controls.Add(txtNumOfAnimals4);
-            pbxFarmer4.Controls.Add(txtFarmSize4);
+            pbxFarmer4.Controls.Add(lblFarmerName4);
+            pbxFarmer4.Controls.Add(lblFarmerGender4);
+            pbxFarmer4.Controls.Add(lblFarmerAge4);
+            pbxFarmer4.Controls.Add(lblNumOfAnimals4);
+            pbxFarmer4.Controls.Add(lblFarmSize4);
             pbxFarmer4.Controls.Add(pbxCross4);
 
 
-            txtFarmerName4.Location = new Point(240, 13);
-            txtFarmerGender4.Location = new Point(240, 48);
-            txtFarmerAge4.Location = new Point(240, 80);
-            txtNumOfAnimals4.Location = new Point(475, 70);
-            txtFarmSize4.Location = new Point(475, 30);
+            lblFarmerName4.Location = new Point(240, 13);
+            lblFarmerGender4.Location = new Point(240, 48);
+            lblFarmerAge4.Location = new Point(240, 80);
+            lblNumOfAnimals4.Location = new Point(470, 70);
+            lblFarmSize4.Location = new Point(470, 30);
             pbxCross4.Location = new Point(508, 5);
 
 
-            pbxFarmer5.Controls.Add(txtFarmerName5);
-            pbxFarmer5.Controls.Add(txtFarmerGender5);
-            pbxFarmer5.Controls.Add(txtFarmerAge5);
-            pbxFarmer5.Controls.Add(txtNumOfAnimals5);
-            pbxFarmer5.Controls.Add(txtFarmSize5);
+            pbxFarmer5.Controls.Add(lblFarmerName5);
+            pbxFarmer5.Controls.Add(lblFarmerGender5);
+            pbxFarmer5.Controls.Add(lblFarmerAge5);
+            pbxFarmer5.Controls.Add(lblNumOfAnimals5);
+            pbxFarmer5.Controls.Add(lblFarmSize5);
             pbxFarmer5.Controls.Add(pbxCross5);
 
-            txtFarmerName5.Location = new Point(240, 13);
-            txtFarmerGender5.Location = new Point(240, 48);
-            txtFarmerAge5.Location = new Point(240, 80);
-            txtNumOfAnimals5.Location = new Point(475, 70);
-            txtFarmSize5.Location = new Point(475, 30);
+            lblFarmerName5.Location = new Point(240, 13);
+            lblFarmerGender5.Location = new Point(240, 48);
+            lblFarmerAge5.Location = new Point(240, 80);
+            lblNumOfAnimals5.Location = new Point(470, 70);
+            lblFarmSize5.Location = new Point(470, 30);
             pbxCross5.Location = new Point(508, 5);
 
         }
@@ -461,37 +452,42 @@ namespace FarmManagement
 
         private void pbxNewFarmer1_Click(object sender, EventArgs e)
         {
-            Farmer_Creation navCreaation = new Farmer_Creation();
-            navCreaation.Show();
+            Farmer_Creation form = new Farmer_Creation();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void pbxNewFarmer2_Click(object sender, EventArgs e)
         {
-            Farmer_Creation navCreaation = new Farmer_Creation();
-            navCreaation.Show();
+            Farmer_Creation form = new Farmer_Creation();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void pbxNewFarmer3_Click(object sender, EventArgs e)
         {
-            Farmer_Creation navCreaation = new Farmer_Creation();
-            navCreaation.Show();
+            Farmer_Creation form = new Farmer_Creation();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void pbxNewFarmer4_Click(object sender, EventArgs e)
         {
-            Farmer_Creation navCreaation = new Farmer_Creation();
-            navCreaation.Show();
+            Farmer_Creation form = new Farmer_Creation();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void pbxNewFarmer5_Click(object sender, EventArgs e)
         {
-            Farmer_Creation navCreaation = new Farmer_Creation();
-            navCreaation.Show();
+            Farmer_Creation form = new Farmer_Creation();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void pbxFarmer1_Click(object sender, EventArgs e)
@@ -514,9 +510,10 @@ namespace FarmManagement
             }
             else
             {
-                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
-                fc.Show();
+                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
                 this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
 
             //MessageBox.Show("Load farmer One");
@@ -529,22 +526,25 @@ namespace FarmManagement
             {
                 if (CurrentFarmer.numOfAnimals() > 0)
                 {
-                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-                    navFarmView.Show();
+                    Farm_View form = new Farm_View(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
-                    assd.Show();
+                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
             }
             else
             {
-                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
-                fc.Show();
+                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
                 this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
             // MessageBox.Show("Load farmer Two");
         }
@@ -556,22 +556,25 @@ namespace FarmManagement
             {
                 if (CurrentFarmer.numOfAnimals() > 0)
                 {
-                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-                    navFarmView.Show();
+                    Farm_View form = new Farm_View(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
-                    assd.Show();
+                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
             }
             else
             {
-                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
-                fc.Show();
+                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
                 this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
             //  MessageBox.Show("Load farmer Three");
         }
@@ -583,22 +586,25 @@ namespace FarmManagement
             {
                 if (CurrentFarmer.numOfAnimals() > 0)
                 {
-                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-                    navFarmView.Show();
+                    Farm_View form = new Farm_View(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
-                    assd.Show();
+                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
             }
             else
             {
-                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
-                fc.Show();
+                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
                 this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
             //  MessageBox.Show("Load farmer Four");
         }
@@ -610,22 +616,25 @@ namespace FarmManagement
             {
                 if (CurrentFarmer.numOfAnimals() > 0)
                 {
-                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-                    navFarmView.Show();
+                    Farm_View form = new Farm_View(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
-                    assd.Show();
+                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
             }
             else
             {
-                Farm_Creation fc = new Farm_Creation(CurrentFarmer.ID);
-                fc.Show();
+                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
                 this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
             //  MessageBox.Show("Load farmer Five");
         }
@@ -637,65 +646,84 @@ namespace FarmManagement
 
         private void pbxCross1_Click_1(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[0];
-            int succes = CurrentFarmer.DeleteFarmer();
-            
-            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+            DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName1.Text +"?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                CurrentFarmer = (Farmer)AllFarmers[0];
+                int succes = CurrentFarmer.DeleteFarmer();
 
-            RefreshThread.Start();
+                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
-            this.Close();
+                RefreshThread.Start();
 
+                this.Close();
+            }
         }
 
         private void pbxCross2_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[1];
-            int succes = CurrentFarmer.DeleteFarmer();
-           
-            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+            DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName2.Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                CurrentFarmer = (Farmer)AllFarmers[1];
+                int succes = CurrentFarmer.DeleteFarmer();
 
-            RefreshThread.Start();
+                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
-            this.Close();
+                RefreshThread.Start();
+
+                this.Close();
+            }
         }
 
         private void pbxCross3_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[2];
-            int succes = CurrentFarmer.DeleteFarmer();
-            
-            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+            DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName3.Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                CurrentFarmer = (Farmer)AllFarmers[2];
+                int succes = CurrentFarmer.DeleteFarmer();
 
-            RefreshThread.Start();
+                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
-            this.Close();
+                RefreshThread.Start();
+
+                this.Close();
+            }
 
         }
 
         private void pbxCross4_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[3];
-            int succes = CurrentFarmer.DeleteFarmer();
-           
-            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+            DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName4.Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                CurrentFarmer = (Farmer)AllFarmers[3];
+                int succes = CurrentFarmer.DeleteFarmer();
 
-            RefreshThread.Start();
+                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
-            this.Close();
+                RefreshThread.Start();
+
+                this.Close();
+            }
 
         }
 
         private void pbxCross5_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[4];
-            int succes = CurrentFarmer.DeleteFarmer();
-           
-            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+            DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName5.Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                CurrentFarmer = (Farmer)AllFarmers[4];
+                int succes = CurrentFarmer.DeleteFarmer();
 
-            RefreshThread.Start();
+                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
 
-            this.Close();
+                RefreshThread.Start();
+
+                this.Close();
+            }
         }
     }
 }

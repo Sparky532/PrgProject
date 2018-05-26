@@ -66,9 +66,10 @@ namespace FarmManagement
 
         private void returnToFarmerSelectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Farmer_Selection navFarmerSelection = new Farmer_Selection();
-            navFarmerSelection.Show();
+            Farmer_Selection form = new Farmer_Selection();
             this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void lionToolStripMenuItem_Click(object sender, EventArgs e)
