@@ -72,17 +72,17 @@ namespace BLL
 
     public partial class Farmer
     {
-        //public override bool Equals(object obj)
-        //{
-        //    if (obj == null) return false;
-        //    Farmer f = obj as Farmer;
-        //    if ((Object)f == null) return false;
-        //    return ((f.ID == this.ID) && (f.EyeColour == this.EyeColour) && (f.Gender == this.Gender) && (f.HairColour == this.HairColour) && (f.Name == this.Name) && (f.OutfitType == this.OutfitType) && (f.SkinColour == this.SkinColour));
-        //}
-        //public override int GetHashCode()
-        //{
-        //    return this.EyeColour.GetHashCode() ^ this.Gender.GetHashCode() ^ this.HairColour.GetHashCode() ^ this.ID.GetHashCode() ^ this.Name.GetHashCode() ^ this.OutfitType.GetHashCode() ^ this.SkinColour.GetHashCode();
-        //}
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            Farmer f = obj as Farmer;
+            if ((Object)f == null) return false;
+            return ((f.ID == this.ID) && (f.Gender == this.Gender) && (f.Name == this.Name) && (f.Age == this.Age) && (f.FarmerStyle.Equals(this.FarmerStyle)));
+        }
+        public override int GetHashCode()
+        {
+            return  this.Gender.GetHashCode() ^ this.ID.GetHashCode() ^ this.Name.GetHashCode() ^ this.Age.GetHashCode() ^ this.FarmerStyle.GetHashCode();
+        }
         public override string ToString()
         {
             return this.Name + " " + this.Gender;

@@ -360,34 +360,28 @@ namespace FarmManagement
             pbxAddNew.Visible = true;
         }
 
-        //List<AnimalsSelected> animalsSelected = new List<AnimalsSelected>();
-        //List<Species> animalSpecies = new List<Species>();
-
         void quickSortSelected(List<AnimalsSelected> animalsSelected, int indexLow, int indexHigh)
         {
             if (indexLow < indexHigh)
             {
-                /* pi is partitioning index, arr[p] is now
+                /* split is partitioning index, arr[p] is now
                    at right place */
-                int pi = partitionSelected(animalsSelected, indexLow, indexHigh);
+                int split = splitSelected(animalsSelected, indexLow, indexHigh);
 
-                // Separately sort elements before
-                // partition and after partition
-                quickSortSelected(animalsSelected, indexLow, pi - 1);
-                quickSortSelected(animalsSelected, pi + 1, indexHigh);
+                // Separately sort elements before partition and after partition
+                quickSortSelected(animalsSelected, indexLow, split - 1);
+                quickSortSelected(animalsSelected, split + 1, indexHigh);
             }
         }
 
-        int partitionSelected(List<AnimalsSelected> animalsSelected, int indexLow, int indexHigh)
+        int splitSelected(List<AnimalsSelected> animalsSelected, int indexLow, int indexHigh)
         {
-            AnimalsSelected pivot = animalsSelected[indexHigh];    // pivot
+            AnimalsSelected pivot = animalsSelected[indexHigh];    // values are shifted around this value
             int i = (indexLow - 1);  // Index of smaller element
             AnimalsSelected temp;
             for (int j = indexLow; j <= indexHigh - 1; j++)
             {
-                // If current element is smaller than or
-                // equal to pivot
-                //animals[j] <= pivot
+                // If current element is smaller than or equal to pivot
                 if (animalsSelected[j].Animaal.AnimalName.CompareTo(pivot.Animaal.AnimalName) <= 0)
                 {
                     i++;    // increment index of smaller element
@@ -407,27 +401,24 @@ namespace FarmManagement
         {
             if (indexLow < indexHigh)
             {
-                /* pi is partitioning index, arr[p] is now
+                /* split is partitioning index, animalSpecies[indexHigh] is now
                    at right place */
-                int pi = partitionSpecies(animalSpecies, indexLow, indexHigh);
+                int split = splitSpecies(animalSpecies, indexLow, indexHigh);
 
-                // Separately sort elements before
-                // partition and after partition
-                quickSortSpecies(animalSpecies, indexLow, pi - 1);
-                quickSortSpecies(animalSpecies, pi + 1, indexHigh);
+                // Separately sort elements before partition and after partition
+                quickSortSpecies(animalSpecies, indexLow, split - 1);
+                quickSortSpecies(animalSpecies, split + 1, indexHigh);
             }
         }
 
-        int partitionSpecies(List<Species> animalSpecies, int indexLow, int indexHigh)
+        int splitSpecies(List<Species> animalSpecies, int indexLow, int indexHigh)
         {
-            Species pivot = animalSpecies[indexHigh];    // pivot
+            Species pivot = animalSpecies[indexHigh];    // values are shifted around this value
             int i = (indexLow - 1);  // Index of smaller element
             Species temp;
             for (int j = indexLow; j <= indexHigh - 1; j++)
             {
-                // If current element is smaller than or
-                // equal to pivot
-                //animals[j] <= pivot
+                // If current element is smaller than or equal to pivot, 
                 if (animalSpecies[j].AnimalName.CompareTo(pivot.AnimalName) <= 0)
                 {
                     i++;    // increment index of smaller element
