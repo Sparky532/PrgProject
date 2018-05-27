@@ -73,7 +73,7 @@ namespace FarmManagement
             pbxChange.Location = new Point(355, 60);
             pbxRemove.Location = new Point(560, 30);
         }
-
+        //Allows the user to edit an animal already added to the list of animals to add to the farm
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -97,23 +97,7 @@ namespace FarmManagement
             }
 
         }
-
-        private void btnChangeValues_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void cbxAnimals_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-        }
-
+        //changes the picture to match the animal in the comboBox
         private void cbxAnimals_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cbxAnimals.Text != "")
@@ -138,11 +122,7 @@ namespace FarmManagement
                 pbxAnimal.Image = null;
             }
         }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-        }
-
+        //Go to next Screen And add the animals selected
         private void pbxNext_Click(object sender, EventArgs e)
         {
             try
@@ -196,7 +176,7 @@ namespace FarmManagement
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-
+        //Adds an animal to the list of animals to add to farm
         private void pbxAdd_Click(object sender, EventArgs e)
         {
             //Make the change part not visible
@@ -252,7 +232,7 @@ namespace FarmManagement
                 MessageBox.Show("Please ensure a number is entered!");
             }
         }
-
+        //Decreases the amount of animals
         private void pbxPrevious_Click(object sender, EventArgs e)
         {
             try
@@ -273,13 +253,13 @@ namespace FarmManagement
                 index++;
             }
         }
-
+        //increases the amount of animals
         private void pbxNext1_Click(object sender, EventArgs e)
         {
             index++;
             txtAnimalAmount.Text = index.ToString();
         }
-
+        //changes the quantity of an existing animal
         private void pbxChange_Click(object sender, EventArgs e)
         {
             txtSelectedAnimalAmount.Visible = false;
@@ -330,7 +310,7 @@ namespace FarmManagement
                 MessageBox.Show("Please ensure a number is entered!");
             }
         }
-
+        //Goes to the add new species form to add a species
         private void pbxAddNew_Click(object sender, EventArgs e)
         {
             //Go to add species form
@@ -339,20 +319,7 @@ namespace FarmManagement
             form.ShowDialog();
             this.Close();
         }
-
-        private void cbxAnimals_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-        }
-
-        private void Animal_Selection_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //resets the form to the original state to allow the user to have the add species option once again
         private void pbxAnimal_Click(object sender, EventArgs e)
         {
             txtSelectedAnimalAmount.Visible = false;
@@ -361,6 +328,7 @@ namespace FarmManagement
             pbxAddNew.Visible = true;
         }
 
+        #region SortSelectedAnimalsRecursion
         void quickSortSelected(List<AnimalsSelected> animalsSelected, int indexLow, int indexHigh)
         {
             if (indexLow < indexHigh)
@@ -396,8 +364,10 @@ namespace FarmManagement
             animalsSelected[indexHigh] = temp;
             return (i + 1);
         }
+        #endregion
 
 
+        #region SortSpeciesRecursion
         void quickSortSpecies(List<Species> animalSpecies, int indexLow, int indexHigh)
         {
             if (indexLow < indexHigh)
@@ -433,7 +403,9 @@ namespace FarmManagement
             animalSpecies[indexHigh] = temp;
             return (i + 1);
         }
+        #endregion
 
+        //Removes an animal from the list of animals that the user wants to add
         private void pbxRemove_Click(object sender, EventArgs e)
         {
             txtSelectedAnimalAmount.Visible = false;
