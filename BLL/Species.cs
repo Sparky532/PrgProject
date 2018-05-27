@@ -7,6 +7,7 @@ using DAL;
 using System.Collections;
 using System.Windows.Forms;
 
+
 namespace BLL
 {
     public struct Species
@@ -48,9 +49,14 @@ namespace BLL
         {
             DataHandler handler = new DataHandler();
             ArrayList toWrite = new ArrayList() {this.AnimalName,this.Animaltype,this.Speed,this.Space};
-           return handler.InsertSpecies(toWrite);
+            return handler.InsertSpecies(toWrite);
            
         }
 
+        public void NewSpeciesException()
+        {
+            FileHandler handler = new FileHandler();
+            handler.WriteData("No user file exception was caught at: " + DateTime.UtcNow.ToShortDateString() + " " + DateTime.UtcNow.ToShortTimeString());
+        }
     }
 }

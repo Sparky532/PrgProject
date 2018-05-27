@@ -162,6 +162,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Farm_View";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farm_View";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Farm_View_FormClosing);
             this.Load += new System.EventHandler(this.Farm_View_Load);
