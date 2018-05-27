@@ -20,16 +20,12 @@ namespace FarmManagement
         public Farm_Creation()
         {
             InitializeComponent();
-
         }
         public Farm_Creation(int id)
         {
             InitializeComponent();
             farmer.ID = id;
-
         }
-
-      
 
         private void txtFarmName_Click(object sender, EventArgs e)
         {
@@ -93,7 +89,6 @@ namespace FarmManagement
         {
             pbxMediumClicked.Visible = false;
             size = 0;
-
         }
 
         private void pbxLarge_Click(object sender, EventArgs e)
@@ -154,7 +149,6 @@ namespace FarmManagement
             }
             else
             {
-
                 Farm f = new Farm(name, size);
                 f.insertFarm();
                 Animal_Selection form = new Animal_Selection(farmer.ID);
@@ -166,7 +160,7 @@ namespace FarmManagement
         private void pbxCreate_Click(object sender, EventArgs e)
         {
             name = txtFarmName.Text;
-            //MessageBox.Show(size.ToString());
+
             if (size == 0)
             {
                 MessageBox.Show("Please Select a Farm Size");
@@ -177,7 +171,6 @@ namespace FarmManagement
             }
             else
             {
-
                 Farm f = new Farm(name, size);
                 f.insertFarm();
                 Animal_Selection form = new Animal_Selection(farmer.ID);
