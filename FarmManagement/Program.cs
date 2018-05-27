@@ -16,7 +16,7 @@ namespace FarmManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Farm_Creation());
+            Application.Run(new SplashScreen());
         }
     }
 }
