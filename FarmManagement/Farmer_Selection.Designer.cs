@@ -37,7 +37,7 @@
             this.lblFarmerAge2 = new System.Windows.Forms.Label();
             this.lblNumOfAnimals2 = new System.Windows.Forms.Label();
             this.lblFarmerGender2 = new System.Windows.Forms.Label();
-            this.l = new System.Windows.Forms.Label();
+            this.lblFarmSize2 = new System.Windows.Forms.Label();
             this.lblFarmerName2 = new System.Windows.Forms.Label();
             this.lblFarmerAge3 = new System.Windows.Forms.Label();
             this.lblNumOfAnimals3 = new System.Windows.Forms.Label();
@@ -144,9 +144,9 @@
             this.lblFarmerName1.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerName1.Location = new System.Drawing.Point(274, 27);
             this.lblFarmerName1.Name = "lblFarmerName1";
-            this.lblFarmerName1.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName1.Size = new System.Drawing.Size(50, 20);
             this.lblFarmerName1.TabIndex = 45;
-            this.lblFarmerName1.Text = "label1";
+            this.lblFarmerName1.Text = "Name";
             // 
             // lblFarmSize1
             // 
@@ -168,9 +168,9 @@
             this.lblFarmerGender1.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerGender1.Location = new System.Drawing.Point(274, 59);
             this.lblFarmerGender1.Name = "lblFarmerGender1";
-            this.lblFarmerGender1.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender1.Size = new System.Drawing.Size(61, 20);
             this.lblFarmerGender1.TabIndex = 47;
-            this.lblFarmerGender1.Text = "label1";
+            this.lblFarmerGender1.Text = "Gender";
             // 
             // lblNumOfAnimals1
             // 
@@ -192,9 +192,9 @@
             this.lblFarmerAge1.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerAge1.Location = new System.Drawing.Point(274, 91);
             this.lblFarmerAge1.Name = "lblFarmerAge1";
-            this.lblFarmerAge1.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerAge1.Size = new System.Drawing.Size(37, 20);
             this.lblFarmerAge1.TabIndex = 49;
-            this.lblFarmerAge1.Text = "label1";
+            this.lblFarmerAge1.Text = "Age";
             // 
             // lblFarmerAge2
             // 
@@ -204,9 +204,9 @@
             this.lblFarmerAge2.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerAge2.Location = new System.Drawing.Point(274, 216);
             this.lblFarmerAge2.Name = "lblFarmerAge2";
-            this.lblFarmerAge2.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerAge2.Size = new System.Drawing.Size(37, 20);
             this.lblFarmerAge2.TabIndex = 54;
-            this.lblFarmerAge2.Text = "label1";
+            this.lblFarmerAge2.Text = "Age";
             // 
             // lblNumOfAnimals2
             // 
@@ -228,21 +228,21 @@
             this.lblFarmerGender2.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerGender2.Location = new System.Drawing.Point(274, 187);
             this.lblFarmerGender2.Name = "lblFarmerGender2";
-            this.lblFarmerGender2.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender2.Size = new System.Drawing.Size(61, 20);
             this.lblFarmerGender2.TabIndex = 52;
-            this.lblFarmerGender2.Text = "label1";
+            this.lblFarmerGender2.Text = "Gender";
             // 
-            // l
+            // lblFarmSize2
             // 
-            this.l.AutoSize = true;
-            this.l.BackColor = System.Drawing.Color.Transparent;
-            this.l.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l.ForeColor = System.Drawing.Color.DarkGreen;
-            this.l.Location = new System.Drawing.Point(496, 173);
-            this.l.Name = "l";
-            this.l.Size = new System.Drawing.Size(18, 20);
-            this.l.TabIndex = 51;
-            this.l.Text = "0";
+            this.lblFarmSize2.AutoSize = true;
+            this.lblFarmSize2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmSize2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmSize2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmSize2.Location = new System.Drawing.Point(496, 173);
+            this.lblFarmSize2.Name = "lblFarmSize2";
+            this.lblFarmSize2.Size = new System.Drawing.Size(18, 20);
+            this.lblFarmSize2.TabIndex = 51;
+            this.lblFarmSize2.Text = "0";
             // 
             // lblFarmerName2
             // 
@@ -252,9 +252,9 @@
             this.lblFarmerName2.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerName2.Location = new System.Drawing.Point(273, 156);
             this.lblFarmerName2.Name = "lblFarmerName2";
-            this.lblFarmerName2.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName2.Size = new System.Drawing.Size(50, 20);
             this.lblFarmerName2.TabIndex = 50;
-            this.lblFarmerName2.Text = "label1";
+            this.lblFarmerName2.Text = "Name";
             // 
             // lblFarmerAge3
             // 
@@ -264,9 +264,9 @@
             this.lblFarmerAge3.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerAge3.Location = new System.Drawing.Point(276, 340);
             this.lblFarmerAge3.Name = "lblFarmerAge3";
-            this.lblFarmerAge3.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerAge3.Size = new System.Drawing.Size(37, 20);
             this.lblFarmerAge3.TabIndex = 59;
-            this.lblFarmerAge3.Text = "label6";
+            this.lblFarmerAge3.Text = "Age";
             // 
             // lblNumOfAnimals3
             // 
@@ -288,9 +288,10 @@
             this.lblFarmerGender3.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerGender3.Location = new System.Drawing.Point(274, 311);
             this.lblFarmerGender3.Name = "lblFarmerGender3";
-            this.lblFarmerGender3.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender3.Size = new System.Drawing.Size(61, 20);
             this.lblFarmerGender3.TabIndex = 57;
-            this.lblFarmerGender3.Text = "label1";
+            this.lblFarmerGender3.Tag = "";
+            this.lblFarmerGender3.Text = "Gender";
             // 
             // lblFarmSize3
             // 
@@ -312,9 +313,9 @@
             this.lblFarmerName3.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerName3.Location = new System.Drawing.Point(275, 280);
             this.lblFarmerName3.Name = "lblFarmerName3";
-            this.lblFarmerName3.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName3.Size = new System.Drawing.Size(50, 20);
             this.lblFarmerName3.TabIndex = 55;
-            this.lblFarmerName3.Text = "label1";
+            this.lblFarmerName3.Text = "Name";
             // 
             // lblFarmerAge4
             // 
@@ -324,9 +325,9 @@
             this.lblFarmerAge4.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerAge4.Location = new System.Drawing.Point(273, 464);
             this.lblFarmerAge4.Name = "lblFarmerAge4";
-            this.lblFarmerAge4.Size = new System.Drawing.Size(62, 20);
+            this.lblFarmerAge4.Size = new System.Drawing.Size(37, 20);
             this.lblFarmerAge4.TabIndex = 64;
-            this.lblFarmerAge4.Text = "label11";
+            this.lblFarmerAge4.Text = "Age";
             // 
             // lblNumOfAnimals4
             // 
@@ -348,9 +349,9 @@
             this.lblFarmerGender4.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerGender4.Location = new System.Drawing.Point(273, 435);
             this.lblFarmerGender4.Name = "lblFarmerGender4";
-            this.lblFarmerGender4.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender4.Size = new System.Drawing.Size(61, 20);
             this.lblFarmerGender4.TabIndex = 62;
-            this.lblFarmerGender4.Text = "label1";
+            this.lblFarmerGender4.Text = "Gender";
             // 
             // lblFarmSize4
             // 
@@ -372,9 +373,9 @@
             this.lblFarmerName4.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerName4.Location = new System.Drawing.Point(272, 404);
             this.lblFarmerName4.Name = "lblFarmerName4";
-            this.lblFarmerName4.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName4.Size = new System.Drawing.Size(50, 20);
             this.lblFarmerName4.TabIndex = 60;
-            this.lblFarmerName4.Text = "label1";
+            this.lblFarmerName4.Text = "Name";
             // 
             // lblFarmerAge5
             // 
@@ -384,9 +385,9 @@
             this.lblFarmerAge5.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerAge5.Location = new System.Drawing.Point(272, 586);
             this.lblFarmerAge5.Name = "lblFarmerAge5";
-            this.lblFarmerAge5.Size = new System.Drawing.Size(62, 20);
+            this.lblFarmerAge5.Size = new System.Drawing.Size(37, 20);
             this.lblFarmerAge5.TabIndex = 69;
-            this.lblFarmerAge5.Text = "label16";
+            this.lblFarmerAge5.Text = "Age";
             // 
             // lblNumOfAnimals5
             // 
@@ -408,9 +409,9 @@
             this.lblFarmerGender5.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerGender5.Location = new System.Drawing.Point(272, 557);
             this.lblFarmerGender5.Name = "lblFarmerGender5";
-            this.lblFarmerGender5.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerGender5.Size = new System.Drawing.Size(61, 20);
             this.lblFarmerGender5.TabIndex = 67;
-            this.lblFarmerGender5.Text = "label1";
+            this.lblFarmerGender5.Text = "Gender";
             // 
             // lblFarmSize5
             // 
@@ -432,9 +433,9 @@
             this.lblFarmerName5.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFarmerName5.Location = new System.Drawing.Point(271, 526);
             this.lblFarmerName5.Name = "lblFarmerName5";
-            this.lblFarmerName5.Size = new System.Drawing.Size(53, 20);
+            this.lblFarmerName5.Size = new System.Drawing.Size(50, 20);
             this.lblFarmerName5.TabIndex = 65;
-            this.lblFarmerName5.Text = "label1";
+            this.lblFarmerName5.Text = "Name";
             // 
             // pbxCross1
             // 
@@ -446,7 +447,7 @@
             this.pbxCross1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCross1.TabIndex = 95;
             this.pbxCross1.TabStop = false;
-            this.pbxCross1.Click += new System.EventHandler(this.pbxCross1_Click_1);
+            this.pbxCross1.Click += new System.EventHandler(this.pbxCross1_Click);
             // 
             // pbxOutfitFive
             // 
@@ -750,8 +751,9 @@
             // 
             // pbxFarmer5
             // 
+            this.pbxFarmer5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxFarmer5.Image = global::FarmManagement.Properties.Resources.FarmerSelectionNew;
-            this.pbxFarmer5.Location = new System.Drawing.Point(25, 511);
+            this.pbxFarmer5.Location = new System.Drawing.Point(22, 511);
             this.pbxFarmer5.Name = "pbxFarmer5";
             this.pbxFarmer5.Size = new System.Drawing.Size(547, 118);
             this.pbxFarmer5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -761,8 +763,9 @@
             // 
             // pbxFarmer4
             // 
+            this.pbxFarmer4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxFarmer4.Image = global::FarmManagement.Properties.Resources.FarmerSelectionNew;
-            this.pbxFarmer4.Location = new System.Drawing.Point(22, 387);
+            this.pbxFarmer4.Location = new System.Drawing.Point(25, 389);
             this.pbxFarmer4.Name = "pbxFarmer4";
             this.pbxFarmer4.Size = new System.Drawing.Size(547, 118);
             this.pbxFarmer4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -772,8 +775,9 @@
             // 
             // pbxFarmer1
             // 
+            this.pbxFarmer1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxFarmer1.Image = global::FarmManagement.Properties.Resources.FarmerSelectionNew;
-            this.pbxFarmer1.Location = new System.Drawing.Point(22, 12);
+            this.pbxFarmer1.Location = new System.Drawing.Point(21, 12);
             this.pbxFarmer1.Name = "pbxFarmer1";
             this.pbxFarmer1.Size = new System.Drawing.Size(547, 118);
             this.pbxFarmer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -783,6 +787,7 @@
             // 
             // pbxFarmer2
             // 
+            this.pbxFarmer2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxFarmer2.Image = global::FarmManagement.Properties.Resources.FarmerSelectionNew;
             this.pbxFarmer2.Location = new System.Drawing.Point(22, 141);
             this.pbxFarmer2.Name = "pbxFarmer2";
@@ -794,8 +799,9 @@
             // 
             // pbxFarmer3
             // 
+            this.pbxFarmer3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxFarmer3.Image = global::FarmManagement.Properties.Resources.FarmerSelectionNew;
-            this.pbxFarmer3.Location = new System.Drawing.Point(25, 265);
+            this.pbxFarmer3.Location = new System.Drawing.Point(22, 263);
             this.pbxFarmer3.Name = "pbxFarmer3";
             this.pbxFarmer3.Size = new System.Drawing.Size(547, 118);
             this.pbxFarmer3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -805,6 +811,7 @@
             // 
             // pbxNewFarmer5
             // 
+            this.pbxNewFarmer5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNewFarmer5.Image = global::FarmManagement.Properties.Resources.NewFarmerSelection1;
             this.pbxNewFarmer5.Location = new System.Drawing.Point(22, 511);
             this.pbxNewFarmer5.Name = "pbxNewFarmer5";
@@ -816,6 +823,7 @@
             // 
             // pbxNewFarmer4
             // 
+            this.pbxNewFarmer4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNewFarmer4.Image = global::FarmManagement.Properties.Resources.NewFarmerSelection1;
             this.pbxNewFarmer4.Location = new System.Drawing.Point(22, 389);
             this.pbxNewFarmer4.Name = "pbxNewFarmer4";
@@ -827,6 +835,7 @@
             // 
             // pbxNewFarmer3
             // 
+            this.pbxNewFarmer3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNewFarmer3.Image = global::FarmManagement.Properties.Resources.NewFarmerSelection1;
             this.pbxNewFarmer3.Location = new System.Drawing.Point(22, 265);
             this.pbxNewFarmer3.Name = "pbxNewFarmer3";
@@ -838,6 +847,7 @@
             // 
             // pbxNewFarmer2
             // 
+            this.pbxNewFarmer2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNewFarmer2.Image = global::FarmManagement.Properties.Resources.NewFarmerSelection1;
             this.pbxNewFarmer2.Location = new System.Drawing.Point(22, 141);
             this.pbxNewFarmer2.Name = "pbxNewFarmer2";
@@ -849,6 +859,7 @@
             // 
             // pbxNewFarmer1
             // 
+            this.pbxNewFarmer1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNewFarmer1.Image = global::FarmManagement.Properties.Resources.NewFarmerSelection1;
             this.pbxNewFarmer1.Location = new System.Drawing.Point(22, 12);
             this.pbxNewFarmer1.Name = "pbxNewFarmer1";
@@ -960,7 +971,7 @@
             this.Controls.Add(this.lblFarmerAge2);
             this.Controls.Add(this.lblNumOfAnimals2);
             this.Controls.Add(this.lblFarmerGender2);
-            this.Controls.Add(this.l);
+            this.Controls.Add(this.lblFarmSize2);
             this.Controls.Add(this.lblFarmerName2);
             this.Controls.Add(this.lblFarmerAge1);
             this.Controls.Add(this.lblNumOfAnimals1);
@@ -983,7 +994,7 @@
             this.Name = "Farmer_Selection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmer Selection";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Farmer_Selection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCross1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEyesFive)).EndInit();
@@ -1048,7 +1059,7 @@
         private System.Windows.Forms.Label lblFarmerAge2;
         private System.Windows.Forms.Label lblNumOfAnimals2;
         private System.Windows.Forms.Label lblFarmerGender2;
-        private System.Windows.Forms.Label l;
+        private System.Windows.Forms.Label lblFarmSize2;
         private System.Windows.Forms.Label lblFarmerName2;
         private System.Windows.Forms.Label lblFarmerAge3;
         private System.Windows.Forms.Label lblNumOfAnimals3;
