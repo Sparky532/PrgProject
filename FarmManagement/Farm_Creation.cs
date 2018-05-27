@@ -33,19 +33,23 @@ namespace FarmManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            name = txtFarmName.Text;
-            //MessageBox.Show(size.ToString());
             if (size == 0)
             {
                 MessageBox.Show("Please Select a Farm Size");
             }
+            else if (txtFarmName.ForeColor.Name == "GrayText" || txtFarmName.Text == "")
+            {
+                MessageBox.Show("Please enter a Farm Name");
+            }
             else
             {
+
                 Farm f = new Farm(name, size);
                 f.insertFarm();
-                Animal_Selection assd = new Animal_Selection(farmer.ID);
-                assd.Show();
+                Animal_Selection form = new Animal_Selection(farmer.ID);
                 this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
         }
 

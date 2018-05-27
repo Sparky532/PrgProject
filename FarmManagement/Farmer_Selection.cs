@@ -497,15 +497,17 @@ namespace FarmManagement
             {
                 if (CurrentFarmer.numOfAnimals() > 0)
                 {
-                    Farm_View navFarmView = new Farm_View(CurrentFarmer.ID);
-                    navFarmView.Show();
+                    Farm_View form = new Farm_View(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    Animal_Selection assd = new Animal_Selection(CurrentFarmer.ID);
-                    assd.Show();
+                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
                     this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
             }
             else
