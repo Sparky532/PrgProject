@@ -303,7 +303,7 @@ namespace FarmManagement
             CurrentFarmer = (Farmer)AllFarmers[index];
             farmerName.Text = CurrentFarmer.Name;
             farmerGender.Text = CurrentFarmer.Gender;
-            farmerAge.Text = CurrentFarmer.Age + "";
+            farmerAge.Text = CurrentFarmer.Age.ToString();
             numOfAnimals.Text = CurrentFarmer.numOfAnimals().ToString();
             farmSize.Text = CurrentFarmer.GetFarmSize().ToString();
 
@@ -488,9 +488,7 @@ namespace FarmManagement
                 CurrentFarmer.DeleteFarmer();
 
                 Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
-
                 RefreshThread.Start();
-
                 this.Close();
 
             }

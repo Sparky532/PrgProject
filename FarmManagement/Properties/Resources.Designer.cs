@@ -813,6 +813,16 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RemoveButton {
+            get {
+                object obj = ResourceManager.GetObject("RemoveButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sheep {
             get {
                 object obj = ResourceManager.GetObject("Sheep", resourceCulture);

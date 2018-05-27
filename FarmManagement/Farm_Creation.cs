@@ -16,7 +16,6 @@ namespace FarmManagement
         Farmer farmer = new Farmer();
         string name;
         double size = 0;
-        int farmerID = 0;
 
         public Farm_Creation()
         {
