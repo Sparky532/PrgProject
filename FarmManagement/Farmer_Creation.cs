@@ -139,6 +139,7 @@ namespace FarmManagement
         }
 
         #region Previous_click
+        //Skin previous
         private void pbxPrevious1_Click(object sender, EventArgs e)
         {
             try
@@ -157,6 +158,7 @@ namespace FarmManagement
             }
         }
 
+        //Hair previous
         private void pbxPrevious2_Click(object sender, EventArgs e)
         {
             try
@@ -175,6 +177,7 @@ namespace FarmManagement
             }
         }
 
+        //Eye previous
         private void pbxPrevious3_Click(object sender, EventArgs e)
         {
             try
@@ -194,6 +197,7 @@ namespace FarmManagement
             }
         }
 
+        //Oufit previous
         private void pbxPrevious4_Click(object sender, EventArgs e)
         {
             try
@@ -214,6 +218,7 @@ namespace FarmManagement
         #endregion
 
         #region Next_click
+        //Skin Next
         private void pbxNext1_Click(object sender, EventArgs e)
         {
             try
@@ -232,6 +237,7 @@ namespace FarmManagement
             }
         }
 
+        //Hair Next
         private void pbxNext2_Click(object sender, EventArgs e)
         {
 
@@ -251,6 +257,7 @@ namespace FarmManagement
             }
         }
 
+        //Eyes Next
         private void pbxNext3_Click(object sender, EventArgs e)
         {
             try
@@ -269,6 +276,7 @@ namespace FarmManagement
             }
         }
 
+        //Outfit Next
         private void pbxNext4_Click(object sender, EventArgs e)
         {
             try
