@@ -116,25 +116,40 @@ namespace FarmManagement
 
         private void pbxAdd_Click(object sender, EventArgs e)
         {
-            if (File.Exists(Environment.CurrentDirectory + @"\" + txtName.Text + ".png") == false)
+            try
             {
-                pbxNewAnimal.Image.Save(Environment.CurrentDirectory + @"\" + txtName.Text + ".png", ImageFormat.Png);
-                if (txtName != null && txtSpace != null && txtSpeed != null && cbxType.SelectedItem.ToString() != null)
+                if (txtChooseimage.Text==null||txtChooseimage.Text=="")
                 {
-                    Species spec = new Species();
-                    spec.AnimalName = txtName.Text;
-                    spec.Animaltype = cbxType.SelectedItem.ToString();
-                    spec.Space = double.Parse(txtSpace.Text);
-                    spec.Speed = double.Parse(txtSpeed.Text);
-                    //Write the four items to the text file
-                    spec.writeSpecies();
+                    throw new NoImageDirectoryException();
                 }
+                if (File.Exists(Environment.CurrentDirectory + @"\" + txtName.Text + ".png") == false)
+                {
+                    pbxNewAnimal.Image.Save(Environment.CurrentDirectory + @"\" + txtName.Text + ".png", ImageFormat.Png);
+                    if (txtName != null && txtSpace != null && txtSpeed != null && cbxType.SelectedItem.ToString() != null)
+                    {
+                        Species spec = new Species();
+                        spec.AnimalName = txtName.Text;
+                        spec.Animaltype = cbxType.SelectedItem.ToString();
+                        spec.Space = double.Parse(txtSpace.Text);
+                        spec.Speed = double.Parse(txtSpeed.Text);
+                        //Write the four items to the text file
+                        spec.writeSpecies();
+                    }
 
+                }
+                Animal_Selection form = new Animal_Selection();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
-            Animal_Selection form = new Animal_Selection();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
+            catch (NoImageDirectoryException)
+            {
+                MessageBox.Show("Please ensure a picture is selected, and the URL to that image is loaded!");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please ensure that Speed and Space are both numbers!");
+            }
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)

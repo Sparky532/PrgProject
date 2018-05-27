@@ -192,7 +192,7 @@ namespace FarmManagement
             {
                 MessageBox.Show("Please Select a Farm Size");
             }
-            else if (txtFarmName.ForeColor.Name == "GrayText")
+            else if (txtFarmName.ForeColor.Name == "GrayText"||txtFarmName.Text=="")
             {
                 MessageBox.Show("Please enter a Farm Name");
             }

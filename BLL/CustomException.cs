@@ -50,4 +50,17 @@ namespace BLL
           System.Runtime.Serialization.SerializationInfo info,
           System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
     }
+
+
+
+    [Serializable]
+    public class NoImageDirectoryException : Exception
+    {
+        public NoImageDirectoryException() { }
+        public NoImageDirectoryException(string message) : base(message) { }
+        public NoImageDirectoryException(string message, Exception inner) : base(message, inner) { }
+        protected NoImageDirectoryException(
+          System.Runtime.Serialization.SerializationInfo info,
+          System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
+    }
 }

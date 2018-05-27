@@ -253,6 +253,10 @@ namespace FarmManagement
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please ensure a number is entered!");
+            }
         }
 
         private void pbxPrevious_Click(object sender, EventArgs e)
@@ -326,6 +330,10 @@ namespace FarmManagement
             catch (AnimalCriteriaNotMeetException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please ensure a number is entered!");
             }
         }
 
