@@ -157,7 +157,7 @@ namespace FarmManagement
         {
             
         }
-
+        //Skin Previous
         private void pbxPrevious1_Click(object sender, EventArgs e)
         {
 
@@ -176,7 +176,7 @@ namespace FarmManagement
                 pbxBody.Image = skin.Value;
             }
         }
-
+        //HairPrevious
         private void pbxPrevious2_Click(object sender, EventArgs e)
         {
             try
@@ -194,7 +194,7 @@ namespace FarmManagement
                 pbxHairs.Image = hair.Value;
             }
         }
-
+        //EyesPrevious
         private void pbxPrevious3_Click(object sender, EventArgs e)
         {
             try
@@ -213,7 +213,7 @@ namespace FarmManagement
 
             }
         }
-
+        //OutfitPrevious
         private void pbxPrevious4_Click(object sender, EventArgs e)
         {
             try
@@ -231,7 +231,7 @@ namespace FarmManagement
                 pbxOutfits.Image = outfit.Value;
             }
         }
-
+        //Skin Next
         private void pbxNext1_Click(object sender, EventArgs e)
         {
             try
@@ -249,7 +249,7 @@ namespace FarmManagement
                 pbxBody.Image = skin.Value;
             }
         }
-
+        //Hair Next
         private void pbxNext2_Click(object sender, EventArgs e)
         {
 
@@ -268,7 +268,7 @@ namespace FarmManagement
                 pbxHairs.Image = hair.Value;
             }
         }
-
+        //Eyes Next
         private void pbxNext3_Click(object sender, EventArgs e)
         {
             try
@@ -286,7 +286,7 @@ namespace FarmManagement
                 pbxEyes.Image = eye.Value;
             }
         }
-
+        //OutfitNext
         private void pbxNext4_Click(object sender, EventArgs e)
         {
             try
