@@ -79,16 +79,19 @@ namespace FarmManagement
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Make the change part visible
-            txtSelectedAnimalAmount.Visible = true;
-            pbxChange.Visible = true;
-            pbxRemove.Visible = true;
-            pbxAddNew.Visible = false;
-
-            //Change the amount of specific species
             try
             {
-                txtSelectedAnimalAmount.Text = ((AnimalsSelected)lstAnimalsSelected.SelectedItem).AnimalAmount.ToString();
+                if (!lstAnimalsSelected.SelectedItem.ToString().Equals("No animals yet"))
+                {
+                    //Make the change part visible
+                    txtSelectedAnimalAmount.Visible = true;
+                    pbxChange.Visible = true;
+                    pbxRemove.Visible = true;
+                    pbxAddNew.Visible = false;
+
+                    //Change the amount of specific species
+                    txtSelectedAnimalAmount.Text = ((AnimalsSelected)lstAnimalsSelected.SelectedItem).AnimalAmount.ToString();
+                }
             }
             catch (NullReferenceException nulls)
             {
@@ -107,7 +110,7 @@ namespace FarmManagement
         }
 
         private void cbxAnimals_SelectedIndexChanged(object sender, EventArgs e)
-        { 
+        {
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -349,7 +352,7 @@ namespace FarmManagement
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void pbxAnimal_Click(object sender, EventArgs e)
@@ -442,7 +445,10 @@ namespace FarmManagement
             AnimalsSelected assd = (AnimalsSelected)lstAnimalsSelected.SelectedItem;
             animalsSelected.Remove(assd);
             //Refresh the List
-            quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
+            if (animalsSelected.Count > 0)
+            {
+                quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
+            }
             bs1.ResetBindings(false);
             //Remove option of animal already added
             animalSpecies.Add(assd.Animaal);
