@@ -133,10 +133,7 @@ namespace BLL
                     l.XLength = l.YLength = Math.Sqrt(l.Size);
                     l.GateXCoord = 0;
                     l.GateYCoord = 0;
-                    //System.Windows.Forms.MessageBox.Show(l.ToString());
-
-                    //Adds Location;
-                    //System.Windows.Forms.MessageBox.Show(l.InsertLocation());
+                    
                     l.InsertLocation();
                     for (int j = i; j < i + toAdd; j++)
                     {
@@ -170,16 +167,7 @@ namespace BLL
 
                         //Give Arraylist to DAL
                         DataHandler handler = new DataHandler();
-                        int result = handler.InsertAnimals(AnimalToAdd);
-
-                        //if (result == 0)
-                        //{
-                        //    System.Windows.Forms.MessageBox.Show("Unsucessful");
-                        //}
-                        //else
-                        //{
-                        //    System.Windows.Forms.MessageBox.Show("Sucessful");
-                        //}
+                        int result = handler.InsertAnimals(AnimalToAdd);                       
                     }
                 }
             }
