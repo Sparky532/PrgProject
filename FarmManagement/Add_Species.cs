@@ -33,12 +33,6 @@ namespace FarmManagement
            
         }
 
-        private void btnWriteToTxt_Click(object sender, EventArgs e)
-        {
-            string name = txtName.Text;
-            //Write the name to a textfile so that developers can add the species to the database themselves
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -51,7 +45,7 @@ namespace FarmManagement
 
             fileDialog.InitialDirectory = "C://";
             fileDialog.Filter = "png files (*.png)|*.png";
-            fileDialog.FilterIndex = 2;
+            fileDialog.FilterIndex = 1;
             fileDialog.DefaultExt = ".png";
             fileDialog.RestoreDirectory = true;
 

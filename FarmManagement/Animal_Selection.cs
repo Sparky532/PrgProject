@@ -232,6 +232,7 @@ namespace FarmManagement
                 MessageBox.Show("Please ensure a number is entered!");
             }
         }
+
         //Decreases the amount of animals
         private void pbxPrevious_Click(object sender, EventArgs e)
         {
@@ -253,12 +254,14 @@ namespace FarmManagement
                 index++;
             }
         }
+
         //increases the amount of animals
         private void pbxNext1_Click(object sender, EventArgs e)
         {
             index++;
             txtAnimalAmount.Text = index.ToString();
         }
+
         //changes the quantity of an existing animal
         private void pbxChange_Click(object sender, EventArgs e)
         {
@@ -310,6 +313,7 @@ namespace FarmManagement
                 MessageBox.Show("Please ensure a number is entered!");
             }
         }
+
         //Goes to the add new species form to add a species
         private void pbxAddNew_Click(object sender, EventArgs e)
         {
@@ -319,6 +323,7 @@ namespace FarmManagement
             form.ShowDialog();
             this.Close();
         }
+
         //resets the form to the original state to allow the user to have the add species option once again
         private void pbxAnimal_Click(object sender, EventArgs e)
         {
