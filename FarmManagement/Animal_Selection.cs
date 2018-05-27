@@ -432,7 +432,7 @@ namespace FarmManagement
         {
             if (indexLow < indexHigh)
             {
-                /* pi is partitioning index, arr[p] is now
+                /* pi is partitioning index, animalSpecies[indexHigh] is now
                    at right place */
                 int pi = partitionSpecies(animalSpecies, indexLow, indexHigh);
 
@@ -452,7 +452,6 @@ namespace FarmManagement
             {
                 // If current element is smaller than or
                 // equal to pivot
-                //animals[j] <= pivot
                 if (animalSpecies[j].AnimalName.CompareTo(pivot.AnimalName) <= 0)
                 {
                     i++;    // increment index of smaller element
