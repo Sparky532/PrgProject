@@ -36,13 +36,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(510, 406);
+            this.pictureBox1.Size = new System.Drawing.Size(510, 409);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // SplashScreen
             // 
@@ -57,8 +56,7 @@
             this.Name = "SplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
-            this.Load += new System.EventHandler(this.SplashScreen_Load);
-            this.Shown += new System.EventHandler(this.SplashScreen_Shown_1);
+            this.Shown += new System.EventHandler(this.SplashScreen_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

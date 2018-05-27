@@ -13,40 +13,36 @@ namespace FarmManagement
     public partial class SplashScreen : Form
     {
         Timer timer;
+        delegate void TimerStop(object sender, EventArgs e);
+        event TimerStop stopping;
+
         public SplashScreen()
         {
             InitializeComponent();
         }
-        private void timerStop(object sender, EventArgs e)
-        {
-            timer.Stop();
-            Farmer_Selection form = new Farmer_Selection();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
-        }
 
         private void SplashScreen_Shown(object sender, EventArgs e)
         {
-        }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+            //creating the timer that will run for 3 seconds
+            timer = new Timer
+            {
+                Interval = 3000
+            };
 
-        }
-
-        private void SplashScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SplashScreen_Shown_1(object sender, EventArgs e)
-        {
-
-            timer = new Timer();
-            timer.Interval = 3000;
             timer.Start();
 
-            timer.Tick += timerStop;
+            //event that will run when the timer stops
+            stopping = new TimerStop((object send, EventArgs args) =>
+            {
+                timer.Stop();
+                Farmer_Selection form = new Farmer_Selection();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+            });
+
+            //calling the stopping event
+            timer.Tick += new EventHandler(stopping);
         }
     }
 }
