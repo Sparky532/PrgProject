@@ -26,23 +26,19 @@ namespace FarmManagement
         public Animal_Selection()
         {
             InitializeComponent();
-            pbxBackground.Controls.Add(pbxAnimal);
-            txtSelectedAnimalAmount.Visible = false;
-            pbxChange.Visible = false;
-
         }
         public Animal_Selection(int id)
         {
-            this.ID = id;
             InitializeComponent();
-            pbxBackground.Controls.Add(pbxAnimal);
-            txtSelectedAnimalAmount.Visible = false;
-            pbxChange.Visible = false;
-
+            this.ID = id;
         }
 
         private void Animal_Selection_Load(object sender, EventArgs e)
         {
+            pbxBackground.Controls.Add(pbxAnimal);
+            txtSelectedAnimalAmount.Visible = false;
+            pbxChange.Visible = false;
+
             //Select the animal species from the database
             AnimalsSelected selects = new AnimalsSelected();
             animalSpecies = selects.getAnimalName();
@@ -60,6 +56,7 @@ namespace FarmManagement
                 lstAnimalsSelected.Items.Add("No animals yet");
             }
 
+            //Link all buttons to panel
             pbxPanel.Controls.Add(pbxPrevious);
             pbxPanel.Controls.Add(pbxNext1);
             pbxPanel.Controls.Add(pbxAdd);
@@ -132,8 +129,6 @@ namespace FarmManagement
                 else
                 {
                     String DirectoryPath = Environment.CurrentDirectory;
-                    //  MessageBox.Show(DirectoryPath);
-                    //  DirectoryPath = DirectoryPath.Substring(0, DirectoryPath.Length - 10)+"\\Resources";
                     Image NewAnimal = Image.FromFile(DirectoryPath + @"\" + speciesSelected.AnimalName + ".png");
                     pbxAnimal.Image = NewAnimal;
                 }
@@ -154,7 +149,8 @@ namespace FarmManagement
             {
                 int predatorsNum = 0;
                 int preysNum = 0;
-                //Checking to see that there is at least 1 prey and 1 predator
+                
+                //Counting predator and prey
                 foreach (AnimalsSelected item in animalsSelected)
                 {
                     if (item.Animaal.Animaltype == "Predator")
@@ -166,6 +162,8 @@ namespace FarmManagement
                         preysNum++;
                     }
                 }
+
+                //Checking to see that there is at least 1 prey and 1 predator
                 if (preysNum > 0 && predatorsNum > 0)
                 {
                     //Making sure there is more than 3 types of animals selected
