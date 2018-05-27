@@ -396,8 +396,7 @@ namespace FarmManagement
             animalsSelected[indexHigh] = temp;
             return (i + 1);
         }
-
-
+        
         void quickSortSpecies(List<Species> animalSpecies, int indexLow, int indexHigh)
         {
             if (indexLow < indexHigh)
@@ -442,6 +441,7 @@ namespace FarmManagement
             pbxAddNew.Visible = true;
             AnimalsSelected assd = (AnimalsSelected)lstAnimalsSelected.SelectedItem;
             animalsSelected.Remove(assd);
+
             //Refresh the List
             if (animalsSelected.Count > 0)
             {
