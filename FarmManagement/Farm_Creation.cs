@@ -20,7 +20,6 @@ namespace FarmManagement
         public Farm_Creation()
         {
             InitializeComponent();
-            farmer = farmer.NewestFarmer();
 
         }
         public Farm_Creation(int id)
@@ -30,52 +29,7 @@ namespace FarmManagement
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (size == 0)
-            {
-                MessageBox.Show("Please Select a Farm Size");
-            }
-            else if (txtFarmName.ForeColor.Name == "GrayText" || txtFarmName.Text == "")
-            {
-                MessageBox.Show("Please enter a Farm Name");
-            }
-            else
-            {
-
-                Farm f = new Farm(name, size);
-                f.insertFarm();
-                Animal_Selection form = new Animal_Selection(farmer.ID);
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
-            }
-        }
-
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void txtFarmName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void txtFarmName_Click(object sender, EventArgs e)
         {
@@ -86,6 +40,8 @@ namespace FarmManagement
 
         private void Farm_Creation_Load(object sender, EventArgs e)
         {
+            farmer = farmer.NewestFarmer();
+
             this.ActiveControl = null;
             pbxSmallClicked.Visible = false;
             pbxMediumClicked.Visible = false;
@@ -186,7 +142,27 @@ namespace FarmManagement
         {
             this.ActiveControl = null;
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (size == 0)
+            {
+                MessageBox.Show("Please Select a Farm Size");
+            }
+            else if (txtFarmName.ForeColor.Name == "GrayText" || txtFarmName.Text == "")
+            {
+                MessageBox.Show("Please enter a Farm Name");
+            }
+            else
+            {
 
+                Farm f = new Farm(name, size);
+                f.insertFarm();
+                Animal_Selection form = new Animal_Selection(farmer.ID);
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+            }
+        }
         private void pbxCreate_Click(object sender, EventArgs e)
         {
             name = txtFarmName.Text;
