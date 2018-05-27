@@ -37,9 +37,8 @@ namespace FarmManagement
         {
             navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
             navFormWithoutParam += new NavFormWithoutParam(NavFarmerCreation);
-            deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
 
-            //Setting Which 
+            //Setting the farmer pictures to default
             pbxFarmer1.Visible = false;
             pbxFarmer2.Visible = false;
             pbxFarmer3.Visible = false;
@@ -51,117 +50,31 @@ namespace FarmManagement
             pbxNewFarmer4.Visible = true;
             pbxNewFarmer5.Visible = true;
 
+            //Loading existing farmers from database
             AllFarmers = farmer.FarmerSelection();
 
             if (AllFarmers[0] != null)
             {
-                pbxNewFarmer1.Visible = false;
-                pbxFarmer1.Visible = true;
-                CurrentFarmer = (Farmer)AllFarmers[0];
-                lblFarmerName1.Text = CurrentFarmer.Name;
-                lblFarmerGender1.Text = CurrentFarmer.Gender;
-                lblFarmerAge1.Text = CurrentFarmer.Age + "";
-                lblNumOfAnimals1.Text = CurrentFarmer.numOfAnimals().ToString();
-                lblFarmSize1.Text = CurrentFarmer.GetFarmSize().ToString();
-
-                if (AllFarmers[0].Gender == "Male")
-                {
-                    loadMaleAvatar(AllFarmers[0].FarmerStyle.OutfitType, AllFarmers[0].FarmerStyle.Eyecolour, AllFarmers[0].FarmerStyle.HairColour, AllFarmers[0].FarmerStyle.SkinColour, pbxBodyOne, pbxOutfitOne, pbxEyesOne, pbxHairOne);
-                }
-                else if (AllFarmers[0].Gender == "Female")
-                {
-                    loadFemaleAvatar(AllFarmers[0].FarmerStyle.OutfitType, AllFarmers[0].FarmerStyle.Eyecolour, AllFarmers[0].FarmerStyle.HairColour, AllFarmers[0].FarmerStyle.SkinColour, pbxBodyOne, pbxOutfitOne, pbxEyesOne, pbxHairOne);
-                }
+                CharacterLoad(pbxNewFarmer1, pbxFarmer1, lblFarmerName1, lblFarmerGender1, lblFarmerAge1, lblNumOfAnimals1, lblFarmSize1, 0, pbxBodyOne, pbxOutfitOne, pbxEyesOne, pbxHairOne);
             }
             if (AllFarmers[1] != null)
             {
-                pbxNewFarmer2.Visible = false;
-                pbxFarmer2.Visible = true;
-                CurrentFarmer = (Farmer)AllFarmers[1];
-                lblFarmerName2.Text = CurrentFarmer.Name;
-                lblFarmerGender2.Text = CurrentFarmer.Gender;
-                lblFarmerAge2.Text = CurrentFarmer.Age + "";
-                lblNumOfAnimals2.Text = CurrentFarmer.numOfAnimals().ToString();
-                l.Text = CurrentFarmer.GetFarmSize().ToString();
-
-                if (AllFarmers[1].Gender == "Male")
-                {
-                    loadMaleAvatar(AllFarmers[1].FarmerStyle.OutfitType, AllFarmers[1].FarmerStyle.Eyecolour, AllFarmers[1].FarmerStyle.HairColour, AllFarmers[1].FarmerStyle.SkinColour, pbxBodyTwo, pbxOutfitTwo, pbxEyesTwo, pbxHairTwo);
-                }
-                else if (AllFarmers[1].Gender == "Female")
-                {
-                    loadFemaleAvatar(AllFarmers[1].FarmerStyle.OutfitType, AllFarmers[1].FarmerStyle.Eyecolour, AllFarmers[1].FarmerStyle.HairColour, AllFarmers[1].FarmerStyle.SkinColour, pbxBodyTwo, pbxOutfitTwo, pbxEyesTwo, pbxHairTwo);
-                }
+                CharacterLoad(pbxNewFarmer2, pbxFarmer2, lblFarmerName2, lblFarmerGender2, lblFarmerAge2, lblNumOfAnimals2, lblFarmSize2, 1, pbxBodyTwo, pbxOutfitTwo, pbxEyesTwo, pbxHairTwo);
             }
             if (AllFarmers[2] != null)
             {
-                pbxNewFarmer3.Visible = false;
-                pbxFarmer3.Visible = true;
-                CurrentFarmer = (Farmer)AllFarmers[2];
-                lblFarmerName3.Text = CurrentFarmer.Name;
-                lblFarmerGender3.Text = CurrentFarmer.Gender;
-                lblFarmerAge3.Text = CurrentFarmer.Age + "";
-                lblFarmSize3.Text = CurrentFarmer.GetFarmSize().ToString();
-                lblNumOfAnimals3.Text = CurrentFarmer.numOfAnimals().ToString();
-
-                if (AllFarmers[2].Gender == "Male")
-                {
-                    loadMaleAvatar(AllFarmers[2].FarmerStyle.OutfitType, AllFarmers[2].FarmerStyle.Eyecolour, AllFarmers[2].FarmerStyle.HairColour, AllFarmers[2].FarmerStyle.SkinColour, pbxBodyThree, pbxOutfitThree, pbxEyesThree, pbxHairThree);
-                }
-                else if (AllFarmers[2].Gender == "Female")
-                {
-                    loadFemaleAvatar(AllFarmers[2].FarmerStyle.OutfitType, AllFarmers[2].FarmerStyle.Eyecolour, AllFarmers[2].FarmerStyle.HairColour, AllFarmers[2].FarmerStyle.SkinColour, pbxBodyThree, pbxOutfitThree, pbxEyesThree, pbxHairThree);
-                }
+                CharacterLoad(pbxNewFarmer3, pbxFarmer3, lblFarmerName3, lblFarmerGender3, lblFarmerAge3, lblNumOfAnimals3, lblFarmSize3, 2, pbxBodyThree, pbxOutfitThree, pbxEyesThree, pbxHairThree);
             }
             if (AllFarmers[3] != null)
             {
-                pbxNewFarmer4.Visible = false;
-                pbxFarmer4.Visible = true;
-                CurrentFarmer = (Farmer)AllFarmers[3];
-                lblFarmerName4.Text = CurrentFarmer.Name;
-                lblFarmerGender4.Text = CurrentFarmer.Gender;
-                lblFarmerAge4.Text = CurrentFarmer.Age + "";
-                lblFarmSize4.Text = CurrentFarmer.GetFarmSize().ToString();
-                lblNumOfAnimals4.Text = CurrentFarmer.numOfAnimals().ToString();
-
-                if (AllFarmers[3].Gender == "Male")
-                {
-                    loadMaleAvatar(AllFarmers[3].FarmerStyle.OutfitType, AllFarmers[3].FarmerStyle.Eyecolour, AllFarmers[3].FarmerStyle.HairColour, AllFarmers[3].FarmerStyle.SkinColour, pbxBodyFour, pbxOutfitFour, pbxEyesFour, pbxHairFour);
-                }
-                else if (AllFarmers[3].Gender == "Female")
-                {
-                    loadFemaleAvatar(AllFarmers[3].FarmerStyle.OutfitType, AllFarmers[3].FarmerStyle.Eyecolour, AllFarmers[3].FarmerStyle.HairColour, AllFarmers[3].FarmerStyle.SkinColour, pbxBodyFour, pbxOutfitFour, pbxEyesFour, pbxHairFour);
-                }
+                CharacterLoad(pbxNewFarmer4, pbxFarmer4, lblFarmerName4, lblFarmerGender4, lblFarmerAge4, lblNumOfAnimals4, lblFarmSize4, 3, pbxBodyFour, pbxOutfitFour, pbxEyesFour, pbxHairFour);
             }
             if (AllFarmers[4] != null)
             {
-                pbxNewFarmer5.Visible = false;
-                pbxFarmer5.Visible = true;
-                CurrentFarmer = (Farmer)AllFarmers[4];
-                lblFarmerName5.Text = CurrentFarmer.Name;
-                lblFarmerGender5.Text = CurrentFarmer.Gender;
-                lblFarmerAge5.Text = CurrentFarmer.Age + "";
-                lblFarmSize5.Text = CurrentFarmer.GetFarmSize().ToString();
-                lblNumOfAnimals5.Text = CurrentFarmer.numOfAnimals().ToString();
-
-                if (AllFarmers[4].Gender == "Male")
-                {
-                    loadMaleAvatar(AllFarmers[4].FarmerStyle.OutfitType, AllFarmers[4].FarmerStyle.Eyecolour, AllFarmers[4].FarmerStyle.HairColour, AllFarmers[4].FarmerStyle.SkinColour, pbxBodyFive, pbxOutfitFive, pbxEyesFive, pbxHairFive);
-                }
-                else if (AllFarmers[4].Gender == "Female")
-                {
-                    loadFemaleAvatar(AllFarmers[4].FarmerStyle.OutfitType, AllFarmers[4].FarmerStyle.Eyecolour, AllFarmers[4].FarmerStyle.HairColour, AllFarmers[4].FarmerStyle.SkinColour, pbxBodyFive, pbxOutfitFive, pbxEyesFive, pbxHairFive);
-                }
+                CharacterLoad(pbxNewFarmer5, pbxFarmer5, lblFarmerName5, lblFarmerGender5, lblFarmerAge5, lblNumOfAnimals5, lblFarmSize5, 4, pbxBodyFive, pbxOutfitFive, pbxEyesFive, pbxHairFive);
             }
 
-            pbxFarmer1.Controls.Add(lblFarmerName1);
-            pbxFarmer1.Controls.Add(lblFarmerGender1);
-            pbxFarmer1.Controls.Add(lblFarmerAge1);
-            pbxFarmer1.Controls.Add(lblNumOfAnimals1);
-            pbxFarmer1.Controls.Add(lblFarmSize1);
-            pbxFarmer1.Controls.Add(pbxCross1);
-
-            #region avatars
+            #region Avatars
             pbxFarmer1.Controls.Add(pbxOne);
             pbxOne.Location = new Point(14, 16);
             pbxBodyOne.Location = new Point(-4, 0);
@@ -213,6 +126,14 @@ namespace FarmManagement
             pbxOutfitFive.Location = new Point(0, 70);
             #endregion
 
+            #region FarmerLabels
+            pbxFarmer1.Controls.Add(lblFarmerName1);
+            pbxFarmer1.Controls.Add(lblFarmerGender1);
+            pbxFarmer1.Controls.Add(lblFarmerAge1);
+            pbxFarmer1.Controls.Add(lblNumOfAnimals1);
+            pbxFarmer1.Controls.Add(lblFarmSize1);
+            pbxFarmer1.Controls.Add(pbxCross1);
+
             lblFarmerName1.Location = new Point(240, 13);
             lblFarmerGender1.Location = new Point(240, 48);
             lblFarmerAge1.Location = new Point(240, 80);
@@ -224,7 +145,7 @@ namespace FarmManagement
             pbxFarmer2.Controls.Add(lblFarmerGender2);
             pbxFarmer2.Controls.Add(lblFarmerAge2);
             pbxFarmer2.Controls.Add(lblNumOfAnimals2);
-            pbxFarmer2.Controls.Add(l);
+            pbxFarmer2.Controls.Add(lblFarmSize2);
             pbxFarmer2.Controls.Add(pbxCross2);
 
 
@@ -232,7 +153,7 @@ namespace FarmManagement
             lblFarmerGender2.Location = new Point(240, 48);
             lblFarmerAge2.Location = new Point(240, 80);
             lblNumOfAnimals2.Location = new Point(470, 70);
-            l.Location = new Point(470, 30);
+            lblFarmSize2.Location = new Point(470, 30);
             pbxCross2.Location = new Point(508, 5);
 
             pbxFarmer3.Controls.Add(lblFarmerName3);
@@ -278,10 +199,124 @@ namespace FarmManagement
             lblNumOfAnimals5.Location = new Point(470, 70);
             lblFarmSize5.Location = new Point(470, 30);
             pbxCross5.Location = new Point(508, 5);
-
+            #endregion
         }
 
-        #region CharacterLoad
+        #region NewFarmer_Click
+        private void pbxNewFarmer1_Click(object sender, EventArgs e)
+        {
+            navFormWithoutParam.Invoke();
+        }
+
+        private void pbxNewFarmer2_Click(object sender, EventArgs e)
+        {
+            navFormWithoutParam.Invoke();
+        }
+
+        private void pbxNewFarmer3_Click(object sender, EventArgs e)
+        {
+            navFormWithoutParam.Invoke();
+        }
+
+        private void pbxNewFarmer4_Click(object sender, EventArgs e)
+        {
+            navFormWithoutParam.Invoke();
+        }
+
+        private void pbxNewFarmer5_Click(object sender, EventArgs e)
+        {
+            navFormWithoutParam.Invoke();
+        }
+        #endregion
+
+        #region ExistingFarmer_Click
+        private void pbxFarmer1_Click(object sender, EventArgs e)
+        {
+            navFormwithParam.Invoke((Farmer)AllFarmers[0]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
+        }
+
+        private void pbxFarmer2_Click(object sender, EventArgs e)
+        {
+            navFormwithParam.Invoke((Farmer)AllFarmers[1]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
+        }
+
+        private void pbxFarmer3_Click(object sender, EventArgs e)
+        {
+            navFormwithParam.Invoke((Farmer)AllFarmers[2]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
+        }
+
+        private void pbxFarmer4_Click(object sender, EventArgs e)
+        {
+
+            navFormwithParam.Invoke((Farmer)AllFarmers[3]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
+        }
+
+        private void pbxFarmer5_Click(object sender, EventArgs e)
+        {
+            navFormwithParam.Invoke((Farmer)AllFarmers[4]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
+        }
+        #endregion
+
+        #region Delete_Click
+        private void pbxCross1_Click(object sender, EventArgs e)
+        {
+            deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
+            deleteFarmer.Invoke((Farmer)AllFarmers[0], lblFarmerName1.Text);
+        }
+
+        private void pbxCross2_Click(object sender, EventArgs e)
+        {
+            deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
+            deleteFarmer.Invoke((Farmer)AllFarmers[1], lblFarmerName2.Text);
+        }
+
+        private void pbxCross3_Click(object sender, EventArgs e)
+        {
+            deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
+            deleteFarmer.Invoke((Farmer)AllFarmers[2], lblFarmerName3.Text);
+        }
+
+        private void pbxCross4_Click(object sender, EventArgs e)
+        {
+            deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
+            deleteFarmer.Invoke((Farmer)AllFarmers[3], lblFarmerName4.Text);
+        }
+
+        private void pbxCross5_Click(object sender, EventArgs e)
+        {
+            deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
+            deleteFarmer.Invoke((Farmer)AllFarmers[4], lblFarmerName5.Text);
+        }
+        #endregion
+
+        #region Methods
+        //Loading existing characters
+        private void CharacterLoad(PictureBox newFarmer, PictureBox farmer, Label farmerName, Label farmerGender, Label farmerAge, Label numOfAnimals, Label farmSize, int index, PictureBox pbxBody, PictureBox pbxOutfit, PictureBox pbxEyes, PictureBox pbxHair)
+        {
+            newFarmer.Visible = false;
+            farmer.Visible = true;
+            CurrentFarmer = (Farmer)AllFarmers[index];
+            farmerName.Text = CurrentFarmer.Name;
+            farmerGender.Text = CurrentFarmer.Gender;
+            farmerAge.Text = CurrentFarmer.Age + "";
+            numOfAnimals.Text = CurrentFarmer.numOfAnimals().ToString();
+            farmSize.Text = CurrentFarmer.GetFarmSize().ToString();
+
+            if (AllFarmers[index].Gender == "Male")
+            {
+                loadMaleAvatar(AllFarmers[index].FarmerStyle.OutfitType, AllFarmers[index].FarmerStyle.Eyecolour, AllFarmers[index].FarmerStyle.HairColour, AllFarmers[index].FarmerStyle.SkinColour, pbxBody, pbxOutfit, pbxEyes, pbxHair);
+            }
+            else if (AllFarmers[index].Gender == "Female")
+            {
+                loadFemaleAvatar(AllFarmers[index].FarmerStyle.OutfitType, AllFarmers[index].FarmerStyle.Eyecolour, AllFarmers[index].FarmerStyle.HairColour, AllFarmers[index].FarmerStyle.SkinColour, pbxBody, pbxOutfit, pbxEyes, pbxHair);
+            }
+        }
+        //Loading Character avatars
         public void loadMaleAvatar(string outfit, string eyes, string hair, string skin, PictureBox pbxBody, PictureBox pbxOutfit, PictureBox pbxEyes, PictureBox pbxHair)
         {
             pbxEyes.Location = new Point(4, 33);
@@ -443,96 +478,6 @@ namespace FarmManagement
                 pbxOutfit.Image = newBody;
             }
         }
-        #endregion
-
-        #region NewFarmer_Click
-        private void pbxNewFarmer1_Click(object sender, EventArgs e)
-        {
-            navFormWithoutParam.Invoke();
-        }
-
-        private void pbxNewFarmer2_Click(object sender, EventArgs e)
-        {
-            navFormWithoutParam.Invoke();
-        }
-
-        private void pbxNewFarmer3_Click(object sender, EventArgs e)
-        {
-            navFormWithoutParam.Invoke();
-        }
-
-        private void pbxNewFarmer4_Click(object sender, EventArgs e)
-        {
-            navFormWithoutParam.Invoke();
-        }
-
-        private void pbxNewFarmer5_Click(object sender, EventArgs e)
-        {
-            navFormWithoutParam.Invoke();
-        }
-        #endregion
-
-        #region ExistingFarmer_Click
-        private void pbxFarmer1_Click(object sender, EventArgs e)
-        {
-            navFormwithParam.Invoke((Farmer)AllFarmers[0]);
-            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
-        }
-
-        private void pbxFarmer2_Click(object sender, EventArgs e)
-        {
-            navFormwithParam.Invoke((Farmer)AllFarmers[1]);
-            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
-        }
-
-        private void pbxFarmer3_Click(object sender, EventArgs e)
-        {
-            navFormwithParam.Invoke((Farmer)AllFarmers[2]);
-            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
-        }
-
-        private void pbxFarmer4_Click(object sender, EventArgs e)
-        {
-
-            navFormwithParam.Invoke((Farmer)AllFarmers[3]);
-            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
-        }
-
-        private void pbxFarmer5_Click(object sender, EventArgs e)
-        {
-            navFormwithParam.Invoke((Farmer)AllFarmers[4]);
-            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
-        }
-        #endregion
-
-        #region Delete_Click
-        private void pbxCross1_Click(object sender, EventArgs e)
-        {
-            deleteFarmer.Invoke((Farmer)AllFarmers[0], lblFarmerName1.Text);
-        }
-
-        private void pbxCross2_Click(object sender, EventArgs e)
-        {
-            deleteFarmer.Invoke((Farmer)AllFarmers[1], lblFarmerName2.Text);
-        }
-
-        private void pbxCross3_Click(object sender, EventArgs e)
-        {
-            deleteFarmer.Invoke((Farmer)AllFarmers[2], lblFarmerName3.Text);
-        }
-
-        private void pbxCross4_Click(object sender, EventArgs e)
-        {
-            deleteFarmer.Invoke((Farmer)AllFarmers[3], lblFarmerName4.Text);
-        }
-
-        private void pbxCross5_Click(object sender, EventArgs e)
-        {
-            deleteFarmer.Invoke((Farmer)AllFarmers[4], lblFarmerName5.Text);
-        }
-        #endregion
-
-        #region Methods
 
         //Delete a farmer that already exists
         private void DeleteFarmer(Farmer CurrentFarmer, string Name)
@@ -550,6 +495,7 @@ namespace FarmManagement
 
             }
         }
+
         //Method for the event to go to a specific form if a farmer that exists is selected
         private void NavResumeOrFarmView(Farmer CurrentFarmer)
         {
@@ -578,6 +524,7 @@ namespace FarmManagement
                 this.Close();
             }
         }
+
         //Method to go to farmer creation when a new farmer is clicked
         private void NavFarmerCreation()
         {

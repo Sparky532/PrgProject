@@ -37,7 +37,7 @@
             this.lblFarmerAge2 = new System.Windows.Forms.Label();
             this.lblNumOfAnimals2 = new System.Windows.Forms.Label();
             this.lblFarmerGender2 = new System.Windows.Forms.Label();
-            this.l = new System.Windows.Forms.Label();
+            this.lblFarmSize2 = new System.Windows.Forms.Label();
             this.lblFarmerName2 = new System.Windows.Forms.Label();
             this.lblFarmerAge3 = new System.Windows.Forms.Label();
             this.lblNumOfAnimals3 = new System.Windows.Forms.Label();
@@ -232,17 +232,17 @@
             this.lblFarmerGender2.TabIndex = 52;
             this.lblFarmerGender2.Text = "Gender";
             // 
-            // l
+            // lblFarmSize2
             // 
-            this.l.AutoSize = true;
-            this.l.BackColor = System.Drawing.Color.Transparent;
-            this.l.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l.ForeColor = System.Drawing.Color.DarkGreen;
-            this.l.Location = new System.Drawing.Point(496, 173);
-            this.l.Name = "l";
-            this.l.Size = new System.Drawing.Size(18, 20);
-            this.l.TabIndex = 51;
-            this.l.Text = "0";
+            this.lblFarmSize2.AutoSize = true;
+            this.lblFarmSize2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFarmSize2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFarmSize2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFarmSize2.Location = new System.Drawing.Point(496, 173);
+            this.lblFarmSize2.Name = "lblFarmSize2";
+            this.lblFarmSize2.Size = new System.Drawing.Size(18, 20);
+            this.lblFarmSize2.TabIndex = 51;
+            this.lblFarmSize2.Text = "0";
             // 
             // lblFarmerName2
             // 
@@ -971,7 +971,7 @@
             this.Controls.Add(this.lblFarmerAge2);
             this.Controls.Add(this.lblNumOfAnimals2);
             this.Controls.Add(this.lblFarmerGender2);
-            this.Controls.Add(this.l);
+            this.Controls.Add(this.lblFarmSize2);
             this.Controls.Add(this.lblFarmerName2);
             this.Controls.Add(this.lblFarmerAge1);
             this.Controls.Add(this.lblNumOfAnimals1);
@@ -1059,7 +1059,7 @@
         private System.Windows.Forms.Label lblFarmerAge2;
         private System.Windows.Forms.Label lblNumOfAnimals2;
         private System.Windows.Forms.Label lblFarmerGender2;
-        private System.Windows.Forms.Label l;
+        private System.Windows.Forms.Label lblFarmSize2;
         private System.Windows.Forms.Label lblFarmerName2;
         private System.Windows.Forms.Label lblFarmerAge3;
         private System.Windows.Forms.Label lblNumOfAnimals3;
