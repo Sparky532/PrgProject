@@ -17,29 +17,24 @@ namespace FarmManagement
         Dictionary<string, Bitmap> hairs = new Dictionary<string, Bitmap>();
         Dictionary<string, Bitmap> eyes = new Dictionary<string, Bitmap>();
         Dictionary<string, Bitmap> outfits = new Dictionary<string, Bitmap>();
-        int[] indexes = new int[]{0,0,0,0};
+        int[] indexes = new int[] { 0, 0, 0, 0 };
+
         public Farmer_Creation()
         {
             InitializeComponent();
-            cmbGender.SelectedIndex = 0;
-            
         }
 
-        //public Farmer_Creation(int id)
-        //{
-        //    InitializeComponent();
-        //    cmbGender.SelectedIndex = 0;
-
-        //}
-
+        //Loading characters
         void loadFemales()
         {
             eyes.Clear();
             skins.Clear();
             hairs.Clear();
             outfits.Clear();
+
             pbxEyes.Location = new Point(0, 103);
             pbxHairs.Location = new Point(0, -10);
+
             eyes.Add("Green", Properties.Resources.GirlGreenEyes);
             eyes.Add("Blue", Properties.Resources.GirlBlueEyes);
             eyes.Add("Brown", Properties.Resources.GirlBrownEyes);
@@ -64,8 +59,10 @@ namespace FarmManagement
             skins.Clear();
             hairs.Clear();
             outfits.Clear();
+
             pbxEyes.Location = new Point(10, 105);
             pbxHairs.Location = new Point(0, -17);
+
             eyes.Add("Green", Properties.Resources.GirlGreenEyes);
             eyes.Add("Blue", Properties.Resources.GirlBlueEyes);
             eyes.Add("Brown", Properties.Resources.GirlBrownEyes);
@@ -84,6 +81,7 @@ namespace FarmManagement
             outfits.Add("Four", Properties.Resources.BoyOutfit4);
         }
 
+        //Loading the default character
         public void loadDefaults()
         {
             KeyValuePair<string, Bitmap> eye = eyes.ElementAt(0);
@@ -102,35 +100,26 @@ namespace FarmManagement
             txtOutfit.Text = outfit.Key;
             pbxOutfits.Image = outfit.Value;
 
-            //this.BackColor = Color.FromArgb(36, 41, 45);
-
             pbxBody.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxOutfits.SizeMode = PictureBoxSizeMode.Zoom;
             pbxEyes.SizeMode = PictureBoxSizeMode.Zoom;
             pbxHairs.SizeMode = PictureBoxSizeMode.Zoom;
 
             pbxBackground.Controls.Add(pbxBody);
-            
 
             pbxBody.Controls.Add(pbxOutfits);
             pbxOutfits.Location = new Point(0, 196);
-            pbxOutfits.BackColor = Color.Transparent;
 
             pbxBody.Controls.Add(pbxEyes);
-            pbxEyes.BackColor = Color.Transparent;
-
             pbxHairs.Controls.Add(pbxEyes);
-
             pbxBody.Controls.Add(pbxHairs);
-            pbxHairs.BackColor = Color.Transparent;
         }
 
         private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbGender.SelectedIndex==0)
+            if (cmbGender.SelectedIndex == 0)
             {
                 loadFemales();
-
                 pbxBody.Location = new Point(36, 35);
                 loadDefaults();
             }
@@ -144,23 +133,14 @@ namespace FarmManagement
 
         private void Farmer_Creation_Load(object sender, EventArgs e)
         {
+            cmbGender.SelectedIndex = 0;
             pbxBackground.Controls.Add(pbxBack);
             pbxBack.Location = new Point(0, 0);
         }
 
-        private void Farmer_Creation_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        #region Previous_click
         private void pbxPrevious1_Click(object sender, EventArgs e)
         {
-
             try
             {
                 indexes[0]--;
@@ -231,7 +211,9 @@ namespace FarmManagement
                 pbxOutfits.Image = outfit.Value;
             }
         }
+        #endregion
 
+        #region Next_click
         private void pbxNext1_Click(object sender, EventArgs e)
         {
             try
@@ -346,6 +328,7 @@ namespace FarmManagement
                 MessageBox.Show("Age has to be a number");
             }
         }
+        #endregion
 
         private void pbxBack_Click(object sender, EventArgs e)
         {

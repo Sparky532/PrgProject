@@ -33,6 +33,7 @@ namespace FarmManagement
         {
             InitializeComponent();
         }
+
         private void Farmer_Selection_Load(object sender, EventArgs e)
         {
             navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
@@ -316,6 +317,7 @@ namespace FarmManagement
                 loadFemaleAvatar(AllFarmers[index].FarmerStyle.OutfitType, AllFarmers[index].FarmerStyle.Eyecolour, AllFarmers[index].FarmerStyle.HairColour, AllFarmers[index].FarmerStyle.SkinColour, pbxBody, pbxOutfit, pbxEyes, pbxHair);
             }
         }
+       
         //Loading Character avatars
         public void loadMaleAvatar(string outfit, string eyes, string hair, string skin, PictureBox pbxBody, PictureBox pbxOutfit, PictureBox pbxEyes, PictureBox pbxHair)
         {

@@ -267,6 +267,7 @@
             // 
             // pbxHairs
             // 
+            this.pbxHairs.BackColor = System.Drawing.Color.Transparent;
             this.pbxHairs.Location = new System.Drawing.Point(36, 35);
             this.pbxHairs.Name = "pbxHairs";
             this.pbxHairs.Size = new System.Drawing.Size(343, 221);
@@ -275,6 +276,7 @@
             // 
             // pbxEyes
             // 
+            this.pbxEyes.BackColor = System.Drawing.Color.Transparent;
             this.pbxEyes.Location = new System.Drawing.Point(36, 189);
             this.pbxEyes.Name = "pbxEyes";
             this.pbxEyes.Size = new System.Drawing.Size(343, 97);
@@ -283,6 +285,7 @@
             // 
             // pbxOutfits
             // 
+            this.pbxOutfits.BackColor = System.Drawing.Color.Transparent;
             this.pbxOutfits.Location = new System.Drawing.Point(36, 292);
             this.pbxOutfits.Name = "pbxOutfits";
             this.pbxOutfits.Size = new System.Drawing.Size(343, 365);
@@ -369,7 +372,6 @@
             this.Name = "Farmer_Creation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmer_Creation";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Farmer_Creation_FormClosing);
             this.Load += new System.EventHandler(this.Farmer_Creation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious4)).EndInit();
