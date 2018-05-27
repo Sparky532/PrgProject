@@ -19,6 +19,12 @@ namespace FarmManagement
         Farmer[] AllFarmers = new Farmer[5];
         Farmer farmer = new Farmer();
         Farmer CurrentFarmer = new Farmer();
+        public delegate void NavFormsWithParam(Farmer currentFarmer);
+        public event NavFormsWithParam navFormwithParam;
+
+        public delegate void NavFormWithoutParam();
+        public event NavFormWithoutParam navFormWithoutParam;
+
         public Farmer_Selection()
         {
             InitializeComponent();
@@ -44,6 +50,7 @@ namespace FarmManagement
             pbxNewFarmer4.Cursor = Cursors.Hand;
             pbxNewFarmer5.Cursor = Cursors.Hand;
 
+            navFormWithoutParam += new NavFormWithoutParam(NavFarmerCreation);
 
             AllFarmers = farmer.FarmerSelection();
 
@@ -452,193 +459,62 @@ namespace FarmManagement
 
         private void pbxNewFarmer1_Click(object sender, EventArgs e)
         {
-            Farmer_Creation form = new Farmer_Creation();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
+            navFormWithoutParam.Invoke();          
         }
 
         private void pbxNewFarmer2_Click(object sender, EventArgs e)
         {
-            Farmer_Creation form = new Farmer_Creation();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
+            navFormWithoutParam.Invoke();           
         }
 
         private void pbxNewFarmer3_Click(object sender, EventArgs e)
         {
-            Farmer_Creation form = new Farmer_Creation();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
+            navFormWithoutParam.Invoke();           
         }
 
         private void pbxNewFarmer4_Click(object sender, EventArgs e)
         {
-            Farmer_Creation form = new Farmer_Creation();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
+            navFormWithoutParam.Invoke();           
         }
 
         private void pbxNewFarmer5_Click(object sender, EventArgs e)
         {
-            Farmer_Creation form = new Farmer_Creation();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
+            navFormWithoutParam.Invoke();           
         }
 
         private void pbxFarmer1_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[0];
-            if (CurrentFarmer.GetFarmSize() > 0)
-            {
-                if (CurrentFarmer.numOfAnimals() > 0)
-                {
-                    Farm_View form = new Farm_View(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-            }
-            else
-            {
-                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
-            }
-
-            //MessageBox.Show("Load farmer One");
+            navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
+            navFormwithParam.Invoke((Farmer)AllFarmers[0]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);          
         }
 
         private void pbxFarmer2_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[1];
-            if (CurrentFarmer.GetFarmSize() > 0)
-            {
-                if (CurrentFarmer.numOfAnimals() > 0)
-                {
-                    Farm_View form = new Farm_View(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-            }
-            else
-            {
-                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
-            }
-            // MessageBox.Show("Load farmer Two");
+            navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
+            navFormwithParam.Invoke((Farmer)AllFarmers[1]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);          
         }
 
         private void pbxFarmer3_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[2];
-            if (CurrentFarmer.GetFarmSize() > 0)
-            {
-                if (CurrentFarmer.numOfAnimals() > 0)
-                {
-                    Farm_View form = new Farm_View(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-            }
-            else
-            {
-                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
-            }
-            //  MessageBox.Show("Load farmer Three");
+            navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
+            navFormwithParam.Invoke((Farmer)AllFarmers[2]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);           
         }
 
         private void pbxFarmer4_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[3];
-            if (CurrentFarmer.GetFarmSize() > 0)
-            {
-                if (CurrentFarmer.numOfAnimals() > 0)
-                {
-                    Farm_View form = new Farm_View(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-            }
-            else
-            {
-                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
-            }
-            //  MessageBox.Show("Load farmer Four");
+            navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
+            navFormwithParam.Invoke((Farmer)AllFarmers[3]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);           
         }
 
         private void pbxFarmer5_Click(object sender, EventArgs e)
         {
-            CurrentFarmer = (Farmer)AllFarmers[4];
-            if (CurrentFarmer.GetFarmSize() > 0)
-            {
-                if (CurrentFarmer.numOfAnimals() > 0)
-                {
-                    Farm_View form = new Farm_View(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-                }
-            }
-            else
-            {
-                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
-            }
-            //  MessageBox.Show("Load farmer Five");
+            navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
+            navFormwithParam.Invoke((Farmer)AllFarmers[4]);
+            navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);            
         }
 
         private void pbxCross1_Click(object sender, EventArgs e)
@@ -651,14 +527,8 @@ namespace FarmManagement
             DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName1.Text +"?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                CurrentFarmer = (Farmer)AllFarmers[0];
-                int succes = CurrentFarmer.DeleteFarmer();
-
-                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
-
-                RefreshThread.Start();
-
-                this.Close();
+                navFormwithParam += new NavFormsWithParam(DeleteFarmer);
+                navFormwithParam.Invoke((Farmer)AllFarmers[0]);               
             }
         }
 
@@ -667,14 +537,8 @@ namespace FarmManagement
             DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName2.Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                CurrentFarmer = (Farmer)AllFarmers[1];
-                int succes = CurrentFarmer.DeleteFarmer();
-
-                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
-
-                RefreshThread.Start();
-
-                this.Close();
+                navFormwithParam += new NavFormsWithParam(DeleteFarmer);
+                navFormwithParam.Invoke((Farmer)AllFarmers[1]);               
             }
         }
 
@@ -683,14 +547,8 @@ namespace FarmManagement
             DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName3.Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                CurrentFarmer = (Farmer)AllFarmers[2];
-                int succes = CurrentFarmer.DeleteFarmer();
-
-                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
-
-                RefreshThread.Start();
-
-                this.Close();
+                navFormwithParam += new NavFormsWithParam(DeleteFarmer);
+                navFormwithParam.Invoke((Farmer)AllFarmers[2]);               
             }
 
         }
@@ -700,14 +558,8 @@ namespace FarmManagement
             DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName4.Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                CurrentFarmer = (Farmer)AllFarmers[3];
-                int succes = CurrentFarmer.DeleteFarmer();
-
-                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
-
-                RefreshThread.Start();
-
-                this.Close();
+                navFormwithParam += new NavFormsWithParam(DeleteFarmer);
+                navFormwithParam.Invoke((Farmer)AllFarmers[3]);                
             }
 
         }
@@ -717,15 +569,57 @@ namespace FarmManagement
             DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + lblFarmerName5.Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                CurrentFarmer = (Farmer)AllFarmers[4];
-                int succes = CurrentFarmer.DeleteFarmer();
-
-                Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
-
-                RefreshThread.Start();
-
+                navFormwithParam += new NavFormsWithParam(DeleteFarmer);
+                navFormwithParam.Invoke((Farmer)AllFarmers[4]);               
+            }
+        }
+        //Method to go to farmer creation when a new farmer is clicked
+        private void NavFarmerCreation()
+        {
+            Farmer_Creation form = new Farmer_Creation();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+        //MEthod for the event to go to a specific form if a farmer that exists is selected
+        private void NavResumeOrFarmView(Farmer CurrentFarmer)
+        {          
+            if (CurrentFarmer.GetFarmSize() > 0)
+            {
+                if (CurrentFarmer.numOfAnimals() > 0)
+                {
+                    Farm_View form = new Farm_View(CurrentFarmer.ID);
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+                }
+            }
+            else
+            {
+                Farm_Creation form = new Farm_Creation(CurrentFarmer.ID);
+                this.Hide();
+                form.ShowDialog();
                 this.Close();
             }
+        }
+        //Delete a farmer that already exists
+        private void DeleteFarmer(Farmer CurrentFarmer)
+        {
+            //CurrentFarmer = (Farmer)AllFarmers[1];
+            int succes = CurrentFarmer.DeleteFarmer();
+
+            Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
+
+            RefreshThread.Start();
+
+            this.Close();
         }
     }
 }
