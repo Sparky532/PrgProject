@@ -66,13 +66,15 @@ namespace FarmManagement
             pbxPanel.Controls.Add(pbxNext);
             pbxPanel.Controls.Add(pbxAddNew);
             pbxPanel.Controls.Add(pbxChange);
+            pbxPanel.Controls.Add(pbxRemove);
 
             pbxPrevious.Location = new Point(75, 100);
             pbxNext1.Location = new Point(228, 100);
             pbxAdd.Location = new Point(104, 150);
             pbxNext.Location = new Point(443, 150);
             pbxAddNew.Location = new Point(443, 30);
-            pbxChange.Location = new Point(450, 60);
+            pbxChange.Location = new Point(355, 60);
+            pbxRemove.Location = new Point(560, 30);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,7 +82,7 @@ namespace FarmManagement
             //Make the change part visible
             txtSelectedAnimalAmount.Visible = true;
             pbxChange.Visible = true;
-            btnRemove.Visible = true;
+            pbxRemove.Visible = true;
             pbxAddNew.Visible = false;
 
             //Change the amount of specific species
@@ -98,26 +100,18 @@ namespace FarmManagement
 
         private void btnChangeValues_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
         }
 
         private void cbxAnimals_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-
-
-
+        { 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void cbxAnimals_SelectedValueChanged(object sender, EventArgs e)
@@ -149,7 +143,6 @@ namespace FarmManagement
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void pbxNext_Click(object sender, EventArgs e)
@@ -208,7 +201,7 @@ namespace FarmManagement
             //Make the change part not visible
             txtSelectedAnimalAmount.Visible = false;
             pbxChange.Visible = false;
-            btnRemove.Visible = false;
+            pbxRemove.Visible = false;
             pbxAddNew.Visible = true;
 
             lstAnimalsSelected.DataSource = bs1;
@@ -290,7 +283,7 @@ namespace FarmManagement
         {
             txtSelectedAnimalAmount.Visible = false;
             pbxChange.Visible = false;
-            btnRemove.Visible = false;
+            pbxRemove.Visible = false;
             pbxAddNew.Visible = true;
             try
             {
@@ -348,40 +341,22 @@ namespace FarmManagement
 
         private void cbxAnimals_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
         }
 
         private void Animal_Selection_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Environment.Exit(0);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            txtSelectedAnimalAmount.Visible = false;
-            pbxChange.Visible = false;
-            btnRemove.Visible = false;
-            pbxAddNew.Visible = true;
-            AnimalsSelected assd = (AnimalsSelected)lstAnimalsSelected.SelectedItem;
-            animalsSelected.Remove(assd);
-            //Refresh the List
-            quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
-            bs1.ResetBindings(false);
-            //Remove option of animal already added
-            animalSpecies.Add(assd.Animaal);
-
-            //Refresh the combo box
-            quickSortSpecies(animalSpecies, 0, animalSpecies.Count-1);
-            bs2.ResetBindings(false);
-
-            txtAnimalAmount.Text = "0";
+           
         }
 
         private void pbxAnimal_Click(object sender, EventArgs e)
         {
             txtSelectedAnimalAmount.Visible = false;
             pbxChange.Visible = false;
-            btnRemove.Visible = false;
+            pbxRemove.Visible = false;
             pbxAddNew.Visible = true;
         }
 
@@ -458,6 +433,25 @@ namespace FarmManagement
             return (i + 1);
         }
 
+        private void pbxRemove_Click(object sender, EventArgs e)
+        {
+            txtSelectedAnimalAmount.Visible = false;
+            pbxChange.Visible = false;
+            pbxRemove.Visible = false;
+            pbxAddNew.Visible = true;
+            AnimalsSelected assd = (AnimalsSelected)lstAnimalsSelected.SelectedItem;
+            animalsSelected.Remove(assd);
+            //Refresh the List
+            quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
+            bs1.ResetBindings(false);
+            //Remove option of animal already added
+            animalSpecies.Add(assd.Animaal);
 
+            //Refresh the combo box
+            quickSortSpecies(animalSpecies, 0, animalSpecies.Count - 1);
+            bs2.ResetBindings(false);
+
+            txtAnimalAmount.Text = "0";
+        }
     }
 }

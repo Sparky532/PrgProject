@@ -33,23 +33,25 @@
             this.cbxAnimals = new System.Windows.Forms.ComboBox();
             this.lstAnimalsSelected = new System.Windows.Forms.ListBox();
             this.txtSelectedAnimalAmount = new System.Windows.Forms.TextBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.pbxRemove = new System.Windows.Forms.PictureBox();
+            this.pbxPrevious = new System.Windows.Forms.PictureBox();
             this.pbxAddNew = new System.Windows.Forms.PictureBox();
             this.pbxChange = new System.Windows.Forms.PictureBox();
             this.pbxAdd = new System.Windows.Forms.PictureBox();
             this.pbxNext = new System.Windows.Forms.PictureBox();
             this.pbxNext1 = new System.Windows.Forms.PictureBox();
-            this.pbxPrevious = new System.Windows.Forms.PictureBox();
             this.pbxAnimal = new System.Windows.Forms.PictureBox();
             this.pbxFrame = new System.Windows.Forms.PictureBox();
             this.pbxPanel = new System.Windows.Forms.PictureBox();
             this.pbxBackground = new System.Windows.Forms.PictureBox();
-            this.btnRemove = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemove)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNext1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAnimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPanel)).BeginInit();
@@ -99,7 +101,7 @@
             // 
             this.txtSelectedAnimalAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSelectedAnimalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtSelectedAnimalAmount.Location = new System.Drawing.Point(500, 326);
+            this.txtSelectedAnimalAmount.Location = new System.Drawing.Point(406, 326);
             this.txtSelectedAnimalAmount.Name = "txtSelectedAnimalAmount";
             this.txtSelectedAnimalAmount.Size = new System.Drawing.Size(70, 45);
             this.txtSelectedAnimalAmount.TabIndex = 26;
@@ -107,12 +109,50 @@
             this.txtSelectedAnimalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSelectedAnimalAmount.Visible = false;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(650, 369);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 37;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Visible = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // pbxRemove
+            // 
+            this.pbxRemove.BackColor = System.Drawing.Color.Transparent;
+            this.pbxRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxRemove.Image = global::FarmManagement.Properties.Resources.RemoveButton;
+            this.pbxRemove.Location = new System.Drawing.Point(556, 369);
+            this.pbxRemove.Name = "pbxRemove";
+            this.pbxRemove.Size = new System.Drawing.Size(147, 80);
+            this.pbxRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxRemove.TabIndex = 38;
+            this.pbxRemove.TabStop = false;
+            this.pbxRemove.Visible = false;
+            this.pbxRemove.Click += new System.EventHandler(this.pbxRemove_Click);
+            // 
+            // pbxPrevious
+            // 
+            this.pbxPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.pbxPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxPrevious.Image = global::FarmManagement.Properties.Resources.Previous;
+            this.pbxPrevious.Location = new System.Drawing.Point(75, 401);
+            this.pbxPrevious.Name = "pbxPrevious";
+            this.pbxPrevious.Size = new System.Drawing.Size(64, 50);
+            this.pbxPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxPrevious.TabIndex = 32;
+            this.pbxPrevious.TabStop = false;
+            this.pbxPrevious.Click += new System.EventHandler(this.pbxPrevious_Click);
+            // 
             // pbxAddNew
             // 
             this.pbxAddNew.BackColor = System.Drawing.Color.Transparent;
             this.pbxAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxAddNew.Image = global::FarmManagement.Properties.Resources.AddNewSpeciesButton;
-            this.pbxAddNew.Location = new System.Drawing.Point(443, 341);
+            this.pbxAddNew.Location = new System.Drawing.Point(349, 341);
             this.pbxAddNew.Name = "pbxAddNew";
             this.pbxAddNew.Size = new System.Drawing.Size(201, 97);
             this.pbxAddNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,7 +165,7 @@
             this.pbxChange.BackColor = System.Drawing.Color.Transparent;
             this.pbxChange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxChange.Image = global::FarmManagement.Properties.Resources.ChangeButton;
-            this.pbxChange.Location = new System.Drawing.Point(450, 369);
+            this.pbxChange.Location = new System.Drawing.Point(356, 369);
             this.pbxChange.Name = "pbxChange";
             this.pbxChange.Size = new System.Drawing.Size(178, 80);
             this.pbxChange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,19 +212,6 @@
             this.pbxNext1.TabStop = false;
             this.pbxNext1.Click += new System.EventHandler(this.pbxNext1_Click);
             // 
-            // pbxPrevious
-            // 
-            this.pbxPrevious.BackColor = System.Drawing.Color.Transparent;
-            this.pbxPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxPrevious.Image = global::FarmManagement.Properties.Resources.Previous;
-            this.pbxPrevious.Location = new System.Drawing.Point(75, 401);
-            this.pbxPrevious.Name = "pbxPrevious";
-            this.pbxPrevious.Size = new System.Drawing.Size(64, 50);
-            this.pbxPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxPrevious.TabIndex = 32;
-            this.pbxPrevious.TabStop = false;
-            this.pbxPrevious.Click += new System.EventHandler(this.pbxPrevious_Click);
-            // 
             // pbxAnimal
             // 
             this.pbxAnimal.BackColor = System.Drawing.Color.Transparent;
@@ -230,24 +257,13 @@
             this.pbxBackground.TabIndex = 28;
             this.pbxBackground.TabStop = false;
             // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(650, 369);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnRemove.TabIndex = 37;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Visible = false;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
             // Animal_Selection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(754, 568);
-            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.pbxRemove);
             this.Controls.Add(this.pbxPrevious);
             this.Controls.Add(this.pbxAddNew);
             this.Controls.Add(this.pbxChange);
@@ -262,6 +278,7 @@
             this.Controls.Add(this.pbxFrame);
             this.Controls.Add(this.pbxPanel);
             this.Controls.Add(this.pbxBackground);
+            this.Controls.Add(this.btnRemove);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -270,12 +287,13 @@
             this.Text = "Animal_Selection";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Animal_Selection_FormClosing);
             this.Load += new System.EventHandler(this.Animal_Selection_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxRemove)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxChange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNext1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAnimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPanel)).EndInit();
@@ -302,5 +320,6 @@
         private System.Windows.Forms.PictureBox pbxChange;
         private System.Windows.Forms.PictureBox pbxAddNew;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.PictureBox pbxRemove;
     }
 }

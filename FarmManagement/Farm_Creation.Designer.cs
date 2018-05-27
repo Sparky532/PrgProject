@@ -78,8 +78,7 @@
             this.txtFarmName.TabIndex = 2;
             this.txtFarmName.Tag = "Farm Name";
             this.txtFarmName.Text = "Farm Name";
-            this.txtFarmName.Click += new System.EventHandler(this.txtFarmName_Click);
-            this.txtFarmName.TextChanged += new System.EventHandler(this.txtFarmName_TextChanged);
+            this.txtFarmName.Click += new System.EventHandler(this.txtFarmName_Click);       
             this.txtFarmName.Leave += new System.EventHandler(this.txtFarmName_Leave);
             // 
             // pbxLargeSize

@@ -27,5 +27,11 @@ namespace DAL
         int CountNumAnimals(ArrayList FarmerDetails);
 
         DataTable GetFarmSize(ArrayList FarmerDetails);
+
+        DataTable SelectFarmOrLocationOrAnimal(int id, string storedProcedureName);
+
+        DataTable SelectNewestFarmer();
+
+        int DeleteFarmer(int FarmerID, int StyleId);
     }
 }
