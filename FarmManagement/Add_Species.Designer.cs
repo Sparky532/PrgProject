@@ -239,6 +239,7 @@
             this.pbxSpeciesBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSpeciesBackground.TabIndex = 13;
             this.pbxSpeciesBackground.TabStop = false;
+            this.pbxSpeciesBackground.Click += new System.EventHandler(this.pbxSpeciesBackground_Click);
             // 
             // Add_Species
             // 

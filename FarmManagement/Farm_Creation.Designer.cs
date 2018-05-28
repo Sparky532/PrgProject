@@ -78,7 +78,7 @@
             this.txtFarmName.TabIndex = 2;
             this.txtFarmName.Tag = "Farm Name";
             this.txtFarmName.Text = "Farm Name";
-            this.txtFarmName.Click += new System.EventHandler(this.txtFarmName_Click);       
+            this.txtFarmName.Click += new System.EventHandler(this.txtFarmName_Click);
             this.txtFarmName.Leave += new System.EventHandler(this.txtFarmName_Leave);
             // 
             // pbxLargeSize
@@ -219,6 +219,7 @@
             this.pbxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxBackground.TabIndex = 10;
             this.pbxBackground.TabStop = false;
+            this.pbxBackground.Click += new System.EventHandler(this.pbxBackground_Click);
             // 
             // lblSmall
             // 

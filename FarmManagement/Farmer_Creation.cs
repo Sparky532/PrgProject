@@ -13,6 +13,7 @@ namespace FarmManagement
 {
     public partial class Farmer_Creation : Form
     {
+        //Declaration of character items
         Dictionary<string, Bitmap> skins = new Dictionary<string, Bitmap>();
         Dictionary<string, Bitmap> hairs = new Dictionary<string, Bitmap>();
         Dictionary<string, Bitmap> eyes = new Dictionary<string, Bitmap>();
@@ -23,9 +24,139 @@ namespace FarmManagement
         {
             InitializeComponent();
         }
+        private void Farmer_Creation_Load(object sender, EventArgs e)
+        {
+            cmbGender.SelectedIndex = 0;
+            pbxBackground.Controls.Add(pbxBack);
+            pbxBack.Location = new Point(0, 0);
+        }
 
-        //Loading characters
-        void loadFemales()
+        private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbGender.SelectedIndex == 0)
+            {
+                loadFemales();
+                pbxBody.Location = new Point(36, 35);
+                loadDefaults();
+            }
+            else
+            {
+                loadMales();
+                pbxBody.Location = new Point(17, 28);
+                loadDefaults();
+            }
+        }
+
+        private void pbxBack_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Are you sure you want to cancel?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                Farmer_Selection form = new Farmer_Selection();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+            }
+        }
+
+
+        #region Previous_click
+        //Skin previous
+        private void pbxPrevious1_Click(object sender, EventArgs e)
+        {
+            PreviousButton_Click(0, skins, txtSkin, pbxBody);
+        }
+
+        //Hair previous
+        private void pbxPrevious2_Click(object sender, EventArgs e)
+        {
+            PreviousButton_Click(1, hairs, txtHair, pbxHairs);
+        }
+
+        //Eye previous
+        private void pbxPrevious3_Click(object sender, EventArgs e)
+        {
+            PreviousButton_Click(2, eyes, txtEye, pbxEyes);
+        }
+
+        //Oufit previous
+        private void pbxPrevious4_Click(object sender, EventArgs e)
+        {
+            PreviousButton_Click(3, outfits, txtOutfit, pbxOutfits);
+        }
+        #endregion
+
+        #region Next_click
+        //Skin Next
+        private void pbxNext1_Click(object sender, EventArgs e)
+        {
+            NextButton_Click(0, skins, txtSkin, pbxBody);
+        }
+
+        //Hair Next
+        private void pbxNext2_Click(object sender, EventArgs e)
+        {
+            NextButton_Click(1, hairs, txtHair, pbxHairs);
+        }
+
+        //Eyes Next
+        private void pbxNext3_Click(object sender, EventArgs e)
+        {
+            NextButton_Click(2, eyes, txtEye, pbxEyes);
+        }
+
+        //Outfit Next
+        private void pbxNext4_Click(object sender, EventArgs e)
+        {
+            NextButton_Click(3, outfits, txtOutfit, pbxOutfits);
+        }
+
+        private void pbxNext_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtName.Text == "")
+                {
+                    throw new NoFarmerNameException();
+                }
+                int success = 0;
+                Style FarmerStyle = new Style();
+                FarmerStyle.Eyecolour = txtEye.Text;
+                FarmerStyle.OutfitType = txtOutfit.Text;
+                FarmerStyle.SkinColour = txtSkin.Text;
+                FarmerStyle.HairColour = txtHair.Text;
+                Farmer farmer = new Farmer(txtName.Text, cmbGender.Text, int.Parse(txtAge.Text), FarmerStyle);
+                success = farmer.InsertFarmer();
+
+
+                if (success == 2)
+                {
+                    Farm_Creation form = new Farm_Creation();
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Insert Failed");
+
+                }
+            }
+            catch (NoFarmerNameException)
+            {
+                MessageBox.Show("Your Farmer needs a Name");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Age has to be a number");
+            }
+        }
+        #endregion
+
+        #region Characters Methods
+        //Loading female characters
+        private void loadFemales()
         {
             eyes.Clear();
             skins.Clear();
@@ -53,7 +184,8 @@ namespace FarmManagement
             outfits.Add("Four", Properties.Resources.GirlOutfit4);
         }
 
-        void loadMales()
+        //Loading male characters
+        private void loadMales()
         {
             eyes.Clear();
             skins.Clear();
@@ -114,240 +246,45 @@ namespace FarmManagement
             pbxHairs.Controls.Add(pbxEyes);
             pbxBody.Controls.Add(pbxHairs);
         }
+        #endregion
 
-        private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbGender.SelectedIndex == 0)
-            {
-                loadFemales();
-                pbxBody.Location = new Point(36, 35);
-                loadDefaults();
-            }
-            else
-            {
-                loadMales();
-                pbxBody.Location = new Point(17, 28);
-                loadDefaults();
-            }
-        }
-
-        private void Farmer_Creation_Load(object sender, EventArgs e)
-        {
-            cmbGender.SelectedIndex = 0;
-            pbxBackground.Controls.Add(pbxBack);
-            pbxBack.Location = new Point(0, 0);
-        }
-
-        #region Previous_click
-        //Skin previous
-        private void pbxPrevious1_Click(object sender, EventArgs e)
+        #region Methods
+        private void NextButton_Click(int index, Dictionary<string, Bitmap> items, TextBox txt, PictureBox pbx)
         {
             try
             {
-                indexes[0]--;
-                KeyValuePair<string, Bitmap> skin = skins.ElementAt(indexes[0]);
-                txtSkin.Text = skin.Key;
-                pbxBody.Image = skin.Value;
+                indexes[index]++;
+                KeyValuePair<string, Bitmap> item = items.ElementAt(indexes[index]);
+                txt.Text = item.Key;
+                pbx.Image = item.Value;
             }
             catch (ArgumentOutOfRangeException)
             {
-                indexes[0] = skins.Count - 1;
-                KeyValuePair<string, Bitmap> skin = skins.ElementAt(indexes[0]);
-                txtSkin.Text = skin.Key;
-                pbxBody.Image = skin.Value;
+                indexes[index] = 0;
+                KeyValuePair<string, Bitmap> item = items.ElementAt(indexes[index]);
+                txt.Text = item.Key;
+                pbx.Image = item.Value;
             }
         }
 
-        //Hair previous
-        private void pbxPrevious2_Click(object sender, EventArgs e)
+        private void PreviousButton_Click(int index, Dictionary<string, Bitmap> items, TextBox txt, PictureBox pbx)
         {
             try
             {
-                indexes[1]--;
-                KeyValuePair<string, Bitmap> hair = hairs.ElementAt(indexes[1]);
-                txtHair.Text = hair.Key;
-                pbxHairs.Image = hair.Value;
+                indexes[index]--;
+                KeyValuePair<string, Bitmap> item = items.ElementAt(indexes[index]);
+                txt.Text = item.Key;
+                pbx.Image = item.Value;
             }
             catch (ArgumentOutOfRangeException)
             {
-                indexes[1] = hairs.Count - 1;
-                KeyValuePair<string, Bitmap> hair = hairs.ElementAt(indexes[1]);
-                txtHair.Text = hair.Key;
-                pbxHairs.Image = hair.Value;
-            }
-        }
-
-        //Eye previous
-        private void pbxPrevious3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                indexes[2]--;
-                KeyValuePair<string, Bitmap> eye = eyes.ElementAt(indexes[2]);
-                txtEye.Text = eye.Key;
-                pbxEyes.Image = eye.Value;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                indexes[2] = eyes.Count - 1;
-                KeyValuePair<string, Bitmap> eye = eyes.ElementAt(indexes[2]);
-                txtEye.Text = eye.Key;
-                pbxEyes.Image = eye.Value;
-
-            }
-        }
-
-        //Oufit previous
-        private void pbxPrevious4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                indexes[3]--;
-                KeyValuePair<string, Bitmap> outfit = outfits.ElementAt(indexes[3]);
-                txtOutfit.Text = outfit.Key;
-                pbxOutfits.Image = outfit.Value;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                indexes[3] = outfits.Count - 1;
-                KeyValuePair<string, Bitmap> outfit = outfits.ElementAt(indexes[3]);
-                txtOutfit.Text = outfit.Key;
-                pbxOutfits.Image = outfit.Value;
+                indexes[index] = skins.Count - 1;
+                KeyValuePair<string, Bitmap> item = items.ElementAt(indexes[index]);
+                txt.Text = item.Key;
+                pbx.Image = item.Value;
             }
         }
         #endregion
 
-        #region Next_click
-        //Skin Next
-        private void pbxNext1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                indexes[0]++;
-                KeyValuePair<string, Bitmap> skin = skins.ElementAt(indexes[0]);
-                txtSkin.Text = skin.Key;
-                pbxBody.Image = skin.Value;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                indexes[0] = 0;
-                KeyValuePair<string, Bitmap> skin = skins.ElementAt(indexes[0]);
-                txtSkin.Text = skin.Key;
-                pbxBody.Image = skin.Value;
-            }
-        }
-
-        //Hair Next
-        private void pbxNext2_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                indexes[1]++;
-                KeyValuePair<string, Bitmap> hair = hairs.ElementAt(indexes[1]);
-                txtHair.Text = hair.Key;
-                pbxHairs.Image = hair.Value;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                indexes[1] = 0;
-                KeyValuePair<string, Bitmap> hair = hairs.ElementAt(indexes[1]);
-                txtHair.Text = hair.Key;
-                pbxHairs.Image = hair.Value;
-            }
-        }
-
-        //Eyes Next
-        private void pbxNext3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                indexes[2]++;
-                KeyValuePair<string, Bitmap> eye = eyes.ElementAt(indexes[2]);
-                txtEye.Text = eye.Key;
-                pbxEyes.Image = eye.Value;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                indexes[2] = 0;
-                KeyValuePair<string, Bitmap> eye = eyes.ElementAt(indexes[2]);
-                txtEye.Text = eye.Key;
-                pbxEyes.Image = eye.Value;
-            }
-        }
-
-        //Outfit Next
-        private void pbxNext4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                indexes[3]++;
-                KeyValuePair<string, Bitmap> outfit = outfits.ElementAt(indexes[3]);
-                txtOutfit.Text = outfit.Key;
-                pbxOutfits.Image = outfit.Value;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                indexes[3] = 0;
-                KeyValuePair<string, Bitmap> outfit = outfits.ElementAt(indexes[3]);
-                txtOutfit.Text = outfit.Key;
-                pbxOutfits.Image = outfit.Value;
-            }
-        }
-
-        private void pbxNext_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtName.Text == "")
-                {
-                    throw new NoFarmerNameException();
-                }
-                int success = 0;
-                Style FarmerStyle = new Style();
-                FarmerStyle.Eyecolour = txtEye.Text;
-                FarmerStyle.OutfitType = txtOutfit.Text;
-                FarmerStyle.SkinColour = txtSkin.Text;
-                FarmerStyle.HairColour = txtHair.Text;
-                Farmer farmer = new Farmer(txtName.Text, cmbGender.Text, int.Parse(txtAge.Text), FarmerStyle);
-                success = farmer.InsertFarmer();
-
-
-                if (success == 2)
-                {
-                    Farm_Creation form = new Farm_Creation();
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-
-                }
-                else
-                {
-                    MessageBox.Show("Insert Failed");
-
-                }
-            }
-            catch (NoFarmerNameException)
-            {
-                MessageBox.Show("Your Farmer needs a Name");
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Age has to be a number");
-            }
-        }
-        #endregion
-
-        private void pbxBack_Click(object sender, EventArgs e)
-        {
-            DialogResult confirm = MessageBox.Show("Are you sure you want to cancel?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirm == DialogResult.Yes)
-            {
-                Farmer_Selection form = new Farmer_Selection();
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
-            }
-        }
     }
 }
