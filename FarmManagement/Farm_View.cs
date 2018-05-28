@@ -54,13 +54,13 @@ namespace FarmManagement
 
         private void lionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var SelectLions = from lions in animals
-                              where lions.Species.ToString() == "Lion"
-                              select lions.Species.AnimalName + " " + lions.MateState + " " + lions.Gender + " " + lions.EatingTime;
+            var Selectitem = from item in animals
+                              where item.Species.ToString() == "Lion"
+                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in SelectLions)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -69,14 +69,14 @@ namespace FarmManagement
 
         private void tigerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var SelectLions = from lions in animals
-                              where lions.Species.ToString() == "Tiger"
-                              select lions.Species.AnimalName + " " + lions.MateState + " " + lions.Gender + " " + lions.EatingTime;
+            var Selectitem = from item in animals
+                              where item.Species.ToString() == "Tiger"
+                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in SelectLions)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -84,14 +84,14 @@ namespace FarmManagement
 
         private void cowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var SelectLions = from lions in animals
-                              where lions.Species.ToString() == "Cow"
-                              select lions.Species.AnimalName + " " + lions.MateState + " " + lions.Gender + " " + lions.EatingTime;
+            var Selectitem = from item in animals
+                              where item.Species.ToString() == "Cow"
+                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in SelectLions)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -99,14 +99,14 @@ namespace FarmManagement
 
         private void sheepToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var SelectLions = from lions in animals
-                              where lions.Species.ToString() == "Sheep"
-                              select lions.Species.AnimalName + " " + lions.MateState + " " + lions.Gender + " " + lions.EatingTime;
+            var Selectitem = from item in animals
+                              where item.Species.ToString() == "Sheep"
+                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in SelectLions)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -114,14 +114,14 @@ namespace FarmManagement
 
         private void horseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var SelectLions = from lions in animals
-                              where lions.Species.ToString() == "Horse"
-                              select lions.Species.AnimalName + " " + lions.MateState + " " + lions.Gender + " " + lions.EatingTime;
+            var Selectitem = from item in animals
+                              where item.Species.ToString() == "Horse"
+                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in SelectLions)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -129,8 +129,8 @@ namespace FarmManagement
 
         private void allAnimalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var SelectAnimals = from lions in animals                              
-                              select lions.Species.AnimalName + " " + lions.MateState + " " + lions.Gender + " " + lions.EatingTime;
+            var SelectAnimals = from item in animals                              
+                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
