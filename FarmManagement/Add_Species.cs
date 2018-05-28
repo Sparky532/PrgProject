@@ -72,7 +72,7 @@ namespace FarmManagement
                 {
                     throw new NoImageDirectoryException();
                 }
-                if (File.Exists(Environment.CurrentDirectory + @"\" + txtName.Text + ".png") == false)
+                if (File.Exists(Environment.CurrentDirectory + @"\" + txtName.Text + ".png") )
                 {
                     pbxNewAnimal.Image.Save(Environment.CurrentDirectory + @"\" + txtName.Text + ".png", ImageFormat.Png);
                     if (txtName != null && txtSpace != null && txtSpeed != null && cbxType.SelectedItem.ToString() != null)
