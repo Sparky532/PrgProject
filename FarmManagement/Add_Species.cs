@@ -15,9 +15,15 @@ namespace FarmManagement
 {
     public partial class Add_Species : Form
     {
-        public Add_Species()
+        List<AnimalsSelected> animalsSelected = new List<AnimalsSelected>();
+        List<Species> animalSpecies = new List<Species>();
+        int farmerID = 0;
+        public Add_Species(List<AnimalsSelected> animalsSelectedP, List<Species> animalSpeciesP,int farmerIDP)
         {
             InitializeComponent();
+            this.animalsSelected = animalsSelectedP;
+            this.animalSpecies = animalSpeciesP;
+            this.farmerID = farmerIDP;
             cbxType.SelectedIndex = 0;
 
             pbxSpeciesBackground.Controls.Add(pbxBack);
@@ -50,7 +56,7 @@ namespace FarmManagement
         //goes back to animal Selection 
         private void pbxBack_Click(object sender, EventArgs e)
         {
-            Animal_Selection form = new Animal_Selection();
+            Animal_Selection form = new Animal_Selection(animalsSelected, animalSpecies, farmerID);
             this.Hide();
             form.ShowDialog();
             this.Close();
@@ -76,12 +82,13 @@ namespace FarmManagement
                         spec.Animaltype = cbxType.SelectedItem.ToString();
                         spec.Space = double.Parse(txtSpace.Text);
                         spec.Speed = double.Parse(txtSpeed.Text);
+                        animalSpecies.Add(spec);
                         //Write the four items to the text file
                         spec.writeSpecies();
                     }
 
                 }
-                Animal_Selection form = new Animal_Selection();
+                Animal_Selection form = new Animal_Selection(animalsSelected, animalSpecies, farmerID);
                 this.Hide();
                 form.ShowDialog();
                 this.Close();

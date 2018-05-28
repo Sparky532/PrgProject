@@ -27,10 +27,25 @@ namespace FarmManagement
         {
             InitializeComponent();
         }
+        public Animal_Selection(List<AnimalsSelected> animalsSelectedP, List<Species> animalSpeciesP, int farmerIDP)
+        {
+            InitializeComponent();
+            this.animalsSelected = animalsSelectedP;
+            this.animalSpecies = animalSpeciesP;
+            this.ID = farmerIDP;
+        }
         public Animal_Selection(int id)
         {
             InitializeComponent();
             this.ID = id;
+            loadDefaults();
+        }
+
+        public void loadDefaults()
+        {
+            //Select the animal species from the database
+            AnimalsSelected selects = new AnimalsSelected();
+            animalSpecies = selects.getAnimalName();
         }
 
         private void Animal_Selection_Load(object sender, EventArgs e)
@@ -39,22 +54,19 @@ namespace FarmManagement
             txtSelectedAnimalAmount.Visible = false;
             pbxChange.Visible = false;
 
-            //Select the animal species from the database
-            AnimalsSelected selects = new AnimalsSelected();
-            animalSpecies = selects.getAnimalName();
-
             //Set binding sources
             bs2.DataSource = animalSpecies;
             bs1.DataSource = animalsSelected;
 
             //Link combo box
             cbxAnimals.DataSource = bs2;
+            lstAnimalsSelected.DataSource = bs1;
 
             //If the box is empty make it display no animals yet
-            if (animalsAdded == false)
-            {
-                lstAnimalsSelected.Items.Add("No animals yet");
-            }
+            //if (animalsSelected.Count ==0)
+            //{
+            //    lstAnimalsSelected.Items.Add("No animals yet");
+            //}
 
             //Link all buttons to panel
             pbxPanel.Controls.Add(pbxPrevious);
@@ -129,7 +141,7 @@ namespace FarmManagement
             {
                 int predatorsNum = 0;
                 int preysNum = 0;
-                
+
                 //Counting predator and prey
                 foreach (AnimalsSelected item in animalsSelected)
                 {
@@ -185,7 +197,6 @@ namespace FarmManagement
             pbxRemove.Visible = false;
             pbxAddNew.Visible = true;
 
-            lstAnimalsSelected.DataSource = bs1;
 
             try
             {
@@ -318,7 +329,7 @@ namespace FarmManagement
         private void pbxAddNew_Click(object sender, EventArgs e)
         {
             //Go to add species form
-            Add_Species form = new Add_Species();
+            Add_Species form = new Add_Species(animalsSelected, animalSpecies, ID);
             this.Hide();
             form.ShowDialog();
             this.Close();
@@ -433,6 +444,11 @@ namespace FarmManagement
             bs2.ResetBindings(false);
 
             txtAnimalAmount.Text = "0";
+        }
+
+        private void cbxAnimals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

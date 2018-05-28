@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    interface IDataHandler
+    partial interface IDataHandler
     {
-        DataTable SelectSpecies();
+        int InsertLocation(ArrayList toWrite);
 
-        DataTable SelectFarmer();
+        int InsertAnimals(ArrayList animalToWrite);
+
+        int CountNumAnimals(ArrayList FarmerDetails);
 
         int InsertFarmer(ArrayList FarmerToInsert);
 
@@ -20,18 +22,19 @@ namespace DAL
 
         int InsertFarm(ArrayList toWrite);
 
-        int InsertLocation(ArrayList toWrite);
+        int DeleteFarmer(int FarmerID, int StyleId);
+    }
 
-        int InsertAnimals(ArrayList animalToWrite);
+    partial interface IDataHandler
+    {       
+        DataTable SelectSpecies();
 
-        int CountNumAnimals(ArrayList FarmerDetails);
+        DataTable SelectFarmer();
 
         DataTable GetFarmSize(ArrayList FarmerDetails);
 
         DataTable SelectFarmOrLocationOrAnimal(int id, string storedProcedureName);
 
-        DataTable SelectNewestFarmer();
-
-        int DeleteFarmer(int FarmerID, int StyleId);
+        DataTable SelectNewestFarmer();       
     }
 }
