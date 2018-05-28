@@ -31,50 +31,7 @@ namespace FarmManagement
             pbxNewAnimal.Location = new Point(545, 99);
             pbxAddSpecies.Location = new Point(250, 12);
            
-        }
-
-        private void btnWriteToTxt_Click(object sender, EventArgs e)
-        {
-            string name = txtName.Text;
-            //Write the name to a textfile so that developers can add the species to the database themselves
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnChooseFile_Click(object sender, EventArgs e)
-        {
-            Stream FilePath = null;
-            OpenFileDialog fileDialog = new OpenFileDialog();
-
-            fileDialog.InitialDirectory = "C://";
-            fileDialog.Filter = "png files (*.png)|*.png";
-            fileDialog.FilterIndex = 2;
-            fileDialog.DefaultExt = ".png";
-            fileDialog.RestoreDirectory = true;
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    if ((FilePath = fileDialog.OpenFile()) != null)
-                    {
-                        txtChooseimage.Text = fileDialog.FileName;
-                        Image NewAnimal = Image.FromFile(txtChooseimage.Text);
-                        pbxNewAnimal.Image = NewAnimal;
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Could not find the file you want");
-                    Species species = new Species();
-                    species.NewSpeciesException();
-                    throw;
-                }
-            }
-        }
+        }      
 
         private void Add_Species_Load(object sender, EventArgs e)
         {
@@ -90,17 +47,7 @@ namespace FarmManagement
             lblSpaceNeeded.Location = new Point(40, 263);
             lblSpeed.Location = new Point(93, 213);
         }
-
-        private void btnBackToAnimalSelection_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Add_Species_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Environment.Exit(0);
-        }
-
+        //goes back to animal Selection 
         private void pbxBack_Click(object sender, EventArgs e)
         {
             Animal_Selection form = new Animal_Selection();
@@ -108,16 +55,13 @@ namespace FarmManagement
             form.ShowDialog();
             this.Close();
         }
-
-        private void pbxSpeciesBackground_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // adds the new species and goes back to animal Selection Screen
         private void pbxAdd_Click(object sender, EventArgs e)
         {
+
             try
             {
+
                 if (txtChooseimage.Text==null||txtChooseimage.Text=="")
                 {
                     throw new NoImageDirectoryException();
@@ -151,35 +95,47 @@ namespace FarmManagement
                 MessageBox.Show("Please ensure that Speed and Space are both numbers!");
             }
         }
-
+        //if enter key is pressed it Adds the Species
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            if (File.Exists(Environment.CurrentDirectory + @"\" + txtName.Text + ".png") == false)
+
+            try
             {
-                pbxNewAnimal.Image.Save(Environment.CurrentDirectory + @"\" + txtName.Text + ".png", ImageFormat.Png);
-                if (txtName != null && txtSpace != null && txtSpeed != null && cbxType.SelectedItem.ToString() != null)
+
+                if (txtChooseimage.Text == null || txtChooseimage.Text == "")
                 {
-                    Species spec = new Species();
-                    spec.AnimalName = txtName.Text;
-                    spec.Animaltype = cbxType.SelectedItem.ToString();
-                    spec.Space = double.Parse(txtSpace.Text);
-                    spec.Speed = double.Parse(txtSpeed.Text);
-                    //Write the four items to the text file
-                    spec.writeSpecies();
+                    throw new NoImageDirectoryException();
                 }
+                if (File.Exists(Environment.CurrentDirectory + @"\" + txtName.Text + ".png") == false)
+                {
+                    pbxNewAnimal.Image.Save(Environment.CurrentDirectory + @"\" + txtName.Text + ".png", ImageFormat.Png);
+                    if (txtName != null && txtSpace != null && txtSpeed != null && cbxType.SelectedItem.ToString() != null)
+                    {
+                        Species spec = new Species();
+                        spec.AnimalName = txtName.Text;
+                        spec.Animaltype = cbxType.SelectedItem.ToString();
+                        spec.Space = double.Parse(txtSpace.Text);
+                        spec.Speed = double.Parse(txtSpeed.Text);
+                        //Write the four items to the text file
+                        spec.writeSpecies();
+                    }
 
+                }
+                Animal_Selection form = new Animal_Selection();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
-            Animal_Selection form = new Animal_Selection();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
+            catch (NoImageDirectoryException)
+            {
+                MessageBox.Show("Please ensure a picture is selected, and the URL to that image is loaded!");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please ensure that Speed and Space are both numbers!");
+            }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Opens filedialog so you can choose your File
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Stream FilePath = null;

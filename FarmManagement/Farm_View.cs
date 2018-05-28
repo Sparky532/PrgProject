@@ -21,29 +21,12 @@ namespace FarmManagement
         {
             InitializeComponent();
             this.ID = id;
-            //Farm f = new Farm();
-            //Location l = new BLL.Location();
-            //Animal a = new Animal();
-            //farms = f.selectFarm(id);
-            //locations = l.selectLocation();
-            //animals = a.selectAnimals();
-            //lstFarm.DataSource = farms;
-            //lstLocations.DataSource = locations;
-            //lstAnimals.DataSource = animals;
+            
         }
         public Farm_View()
         {
             InitializeComponent();
-            //int id = 1;
-            //Farm f = new Farm();
-            //Location l = new BLL.Location();
-            //Animal a = new Animal();
-            //farms = f.selectFarm(id);
-            //locations = l.selectLocation();
-            //animals = a.selectAnimals();
-            //lstFarm.DataSource = farms;
-            //lstLocations.DataSource = locations;
-            //lstAnimals.DataSource = animals;
+         
         }
 
         private void Farm_View_Load(object sender, EventArgs e)
@@ -59,10 +42,7 @@ namespace FarmManagement
             lstAnimals.DataSource = animals;
         }
 
-        private void Farm_View_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Environment.Exit(0);
-        }
+      
 
         private void returnToFarmerSelectionToolStripMenuItem_Click(object sender, EventArgs e)
         {

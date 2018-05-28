@@ -163,8 +163,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Farm_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Farm_View";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Farm_View_FormClosing);
+            this.Text = "Farm_View";           
             this.Load += new System.EventHandler(this.Farm_View_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

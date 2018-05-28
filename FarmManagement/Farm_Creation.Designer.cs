@@ -219,7 +219,6 @@
             this.pbxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxBackground.TabIndex = 10;
             this.pbxBackground.TabStop = false;
-            this.pbxBackground.Click += new System.EventHandler(this.pbxBackground_Click);
             // 
             // lblSmall
             // 

@@ -239,7 +239,6 @@
             this.pbxSpeciesBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSpeciesBackground.TabIndex = 13;
             this.pbxSpeciesBackground.TabStop = false;
-            this.pbxSpeciesBackground.Click += new System.EventHandler(this.pbxSpeciesBackground_Click);
             // 
             // Add_Species
             // 
@@ -269,7 +268,6 @@
             this.MaximizeBox = false;
             this.Name = "Add_Species";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Species_FormClosing);
             this.Load += new System.EventHandler(this.Add_Species_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddSpecies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBrowse)).EndInit();

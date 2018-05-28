@@ -78,8 +78,7 @@
             this.cbxAnimals.Location = new System.Drawing.Point(83, 329);
             this.cbxAnimals.Name = "cbxAnimals";
             this.cbxAnimals.Size = new System.Drawing.Size(194, 46);
-            this.cbxAnimals.TabIndex = 21;
-            this.cbxAnimals.SelectedIndexChanged += new System.EventHandler(this.cbxAnimals_SelectedIndexChanged_1);
+            this.cbxAnimals.TabIndex = 21;        
             this.cbxAnimals.SelectedValueChanged += new System.EventHandler(this.cbxAnimals_SelectedValueChanged);
             // 
             // lstAnimalsSelected
@@ -118,7 +117,7 @@
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Visible = false;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+     
             // 
             // pbxRemove
             // 
@@ -245,7 +244,6 @@
             this.pbxPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxPanel.TabIndex = 30;
             this.pbxPanel.TabStop = false;
-            this.pbxPanel.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // pbxBackground
             // 
@@ -285,7 +283,7 @@
             this.Name = "Animal_Selection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Animal_Selection";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Animal_Selection_FormClosing);
+     
             this.Load += new System.EventHandler(this.Animal_Selection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious)).EndInit();
