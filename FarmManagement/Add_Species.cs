@@ -64,30 +64,31 @@ namespace FarmManagement
         // adds the new species and goes back to animal Selection Screen
         private void pbxAdd_Click(object sender, EventArgs e)
         {
-
             try
             {
-
-                if (txtChooseimage.Text==null||txtChooseimage.Text=="")
+                if (txtChooseimage.Text == null || txtChooseimage.Text == "")
                 {
                     throw new NoImageDirectoryException();
                 }
                 if (File.Exists(Environment.CurrentDirectory + @"\" + txtName.Text + ".png") == false)
                 {
                     pbxNewAnimal.Image.Save(Environment.CurrentDirectory + @"\" + txtName.Text + ".png", ImageFormat.Png);
-                    if (txtName != null && txtSpace != null && txtSpeed != null && cbxType.SelectedItem.ToString() != null)
-                    {
-                        Species spec = new Species();
-                        spec.AnimalName = txtName.Text;
-                        spec.Animaltype = cbxType.SelectedItem.ToString();
-                        spec.Space = double.Parse(txtSpace.Text);
-                        spec.Speed = double.Parse(txtSpeed.Text);
-                        animalSpecies.Add(spec);
-                        //Write the four items to the text file
-                        spec.writeSpecies();
-                    }
 
                 }
+                if (txtName != null && txtSpace != null && txtSpeed != null && cbxType.SelectedItem.ToString() != null)
+                {
+                    Species spec = new Species();
+                    spec.AnimalName = txtName.Text;
+                    spec.Animaltype = cbxType.SelectedItem.ToString();
+                    spec.Space = double.Parse(txtSpace.Text);
+                    spec.Speed = double.Parse(txtSpeed.Text);
+                    animalSpecies.Add(spec);
+                    //Write the four items to the text file
+                    spec.writeSpecies();
+                }
+
+            
+            
                 Animal_Selection form = new Animal_Selection(animalsSelected, animalSpecies, farmerID);
                 this.Hide();
                 form.ShowDialog();
@@ -105,7 +106,6 @@ namespace FarmManagement
         //if enter key is pressed it Adds the Species
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-
             try
             {
 
@@ -162,6 +162,7 @@ namespace FarmManagement
                     {
                         txtChooseimage.Text = fileDialog.FileName;
                         Image NewAnimal = Image.FromFile(txtChooseimage.Text);
+                        pbxNewAnimal.Visible = true;
                         pbxNewAnimal.Image = NewAnimal;
                     }
                 }
@@ -173,6 +174,11 @@ namespace FarmManagement
                     throw;
                 }
             }
+        }
+
+        private void pbxSpeciesBackground_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

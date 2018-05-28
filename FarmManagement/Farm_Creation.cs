@@ -79,7 +79,9 @@ namespace FarmManagement
 
         private void txtFarmName_Leave(object sender, EventArgs e)
         {
-            if (txtFarmName.Text == "")
+            this.ActiveControl = null;
+
+            if (txtFarmName.Text == "" && this.ActiveControl == null)
             {
                 txtFarmName.Text = "Farm name";
                 txtFarmName.ForeColor = Color.Gray;
@@ -91,44 +93,29 @@ namespace FarmManagement
         {
             this.ActiveControl = null;
         }
+        private void pbxBackground_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (size == 0)
-            {
-                MessageBox.Show("Please Select a Farm Size");
-            }
-            else if (txtFarmName.ForeColor.Name == "GrayText" || txtFarmName.Text == "")
-            {
-                MessageBox.Show("Please enter a Farm Name");
-            }
-            else
-            {
-
-                Farm f = new Farm(name, size);
-                f.insertFarm();
-                Animal_Selection form = new Animal_Selection(farmer.ID);
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
-            }
+            pbxCreate_Click(sender,e); 
         }
 
         private void pbxCreate_Click(object sender, EventArgs e)
         {
             name = txtFarmName.Text;
-            //MessageBox.Show(size.ToString());
             if (size == 0)
             {
                 MessageBox.Show("Please Select a Farm Size");
             }
-            else if (txtFarmName.ForeColor.Name == "GrayText"||txtFarmName.Text=="")
+            else if (txtFarmName.ForeColor.Name == "GrayText"|| txtFarmName.ForeColor.Name == "Gray" || name == "")
             {
                 MessageBox.Show("Please enter a Farm Name");
             }
             else
             {
-
                 Farm f = new Farm(name, size);
                 f.insertFarm();
                 Animal_Selection form = new Animal_Selection(farmer.ID);
@@ -144,12 +131,8 @@ namespace FarmManagement
         //Small
         private void pbxSmall_Click(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
-            pbxSmallClicked.Visible = true;
-            pbxMediumClicked.Visible = false;
-            pbxLargeClicked.Visible = false;
-            string name = txtFarmName.Text;
             size = 400;
+            ClickChange(size, pbxSmallClicked);
         }
 
         private void pbxSmallClicked_Click_1(object sender, EventArgs e)
@@ -161,12 +144,8 @@ namespace FarmManagement
         //Medium
         private void pbxMedium_Click(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
-            pbxSmallClicked.Visible = false;
-            pbxMediumClicked.Visible = true;
-            pbxLargeClicked.Visible = false;
-            string name = txtFarmName.Text;
             size = 900;
+            ClickChange(size, pbxMediumClicked);
         }
 
         private void pbxMediumClicked_Click(object sender, EventArgs e)
@@ -179,12 +158,8 @@ namespace FarmManagement
         //Large
         private void pbxLarge_Click(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
-            pbxSmallClicked.Visible = false;
-            pbxMediumClicked.Visible = false;
-            pbxLargeClicked.Visible = true;
-            string name = txtFarmName.Text;
             size = 1600;
+            ClickChange(size, pbxLargeClicked);
         }
 
         private void pbxLargeClicked_Click(object sender, EventArgs e)
@@ -198,140 +173,102 @@ namespace FarmManagement
         //Smalll
         private void pbxSmall_MouseLeave(object sender, EventArgs e)
         {
-            pbxSmallSize.Visible = false;
-            pbxMediumSize.Visible = false;
-            pbxLargeSize.Visible = false;
+            LeavePictureBoxChange();
         }
+
         private void pbxSmallClicked_MouseLeave(object sender, EventArgs e)
         {
-            pbxSmallSize.Visible = false;
-            pbxMediumSize.Visible = false;
-            pbxLargeSize.Visible = false;
+            LeavePictureBoxChange();
         }
+
         //Medium
         private void pbxMedium_MouseLeave(object sender, EventArgs e)
         {
-            pbxSmallSize.Visible = false;
-            pbxMediumSize.Visible = false;
-            pbxLargeSize.Visible = false;
+            LeavePictureBoxChange();
         }
 
         private void pbxMediumClicked_MouseLeave(object sender, EventArgs e)
         {
-            pbxSmallSize.Visible = false;
-            pbxMediumSize.Visible = false;
-            pbxLargeSize.Visible = false;
+            LeavePictureBoxChange();
         }
+
         //Large
         private void pbxLarge_MouseLeave(object sender, EventArgs e)
         {
-            pbxSmallSize.Visible = false;
-            pbxMediumSize.Visible = false;
-            pbxLargeSize.Visible = false;
+            LeavePictureBoxChange();
         }
         private void pbxLargeClicked_MouseLeave(object sender, EventArgs e)
         {
-            pbxSmallSize.Visible = false;
-            pbxMediumSize.Visible = false;
-            pbxLargeSize.Visible = false;
+            LeavePictureBoxChange();
         }
 
         #endregion
 
         #region MouseHovers
         //Small
-
         private void pbxSmallClicked_MouseHover(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
-            timer.Interval = 300;
-            timer.Start();
-            timer.Tick += new EventHandler(delegate (object o, EventArgs ea)
-            {
-                pbxSmallSize.Visible = true;
-                pbxMediumSize.Visible = false;
-                pbxLargeSize.Visible = false;
-                timer.Start();
-                timer.Dispose();
-            });
+            HoverChange(pbxSmallSize);
         }
-
         private void pbxSmall_MouseHover(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
-            timer.Interval = 300;
-            timer.Start();
-            timer.Tick += new EventHandler(delegate (object o, EventArgs ea)
-            {
-                pbxSmallSize.Visible = true;
-                pbxMediumSize.Visible = false;
-                pbxLargeSize.Visible = false;
-                timer.Start();
-                timer.Dispose();
-            });
+            HoverChange(pbxSmallSize);
         }
-        //Medium
-       
 
+        //Medium
         private void pbxMedium_MouseHover(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
-            timer.Interval = 300;
-            timer.Start();
-            timer.Tick += new EventHandler(delegate (object o, EventArgs ea)
-            {
-                pbxSmallSize.Visible = false;
-                pbxMediumSize.Visible = true;
-                pbxLargeSize.Visible = false;
-                timer.Start();
-                timer.Dispose();
-            });
+            HoverChange(pbxMediumSize);
         }
+
         private void pbxMediumClicked_MouseHover(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
-            timer.Interval = 300;
-            timer.Start();
-            timer.Tick += new EventHandler(delegate (object o, EventArgs ea)
-            {
-                pbxSmallSize.Visible = false;
-                pbxMediumSize.Visible = true;
-                pbxLargeSize.Visible = false;
-                timer.Start();
-                timer.Dispose();
-            });
+            HoverChange(pbxMediumSize);
         }
+
         //Large
         private void pbxLargeClicked_MouseHover(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
-            timer.Interval = 300;
-            timer.Start();
-            timer.Tick += new EventHandler(delegate (object o, EventArgs ea)
-            {
-                pbxSmallSize.Visible = false;
-                pbxMediumSize.Visible = false;
-                pbxLargeSize.Visible = true;
-                timer.Start();
-                timer.Dispose();
-            });
+            HoverChange(pbxLargeSize);
+        }
+        private void pbxLarge_MouseHover(object sender, EventArgs e)
+        {
+            HoverChange(pbxLargeSize);
+        }
+        #endregion
 
+        #region Methods
+        private void LeavePictureBoxChange()
+        {
+            pbxSmallSize.Visible = false;
+            pbxMediumSize.Visible = false;
+            pbxLargeSize.Visible = false;
         }
 
-        private void pbxLarge_MouseHover(object sender, EventArgs e)
+        private void HoverChange(PictureBox activeOne)
         {
             Timer timer = new Timer();
             timer.Interval = 300;
             timer.Start();
             timer.Tick += new EventHandler(delegate (object o, EventArgs ea)
             {
-                pbxSmallSize.Visible = false;
-                pbxMediumSize.Visible = false;
-                pbxLargeSize.Visible = true;
+                LeavePictureBoxChange();
+                activeOne.Visible = true;
                 timer.Start();
                 timer.Dispose();
             });
         }
+
+        private void ClickChange(double size, PictureBox activeOne)
+        {
+            this.ActiveControl = null;
+            LeavePictureBoxChange();
+            activeOne.Visible = true;
+            string name = txtFarmName.Text;
+            size = 400;
+        }
         #endregion
+
+        
     }
 }
