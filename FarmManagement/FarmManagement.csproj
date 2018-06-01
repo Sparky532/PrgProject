@@ -58,6 +58,7 @@
     <Compile Include="Animal_Selection.Designer.cs">
       <DependentUpon>Animal_Selection.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\ClientObject.cs" />
     <Compile Include="Farmer_Creation.cs">
       <SubType>Form</SubType>
     </Compile>
