@@ -21,50 +21,48 @@ namespace FarmManagement
         Farmer farmer = new Farmer();
         Farmer CurrentFarmer = new Farmer();
         ClientObject co;
-        bool check = false;
+        int index = 0;
 
-        
-        public Farmer[] AllFarmers1
+        delegate void MyDelegate();
+        event MyDelegate myEvent;
+
+        public void ReceiveFarmers(Farmer[] farmers)
         {
-            get
+            index = 0;
+            foreach (Farmer item in farmers)
             {
-                return AllFarmers;
+                CheckReceiveMethod(item);
+                index++;
             }
-
-            set
+            myEvent.Invoke();
+        }
+        public void CheckReceiveMethod(Farmer farmer)
+        {
+            if (InvokeRequired)
             {
-                AllFarmers = value;
-                
-                if (check)
-                {
-                    FarmerArrayLoaded();
-                }
+                this.Invoke(new Action<Farmer>(CheckReceiveMethod), farmer);
             }
+            AllFarmers[index] = farmer;
         }
 
         public delegate void NavFormsWithParam(Farmer currentFarmer);
         public event NavFormsWithParam navFormwithParam;
 
-        public delegate void DeleteFarmerDel(Farmer currentFarmer,string name);
+        public delegate void DeleteFarmerDel(Farmer currentFarmer, string name);
         public event DeleteFarmerDel deleteFarmer;
 
         public delegate void NavFormWithoutParam();
         public event NavFormWithoutParam navFormWithoutParam;
-        
+
         public Farmer_Selection()
         {
             InitializeComponent();
-            MessageObject message = new MessageObject(new byte[1],1,1,1);
-            co = new ClientObject(true,message);
-            // this.AllFarmers1 = new Farmer[5];
-           // AllFarmers = this.AllFarmers1;
-            check = true;
-            FarmerArrayLoaded();
+            MessageObject message = new MessageObject(new byte[1], 1, 1, 1);
+            co = new ClientObject(true, message);
+            myEvent = FarmerArrayLoaded;
         }
         private void Farmer_Selection_Load(object sender, EventArgs e)
         {
-            //AllFarmers1 = farmer.FarmerSelection();
-            //code for a loading bar or something in here
         }
         private void FarmerArrayLoaded()
         {
@@ -72,167 +70,186 @@ namespace FarmManagement
             navFormWithoutParam += new NavFormWithoutParam(NavFarmerCreation);
 
             //Setting the farmer pictures to default
-            pbxFarmer1.Visible = false;
-            pbxFarmer2.Visible = false;
-            pbxFarmer3.Visible = false;
-            pbxFarmer4.Visible = false;
-            pbxFarmer5.Visible = false;
-            pbxNewFarmer1.Visible = true;
-            pbxNewFarmer2.Visible = true;
-            pbxNewFarmer3.Visible = true;
-            pbxNewFarmer4.Visible = true;
-            pbxNewFarmer5.Visible = true;
+            //try
+            //{
+            //    foreach (Farmer item in AllFarmers)
+            //    {
+            //        MessageBox.Show(item.ToString());
+            //    }
+            //}
+            //catch (NullReferenceException)
+            //{
 
-            //Loading existing farmers from database
-            //AllFarmers1 = farmer.FarmerSelection();
-
-            if (AllFarmers[0] != null)
+            //}
+            try
             {
-                CharacterLoad(pbxNewFarmer1, pbxFarmer1, lblFarmerName1, lblFarmerGender1, lblFarmerAge1, lblNumOfAnimals1, lblFarmSize1, 0, pbxBodyOne, pbxOutfitOne, pbxEyesOne, pbxHairOne);
+                pbxFarmer1.Visible = false;
+                pbxFarmer2.Visible = false;
+                pbxFarmer3.Visible = false;
+                pbxFarmer4.Visible = false;
+                pbxFarmer5.Visible = false;
+                pbxNewFarmer1.Visible = true;
+                pbxNewFarmer2.Visible = true;
+                pbxNewFarmer3.Visible = true;
+                pbxNewFarmer4.Visible = true;
+                pbxNewFarmer5.Visible = true;
+
+                //Loading existing farmers from database
+                //AllFarmers1 = farmer.FarmerSelection();
+
+                if (AllFarmers[0] != null)
+                {
+                    CharacterLoad(pbxNewFarmer1, pbxFarmer1, lblFarmerName1, lblFarmerGender1, lblFarmerAge1, lblNumOfAnimals1, lblFarmSize1, 0, pbxBodyOne, pbxOutfitOne, pbxEyesOne, pbxHairOne);
+                }
+                if (AllFarmers[1] != null)
+                {
+                    CharacterLoad(pbxNewFarmer2, pbxFarmer2, lblFarmerName2, lblFarmerGender2, lblFarmerAge2, lblNumOfAnimals2, lblFarmSize2, 1, pbxBodyTwo, pbxOutfitTwo, pbxEyesTwo, pbxHairTwo);
+                }
+                if (AllFarmers[2] != null)
+                {
+                    CharacterLoad(pbxNewFarmer3, pbxFarmer3, lblFarmerName3, lblFarmerGender3, lblFarmerAge3, lblNumOfAnimals3, lblFarmSize3, 2, pbxBodyThree, pbxOutfitThree, pbxEyesThree, pbxHairThree);
+                }
+                if (AllFarmers[3] != null)
+                {
+                    CharacterLoad(pbxNewFarmer4, pbxFarmer4, lblFarmerName4, lblFarmerGender4, lblFarmerAge4, lblNumOfAnimals4, lblFarmSize4, 3, pbxBodyFour, pbxOutfitFour, pbxEyesFour, pbxHairFour);
+                }
+                if (AllFarmers[4] != null)
+                {
+                    CharacterLoad(pbxNewFarmer5, pbxFarmer5, lblFarmerName5, lblFarmerGender5, lblFarmerAge5, lblNumOfAnimals5, lblFarmSize5, 4, pbxBodyFive, pbxOutfitFive, pbxEyesFive, pbxHairFive);
+                }
+
+                #region Avatars
+                pbxFarmer1.Controls.Add(pbxOne);
+                pbxOne.Location = new Point(14, 16);
+                pbxBodyOne.Location = new Point(-4, 0);
+                pbxOne.Controls.Add(pbxBodyOne);
+                pbxHairOne.Location = new Point(0, -2);
+                pbxBodyOne.Controls.Add(pbxHairOne);
+                pbxHairOne.Controls.Add(pbxEyesOne);
+                pbxBodyOne.Controls.Add(pbxOutfitOne);
+                pbxOutfitOne.Location = new Point(0, 70);
+
+                pbxFarmer2.Controls.Add(pbxTwo);
+                pbxTwo.Location = new Point(14, 16);
+                pbxBodyTwo.Location = new Point(-4, 0);
+                pbxTwo.Controls.Add(pbxBodyTwo);
+                pbxHairTwo.Location = new Point(0, -2);
+                pbxBodyTwo.Controls.Add(pbxHairTwo);
+                pbxHairTwo.Controls.Add(pbxEyesTwo);
+                pbxBodyTwo.Controls.Add(pbxOutfitTwo);
+                pbxOutfitTwo.Location = new Point(0, 70);
+
+                pbxFarmer3.Controls.Add(pbxThree);
+                pbxThree.Location = new Point(14, 16);
+                pbxBodyThree.Location = new Point(-4, 0);
+                pbxThree.Controls.Add(pbxBodyThree);
+                pbxHairThree.Location = new Point(0, -2);
+                pbxBodyThree.Controls.Add(pbxHairThree);
+                pbxHairThree.Controls.Add(pbxEyesThree);
+                pbxBodyThree.Controls.Add(pbxOutfitThree);
+                pbxOutfitThree.Location = new Point(0, 70);
+
+                pbxFarmer4.Controls.Add(pbxFour);
+                pbxFour.Location = new Point(14, 16);
+                pbxBodyFour.Location = new Point(-4, 0);
+                pbxFour.Controls.Add(pbxBodyFour);
+                pbxHairFour.Location = new Point(0, -2);
+                pbxBodyFour.Controls.Add(pbxHairFour);
+                pbxHairFour.Controls.Add(pbxEyesFour);
+                pbxBodyFour.Controls.Add(pbxOutfitFour);
+                pbxOutfitFour.Location = new Point(0, 70);
+
+                pbxFarmer5.Controls.Add(pbxFive);
+                pbxFive.Location = new Point(14, 16);
+                pbxBodyFive.Location = new Point(-4, 0);
+                pbxFive.Controls.Add(pbxBodyFive);
+                pbxHairFive.Location = new Point(0, -2);
+                pbxBodyFive.Controls.Add(pbxHairFive);
+                pbxHairFive.Controls.Add(pbxEyesFive);
+                pbxBodyFive.Controls.Add(pbxOutfitFive);
+                pbxOutfitFive.Location = new Point(0, 70);
+                #endregion
+
+                #region FarmerLabels
+                pbxFarmer1.Controls.Add(lblFarmerName1);
+                pbxFarmer1.Controls.Add(lblFarmerGender1);
+                pbxFarmer1.Controls.Add(lblFarmerAge1);
+                pbxFarmer1.Controls.Add(lblNumOfAnimals1);
+                pbxFarmer1.Controls.Add(lblFarmSize1);
+                pbxFarmer1.Controls.Add(pbxCross1);
+
+                lblFarmerName1.Location = new Point(240, 13);
+                lblFarmerGender1.Location = new Point(240, 48);
+                lblFarmerAge1.Location = new Point(240, 80);
+                lblNumOfAnimals1.Location = new Point(470, 70);
+                lblFarmSize1.Location = new Point(470, 30);
+                pbxCross1.Location = new Point(508, 5);
+
+                pbxFarmer2.Controls.Add(lblFarmerName2);
+                pbxFarmer2.Controls.Add(lblFarmerGender2);
+                pbxFarmer2.Controls.Add(lblFarmerAge2);
+                pbxFarmer2.Controls.Add(lblNumOfAnimals2);
+                pbxFarmer2.Controls.Add(lblFarmSize2);
+                pbxFarmer2.Controls.Add(pbxCross2);
+
+
+                lblFarmerName2.Location = new Point(240, 13);
+                lblFarmerGender2.Location = new Point(240, 48);
+                lblFarmerAge2.Location = new Point(240, 80);
+                lblNumOfAnimals2.Location = new Point(470, 70);
+                lblFarmSize2.Location = new Point(470, 30);
+                pbxCross2.Location = new Point(508, 5);
+
+                pbxFarmer3.Controls.Add(lblFarmerName3);
+                pbxFarmer3.Controls.Add(lblFarmerGender3);
+                pbxFarmer3.Controls.Add(lblFarmerAge3);
+                pbxFarmer3.Controls.Add(lblNumOfAnimals3);
+                pbxFarmer3.Controls.Add(lblFarmSize3);
+                pbxFarmer3.Controls.Add(pbxCross3);
+
+                lblFarmerName3.Location = new Point(240, 13);
+                lblFarmerGender3.Location = new Point(240, 48);
+                lblFarmerAge3.Location = new Point(240, 80);
+                lblNumOfAnimals3.Location = new Point(470, 70);
+                lblFarmSize3.Location = new Point(470, 30);
+                pbxCross3.Location = new Point(508, 5);
+
+                pbxFarmer4.Controls.Add(lblFarmerName4);
+                pbxFarmer4.Controls.Add(lblFarmerGender4);
+                pbxFarmer4.Controls.Add(lblFarmerAge4);
+                pbxFarmer4.Controls.Add(lblNumOfAnimals4);
+                pbxFarmer4.Controls.Add(lblFarmSize4);
+                pbxFarmer4.Controls.Add(pbxCross4);
+
+
+                lblFarmerName4.Location = new Point(240, 13);
+                lblFarmerGender4.Location = new Point(240, 48);
+                lblFarmerAge4.Location = new Point(240, 80);
+                lblNumOfAnimals4.Location = new Point(470, 70);
+                lblFarmSize4.Location = new Point(470, 30);
+                pbxCross4.Location = new Point(508, 5);
+
+
+                pbxFarmer5.Controls.Add(lblFarmerName5);
+                pbxFarmer5.Controls.Add(lblFarmerGender5);
+                pbxFarmer5.Controls.Add(lblFarmerAge5);
+                pbxFarmer5.Controls.Add(lblNumOfAnimals5);
+                pbxFarmer5.Controls.Add(lblFarmSize5);
+                pbxFarmer5.Controls.Add(pbxCross5);
+
+                lblFarmerName5.Location = new Point(240, 13);
+                lblFarmerGender5.Location = new Point(240, 48);
+                lblFarmerAge5.Location = new Point(240, 80);
+                lblNumOfAnimals5.Location = new Point(470, 70);
+                lblFarmSize5.Location = new Point(470, 30);
+                pbxCross5.Location = new Point(508, 5);
+                #endregion
             }
-            if (AllFarmers1[1] != null)
+            catch (InvalidOperationException)
             {
-                CharacterLoad(pbxNewFarmer2, pbxFarmer2, lblFarmerName2, lblFarmerGender2, lblFarmerAge2, lblNumOfAnimals2, lblFarmSize2, 1, pbxBodyTwo, pbxOutfitTwo, pbxEyesTwo, pbxHairTwo);
+                
             }
-            if (AllFarmers1[2] != null)
-            {
-                CharacterLoad(pbxNewFarmer3, pbxFarmer3, lblFarmerName3, lblFarmerGender3, lblFarmerAge3, lblNumOfAnimals3, lblFarmSize3, 2, pbxBodyThree, pbxOutfitThree, pbxEyesThree, pbxHairThree);
-            }
-            if (AllFarmers1[3] != null)
-            {
-                CharacterLoad(pbxNewFarmer4, pbxFarmer4, lblFarmerName4, lblFarmerGender4, lblFarmerAge4, lblNumOfAnimals4, lblFarmSize4, 3, pbxBodyFour, pbxOutfitFour, pbxEyesFour, pbxHairFour);
-            }
-            if (AllFarmers1[4] != null)
-            {
-                CharacterLoad(pbxNewFarmer5, pbxFarmer5, lblFarmerName5, lblFarmerGender5, lblFarmerAge5, lblNumOfAnimals5, lblFarmSize5, 4, pbxBodyFive, pbxOutfitFive, pbxEyesFive, pbxHairFive);
-            }
-
-            #region Avatars
-            pbxFarmer1.Controls.Add(pbxOne);
-            pbxOne.Location = new Point(14, 16);
-            pbxBodyOne.Location = new Point(-4, 0);
-            pbxOne.Controls.Add(pbxBodyOne);
-            pbxHairOne.Location = new Point(0, -2);
-            pbxBodyOne.Controls.Add(pbxHairOne);
-            pbxHairOne.Controls.Add(pbxEyesOne);
-            pbxBodyOne.Controls.Add(pbxOutfitOne);
-            pbxOutfitOne.Location = new Point(0, 70);
-
-            pbxFarmer2.Controls.Add(pbxTwo);
-            pbxTwo.Location = new Point(14, 16);
-            pbxBodyTwo.Location = new Point(-4, 0);
-            pbxTwo.Controls.Add(pbxBodyTwo);
-            pbxHairTwo.Location = new Point(0, -2);
-            pbxBodyTwo.Controls.Add(pbxHairTwo);
-            pbxHairTwo.Controls.Add(pbxEyesTwo);
-            pbxBodyTwo.Controls.Add(pbxOutfitTwo);
-            pbxOutfitTwo.Location = new Point(0, 70);
-
-            pbxFarmer3.Controls.Add(pbxThree);
-            pbxThree.Location = new Point(14, 16);
-            pbxBodyThree.Location = new Point(-4, 0);
-            pbxThree.Controls.Add(pbxBodyThree);
-            pbxHairThree.Location = new Point(0, -2);
-            pbxBodyThree.Controls.Add(pbxHairThree);
-            pbxHairThree.Controls.Add(pbxEyesThree);
-            pbxBodyThree.Controls.Add(pbxOutfitThree);
-            pbxOutfitThree.Location = new Point(0, 70);
-
-            pbxFarmer4.Controls.Add(pbxFour);
-            pbxFour.Location = new Point(14, 16);
-            pbxBodyFour.Location = new Point(-4, 0);
-            pbxFour.Controls.Add(pbxBodyFour);
-            pbxHairFour.Location = new Point(0, -2);
-            pbxBodyFour.Controls.Add(pbxHairFour);
-            pbxHairFour.Controls.Add(pbxEyesFour);
-            pbxBodyFour.Controls.Add(pbxOutfitFour);
-            pbxOutfitFour.Location = new Point(0, 70);
-
-            pbxFarmer5.Controls.Add(pbxFive);
-            pbxFive.Location = new Point(14, 16);
-            pbxBodyFive.Location = new Point(-4, 0);
-            pbxFive.Controls.Add(pbxBodyFive);
-            pbxHairFive.Location = new Point(0, -2);
-            pbxBodyFive.Controls.Add(pbxHairFive);
-            pbxHairFive.Controls.Add(pbxEyesFive);
-            pbxBodyFive.Controls.Add(pbxOutfitFive);
-            pbxOutfitFive.Location = new Point(0, 70);
-            #endregion
-
-            #region FarmerLabels
-            pbxFarmer1.Controls.Add(lblFarmerName1);
-            pbxFarmer1.Controls.Add(lblFarmerGender1);
-            pbxFarmer1.Controls.Add(lblFarmerAge1);
-            pbxFarmer1.Controls.Add(lblNumOfAnimals1);
-            pbxFarmer1.Controls.Add(lblFarmSize1);
-            pbxFarmer1.Controls.Add(pbxCross1);
-
-            lblFarmerName1.Location = new Point(240, 13);
-            lblFarmerGender1.Location = new Point(240, 48);
-            lblFarmerAge1.Location = new Point(240, 80);
-            lblNumOfAnimals1.Location = new Point(470, 70);
-            lblFarmSize1.Location = new Point(470, 30);
-            pbxCross1.Location = new Point(508, 5);
-
-            pbxFarmer2.Controls.Add(lblFarmerName2);
-            pbxFarmer2.Controls.Add(lblFarmerGender2);
-            pbxFarmer2.Controls.Add(lblFarmerAge2);
-            pbxFarmer2.Controls.Add(lblNumOfAnimals2);
-            pbxFarmer2.Controls.Add(lblFarmSize2);
-            pbxFarmer2.Controls.Add(pbxCross2);
-
-
-            lblFarmerName2.Location = new Point(240, 13);
-            lblFarmerGender2.Location = new Point(240, 48);
-            lblFarmerAge2.Location = new Point(240, 80);
-            lblNumOfAnimals2.Location = new Point(470, 70);
-            lblFarmSize2.Location = new Point(470, 30);
-            pbxCross2.Location = new Point(508, 5);
-
-            pbxFarmer3.Controls.Add(lblFarmerName3);
-            pbxFarmer3.Controls.Add(lblFarmerGender3);
-            pbxFarmer3.Controls.Add(lblFarmerAge3);
-            pbxFarmer3.Controls.Add(lblNumOfAnimals3);
-            pbxFarmer3.Controls.Add(lblFarmSize3);
-            pbxFarmer3.Controls.Add(pbxCross3);
-
-            lblFarmerName3.Location = new Point(240, 13);
-            lblFarmerGender3.Location = new Point(240, 48);
-            lblFarmerAge3.Location = new Point(240, 80);
-            lblNumOfAnimals3.Location = new Point(470, 70);
-            lblFarmSize3.Location = new Point(470, 30);
-            pbxCross3.Location = new Point(508, 5);
-
-            pbxFarmer4.Controls.Add(lblFarmerName4);
-            pbxFarmer4.Controls.Add(lblFarmerGender4);
-            pbxFarmer4.Controls.Add(lblFarmerAge4);
-            pbxFarmer4.Controls.Add(lblNumOfAnimals4);
-            pbxFarmer4.Controls.Add(lblFarmSize4);
-            pbxFarmer4.Controls.Add(pbxCross4);
-
-
-            lblFarmerName4.Location = new Point(240, 13);
-            lblFarmerGender4.Location = new Point(240, 48);
-            lblFarmerAge4.Location = new Point(240, 80);
-            lblNumOfAnimals4.Location = new Point(470, 70);
-            lblFarmSize4.Location = new Point(470, 30);
-            pbxCross4.Location = new Point(508, 5);
-
-
-            pbxFarmer5.Controls.Add(lblFarmerName5);
-            pbxFarmer5.Controls.Add(lblFarmerGender5);
-            pbxFarmer5.Controls.Add(lblFarmerAge5);
-            pbxFarmer5.Controls.Add(lblNumOfAnimals5);
-            pbxFarmer5.Controls.Add(lblFarmSize5);
-            pbxFarmer5.Controls.Add(pbxCross5);
-
-            lblFarmerName5.Location = new Point(240, 13);
-            lblFarmerGender5.Location = new Point(240, 48);
-            lblFarmerAge5.Location = new Point(240, 80);
-            lblNumOfAnimals5.Location = new Point(470, 70);
-            lblFarmSize5.Location = new Point(470, 30);
-            pbxCross5.Location = new Point(508, 5);
-            #endregion
+            
         }
 
         #region NewFarmer_Click
@@ -265,32 +282,32 @@ namespace FarmManagement
         #region ExistingFarmer_Click
         private void pbxFarmer1_Click(object sender, EventArgs e)
         {
-            navFormwithParam.Invoke((Farmer)AllFarmers1[0]);
+            navFormwithParam.Invoke((Farmer)AllFarmers[0]);
             navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
         }
 
         private void pbxFarmer2_Click(object sender, EventArgs e)
         {
-            navFormwithParam.Invoke((Farmer)AllFarmers1[1]);
+            navFormwithParam.Invoke((Farmer)AllFarmers[1]);
             navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
         }
 
         private void pbxFarmer3_Click(object sender, EventArgs e)
         {
-            navFormwithParam.Invoke((Farmer)AllFarmers1[2]);
+            navFormwithParam.Invoke((Farmer)AllFarmers[2]);
             navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
         }
 
         private void pbxFarmer4_Click(object sender, EventArgs e)
         {
 
-            navFormwithParam.Invoke((Farmer)AllFarmers1[3]);
+            navFormwithParam.Invoke((Farmer)AllFarmers[3]);
             navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
         }
 
         private void pbxFarmer5_Click(object sender, EventArgs e)
         {
-            navFormwithParam.Invoke((Farmer)AllFarmers1[4]);
+            navFormwithParam.Invoke((Farmer)AllFarmers[4]);
             navFormwithParam -= new NavFormsWithParam(NavResumeOrFarmView);
         }
         #endregion
@@ -299,31 +316,31 @@ namespace FarmManagement
         private void pbxCross1_Click(object sender, EventArgs e)
         {
             deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
-            deleteFarmer.Invoke((Farmer)AllFarmers1[0], lblFarmerName1.Text);
+            deleteFarmer.Invoke((Farmer)AllFarmers[0], lblFarmerName1.Text);
         }
 
         private void pbxCross2_Click(object sender, EventArgs e)
         {
             deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
-            deleteFarmer.Invoke((Farmer)AllFarmers1[1], lblFarmerName2.Text);
+            deleteFarmer.Invoke((Farmer)AllFarmers[1], lblFarmerName2.Text);
         }
 
         private void pbxCross3_Click(object sender, EventArgs e)
         {
             deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
-            deleteFarmer.Invoke((Farmer)AllFarmers1[2], lblFarmerName3.Text);
+            deleteFarmer.Invoke((Farmer)AllFarmers[2], lblFarmerName3.Text);
         }
 
         private void pbxCross4_Click(object sender, EventArgs e)
         {
             deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
-            deleteFarmer.Invoke((Farmer)AllFarmers1[3], lblFarmerName4.Text);
+            deleteFarmer.Invoke((Farmer)AllFarmers[3], lblFarmerName4.Text);
         }
 
         private void pbxCross5_Click(object sender, EventArgs e)
         {
             deleteFarmer += new DeleteFarmerDel(DeleteFarmer);
-            deleteFarmer.Invoke((Farmer)AllFarmers1[4], lblFarmerName5.Text);
+            deleteFarmer.Invoke((Farmer)AllFarmers[4], lblFarmerName5.Text);
         }
         #endregion
 
@@ -333,23 +350,23 @@ namespace FarmManagement
         {
             newFarmer.Visible = false;
             farmer.Visible = true;
-            CurrentFarmer = (Farmer)AllFarmers1[index];
+            CurrentFarmer = (Farmer)AllFarmers[index];
             farmerName.Text = CurrentFarmer.Name;
             farmerGender.Text = CurrentFarmer.Gender;
             farmerAge.Text = CurrentFarmer.Age.ToString();
             numOfAnimals.Text = CurrentFarmer.numOfAnimals().ToString();
             farmSize.Text = CurrentFarmer.GetFarmSize().ToString();
 
-            if (AllFarmers1[index].Gender == "Male")
+            if (AllFarmers[index].Gender == "Male")
             {
-                loadMaleAvatar(AllFarmers1[index].FarmerStyle.OutfitType, AllFarmers1[index].FarmerStyle.Eyecolour, AllFarmers1[index].FarmerStyle.HairColour, AllFarmers1[index].FarmerStyle.SkinColour, pbxBody, pbxOutfit, pbxEyes, pbxHair);
+                loadMaleAvatar(AllFarmers[index].FarmerStyle.OutfitType, AllFarmers[index].FarmerStyle.Eyecolour, AllFarmers[index].FarmerStyle.HairColour, AllFarmers[index].FarmerStyle.SkinColour, pbxBody, pbxOutfit, pbxEyes, pbxHair);
             }
-            else if (AllFarmers1[index].Gender == "Female")
+            else if (AllFarmers[index].Gender == "Female")
             {
-                loadFemaleAvatar(AllFarmers1[index].FarmerStyle.OutfitType, AllFarmers1[index].FarmerStyle.Eyecolour, AllFarmers1[index].FarmerStyle.HairColour, AllFarmers1[index].FarmerStyle.SkinColour, pbxBody, pbxOutfit, pbxEyes, pbxHair);
+                loadFemaleAvatar(AllFarmers[index].FarmerStyle.OutfitType, AllFarmers[index].FarmerStyle.Eyecolour, AllFarmers[index].FarmerStyle.HairColour, AllFarmers[index].FarmerStyle.SkinColour, pbxBody, pbxOutfit, pbxEyes, pbxHair);
             }
         }
-       
+
         //Loading Character avatars
         public void loadMaleAvatar(string outfit, string eyes, string hair, string skin, PictureBox pbxBody, PictureBox pbxOutfit, PictureBox pbxEyes, PictureBox pbxHair)
         {
@@ -567,5 +584,6 @@ namespace FarmManagement
         }
 
         #endregion
+        
     }
 }
