@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using HelperLibrary;
+using FarmManagement.BLL;
 
 namespace FarmManagement
 {
+
     public partial class Farmer_Creation : Form
     {
+        ClientObject Client = new ClientObject();
+
         //Declaration of character items
         Dictionary<string, Bitmap> skins = new Dictionary<string, Bitmap>();
         Dictionary<string, Bitmap> hairs = new Dictionary<string, Bitmap>();
@@ -126,7 +131,13 @@ namespace FarmManagement
                 FarmerStyle.SkinColour = txtSkin.Text;
                 FarmerStyle.HairColour = txtHair.Text;
                 Farmer farmer = new Farmer(txtName.Text, cmbGender.Text, int.Parse(txtAge.Text), FarmerStyle);
-                success = farmer.InsertFarmer();
+                MessageObject FarmerToAdd = new MessageObject();
+                FarmerToAdd.Data = farmer.BinarySerialization();
+                FarmerToAdd.FormIdentifier = 4;
+                FarmerToAdd.ObjectIdentifier = 3;
+                FarmerToAdd.ActionIdentifier = 2;
+                Client.SendData(FarmerToAdd);
+               // success = farmer.InsertFarmer();
 
 
                 if (success == 2)
