@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{460FF9F1-1589-4233-9889-41ECFD8DEFBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperLibrary", "..\..\..\Desktop\HelperLibrary\HelperLibrary.csproj", "{2866BA3C-8BC6-4C4E-8FE0-1FE8676F2C59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperLibrary", "HelperLibrary\HelperLibrary.csproj", "{8755511F-7913-4992-B9F4-342D50D3AD2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{460FF9F1-1589-4233-9889-41ECFD8DEFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{460FF9F1-1589-4233-9889-41ECFD8DEFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{460FF9F1-1589-4233-9889-41ECFD8DEFBA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2866BA3C-8BC6-4C4E-8FE0-1FE8676F2C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2866BA3C-8BC6-4C4E-8FE0-1FE8676F2C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2866BA3C-8BC6-4C4E-8FE0-1FE8676F2C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2866BA3C-8BC6-4C4E-8FE0-1FE8676F2C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8755511F-7913-4992-B9F4-342D50D3AD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8755511F-7913-4992-B9F4-342D50D3AD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8755511F-7913-4992-B9F4-342D50D3AD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8755511F-7913-4992-B9F4-342D50D3AD2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
