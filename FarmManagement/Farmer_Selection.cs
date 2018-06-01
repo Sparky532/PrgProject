@@ -11,6 +11,7 @@ using BLL;
 using System.Reflection;
 using System.IO;
 using System.Threading;
+using FarmManagement.BLL;
 
 namespace FarmManagement
 {
@@ -19,6 +20,7 @@ namespace FarmManagement
         Farmer[] AllFarmers = new Farmer[5];
         Farmer farmer = new Farmer();
         Farmer CurrentFarmer = new Farmer();
+        ClientObject co;
 
         public Farmer[] AllFarmers1
         {
@@ -46,6 +48,7 @@ namespace FarmManagement
         public Farmer_Selection()
         {
             InitializeComponent();
+            co = new ClientObject();
         }
         private void Farmer_Selection_Load(object sender, EventArgs e)
         {
