@@ -7,6 +7,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using HelperLibrary;
+using System.Windows.Forms;
 
 namespace FarmManagement.BLL
 {
@@ -20,6 +22,16 @@ namespace FarmManagement.BLL
         Thread receivingThread;
         Thread sendingThread;
 
+        public ClientObject(bool firstStartup,MessageObject message)
+        {
+            InitializeServer();
+            StartServer();
+            if (firstStartup)
+            {
+                Thread.Sleep(2500);
+                SendData(message);
+            }
+        }
         public ClientObject()
         {
             InitializeServer();
@@ -47,8 +59,8 @@ namespace FarmManagement.BLL
             {
                 byte[] buffer = new byte[clientSocket.ReceiveBufferSize];
                 clientSocket.Receive(buffer);
-                // MessageObject message = (MessageObject)buffer.BinaryDeserialization();
-                //ClientActions(message);
+                MessageObject message = (MessageObject)buffer.BinaryDeserialization();
+                ClientActions(message);
 
             }
         }
@@ -65,14 +77,43 @@ namespace FarmManagement.BLL
             clientSocket.Close();
         }
 
-        public void SendData()
+        public void SendData(MessageObject message)
         {
-
+            clientSocket.Send(message.BinarySerialization());
         }
 
         public void ClientActions(MessageObject message)
         {
-
+            switch (message.FormIdentifier)
+            {
+                case 1:
+                    {
+                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                        switch (message.ObjectIdentifier)
+                        {
+                            case 1:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        case 1:
+                                            {
+                                                Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
+                                                farmerSelection.AllFarmers1 = AllFarmers;
+                                                break;
+                                            }
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
+                            default:
+                                break;
+                        }
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
     }
 }

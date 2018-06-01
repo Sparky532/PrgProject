@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace BLL
 {
+    [Serializable]
     public struct Species
     {
         private string animalName;

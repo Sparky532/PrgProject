@@ -9,6 +9,7 @@ using System.Collections;
 
 namespace BLL
 {
+    [Serializable]
     public partial class Farmer
     {
         private int id;

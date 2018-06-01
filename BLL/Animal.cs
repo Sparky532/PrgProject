@@ -10,6 +10,7 @@ using System.Data;
 namespace BLL
 {
     //Fields, constructor and propeties
+    [Serializable]
     public partial class Animal
     {
         private int id;

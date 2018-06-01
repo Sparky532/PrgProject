@@ -9,6 +9,7 @@ using System.Data;
 
 namespace BLL
 {
+    [Serializable]
     public partial class Farm
     {
         private int id;

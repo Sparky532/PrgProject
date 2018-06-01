@@ -63,8 +63,8 @@ namespace Server.BLL
             {
                 byte[] buffer = new byte[client.ReceiveBufferSize];
                 client.Receive(buffer);
-                MessageObject message = (MessageObject)buffer.BinaryDeserialization();
-                ServerActions(message);
+                MessageObject message = ((MessageObject)(buffer.BinaryDeserialization()));
+                ServerActions(message, client);
 
             }
         }
@@ -92,9 +92,39 @@ namespace Server.BLL
             sendingThread.Start();
         }
 
-        public void ServerActions(MessageObject message)
+        public void ServerActions(MessageObject message, Socket client)
         {
-
+            switch (message.FormIdentifier)
+            {
+                case 1:
+                    {
+                        switch (message.ObjectIdentifier)
+                        {
+                            case 1:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        case 1:
+                                            {
+                                                Farmer farmer = new Farmer();
+                                                Farmer[] AllFarmers = farmer.FarmerSelection();
+                                                message.Data = AllFarmers.BinarySerialization();
+                                                SendData(message,client);
+                                                break;
+                                            }
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
+                            default:
+                                break;
+                        }
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
     }
 }

@@ -55,6 +55,10 @@
       <Project>{f0c215c0-db41-4c2a-80e9-7d87bf1e1cdc}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{819700cd-6b12-48fe-8a22-3f34a8171e31}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HelperLibrary\HelperLibrary.csproj">
       <Project>{8755511f-7913-4992-b9f4-342d50d3ad2a}</Project>
       <Name>HelperLibrary</Name>

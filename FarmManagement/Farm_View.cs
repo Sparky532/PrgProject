@@ -14,7 +14,7 @@ namespace FarmManagement
     public partial class Farm_View : Form
     {
         List<Farm> farms = new List<Farm>();
-        List<Location> locations = new List<BLL.Location>();
+        List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
         int ID = 0;
         public Farm_View(int id)

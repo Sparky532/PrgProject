@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
+    [Serializable]
     public class MessageObject
     {
         private byte[] data;

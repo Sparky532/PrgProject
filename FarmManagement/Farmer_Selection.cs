@@ -48,11 +48,12 @@ namespace FarmManagement
         public Farmer_Selection()
         {
             InitializeComponent();
-            co = new ClientObject();
+            MessageObject message = new MessageObject(new byte[1],1,1,1);
+            co = new ClientObject(true,message);
         }
         private void Farmer_Selection_Load(object sender, EventArgs e)
         {
-            AllFarmers1 = farmer.FarmerSelection();
+            //AllFarmers1 = farmer.FarmerSelection();
             //code for a loading bar or something in here
         }
         private void FarmerArrayLoaded()

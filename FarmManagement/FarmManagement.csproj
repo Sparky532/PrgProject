@@ -214,6 +214,10 @@
       <Project>{f0c215c0-db41-4c2a-80e9-7d87bf1e1cdc}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HelperLibrary\HelperLibrary.csproj">
+      <Project>{6bb89a49-b68e-4713-8a59-adb9a412e987}</Project>
+      <Name>HelperLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EnterButton.png" />

@@ -8,6 +8,7 @@ using System.Data;
 
 namespace BLL
 {
+    [Serializable]
     public struct AnimalsSelected
     {
         private int animalAmount;
