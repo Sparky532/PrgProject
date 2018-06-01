@@ -58,12 +58,12 @@ namespace FarmManagement
         public Farmer_Selection()
         {
             InitializeComponent();
-            MessageObject message = new MessageObject(new byte[1], 1, 1, 1);
-            co = new ClientObject(true, message);
-            myEvent = FarmerArrayLoaded;
         }
         private void Farmer_Selection_Load(object sender, EventArgs e)
         {
+            MessageObject message = new MessageObject(new byte[1], 1, 1, 1);
+            co = new ClientObject(true, message);
+            myEvent = FarmerArrayLoaded;
         }
         private void FarmerArrayLoaded()
         {
@@ -543,8 +543,8 @@ namespace FarmManagement
                 FarmerToDelete.FormIdentifier = 1;
                 FarmerToDelete.ObjectIdentifier = 1;
                 FarmerToDelete.ActionIdentifier = 3;
-               // CurrentFarmer.DeleteFarmer();
-
+                // CurrentFarmer.DeleteFarmer();
+                co.SendData(FarmerToDelete);
                 Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
                 RefreshThread.Start();
                 this.Close();

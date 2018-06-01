@@ -32,23 +32,44 @@
             this.lstFarm = new System.Windows.Forms.ListBox();
             this.lstLocations = new System.Windows.Forms.ListBox();
             this.lstAnimals = new System.Windows.Forms.ListBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnToFarmerSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sortBySpeciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tigerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sheepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.horseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.allAnimalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnSort = new System.Windows.Forms.Button();
+            this.btnCloseMenu = new System.Windows.Forms.Button();
+            this.btnOpenMenu = new System.Windows.Forms.Button();
+            this.pnlSortSubMenu = new System.Windows.Forms.Panel();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
+            this.SortSheep = new System.Windows.Forms.Button();
+            this.SortHorse = new System.Windows.Forms.Button();
+            this.SortAll = new System.Windows.Forms.Button();
+            this.SortCow = new System.Windows.Forms.Button();
+            this.SortTiger = new System.Windows.Forms.Button();
+            this.SortLion = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSettingsSubMenu = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.pnlMenu.SuspendLayout();
+            this.pnlSortSubMenu.SuspendLayout();
+            this.pnlSettingsSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstFarm
             // 
             this.lstFarm.FormattingEnabled = true;
-            this.lstFarm.Location = new System.Drawing.Point(159, 119);
+            this.lstFarm.Location = new System.Drawing.Point(314, 27);
             this.lstFarm.Name = "lstFarm";
             this.lstFarm.Size = new System.Drawing.Size(120, 95);
             this.lstFarm.TabIndex = 0;
@@ -56,7 +77,7 @@
             // lstLocations
             // 
             this.lstLocations.FormattingEnabled = true;
-            this.lstLocations.Location = new System.Drawing.Point(316, 119);
+            this.lstLocations.Location = new System.Drawing.Point(440, 27);
             this.lstLocations.Name = "lstLocations";
             this.lstLocations.Size = new System.Drawing.Size(120, 95);
             this.lstLocations.TabIndex = 1;
@@ -64,111 +85,439 @@
             // lstAnimals
             // 
             this.lstAnimals.FormattingEnabled = true;
-            this.lstAnimals.Location = new System.Drawing.Point(472, 119);
+            this.lstAnimals.Location = new System.Drawing.Point(566, 27);
             this.lstAnimals.Name = "lstAnimals";
             this.lstAnimals.Size = new System.Drawing.Size(292, 95);
             this.lstAnimals.TabIndex = 2;
             // 
-            // menuStrip1
+            // pnlMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(890, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.pnlMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlMenu.Controls.Add(this.panel1);
+            this.pnlMenu.Controls.Add(this.textBox1);
+            this.pnlMenu.Controls.Add(this.btnCloseMenu);
+            this.pnlMenu.Controls.Add(this.btnSort);
+            this.pnlMenu.Controls.Add(this.btnSettings);
+            this.pnlMenu.Controls.Add(this.btnExit);
+            this.pnlMenu.Location = new System.Drawing.Point(961, 27);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(190, 500);
+            this.pnlMenu.TabIndex = 4;
+            this.pnlMenu.Visible = false;
             // 
-            // fileToolStripMenuItem
+            // btnExit
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.returnToFarmerSelectionToolStripMenuItem,
-            this.sortBySpeciesToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnExit.Location = new System.Drawing.Point(40, 450);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(150, 50);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
+            this.btnExit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnExit_MouseMove);
             // 
-            // returnToFarmerSelectionToolStripMenuItem
+            // btnSettings
             // 
-            this.returnToFarmerSelectionToolStripMenuItem.Name = "returnToFarmerSelectionToolStripMenuItem";
-            this.returnToFarmerSelectionToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.returnToFarmerSelectionToolStripMenuItem.Text = "Return To Farmer Selection";
-            this.returnToFarmerSelectionToolStripMenuItem.Click += new System.EventHandler(this.returnToFarmerSelectionToolStripMenuItem_Click);
+            this.btnSettings.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnSettings.Location = new System.Drawing.Point(40, 400);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(150, 50);
+            this.btnSettings.TabIndex = 6;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.MouseLeave += new System.EventHandler(this.btnSettings_MouseLeave);
+            this.btnSettings.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSettings_MouseMove);
             // 
-            // sortBySpeciesToolStripMenuItem
+            // btnSort
             // 
-            this.sortBySpeciesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lionToolStripMenuItem,
-            this.tigerToolStripMenuItem,
-            this.cowToolStripMenuItem,
-            this.sheepToolStripMenuItem,
-            this.horseToolStripMenuItem,
-            this.allAnimalsToolStripMenuItem});
-            this.sortBySpeciesToolStripMenuItem.Name = "sortBySpeciesToolStripMenuItem";
-            this.sortBySpeciesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.sortBySpeciesToolStripMenuItem.Text = "Sort By Species";
+            this.btnSort.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSort.FlatAppearance.BorderSize = 0;
+            this.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnSort.Location = new System.Drawing.Point(40, 350);
+            this.btnSort.Name = "btnSort";
+            this.btnSort.Size = new System.Drawing.Size(150, 50);
+            this.btnSort.TabIndex = 7;
+            this.btnSort.Text = "Sort";
+            this.btnSort.UseVisualStyleBackColor = false;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
+            this.btnSort.MouseLeave += new System.EventHandler(this.btnSort_MouseLeave);
+            this.btnSort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSort_MouseMove);
             // 
-            // lionToolStripMenuItem
+            // btnCloseMenu
             // 
-            this.lionToolStripMenuItem.Name = "lionToolStripMenuItem";
-            this.lionToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.lionToolStripMenuItem.Text = "Lion";
-            this.lionToolStripMenuItem.Click += new System.EventHandler(this.lionToolStripMenuItem_Click);
+            this.btnCloseMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCloseMenu.FlatAppearance.BorderSize = 0;
+            this.btnCloseMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnCloseMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnCloseMenu.Name = "btnCloseMenu";
+            this.btnCloseMenu.Size = new System.Drawing.Size(50, 50);
+            this.btnCloseMenu.TabIndex = 8;
+            this.btnCloseMenu.Text = "≡";
+            this.btnCloseMenu.UseVisualStyleBackColor = false;
+            this.btnCloseMenu.Click += new System.EventHandler(this.btnCloseMenu_Click);
             // 
-            // tigerToolStripMenuItem
+            // btnOpenMenu
             // 
-            this.tigerToolStripMenuItem.Name = "tigerToolStripMenuItem";
-            this.tigerToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.tigerToolStripMenuItem.Text = "Tiger";
-            this.tigerToolStripMenuItem.Click += new System.EventHandler(this.tigerToolStripMenuItem_Click);
+            this.btnOpenMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnOpenMenu.FlatAppearance.BorderSize = 0;
+            this.btnOpenMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnOpenMenu.Location = new System.Drawing.Point(1157, 483);
+            this.btnOpenMenu.Name = "btnOpenMenu";
+            this.btnOpenMenu.Size = new System.Drawing.Size(50, 50);
+            this.btnOpenMenu.TabIndex = 9;
+            this.btnOpenMenu.Text = "≡";
+            this.btnOpenMenu.UseVisualStyleBackColor = false;
+            this.btnOpenMenu.Click += new System.EventHandler(this.btnOpenMenu_Click);
             // 
-            // cowToolStripMenuItem
+            // pnlSortSubMenu
             // 
-            this.cowToolStripMenuItem.Name = "cowToolStripMenuItem";
-            this.cowToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.cowToolStripMenuItem.Text = "Cow";
-            this.cowToolStripMenuItem.Click += new System.EventHandler(this.cowToolStripMenuItem_Click);
+            this.pnlSortSubMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlSortSubMenu.Controls.Add(this.panel2);
+            this.pnlSortSubMenu.Controls.Add(this.textBox2);
+            this.pnlSortSubMenu.Controls.Add(this.SortLion);
+            this.pnlSortSubMenu.Controls.Add(this.SortTiger);
+            this.pnlSortSubMenu.Controls.Add(this.SortCow);
+            this.pnlSortSubMenu.Controls.Add(this.btnBackToMenu);
+            this.pnlSortSubMenu.Controls.Add(this.SortSheep);
+            this.pnlSortSubMenu.Controls.Add(this.SortHorse);
+            this.pnlSortSubMenu.Controls.Add(this.SortAll);
+            this.pnlSortSubMenu.Location = new System.Drawing.Point(1157, 27);
+            this.pnlSortSubMenu.Name = "pnlSortSubMenu";
+            this.pnlSortSubMenu.Size = new System.Drawing.Size(190, 450);
+            this.pnlSortSubMenu.TabIndex = 9;
+            this.pnlSortSubMenu.Visible = false;
             // 
-            // sheepToolStripMenuItem
+            // btnBackToMenu
             // 
-            this.sheepToolStripMenuItem.Name = "sheepToolStripMenuItem";
-            this.sheepToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.sheepToolStripMenuItem.Text = "Sheep";
-            this.sheepToolStripMenuItem.Click += new System.EventHandler(this.sheepToolStripMenuItem_Click);
+            this.btnBackToMenu.BackColor = System.Drawing.Color.Silver;
+            this.btnBackToMenu.FlatAppearance.BorderSize = 0;
+            this.btnBackToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnBackToMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(50, 50);
+            this.btnBackToMenu.TabIndex = 8;
+            this.btnBackToMenu.Text = "<";
+            this.btnBackToMenu.UseVisualStyleBackColor = false;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
             // 
-            // horseToolStripMenuItem
+            // SortSheep
             // 
-            this.horseToolStripMenuItem.Name = "horseToolStripMenuItem";
-            this.horseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.horseToolStripMenuItem.Text = "Horse";
-            this.horseToolStripMenuItem.Click += new System.EventHandler(this.horseToolStripMenuItem_Click);
+            this.SortSheep.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortSheep.FlatAppearance.BorderSize = 0;
+            this.SortSheep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortSheep.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortSheep.Location = new System.Drawing.Point(40, 200);
+            this.SortSheep.Name = "SortSheep";
+            this.SortSheep.Size = new System.Drawing.Size(150, 50);
+            this.SortSheep.TabIndex = 7;
+            this.SortSheep.Text = "Sheep";
+            this.SortSheep.UseVisualStyleBackColor = false;
+            this.SortSheep.Click += new System.EventHandler(this.sheepToolStripMenuItem_Click);
+            this.SortSheep.MouseLeave += new System.EventHandler(this.SortSheep_MouseLeave);
+            this.SortSheep.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortSheep_MouseMove);
             // 
-            // allAnimalsToolStripMenuItem
+            // SortHorse
             // 
-            this.allAnimalsToolStripMenuItem.Name = "allAnimalsToolStripMenuItem";
-            this.allAnimalsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.allAnimalsToolStripMenuItem.Text = "All Animals";
-            this.allAnimalsToolStripMenuItem.Click += new System.EventHandler(this.allAnimalsToolStripMenuItem_Click);
+            this.SortHorse.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortHorse.FlatAppearance.BorderSize = 0;
+            this.SortHorse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortHorse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortHorse.Location = new System.Drawing.Point(40, 250);
+            this.SortHorse.Name = "SortHorse";
+            this.SortHorse.Size = new System.Drawing.Size(150, 50);
+            this.SortHorse.TabIndex = 6;
+            this.SortHorse.Text = "Horse";
+            this.SortHorse.UseVisualStyleBackColor = false;
+            this.SortHorse.Click += new System.EventHandler(this.horseToolStripMenuItem_Click);
+            this.SortHorse.MouseLeave += new System.EventHandler(this.SortHorse_MouseLeave);
+            this.SortHorse.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortHorse_MouseMove);
+            // 
+            // SortAll
+            // 
+            this.SortAll.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortAll.FlatAppearance.BorderSize = 0;
+            this.SortAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortAll.Location = new System.Drawing.Point(40, 300);
+            this.SortAll.Name = "SortAll";
+            this.SortAll.Size = new System.Drawing.Size(150, 50);
+            this.SortAll.TabIndex = 5;
+            this.SortAll.Text = " All Animals";
+            this.SortAll.UseVisualStyleBackColor = false;
+            this.SortAll.Click += new System.EventHandler(this.allAnimalsToolStripMenuItem_Click);
+            this.SortAll.MouseLeave += new System.EventHandler(this.SortAll_MouseLeave);
+            this.SortAll.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortAll_MouseMove);
+            // 
+            // SortCow
+            // 
+            this.SortCow.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortCow.FlatAppearance.BorderSize = 0;
+            this.SortCow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortCow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortCow.Location = new System.Drawing.Point(40, 150);
+            this.SortCow.Name = "SortCow";
+            this.SortCow.Size = new System.Drawing.Size(150, 50);
+            this.SortCow.TabIndex = 9;
+            this.SortCow.Text = "Cow";
+            this.SortCow.UseVisualStyleBackColor = false;
+            this.SortCow.Click += new System.EventHandler(this.cowToolStripMenuItem_Click);
+            this.SortCow.MouseLeave += new System.EventHandler(this.SortCow_MouseLeave);
+            this.SortCow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortCow_MouseMove);
+            // 
+            // SortTiger
+            // 
+            this.SortTiger.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortTiger.FlatAppearance.BorderSize = 0;
+            this.SortTiger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortTiger.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortTiger.Location = new System.Drawing.Point(40, 100);
+            this.SortTiger.Name = "SortTiger";
+            this.SortTiger.Size = new System.Drawing.Size(150, 50);
+            this.SortTiger.TabIndex = 10;
+            this.SortTiger.Text = "Tiger";
+            this.SortTiger.UseVisualStyleBackColor = false;
+            this.SortTiger.Click += new System.EventHandler(this.tigerToolStripMenuItem_Click);
+            this.SortTiger.MouseLeave += new System.EventHandler(this.SortTiger_MouseLeave);
+            this.SortTiger.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortTiger_MouseMove);
+            // 
+            // SortLion
+            // 
+            this.SortLion.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortLion.FlatAppearance.BorderSize = 0;
+            this.SortLion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortLion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortLion.Location = new System.Drawing.Point(40, 50);
+            this.SortLion.Name = "SortLion";
+            this.SortLion.Size = new System.Drawing.Size(150, 50);
+            this.SortLion.TabIndex = 11;
+            this.SortLion.Text = "Lion";
+            this.SortLion.UseVisualStyleBackColor = false;
+            this.SortLion.Click += new System.EventHandler(this.lionToolStripMenuItem_Click);
+            this.SortLion.MouseLeave += new System.EventHandler(this.SortLion_MouseLeave);
+            this.SortLion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortLion_MouseMove);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button7.Location = new System.Drawing.Point(748, 552);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(150, 50);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Exit";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.returnToFarmerSelectionToolStripMenuItem_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBox1.Location = new System.Drawing.Point(90, 8);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 31);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "Menu ";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBox2.Location = new System.Drawing.Point(56, 8);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(131, 31);
+            this.textBox2.TabIndex = 10;
+            this.textBox2.Text = "Sort ";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(50, 450);
+            this.panel1.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(204)))), ((int)(((byte)(242)))));
+            this.panel2.Location = new System.Drawing.Point(0, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(50, 400);
+            this.panel2.TabIndex = 11;
+            // 
+            // pnlSettingsSubMenu
+            // 
+            this.pnlSettingsSubMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlSettingsSubMenu.Controls.Add(this.panel4);
+            this.pnlSettingsSubMenu.Controls.Add(this.textBox3);
+            this.pnlSettingsSubMenu.Controls.Add(this.button8);
+            this.pnlSettingsSubMenu.Controls.Add(this.button9);
+            this.pnlSettingsSubMenu.Controls.Add(this.button10);
+            this.pnlSettingsSubMenu.Controls.Add(this.button11);
+            this.pnlSettingsSubMenu.Controls.Add(this.button12);
+            this.pnlSettingsSubMenu.Controls.Add(this.button13);
+            this.pnlSettingsSubMenu.Controls.Add(this.button14);
+            this.pnlSettingsSubMenu.Location = new System.Drawing.Point(1353, 27);
+            this.pnlSettingsSubMenu.Name = "pnlSettingsSubMenu";
+            this.pnlSettingsSubMenu.Size = new System.Drawing.Size(190, 450);
+            this.pnlSettingsSubMenu.TabIndex = 12;
+            this.pnlSettingsSubMenu.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(255)))), ((int)(((byte)(116)))));
+            this.panel4.Location = new System.Drawing.Point(0, 50);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(50, 400);
+            this.panel4.TabIndex = 11;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBox3.Location = new System.Drawing.Point(56, 8);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(131, 31);
+            this.textBox3.TabIndex = 10;
+            this.textBox3.Text = "Settings ";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button8.Location = new System.Drawing.Point(40, 50);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(150, 50);
+            this.button8.TabIndex = 11;
+            this.button8.Text = "Lion";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button9.Location = new System.Drawing.Point(40, 100);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(150, 50);
+            this.button9.TabIndex = 10;
+            this.button9.Text = "Tiger";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button10.Location = new System.Drawing.Point(40, 150);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(150, 50);
+            this.button10.TabIndex = 9;
+            this.button10.Text = "Cow";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Silver;
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button11.Location = new System.Drawing.Point(0, 0);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(50, 50);
+            this.button11.TabIndex = 8;
+            this.button11.Text = "<";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button12.Location = new System.Drawing.Point(40, 200);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(150, 50);
+            this.button12.TabIndex = 7;
+            this.button12.Text = "Sheep";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button13.Location = new System.Drawing.Point(40, 250);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(150, 50);
+            this.button13.TabIndex = 6;
+            this.button13.Text = "Horse";
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button14.Location = new System.Drawing.Point(40, 300);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(150, 50);
+            this.button14.TabIndex = 5;
+            this.button14.Text = " All Animals";
+            this.button14.UseVisualStyleBackColor = false;
             // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 627);
+            this.ClientSize = new System.Drawing.Size(919, 627);
+            this.Controls.Add(this.pnlSettingsSubMenu);
+            this.Controls.Add(this.pnlSortSubMenu);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(this.btnOpenMenu);
             this.Controls.Add(this.lstAnimals);
             this.Controls.Add(this.lstLocations);
             this.Controls.Add(this.lstFarm);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Farm_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Farm_View";           
+            this.Text = "Farm_View";
             this.Load += new System.EventHandler(this.Farm_View_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
+            this.pnlSortSubMenu.ResumeLayout(false);
+            this.pnlSortSubMenu.PerformLayout();
+            this.pnlSettingsSubMenu.ResumeLayout(false);
+            this.pnlSettingsSubMenu.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -177,15 +526,34 @@
         private System.Windows.Forms.ListBox lstFarm;
         private System.Windows.Forms.ListBox lstLocations;
         private System.Windows.Forms.ListBox lstAnimals;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem returnToFarmerSelectionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sortBySpeciesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tigerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sheepToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem horseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem allAnimalsToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Button btnCloseMenu;
+        private System.Windows.Forms.Button btnSort;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnOpenMenu;
+        private System.Windows.Forms.Panel pnlSortSubMenu;
+        private System.Windows.Forms.Button SortLion;
+        private System.Windows.Forms.Button SortTiger;
+        private System.Windows.Forms.Button SortCow;
+        private System.Windows.Forms.Button btnBackToMenu;
+        private System.Windows.Forms.Button SortSheep;
+        private System.Windows.Forms.Button SortHorse;
+        private System.Windows.Forms.Button SortAll;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlSettingsSubMenu;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
     }
 }

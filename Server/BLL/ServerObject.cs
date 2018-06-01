@@ -130,7 +130,7 @@ namespace Server.BLL
                                                 break;
                                             }
                                             //Delete
-                                        case 2:
+                                        case 3:
                                             {
                                                 Farmer farmer = (Farmer)message.Data.BinaryDeserialization();
                                                 farmer.DeleteFarmer();

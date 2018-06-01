@@ -137,22 +137,11 @@ namespace FarmManagement
                 FarmerToAdd.ObjectIdentifier = 1;
                 FarmerToAdd.ActionIdentifier = 2;
                 Client.SendData(FarmerToAdd);
-               // success = farmer.InsertFarmer();
-
-
-                if (success == 2)
-                {
-                    Farm_Creation form = new Farm_Creation();
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
-
-                }
-                else
-                {
-                    MessageBox.Show("Insert Failed");
-
-                }
+                // success = farmer.InsertFarmer();3
+                Farm_Creation form = new Farm_Creation();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
             catch (NoFarmerNameException)
             {
