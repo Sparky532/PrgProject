@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BLL;
 using System.Reflection;
 using System.IO;
+using FarmManagement.BLL;
+using HelperLibrary;
 
 namespace FarmManagement
 {
@@ -21,6 +23,7 @@ namespace FarmManagement
         BindingSource bs1 = new BindingSource();
         BindingSource bs2 = new BindingSource();
         bool animalsAdded = false;
+        ClientObject Client = new ClientObject();
         int ID = 0;
 
         public Animal_Selection()
@@ -43,6 +46,7 @@ namespace FarmManagement
 
         public void loadDefaults()
         {
+
             //Select the animal species from the database
             AnimalsSelected selects = new AnimalsSelected();
             animalSpecies = selects.getAnimalName();
@@ -164,7 +168,14 @@ namespace FarmManagement
                     {
                         //adding the animals
                         Animal animal = new Animal();
-                        animal.AddAnimal(animalsSelected);
+                       // animal.AddAnimal(animalsSelected);
+                        MessageObject AnimalsToAdd = new MessageObject();                       
+                        AnimalsToAdd.Data =animalsSelected.BinarySerialization();
+                        AnimalsToAdd.FormIdentifier = 4;
+                        AnimalsToAdd.ObjectIdentifier = 3;
+                        AnimalsToAdd.ActionIdentifier = 2;
+                        Client.SendData(AnimalsToAdd);
+
                         Farm_View form = new Farm_View(ID);
                         this.Hide();
                         form.ShowDialog();

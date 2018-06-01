@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BLL;
 using System.IO;
 using System.Drawing.Imaging;
+using HelperLibrary;
+using FarmManagement.BLL;
 
 namespace FarmManagement
 {
@@ -18,6 +20,8 @@ namespace FarmManagement
         List<AnimalsSelected> animalsSelected = new List<AnimalsSelected>();
         List<Species> animalSpecies = new List<Species>();
         int farmerID = 0;
+        ClientObject Client = new ClientObject();
+
         public Add_Species(List<AnimalsSelected> animalsSelectedP, List<Species> animalSpeciesP,int farmerIDP)
         {
             InitializeComponent();
@@ -82,7 +86,14 @@ namespace FarmManagement
                     spec.Animaltype = cbxType.SelectedItem.ToString();
                     spec.Space = double.Parse(txtSpace.Text);
                     spec.Speed = double.Parse(txtSpeed.Text);
-                    animalSpecies.Add(spec);
+                    MessageObject InsertSpecies = new MessageObject();
+                    InsertSpecies.Data = spec.BinarySerialization();
+                    InsertSpecies.FormIdentifier = 5;
+                    InsertSpecies.ObjectIdentifier = 4;
+                    InsertSpecies.ActionIdentifier = 2;
+                    Client.SendData(InsertSpecies);
+
+                   // animalSpecies.Add(spec);
                     //Write the four items to the text file
                     spec.writeSpecies();
                 }

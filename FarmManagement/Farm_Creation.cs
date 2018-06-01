@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using HelperLibrary;
+using FarmManagement.BLL;
 
 namespace FarmManagement
 {
@@ -16,6 +18,7 @@ namespace FarmManagement
         Farmer farmer = new Farmer();
         string name;
         double size = 0;
+        ClientObject Client = new ClientObject();
 
         public Farm_Creation()
         {
@@ -117,7 +120,13 @@ namespace FarmManagement
             else
             {
                 Farm f = new Farm(name, size);
-                f.insertFarm();
+               // f.insertFarm();
+                MessageObject FarmToInsert = new MessageObject();
+                FarmToInsert.Data = f.BinarySerialization();
+                FarmToInsert.FormIdentifier = 3;
+                FarmToInsert.ObjectIdentifier = 2;
+                FarmToInsert.ActionIdentifier = 2;
+                Client.SendData(FarmToInsert);
                 Animal_Selection form = new Animal_Selection(farmer.ID);
                 this.Hide();
                 form.ShowDialog();

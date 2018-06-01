@@ -12,6 +12,7 @@ using System.Reflection;
 using System.IO;
 using System.Threading;
 using FarmManagement.BLL;
+using HelperLibrary;
 
 namespace FarmManagement
 {
@@ -536,7 +537,13 @@ namespace FarmManagement
             DialogResult confirm = MessageBox.Show("Are you sure you want to delete " + Name + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                CurrentFarmer.DeleteFarmer();
+
+                MessageObject FarmerToDelete = new MessageObject();
+                FarmerToDelete.Data = CurrentFarmer.BinarySerialization();
+                FarmerToDelete.FormIdentifier = 1;
+                FarmerToDelete.ObjectIdentifier = 1;
+                FarmerToDelete.ActionIdentifier = 3;
+               // CurrentFarmer.DeleteFarmer();
 
                 Thread RefreshThread = new Thread(() => { Application.Run(new Farmer_Selection()); });
                 RefreshThread.Start();
