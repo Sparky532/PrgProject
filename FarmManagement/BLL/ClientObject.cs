@@ -28,6 +28,7 @@ namespace FarmManagement.BLL
             StartServer();
             if (firstStartup)
             {
+                Thread.Sleep(2500);
                 SendData(message);
             }
         }
@@ -117,11 +118,17 @@ namespace FarmManagement.BLL
         }
         private void InvokeFarmer(Farmer[] AllFarmers, Farmer_Selection farmerSelection)
         {
-            if (farmerSelection.InvokeRequired)
+            try
             {
-                farmerSelection.Invoke(new Action<Farmer[], Farmer_Selection>(InvokeFarmer), AllFarmers, farmerSelection);
+                if (farmerSelection.InvokeRequired)
+                {
+                    farmerSelection.Invoke(new Action<Farmer[], Farmer_Selection>(InvokeFarmer), AllFarmers, farmerSelection);
+                }
+                farmerSelection.ReceiveFarmers(AllFarmers);
             }
-            farmerSelection.ReceiveFarmers(AllFarmers);
+            catch (NullReferenceException)
+            {
+            }
         }
     }
 }
