@@ -133,8 +133,8 @@ namespace FarmManagement
                 Farmer farmer = new Farmer(txtName.Text, cmbGender.Text, int.Parse(txtAge.Text), FarmerStyle);
                 MessageObject FarmerToAdd = new MessageObject();
                 FarmerToAdd.Data = farmer.BinarySerialization();
-                FarmerToAdd.FormIdentifier = 4;
-                FarmerToAdd.ObjectIdentifier = 3;
+                FarmerToAdd.FormIdentifier = 2;
+                FarmerToAdd.ObjectIdentifier = 1;
                 FarmerToAdd.ActionIdentifier = 2;
                 Client.SendData(FarmerToAdd);
                // success = farmer.InsertFarmer();
