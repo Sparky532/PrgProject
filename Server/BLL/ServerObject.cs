@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using BLL;
 
 namespace Server.BLL
 {
@@ -61,16 +62,32 @@ namespace Server.BLL
             {
                 byte[] buffer = new byte[client.ReceiveBufferSize];
                 client.Receive(buffer);
+                // MessageObject message = (MessageObject)buffer.BinaryDeserialization();
+                //ServerActions(message);
 
             }
         }
 
         public void StopServer()
         {
+            running = false;
+            acceptingThread.Abort();
+            receivingThread.Abort();
+            sendingThread.Abort();
 
+            Thread.Sleep(1000);
+
+            serverSocket.Shutdown(SocketShutdown.Both);
+            serverSocket.Dispose();
+            serverSocket.Close();
         }
 
         public void SendData()
+        {
+
+        }
+
+        public void ServerActions(MessageObject message)
         {
 
         }
