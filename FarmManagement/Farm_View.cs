@@ -53,7 +53,7 @@ namespace FarmManagement
         {
             Farmer_Selection form = new Farmer_Selection();
             //form.Show();
-            //this.Hide();
+            this.Hide();
             form.ShowDialog();
             this.Close();
         }
