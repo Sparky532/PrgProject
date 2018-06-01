@@ -19,7 +19,7 @@ namespace HelperLibrary
 
             try
             {
-                formatter.Serialize(stream, dataSerialized);
+                formatter.Serialize(stream,dataToSerialize);
                 dataSerialized = stream.GetBuffer();
             }
             catch (Exception)

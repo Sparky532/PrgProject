@@ -21,6 +21,7 @@ namespace FarmManagement
         Farmer farmer = new Farmer();
         Farmer CurrentFarmer = new Farmer();
         ClientObject co;
+        bool check = false;
 
         public Farmer[] AllFarmers1
         {
@@ -32,7 +33,10 @@ namespace FarmManagement
             set
             {
                 AllFarmers = value;
-                FarmerArrayLoaded();
+                if (check)
+                {
+                    FarmerArrayLoaded();
+                }
             }
         }
 
@@ -50,6 +54,9 @@ namespace FarmManagement
             InitializeComponent();
             MessageObject message = new MessageObject(new byte[1],1,1,1);
             co = new ClientObject(true,message);
+            this.AllFarmers1 = new Farmer[5];
+            check = true;
+            FarmerArrayLoaded();
         }
         private void Farmer_Selection_Load(object sender, EventArgs e)
         {

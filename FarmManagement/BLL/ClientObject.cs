@@ -28,7 +28,7 @@ namespace FarmManagement.BLL
             StartServer();
             if (firstStartup)
             {
-                Thread.Sleep(2500);
+                Thread.Sleep(500);
                 SendData(message);
             }
         }
@@ -98,6 +98,10 @@ namespace FarmManagement.BLL
                                         case 1:
                                             {
                                                 Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
+                                                foreach (Farmer item in AllFarmers)
+                                                {
+                                                    System.Windows.Forms.MessageBox.Show(item.ToString());
+                                                }
                                                 farmerSelection.AllFarmers1 = AllFarmers;
                                                 break;
                                             }
