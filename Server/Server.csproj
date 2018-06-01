@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -60,7 +61,7 @@
       <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\HelperLibrary\HelperLibrary.csproj">
-      <Project>{8755511f-7913-4992-b9f4-342d50d3ad2a}</Project>
+      <Project>{6bb89a49-b68e-4713-8a59-adb9a412e987}</Project>
       <Name>HelperLibrary</Name>
     </ProjectReference>
   </ItemGroup>

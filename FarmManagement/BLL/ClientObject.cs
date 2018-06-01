@@ -88,7 +88,8 @@ namespace FarmManagement.BLL
             {
                 case 1:
                     {
-                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                      //  Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                        Farmer_Selection farmSelect = new Farmer_Selection();
                         switch (message.ObjectIdentifier)
                         {
                             case 1:
@@ -98,11 +99,11 @@ namespace FarmManagement.BLL
                                         case 1:
                                             {
                                                 Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
-                                                foreach (Farmer item in AllFarmers)
-                                                {
-                                                    System.Windows.Forms.MessageBox.Show(item.ToString());
-                                                }
-                                                farmerSelection.AllFarmers1 = AllFarmers;
+                                                //foreach (Farmer item in AllFarmers)
+                                                //{
+                                                //    System.Windows.Forms.MessageBox.Show(item.ToString());
+                                                //}
+                                                farmSelect.AllFarmers1 = AllFarmers;
                                                 break;
                                             }
                                         default:

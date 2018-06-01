@@ -23,6 +23,7 @@ namespace FarmManagement
         ClientObject co;
         bool check = false;
 
+        
         public Farmer[] AllFarmers1
         {
             get
@@ -33,6 +34,7 @@ namespace FarmManagement
             set
             {
                 AllFarmers = value;
+                
                 if (check)
                 {
                     FarmerArrayLoaded();
@@ -54,7 +56,8 @@ namespace FarmManagement
             InitializeComponent();
             MessageObject message = new MessageObject(new byte[1],1,1,1);
             co = new ClientObject(true,message);
-            this.AllFarmers1 = new Farmer[5];
+            // this.AllFarmers1 = new Farmer[5];
+           // AllFarmers = this.AllFarmers1;
             check = true;
             FarmerArrayLoaded();
         }
@@ -83,7 +86,7 @@ namespace FarmManagement
             //Loading existing farmers from database
             //AllFarmers1 = farmer.FarmerSelection();
 
-            if (AllFarmers1[0] != null)
+            if (AllFarmers[0] != null)
             {
                 CharacterLoad(pbxNewFarmer1, pbxFarmer1, lblFarmerName1, lblFarmerGender1, lblFarmerAge1, lblNumOfAnimals1, lblFarmSize1, 0, pbxBodyOne, pbxOutfitOne, pbxEyesOne, pbxHairOne);
             }
