@@ -245,6 +245,12 @@ namespace FarmManagement
             pbxLargeSize.Visible = false;
         }
 
+        public void ClickChange()
+        {
+            pbxSmallClicked.Visible = false;
+            pbxMediumClicked.Visible = false;
+            pbxLargeClicked.Visible = false;
+        }
         private void HoverChange(PictureBox activeOne)
         {
             Timer timer = new Timer();
@@ -262,7 +268,7 @@ namespace FarmManagement
         private void ClickChange(double size, PictureBox activeOne)
         {
             this.ActiveControl = null;
-            LeavePictureBoxChange();
+            ClickChange();
             activeOne.Visible = true;
             string name = txtFarmName.Text;
             size = 400;
