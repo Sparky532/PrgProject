@@ -79,7 +79,7 @@ namespace FarmManagement.BLL
 
         public void SendData(MessageObject message)
         {
-           // Thread.Sleep(1000);
+            // Thread.Sleep(1000);
             clientSocket.Send(message.BinarySerialization());
         }
 
@@ -87,21 +87,123 @@ namespace FarmManagement.BLL
         {
             switch (message.FormIdentifier)
             {
+                //Farmer Selection
                 case 1:
                     {
-                         Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
-                        
+
+                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+
                         switch (message.ObjectIdentifier)
                         {
+                            //Farmer
                             case 1:
                                 {
                                     switch (message.ActionIdentifier)
                                     {
+                                        //Select
                                         case 1:
                                             {
                                                 Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
                                                 //farmerSelection.ReceiveFarmers(AllFarmers);
                                                 InvokeFarmer(AllFarmers, farmerSelection);
+                                                break;
+                                            }
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
+                            default:
+                                break;
+                        }
+                        break;
+                    }
+                    //Animal Selection
+                case 4:
+                    {
+
+                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+
+                        switch (message.ObjectIdentifier)
+                        {
+                            //Species
+                            case 4:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        //Select
+                                        case 1:
+                                            {
+                                                //Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
+                                                //farmerSelection.ReceiveFarmers(AllFarmers);
+                                                //InvokeFarmer(AllFarmers, farmerSelection);
+                                                break;
+                                            }
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
+                            default:
+                                break;
+                        }
+                        break;
+                    }
+                    //Farm View
+                case 6:
+                    {
+
+                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+
+                        switch (message.ObjectIdentifier)
+                        {
+                            //Farm
+                            case 2:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        //Select
+                                        case 1:
+                                            {
+                                                //Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
+                                                //farmerSelection.ReceiveFarmers(AllFarmers);
+                                                //InvokeFarmer(AllFarmers, farmerSelection);
+                                                break;
+                                            }
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
+                                //Animal
+                            case 3:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        //Select
+                                        case 1:
+                                            {
+                                                //Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
+                                                //farmerSelection.ReceiveFarmers(AllFarmers);
+                                                //InvokeFarmer(AllFarmers, farmerSelection);
+                                                break;
+                                            }
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
+                                //Location
+                            case 5:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        //Select
+                                        case 1:
+                                            {
+                                                //Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
+                                                //farmerSelection.ReceiveFarmers(AllFarmers);
+                                                //InvokeFarmer(AllFarmers, farmerSelection);
                                                 break;
                                             }
                                         default:
