@@ -60,13 +60,14 @@ namespace FarmManagement
 
             //Link combo box
             cbxAnimals.DataSource = bs2;
-            lstAnimalsSelected.DataSource = bs1;
-
-            //If the box is empty make it display no animals yet
-            //if (animalsSelected.Count ==0)
-            //{
-            //    lstAnimalsSelected.Items.Add("No animals yet");
-            //}
+            if (animalsSelected.Count>0)
+            {
+                lstAnimalsSelected.DataSource = bs1;
+            }
+            else
+            {
+                lstAnimalsSelected.Items.Add("No animals yet");
+            }
 
             //Link all buttons to panel
             pbxPanel.Controls.Add(pbxPrevious);
@@ -218,6 +219,7 @@ namespace FarmManagement
 
                         //Refresh the List
                         quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
+                        lstAnimalsSelected.DataSource = bs1;
                         bs1.ResetBindings(false);
                         int currentIndex = cbxAnimals.SelectedIndex;
 
