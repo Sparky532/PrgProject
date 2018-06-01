@@ -22,13 +22,12 @@ namespace FarmManagement.BLL
         Thread receivingThread;
         Thread sendingThread;
 
-        public ClientObject(bool firstStartup,MessageObject message)
+        public ClientObject(bool firstStartup, MessageObject message)
         {
             InitializeServer();
             StartServer();
             if (firstStartup)
             {
-                Thread.Sleep(500);
                 SendData(message);
             }
         }
@@ -98,11 +97,8 @@ namespace FarmManagement.BLL
                                         case 1:
                                             {
                                                 Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
-                                                foreach (Farmer item in AllFarmers)
-                                                {
-                                                    System.Windows.Forms.MessageBox.Show(item.ToString());
-                                                }
-                                                farmerSelection.AllFarmers1 = AllFarmers;
+                                                //farmerSelection.ReceiveFarmers(AllFarmers);
+                                                InvokeFarmer(AllFarmers, farmerSelection);
                                                 break;
                                             }
                                         default:
@@ -118,6 +114,14 @@ namespace FarmManagement.BLL
                 default:
                     break;
             }
+        }
+        private void InvokeFarmer(Farmer[] AllFarmers, Farmer_Selection farmerSelection)
+        {
+            if (farmerSelection.InvokeRequired)
+            {
+                farmerSelection.Invoke(new Action<Farmer[], Farmer_Selection>(InvokeFarmer), AllFarmers, farmerSelection);
+            }
+            farmerSelection.ReceiveFarmers(AllFarmers);
         }
     }
 }
