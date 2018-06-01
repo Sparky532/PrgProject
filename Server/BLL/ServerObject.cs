@@ -30,8 +30,8 @@ namespace Server.BLL
 
         private void InitializeServer()
         {
-            iPAddress = Dns.GetHostAddresses("localhost")[1];
-            endpoint = new IPEndPoint(iPAddress, 19200);
+            iPAddress = Dns.GetHostAddresses(Changeables.ipNetwork)[1];
+            endpoint = new IPEndPoint(iPAddress, Changeables.portNumber);
 
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }

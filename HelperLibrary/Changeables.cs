@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HelperLibrary
 {
-    static class Changeables
+    public static class Changeables
     {
-        static string ipNetwork = "localhost";
-        static int portNumber = 19200;
+        public static string ipNetwork = "localhost";
+        public static int portNumber = 19200;
     }
 }
