@@ -10,6 +10,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             ServerObject so = new ServerObject();
         }
     }

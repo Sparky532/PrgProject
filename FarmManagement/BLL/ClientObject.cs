@@ -78,6 +78,7 @@ namespace FarmManagement.BLL
 
         public void SendData(MessageObject message)
         {
+           // Thread.Sleep(1000);
             clientSocket.Send(message.BinarySerialization());
         }
 
@@ -87,7 +88,8 @@ namespace FarmManagement.BLL
             {
                 case 1:
                     {
-                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                         Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                        
                         switch (message.ObjectIdentifier)
                         {
                             case 1:
