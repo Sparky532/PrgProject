@@ -63,11 +63,11 @@
             this.button14 = new System.Windows.Forms.Button();
             this.txtFarmName = new System.Windows.Forms.Label();
             this.pblSortLists = new System.Windows.Forms.Panel();
+            this.txtAnimals = new System.Windows.Forms.TextBox();
             this.pnlCagesSort = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtCages = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.txtAnimals = new System.Windows.Forms.TextBox();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -539,6 +539,17 @@
             this.pblSortLists.TabIndex = 13;
             this.pblSortLists.Visible = false;
             // 
+            // txtAnimals
+            // 
+            this.txtAnimals.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtAnimals.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAnimals.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.txtAnimals.Location = new System.Drawing.Point(0, 58);
+            this.txtAnimals.Name = "txtAnimals";
+            this.txtAnimals.Size = new System.Drawing.Size(131, 31);
+            this.txtAnimals.TabIndex = 11;
+            this.txtAnimals.Text = " Animals ";
+            // 
             // pnlCagesSort
             // 
             this.pnlCagesSort.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -586,22 +597,11 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // txtAnimals
-            // 
-            this.txtAnimals.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtAnimals.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAnimals.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.txtAnimals.Location = new System.Drawing.Point(0, 58);
-            this.txtAnimals.Name = "txtAnimals";
-            this.txtAnimals.Size = new System.Drawing.Size(131, 31);
-            this.txtAnimals.TabIndex = 11;
-            this.txtAnimals.Text = " Animals ";
-            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 661);
+            this.ClientSize = new System.Drawing.Size(1469, 661);
             this.Controls.Add(this.pnlCagesSort);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlSettingsSubMenu);
