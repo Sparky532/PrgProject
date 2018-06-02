@@ -270,7 +270,7 @@ namespace FarmManagement
                         animalsSelected.Add(selects);
 
                         //Refresh the List
-                        //quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
+                        quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
                         lstAnimalsSelected.DataSource = bs1;
                         bs1.ResetBindings(false);
                         int currentIndex = cbxAnimals.SelectedIndex;
@@ -279,7 +279,7 @@ namespace FarmManagement
                         animalSpecies.RemoveAt(currentIndex);
 
                         //Refresh the combo box
-                        //quickSortSpecies(animalSpecies, 0, animalSpecies.Count - 1);
+                        quickSortSpecies(animalSpecies, 0, animalSpecies.Count - 1);
                         bs2.ResetBindings(false);
                     }
                     else

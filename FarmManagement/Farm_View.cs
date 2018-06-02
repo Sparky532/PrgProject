@@ -21,6 +21,8 @@ namespace FarmManagement
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
         ClientObject co;
+        bool received = false;
+        bool listsOpen = false;
         int ID = 0;
         public Farm_View(int id)
         {
@@ -38,22 +40,26 @@ namespace FarmManagement
 
         public void ReceiveData(ArrayList farmViewData)
         {
-            List<Farm> farmss = (List<Farm>)farmViewData[0];
-            List<Animal> animalss = (List<Animal>)farmViewData[1];
-            List<Location> locationss = (List<Location>)farmViewData[2];
-            foreach (Location item in locationss)
+            if (!received)
             {
-                CheckLocationReceiveMethod(item);
+                List<Farm> farmss = (List<Farm>)farmViewData[0];
+                List<Animal> animalss = (List<Animal>)farmViewData[1];
+                List<Location> locationss = (List<Location>)farmViewData[2];
+                foreach (Location item in locationss)
+                {
+                    CheckLocationReceiveMethod(item);
+                }
+                foreach (Animal item in animalss)
+                {
+                    CheckAnimalReceiveMethod(item);
+                }
+                foreach (Farm item in farmss)
+                {
+                    CheckFarmReceiveMethod(item);
+                }
+                myEvent.Invoke();
+                received = true;
             }
-            foreach (Animal item in animalss)
-            {
-                CheckAnimalReceiveMethod(item);
-            }
-            foreach (Farm item in farmss)
-            {
-                CheckFarmReceiveMethod(item);
-            }
-            myEvent.Invoke();
         }
         public void CheckFarmReceiveMethod(Farm farm)
         {
@@ -92,6 +98,8 @@ namespace FarmManagement
             pnlSortSubMenu.Location = new Point(-190, 50);
             pnlSettingsSubMenu.Location = new Point(-190, 50);
             btnOpenMenu.Location = new Point(0, 0);
+            pblSortLists.Location = new Point(-280,0);
+            pnlCagesSort.Location = new Point(-190,50);
             //Farm f = new Farm();
             //Location l = new Location();
             //Animal a = new Animal();
@@ -102,7 +110,8 @@ namespace FarmManagement
 
         public void LoadLists()
         {
-            lstFarm.DataSource = farms;
+            //lstFarm.DataSource = farms;
+            txtFarmName.Text = farms[0].FarmName;
             lstLocations.DataSource = locations;
             lstAnimals.DataSource = animals;
         }
@@ -118,9 +127,11 @@ namespace FarmManagement
 
         private void lionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pblSortLists.Visible = true;
+            ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Lion"
-                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             select item.ToString();
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
@@ -133,9 +144,11 @@ namespace FarmManagement
 
         private void tigerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pblSortLists.Visible = true;
+            ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Tiger"
-                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -148,9 +161,11 @@ namespace FarmManagement
 
         private void cowToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pblSortLists.Visible = true;
+            ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Cow"
-                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -163,9 +178,11 @@ namespace FarmManagement
 
         private void sheepToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pblSortLists.Visible = true;
+            ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Sheep"
-                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -178,9 +195,11 @@ namespace FarmManagement
 
         private void horseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pblSortLists.Visible = true;
+            ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Horse"
-                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -193,8 +212,10 @@ namespace FarmManagement
 
         private void allAnimalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pblSortLists.Visible = true;
+            ShiftListPanel();
             var SelectAnimals = from item in animals
-                                select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                                select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -203,6 +224,23 @@ namespace FarmManagement
             {
                 lstAnimals.Items.Add(item);
             }
+        }
+
+        private void ShiftListPanel()
+        {
+            if (!listsOpen)
+            {
+                Thread openLists = new Thread(() =>
+                {
+                    for (int i = -90; i <= 190; i = i + 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
+            }
+            listsOpen = true;
         }
 
         private void btnOpenMenu_Click(object sender, EventArgs e)
@@ -232,38 +270,89 @@ namespace FarmManagement
         {
             btnOpenMenu.Visible = true;
             pnlMenu.Visible = true;
-            Thread openMenu = new Thread(() =>
+            if (!listsOpen)
             {
-                for (int i = 0; i >= -190; i = i - 3)
+                Thread openMenu = new Thread(() =>
                 {
-                    moveMenu(i, 0, pnlMenu);
-                    Thread.Sleep(2);
-                }
-            });
-            openMenu.Start();
-            openMenu = new Thread(() =>
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        moveMenu(i, 0, pnlMenu);
+                        Thread.Sleep(2);
+                    }
+                });
+                openMenu.Start();
+                openMenu = new Thread(() =>
+                {
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        moveMenu(i, 50, pnlSortSubMenu);
+                        Thread.Sleep(2);
+                    }
+                });
+                openMenu.Start();
+                openMenu = new Thread(() =>
+                {
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        moveMenu(i, 50, pnlSettingsSubMenu);
+                        Thread.Sleep(2);
+                    }
+                });
+                openMenu.Start();
+            }
+            else
             {
-                for (int i = 0; i >= -190; i = i - 3)
+                Thread openLists = new Thread(() =>
                 {
-                    moveMenu(i, 50, pnlSortSubMenu);
-                    Thread.Sleep(2);
-                }
-            });
-            openMenu.Start();
-            openMenu = new Thread(() =>
-            {
-                for (int i = 0; i >= -190; i = i - 3)
+                    for (int i = 190; i >= -90; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                    Thread.Sleep(70);
+                    Thread openMenu = new Thread(() =>
                 {
-                    moveMenu(i, 50, pnlSettingsSubMenu);
-                    Thread.Sleep(2);
-                }
-            });
-            openMenu.Start();
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        moveMenu(i, 0, pnlMenu);
+                        Thread.Sleep(2);
+                    }
+                });
+                    openMenu.Start();
+                    openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlSortSubMenu);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlSettingsSubMenu);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
+            }
+            listsOpen = false;
         }
 
         private void btnSort_Click(object sender, EventArgs e)
         {
+            lstLocations.Visible = false;
             pnlSortSubMenu.Visible = true;
+            pblSortLists.Visible = true;
             Thread openMenu = new Thread(() =>
             {
                 for (int i = -189; i <= 0; i = i + 3)
@@ -273,20 +362,60 @@ namespace FarmManagement
                 }
             });
             openMenu.Start();
+            Thread openLists = new Thread(() =>
+            {
+                for (int i = -280; i <= -90; i = i + 3)
+                {
+                    moveMenu(i, 0, pblSortLists);
+                    Thread.Sleep(2);
+                }
+            });
+            openLists.Start();
         }
 
         private void btnBackToMenu_Click(object sender, EventArgs e)
         {
-            pnlSortSubMenu.Visible = true;
-            Thread openMenu = new Thread(() =>
+            if (listsOpen)
             {
-                for (int i = 0; i >= -190; i = i - 3)
+                pnlSortSubMenu.Visible = true;
+                Thread openLists = new Thread(() =>
                 {
-                    moveMenu(i, 50, pnlSortSubMenu);
-                    Thread.Sleep(2);
-                }
-            });
-            openMenu.Start();
+                    for (int i = 190; i >= -90; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                    Thread.Sleep(70);
+                    Thread openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlSortSubMenu);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
+            }
+            else
+            {
+                Thread openMenu = new Thread(() =>
+                {
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        moveMenu(i, 50, pnlSortSubMenu);
+                        Thread.Sleep(2);
+                    }
+                });
+                openMenu.Start();
+            }
+            listsOpen = false;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -412,6 +541,120 @@ namespace FarmManagement
         {
             btnExit.BackColor = Color.WhiteSmoke;
             btnExit.ForeColor = Color.Black;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Farm_View_Click(object sender, EventArgs e)
+        {
+            btnOpenMenu.Visible = true;
+            pnlMenu.Visible = true;
+            if (!listsOpen)
+            {
+                Thread openMenu = new Thread(() =>
+                {
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        moveMenu(i, 0, pnlMenu);
+                        Thread.Sleep(2);
+                    }
+                });
+                openMenu.Start();
+                openMenu = new Thread(() =>
+                {
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        moveMenu(i, 50, pnlSortSubMenu);
+                        Thread.Sleep(2);
+                    }
+                });
+                openMenu.Start();
+                openMenu = new Thread(() =>
+                {
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        moveMenu(i, 50, pnlSettingsSubMenu);
+                        Thread.Sleep(2);
+                    }
+                });
+                openMenu.Start();
+            }
+            else
+            {
+                Thread openLists = new Thread(() =>
+                {
+                    for (int i = 190; i >= -90; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                    Thread.Sleep(70);
+                    Thread openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 0, pnlMenu);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlSortSubMenu);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlSettingsSubMenu);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
+            }
+            listsOpen = false;
+        }
+
+        private void btnCages_Click(object sender, EventArgs e)
+        {
+            lstLocations.Visible = true;
+            pnlCagesSort.Visible = true;
+            pblSortLists.Visible = true;
+            Thread openMenu = new Thread(() =>
+            {
+                for (int i = -189; i <= 0; i = i + 3)
+                {
+                    moveMenu(i, 50, pnlCagesSort);
+                    Thread.Sleep(2);
+                }
+            });
+            openMenu.Start();
+            pblSortLists.Location = new Point(-280,0);
+            pblSortLists.Visible = true;
+            Thread openLists = new Thread(() =>
+            {
+                for (int i = -280; i <= 190; i = i + 3)
+                {
+                    moveMenu(i, 0, pblSortLists);
+                    Thread.Sleep(2);
+                }
+            });
+            openLists.Start();
         }
     }
 }

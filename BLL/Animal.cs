@@ -93,7 +93,17 @@ namespace BLL
         }
         public override string ToString()
         {
-            return this.Species.AnimalName + " " + this.MateState + " " + this.Gender + " " + this.EatingTime;
+            return Spaces(this.Species.AnimalName,6) + "" + Spaces(this.MateState,10) + "" + Spaces(this.Gender,7) + "" + Spaces(this.EatingTime+"",3);
+        }
+
+        private string Spaces(string word,int totalLength)
+        {
+            string toReturn = word;
+            for (int i = word.Length; i < totalLength; i++)
+            {
+                toReturn =toReturn+" ";
+            }
+            return toReturn;
         }
     }
 

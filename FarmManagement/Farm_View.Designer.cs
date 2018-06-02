@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Farm_View));
-            this.lstFarm = new System.Windows.Forms.ListBox();
             this.lstLocations = new System.Windows.Forms.ListBox();
             this.lstAnimals = new System.Windows.Forms.ListBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -61,39 +60,49 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.txtFarmName = new System.Windows.Forms.Label();
+            this.pblSortLists = new System.Windows.Forms.Panel();
+            this.btnCages = new System.Windows.Forms.Button();
+            this.pnlCagesSort = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtCages = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
+            this.pblSortLists.SuspendLayout();
+            this.pnlCagesSort.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lstFarm
-            // 
-            this.lstFarm.FormattingEnabled = true;
-            this.lstFarm.Location = new System.Drawing.Point(314, 27);
-            this.lstFarm.Name = "lstFarm";
-            this.lstFarm.Size = new System.Drawing.Size(120, 95);
-            this.lstFarm.TabIndex = 0;
             // 
             // lstLocations
             // 
+            this.lstLocations.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lstLocations.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstLocations.Font = new System.Drawing.Font("Consolas", 14.25F);
             this.lstLocations.FormattingEnabled = true;
-            this.lstLocations.Location = new System.Drawing.Point(440, 27);
+            this.lstLocations.ItemHeight = 22;
+            this.lstLocations.Location = new System.Drawing.Point(50, 50);
             this.lstLocations.Name = "lstLocations";
-            this.lstLocations.Size = new System.Drawing.Size(120, 95);
+            this.lstLocations.Size = new System.Drawing.Size(140, 396);
             this.lstLocations.TabIndex = 1;
             // 
             // lstAnimals
             // 
+            this.lstAnimals.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lstAnimals.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstAnimals.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstAnimals.FormattingEnabled = true;
-            this.lstAnimals.Location = new System.Drawing.Point(566, 27);
+            this.lstAnimals.ItemHeight = 22;
+            this.lstAnimals.Location = new System.Drawing.Point(0, 100);
             this.lstAnimals.Name = "lstAnimals";
-            this.lstAnimals.Size = new System.Drawing.Size(292, 95);
+            this.lstAnimals.Size = new System.Drawing.Size(280, 374);
             this.lstAnimals.TabIndex = 2;
             // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlMenu.Controls.Add(this.panel1);
+            this.pnlMenu.Controls.Add(this.btnCages);
             this.pnlMenu.Controls.Add(this.textBox1);
             this.pnlMenu.Controls.Add(this.btnCloseMenu);
             this.pnlMenu.Controls.Add(this.btnSort);
@@ -212,7 +221,7 @@
             this.pnlSortSubMenu.Controls.Add(this.SortSheep);
             this.pnlSortSubMenu.Controls.Add(this.SortHorse);
             this.pnlSortSubMenu.Controls.Add(this.SortAll);
-            this.pnlSortSubMenu.Location = new System.Drawing.Point(1157, 27);
+            this.pnlSortSubMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlSortSubMenu.Name = "pnlSortSubMenu";
             this.pnlSortSubMenu.Size = new System.Drawing.Size(190, 450);
             this.pnlSortSubMenu.TabIndex = 9;
@@ -355,7 +364,7 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button7.Location = new System.Drawing.Point(748, 552);
+            this.button7.Location = new System.Drawing.Point(822, 599);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(150, 50);
             this.button7.TabIndex = 9;
@@ -493,37 +502,119 @@
             this.button14.Text = " All Animals";
             this.button14.UseVisualStyleBackColor = false;
             // 
+            // txtFarmName
+            // 
+            this.txtFarmName.AutoSize = true;
+            this.txtFarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.txtFarmName.Location = new System.Drawing.Point(687, 11);
+            this.txtFarmName.Name = "txtFarmName";
+            this.txtFarmName.Size = new System.Drawing.Size(0, 39);
+            this.txtFarmName.TabIndex = 14;
+            // 
+            // pblSortLists
+            // 
+            this.pblSortLists.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pblSortLists.Controls.Add(this.lstAnimals);
+            this.pblSortLists.Location = new System.Drawing.Point(190, 0);
+            this.pblSortLists.Name = "pblSortLists";
+            this.pblSortLists.Size = new System.Drawing.Size(280, 477);
+            this.pblSortLists.TabIndex = 13;
+            this.pblSortLists.Visible = false;
+            // 
+            // btnCages
+            // 
+            this.btnCages.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCages.FlatAppearance.BorderSize = 0;
+            this.btnCages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCages.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnCages.Location = new System.Drawing.Point(40, 300);
+            this.btnCages.Name = "btnCages";
+            this.btnCages.Size = new System.Drawing.Size(150, 50);
+            this.btnCages.TabIndex = 11;
+            this.btnCages.Text = "Cages";
+            this.btnCages.UseVisualStyleBackColor = false;
+            this.btnCages.Click += new System.EventHandler(this.btnCages_Click);
+            // 
+            // pnlCagesSort
+            // 
+            this.pnlCagesSort.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlCagesSort.Controls.Add(this.panel5);
+            this.pnlCagesSort.Controls.Add(this.lstLocations);
+            this.pnlCagesSort.Controls.Add(this.txtCages);
+            this.pnlCagesSort.Controls.Add(this.button4);
+            this.pnlCagesSort.Location = new System.Drawing.Point(533, 53);
+            this.pnlCagesSort.Name = "pnlCagesSort";
+            this.pnlCagesSort.Size = new System.Drawing.Size(190, 450);
+            this.pnlCagesSort.TabIndex = 12;
+            this.pnlCagesSort.Visible = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(204)))), ((int)(((byte)(242)))));
+            this.panel5.Location = new System.Drawing.Point(0, 50);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(50, 400);
+            this.panel5.TabIndex = 11;
+            // 
+            // txtCages
+            // 
+            this.txtCages.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCages.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCages.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.txtCages.Location = new System.Drawing.Point(56, 8);
+            this.txtCages.Name = "txtCages";
+            this.txtCages.Size = new System.Drawing.Size(131, 31);
+            this.txtCages.TabIndex = 10;
+            this.txtCages.Text = "Cages ";
+            this.txtCages.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Silver;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(50, 50);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "<";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 627);
+            this.ClientSize = new System.Drawing.Size(1353, 661);
+            this.Controls.Add(this.pnlCagesSort);
+            this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlSettingsSubMenu);
             this.Controls.Add(this.pnlSortSubMenu);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.btnOpenMenu);
-            this.Controls.Add(this.lstAnimals);
-            this.Controls.Add(this.lstLocations);
-            this.Controls.Add(this.lstFarm);
+            this.Controls.Add(this.pblSortLists);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Farm_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farm_View";
             this.Load += new System.EventHandler(this.Farm_View_Load);
+            this.Click += new System.EventHandler(this.Farm_View_Click);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.pnlSortSubMenu.ResumeLayout(false);
             this.pnlSortSubMenu.PerformLayout();
             this.pnlSettingsSubMenu.ResumeLayout(false);
             this.pnlSettingsSubMenu.PerformLayout();
+            this.pblSortLists.ResumeLayout(false);
+            this.pnlCagesSort.ResumeLayout(false);
+            this.pnlCagesSort.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstFarm;
         private System.Windows.Forms.ListBox lstLocations;
         private System.Windows.Forms.ListBox lstAnimals;
         private System.Windows.Forms.Panel pnlMenu;
@@ -555,5 +646,12 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label txtFarmName;
+        private System.Windows.Forms.Panel pblSortLists;
+        private System.Windows.Forms.Button btnCages;
+        private System.Windows.Forms.Panel pnlCagesSort;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txtCages;
+        private System.Windows.Forms.Button button4;
     }
 }
