@@ -21,6 +21,8 @@ namespace FarmManagement
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
         ClientObject co;
+        Thread openLists;
+        Thread openMenu;
         bool received = false;
         bool listsOpen = false;
         int ID = 0;
@@ -230,7 +232,7 @@ namespace FarmManagement
         {
             if (!listsOpen)
             {
-                Thread openLists = new Thread(() =>
+                openLists = new Thread(() =>
                 {
                     for (int i = -90; i <= 190; i = i + 3)
                     {
@@ -238,6 +240,7 @@ namespace FarmManagement
                         Thread.Sleep(2);
                     }
                 });
+                openLists.Priority = ThreadPriority.Highest;
                 openLists.Start();
             }
             listsOpen = true;
@@ -247,7 +250,7 @@ namespace FarmManagement
         {
             btnOpenMenu.Visible = false;
             pnlMenu.Visible = true;
-            Thread openMenu = new Thread(() =>
+            openMenu = new Thread(() =>
             {
                 for (int i = -189; i <= 0; i = i + 3)
                 {
@@ -272,7 +275,7 @@ namespace FarmManagement
             pnlMenu.Visible = true;
             if (!listsOpen)
             {
-                Thread openMenu = new Thread(() =>
+                openMenu = new Thread(() =>
                 {
                     for (int i = 0; i >= -190; i = i - 3)
                     {
@@ -311,7 +314,7 @@ namespace FarmManagement
             }
             else
             {
-                Thread openLists = new Thread(() =>
+                openLists = new Thread(() =>
                 {
                     for (int i = 190; i >= -90; i = i - 3)
                     {
@@ -319,7 +322,7 @@ namespace FarmManagement
                         Thread.Sleep(2);
                     }
                     Thread.Sleep(70);
-                    Thread openMenu = new Thread(() =>
+                    openMenu = new Thread(() =>
                 {
                     for (int i = 0; i >= -190; i = i - 3)
                     {
@@ -371,7 +374,7 @@ namespace FarmManagement
             lstLocations.Visible = false;
             pnlSortSubMenu.Visible = true;
             pblSortLists.Visible = true;
-            Thread openMenu = new Thread(() =>
+            openMenu = new Thread(() =>
             {
                 for (int i = -189; i <= 0; i = i + 3)
                 {
@@ -380,7 +383,7 @@ namespace FarmManagement
                 }
             });
             openMenu.Start();
-            Thread openLists = new Thread(() =>
+            openLists = new Thread(() =>
             {
                 for (int i = -280; i <= -90; i = i + 3)
                 {
@@ -396,7 +399,7 @@ namespace FarmManagement
             if (listsOpen)
             {
                 pnlSortSubMenu.Visible = true;
-                Thread openLists = new Thread(() =>
+                openLists = new Thread(() =>
                 {
                     for (int i = 190; i >= -90; i = i - 3)
                     {
@@ -404,7 +407,7 @@ namespace FarmManagement
                         Thread.Sleep(2);
                     }
                     Thread.Sleep(70);
-                    Thread openMenu = new Thread(() =>
+                    openMenu = new Thread(() =>
                     {
                         for (int i = 0; i >= -190; i = i - 3)
                         {
@@ -423,7 +426,7 @@ namespace FarmManagement
             }
             else
             {
-                Thread openMenu = new Thread(() =>
+                openMenu = new Thread(() =>
                 {
                     for (int i = 0; i >= -190; i = i - 3)
                     {
@@ -444,7 +447,7 @@ namespace FarmManagement
         private void btnSettings_Click(object sender, EventArgs e)
         {
             pnlSettingsSubMenu.Visible = true;
-            Thread openMenu = new Thread(() =>
+            openMenu = new Thread(() =>
             {
                 for (int i = -189; i <= 0; i = i + 3)
                 {
@@ -458,7 +461,7 @@ namespace FarmManagement
         private void button11_Click(object sender, EventArgs e)
         {
             pnlSettingsSubMenu.Visible = true;
-            Thread openMenu = new Thread(() =>
+            openMenu = new Thread(() =>
             {
                 for (int i = 0; i >= -190; i = i - 3)
                 {
@@ -653,7 +656,7 @@ namespace FarmManagement
             lstLocations.Visible = true;
             pnlCagesSort.Visible = true;
             pblSortLists.Visible = true;
-            Thread openMenu = new Thread(() =>
+            openMenu = new Thread(() =>
             {
                 for (int i = -189; i <= 0; i = i + 3)
                 {
@@ -664,7 +667,7 @@ namespace FarmManagement
             openMenu.Start();
             pblSortLists.Location = new Point(-280, 0);
             pblSortLists.Visible = true;
-            Thread openLists = new Thread(() =>
+            openLists = new Thread(() =>
             {
                 for (int i = -280; i <= 190; i = i + 3)
                 {
@@ -683,7 +686,7 @@ namespace FarmManagement
             if (listsOpen)
             {
                 pnlSortSubMenu.Visible = true;
-                Thread openLists = new Thread(() =>
+                openLists = new Thread(() =>
                 {
                     for (int i = 190; i >= -90; i = i - 3)
                     {
@@ -691,7 +694,7 @@ namespace FarmManagement
                         Thread.Sleep(2);
                     }
                     Thread.Sleep(70);
-                    Thread openMenu = new Thread(() =>
+                    openMenu = new Thread(() =>
                     {
                         for (int i = 0; i >= -190; i = i - 3)
                         {
