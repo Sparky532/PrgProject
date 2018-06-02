@@ -568,84 +568,84 @@ namespace FarmManagement
 
         private void Farm_View_Click(object sender, EventArgs e)
         {
-            btnOpenMenu.Visible = true;
-            pnlMenu.Visible = true;
-            if (!listsOpen)
-            {
-                Thread openMenu = new Thread(() =>
-                {
-                    for (int i = 0; i >= -190; i = i - 3)
-                    {
-                        moveMenu(i, 0, pnlMenu);
-                        Thread.Sleep(2);
-                    }
-                });
-                openMenu.Start();
-                openMenu = new Thread(() =>
-                {
-                    for (int i = 0; i >= -190; i = i - 3)
-                    {
-                        moveMenu(i, 50, pnlSortSubMenu);
-                        Thread.Sleep(2);
-                    }
-                });
-                openMenu.Start();
-                openMenu = new Thread(() =>
-                {
-                    for (int i = 0; i >= -190; i = i - 3)
-                    {
-                        moveMenu(i, 50, pnlSettingsSubMenu);
-                        Thread.Sleep(2);
-                    }
-                });
-                openMenu.Start();
-            }
-            else
-            {
-                Thread openLists = new Thread(() =>
-                {
-                    for (int i = 190; i >= -90; i = i - 3)
-                    {
-                        moveMenu(i, 0, pblSortLists);
-                        Thread.Sleep(2);
-                    }
-                    Thread.Sleep(70);
-                    Thread openMenu = new Thread(() =>
-                    {
-                        for (int i = 0; i >= -190; i = i - 3)
-                        {
-                            moveMenu(i, 0, pnlMenu);
-                            Thread.Sleep(2);
-                        }
-                    });
-                    openMenu.Start();
-                    openMenu = new Thread(() =>
-                    {
-                        for (int i = 0; i >= -190; i = i - 3)
-                        {
-                            moveMenu(i, 50, pnlSortSubMenu);
-                            Thread.Sleep(2);
-                        }
-                    });
-                    openMenu.Start();
-                    openMenu = new Thread(() =>
-                    {
-                        for (int i = 0; i >= -190; i = i - 3)
-                        {
-                            moveMenu(i, 50, pnlSettingsSubMenu);
-                            Thread.Sleep(2);
-                        }
-                    });
-                    openMenu.Start();
-                    for (int i = -90; i >= -280; i = i - 3)
-                    {
-                        moveMenu(i, 0, pblSortLists);
-                        Thread.Sleep(2);
-                    }
-                });
-                openLists.Start();
-            }
-            listsOpen = false;
+            //btnOpenMenu.Visible = true;
+            //pnlMenu.Visible = true;
+            //if (!listsOpen)
+            //{
+            //    Thread openMenu = new Thread(() =>
+            //    {
+            //        for (int i = 0; i >= -190; i = i - 3)
+            //        {
+            //            moveMenu(i, 0, pnlMenu);
+            //            Thread.Sleep(2);
+            //        }
+            //    });
+            //    openMenu.Start();
+            //    openMenu = new Thread(() =>
+            //    {
+            //        for (int i = 0; i >= -190; i = i - 3)
+            //        {
+            //            moveMenu(i, 50, pnlSortSubMenu);
+            //            Thread.Sleep(2);
+            //        }
+            //    });
+            //    openMenu.Start();
+            //    openMenu = new Thread(() =>
+            //    {
+            //        for (int i = 0; i >= -190; i = i - 3)
+            //        {
+            //            moveMenu(i, 50, pnlSettingsSubMenu);
+            //            Thread.Sleep(2);
+            //        }
+            //    });
+            //    openMenu.Start();
+            //}
+            //else
+            //{
+            //    Thread openLists = new Thread(() =>
+            //    {
+            //        for (int i = 190; i >= -90; i = i - 3)
+            //        {
+            //            moveMenu(i, 0, pblSortLists);
+            //            Thread.Sleep(2);
+            //        }
+            //        Thread.Sleep(70);
+            //        Thread openMenu = new Thread(() =>
+            //        {
+            //            for (int i = 0; i >= -190; i = i - 3)
+            //            {
+            //                moveMenu(i, 0, pnlMenu);
+            //                Thread.Sleep(2);
+            //            }
+            //        });
+            //        openMenu.Start();
+            //        openMenu = new Thread(() =>
+            //        {
+            //            for (int i = 0; i >= -190; i = i - 3)
+            //            {
+            //                moveMenu(i, 50, pnlSortSubMenu);
+            //                Thread.Sleep(2);
+            //            }
+            //        });
+            //        openMenu.Start();
+            //        openMenu = new Thread(() =>
+            //        {
+            //            for (int i = 0; i >= -190; i = i - 3)
+            //            {
+            //                moveMenu(i, 50, pnlSettingsSubMenu);
+            //                Thread.Sleep(2);
+            //            }
+            //        });
+            //        openMenu.Start();
+            //        for (int i = -90; i >= -280; i = i - 3)
+            //        {
+            //            moveMenu(i, 0, pblSortLists);
+            //            Thread.Sleep(2);
+            //        }
+            //    });
+            //    openLists.Start();
+            //}
+            //listsOpen = false;
         }
 
         private void btnCages_Click(object sender, EventArgs e)
