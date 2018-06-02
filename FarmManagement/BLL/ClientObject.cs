@@ -88,12 +88,42 @@ namespace FarmManagement.BLL
         {
             switch (message.FormIdentifier)
             {
+                //Loading Screen
+                case 0:
+                    {
+
+                      //  Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                        LoadingScreen loadingscreen = (LoadingScreen)Form.ActiveForm;
+                        switch (message.ObjectIdentifier)
+                        {
+                            //Farmer
+                            case 1:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        //Select
+                                        case 1:
+                                            {
+                                                Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
+                                                InvokeFarmerforLoading(AllFarmers, loadingscreen);
+                                                break;
+                                            }
+                                       
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
+                            default:
+                                break;
+                        }
+                        break;
+                    }
                 //Farmer Selection
                 case 1:
                     {
 
-                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
-
+                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;                        
                         switch (message.ObjectIdentifier)
                         {
                             //Farmer
@@ -108,6 +138,7 @@ namespace FarmManagement.BLL
                                                 InvokeFarmer(AllFarmers, farmerSelection);
                                                 break;
                                             }
+                                       
                                         default:
                                             break;
                                     }
@@ -235,6 +266,21 @@ namespace FarmManagement.BLL
                     farmerSelection.Invoke(new Action<Farmer[], Farmer_Selection>(InvokeFarmer), AllFarmers, farmerSelection);
                 }
                 farmerSelection.ReceiveFarmers(AllFarmers);
+            }
+            catch (NullReferenceException)
+            {
+            }
+        }
+
+        private void InvokeFarmerforLoading(Farmer[] AllFarmers, LoadingScreen farmerSelectionForLoading)
+        {
+            try
+            {
+                if (farmerSelectionForLoading.InvokeRequired)
+                {
+                    farmerSelectionForLoading.Invoke(new Action<Farmer[], LoadingScreen>(InvokeFarmerforLoading), AllFarmers, farmerSelectionForLoading);
+                }
+                farmerSelectionForLoading.ReceiveFarmers(AllFarmers);
             }
             catch (NullReferenceException)
             {

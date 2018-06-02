@@ -26,7 +26,7 @@ namespace FarmManagement
             //creating the timer that will run for 3 seconds
             timer = new Timer
             {
-                Interval = 3000
+                Interval = 1000
             };
 
             timer.Start();
@@ -35,7 +35,7 @@ namespace FarmManagement
             stopping = new TimerStop((object send, EventArgs args) =>
             {
                 timer.Stop();
-                Farmer_Selection form = new Farmer_Selection();
+                LoadingScreen form = new LoadingScreen();
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
