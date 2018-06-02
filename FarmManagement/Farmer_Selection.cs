@@ -21,9 +21,11 @@ namespace FarmManagement
         Farmer[] AllFarmers = new Farmer[5];
         Farmer farmer = new Farmer();
         Farmer CurrentFarmer = new Farmer();
-        ClientObject co;
+        ClientObject co = new ClientObject();
+        
         int index = 0;
         bool received = false;
+        bool FirstRun = false;
 
         delegate void MyDelegate();
         event MyDelegate myEvent;
@@ -62,16 +64,27 @@ namespace FarmManagement
 
         public Farmer_Selection()
         {
-            //Thread.Sleep(600);
+           // Thread.Sleep(1600);
             InitializeComponent();
+        }
+        public Farmer_Selection(Farmer[] Farmers)
+        {
+            InitializeComponent();
+
+            this.AllFarmers = Farmers;
+            FirstRun = true;
+            FarmerArrayLoaded();
+
         }
         private void Farmer_Selection_Load(object sender, EventArgs e)
         {
-            Thread.Sleep(1000);
-            MessageObject message = new MessageObject(new byte[1], 1, 1, 1);
-            co = new ClientObject(true, message);
-
-            myEvent = FarmerArrayLoaded;
+            if (!FirstRun)
+            {
+                MessageObject message = new MessageObject(new byte[1], 1, 1, 1);
+                co = new ClientObject(true, message);
+                myEvent = FarmerArrayLoaded;
+            }
+          
         }
         private void FarmerArrayLoaded()
         {

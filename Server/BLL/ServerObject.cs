@@ -37,7 +37,7 @@ namespace Server.BLL
             endpoint = new IPEndPoint(iPAddress, Changeables.portNumber);
 
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
 
             Console.WriteLine("Server Initialized");
         }
@@ -47,7 +47,7 @@ namespace Server.BLL
             Console.WriteLine("Starting Server....");
             serverSocket.Bind(endpoint);
             serverSocket.Listen(10);
-            Thread.Sleep(1000);
+            Thread.Sleep(250);
 
             Console.WriteLine("Server Started");
 
@@ -110,11 +110,42 @@ namespace Server.BLL
         {
             switch (message.FormIdentifier)
             {
+                //From Loading Screen
+                case 0:
+                    {
+                        switch (message.ObjectIdentifier)
+                        {
+
+                            //Farmer
+                            case 1:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        //Select
+                                        case 1:
+                                            {
+                                                Farmer farmer = new Farmer();
+                                                Farmer[] AllFarmers = farmer.FarmerSelection();
+                                                message.Data = AllFarmers.BinarySerialization();
+                                                SendData(message, client);
+                                                break;
+                                            }                                      
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
+                            default:
+                                break;
+                        }
+                        break;
+                    }
                 //From Farmer Selection
                 case 1:
                     {
                         switch (message.ObjectIdentifier)
                         {
+                           
                             //Farmer
                             case 1:
                                 {
@@ -130,7 +161,16 @@ namespace Server.BLL
                                                 SendData(message, client);
                                                 break;
                                             }
-                                            //Delete
+                                        case 5:
+                                            {
+
+                                                Farmer farmer = new Farmer();
+                                                Farmer[] AllFarmers = farmer.FarmerSelection();
+                                                message.Data = AllFarmers.BinarySerialization();
+                                                SendData(message, client);
+                                                break;
+                                            }
+                                        //Delete
                                         case 3:
                                             {
                                                 Farmer farmer = (Farmer)message.Data.BinaryDeserialization();
