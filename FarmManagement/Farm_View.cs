@@ -723,7 +723,18 @@ namespace FarmManagement
 
         private void lstLocations_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            int id = ((Location)lstLocations.SelectedItem).ID;
+            var Selectitem = from item in animals
+                             where item.LocationID==id
+                             select item.ToString();
 
+            lstAnimals.DataSource = null;
+            lstAnimals.Items.Clear();
+
+            foreach (string item in Selectitem)
+            {
+                lstAnimals.Items.Add(item);
+            }
         }
     }
 }
