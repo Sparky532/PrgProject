@@ -38,9 +38,12 @@ namespace FarmManagement
         public Animal_Selection(List<AnimalsSelected> animalsSelectedP, List<Species> animalSpeciesP, int farmerIDP)
         {
             InitializeComponent();
+            received = true;
+
             this.animalsSelected = animalsSelectedP;
             this.animalSpecies = animalSpeciesP;
             this.ID = farmerIDP;
+            AnimalsLoaded();
         }
         public Animal_Selection(int id)
         {

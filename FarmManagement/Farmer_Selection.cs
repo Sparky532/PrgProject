@@ -62,7 +62,7 @@ namespace FarmManagement
 
         public Farmer_Selection()
         {
-            Thread.Sleep(600);
+            Thread.Sleep(1600);
             InitializeComponent();
         }
         private void Farmer_Selection_Load(object sender, EventArgs e)
