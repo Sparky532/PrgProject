@@ -58,18 +58,32 @@ namespace FarmManagement.BLL
         {
             while (running)
             {
-                byte[] buffer = new byte[clientSocket.ReceiveBufferSize];
-                clientSocket.Receive(buffer);
-                MessageObject message = (MessageObject)buffer.BinaryDeserialization();
-                ClientActions(message);
+                try
+                {
+                    byte[] buffer = new byte[clientSocket.ReceiveBufferSize];
+                    clientSocket.Receive(buffer);
+                    MessageObject message = (MessageObject)buffer.BinaryDeserialization();
+                    ClientActions(message);
+                }
+                catch (Exception)
+                {
+                    running = false;
+                    //throw;
+                }
+              
 
             }
         }
         public void StopClient()
         {
             running = false;
+            clientSocket.Disconnect(false);
             receivingThread.Abort();
-            sendingThread.Abort();
+            if (sendingThread != null)
+            {
+                sendingThread.Abort();
+
+            }
 
             Thread.Sleep(1000);
 
@@ -81,7 +95,11 @@ namespace FarmManagement.BLL
         public void SendData(MessageObject message)
         {
             // Thread.Sleep(1000);
-            clientSocket.Send(message.BinarySerialization());
+            if (message != null)
+            {
+                clientSocket.Send(message.BinarySerialization());
+
+            }
         }
 
         public void ClientActions(MessageObject message)

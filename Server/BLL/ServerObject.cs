@@ -74,9 +74,19 @@ namespace Server.BLL
                 byte[] buffer = new byte[client.ReceiveBufferSize];
                 client.Receive(buffer);
                 Console.WriteLine("Message Received From " + client.RemoteEndPoint);
+                try
+                {
+                    MessageObject message = ((MessageObject)(buffer.BinaryDeserialization()));
+                    ServerActions(message, client);
 
-                MessageObject message = ((MessageObject)(buffer.BinaryDeserialization()));
-                ServerActions(message, client);
+                }
+                catch (Exception)
+                {
+                    //client.Dispose();
+                    running = false;
+                    client.Disconnect(false);
+                   // throw;
+                }
 
             }
         }
@@ -89,7 +99,7 @@ namespace Server.BLL
             sendingThread.Abort();
 
             Thread.Sleep(1000);
-
+            serverSocket.Disconnect(false);
             serverSocket.Shutdown(SocketShutdown.Both);
             serverSocket.Dispose();
             serverSocket.Close();

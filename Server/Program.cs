@@ -11,11 +11,19 @@ namespace Server
 {
     class Program
     {
+       static ServerObject so;
+
         static void Main(string[] args)
         {
             //Thread.Sleep(1000);
             Console.ForegroundColor = ConsoleColor.Green;
-            ServerObject so = new ServerObject();
+            so = new ServerObject();
+            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;            
+        }
+
+        private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        {
+            so.StopServer();
         }
     }
 }

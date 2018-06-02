@@ -994,6 +994,7 @@
             this.Name = "Farmer_Selection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmer Selection";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Farmer_Selection_FormClosing);
             this.Load += new System.EventHandler(this.Farmer_Selection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCross1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOutfitFive)).EndInit();

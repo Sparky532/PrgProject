@@ -600,6 +600,10 @@ namespace FarmManagement
         }
 
         #endregion
-        
+
+        private void Farmer_Selection_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            co.StopClient();
+        }
     }
 }

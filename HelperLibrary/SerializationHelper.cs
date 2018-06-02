@@ -44,7 +44,7 @@ namespace HelperLibrary
             }
             catch (Exception)
             {
-                throw;
+              //  throw;
             }
             finally
             {
