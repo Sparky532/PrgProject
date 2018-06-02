@@ -604,7 +604,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FarmManagement.Properties.Resources.BgFarm;
+            this.pictureBox1.Image = global::FarmManagement.Properties.Resources.BgFarm1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(684, 661);
