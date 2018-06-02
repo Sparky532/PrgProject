@@ -35,7 +35,8 @@ namespace FarmManagement
                 for (int i = 0; i < 80; i++)
                 {
                     pgbLoading.Increment(1);
-                    Thread.Sleep(1);
+                    Task t = Task.Delay(1);
+                    t.Wait();                  
                 }
                 index = 0;
                 foreach (Farmer item in farmers)
@@ -46,7 +47,8 @@ namespace FarmManagement
                 for (int i = 0; i < 80; i++)
                 {
                     pgbLoading.Increment(1);
-                    Thread.Sleep(1);
+                    Task t = Task.Delay(1);
+                    t.Wait();                 
                 }             
 
                 myEvent.Invoke();

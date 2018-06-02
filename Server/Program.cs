@@ -13,7 +13,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
             Console.ForegroundColor = ConsoleColor.Green;
             ServerObject so = new ServerObject();
         }
