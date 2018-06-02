@@ -115,6 +115,9 @@
     <EmbeddedResource Include="Farm_View.resx">
       <DependentUpon>Farm_View.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoadingScreen.resx">
+      <DependentUpon>LoadingScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -401,6 +404,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RemoveButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ani-Sim.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
