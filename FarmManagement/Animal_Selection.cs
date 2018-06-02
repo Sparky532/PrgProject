@@ -41,54 +41,85 @@ namespace FarmManagement
         {
             InitializeComponent();
             this.ID = id;
-            loadDefaults();
         }
 
-        public void loadDefaults()
-        {
+        delegate void MyDelegate();
+        event MyDelegate myEvent;
 
-            //Select the animal species from the database
-            AnimalsSelected selects = new AnimalsSelected();
-            animalSpecies = selects.getAnimalName();
+        public void ReceiveAnimals(List<Species> animals)
+        {
+            index = 0;
+            foreach (Species item in animals)
+            {
+                CheckReceiveMethod(item);
+                index++;
+            }
+            myEvent.Invoke();
+        }
+        public void CheckReceiveMethod(Species animal)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<Species>(CheckReceiveMethod), animal);
+
+            }
+            animalSpecies.Add(animal);
+
+        }
+
+     
+
+        private void Animal_Load()
+        {
+            //  loadDefaults();
+            try
+            {
+                pbxBackground.Controls.Add(pbxAnimal);
+                txtSelectedAnimalAmount.Visible = false;
+                pbxChange.Visible = false;
+
+                //Set binding sources
+                bs2.DataSource = animalSpecies;
+                bs1.DataSource = animalsSelected;
+
+                //Link combo box
+                cbxAnimals.DataSource = bs2;
+                if (animalsSelected.Count > 0)
+                {
+                    lstAnimalsSelected.DataSource = bs1;
+                }
+                else
+                {
+                    lstAnimalsSelected.Items.Add("No animals yet");
+                }
+
+                //Link all buttons to panel
+                pbxPanel.Controls.Add(pbxPrevious);
+                pbxPanel.Controls.Add(pbxNext1);
+                pbxPanel.Controls.Add(pbxAdd);
+                pbxPanel.Controls.Add(pbxNext);
+                pbxPanel.Controls.Add(pbxAddNew);
+                pbxPanel.Controls.Add(pbxChange);
+                pbxPanel.Controls.Add(pbxRemove);
+
+                pbxPrevious.Location = new Point(75, 100);
+                pbxNext1.Location = new Point(228, 100);
+                pbxAdd.Location = new Point(104, 150);
+                pbxNext.Location = new Point(443, 150);
+                pbxAddNew.Location = new Point(443, 30);
+                pbxChange.Location = new Point(355, 60);
+                pbxRemove.Location = new Point(560, 30);
+            }
+            catch (InvalidOperationException)
+            {
+            }
         }
 
         private void Animal_Selection_Load(object sender, EventArgs e)
         {
-            pbxBackground.Controls.Add(pbxAnimal);
-            txtSelectedAnimalAmount.Visible = false;
-            pbxChange.Visible = false;
-
-            //Set binding sources
-            bs2.DataSource = animalSpecies;
-            bs1.DataSource = animalsSelected;
-
-            //Link combo box
-            cbxAnimals.DataSource = bs2;
-            if (animalsSelected.Count>0)
-            {
-                lstAnimalsSelected.DataSource = bs1;
-            }
-            else
-            {
-                lstAnimalsSelected.Items.Add("No animals yet");
-            }
-
-            //Link all buttons to panel
-            pbxPanel.Controls.Add(pbxPrevious);
-            pbxPanel.Controls.Add(pbxNext1);
-            pbxPanel.Controls.Add(pbxAdd);
-            pbxPanel.Controls.Add(pbxNext);
-            pbxPanel.Controls.Add(pbxAddNew);
-            pbxPanel.Controls.Add(pbxChange);
-            pbxPanel.Controls.Add(pbxRemove);
-
-            pbxPrevious.Location = new Point(75, 100);
-            pbxNext1.Location = new Point(228, 100);
-            pbxAdd.Location = new Point(104, 150);
-            pbxNext.Location = new Point(443, 150);
-            pbxAddNew.Location = new Point(443, 30);
-            pbxChange.Location = new Point(355, 60);
-            pbxRemove.Location = new Point(560, 30);
+            MessageObject message = new MessageObject(new byte[1], 4, 4, 1);
+            Client = new ClientObject(true, message);
+            myEvent = Animal_Load;           
         }
         //Allows the user to edit an animal already added to the list of animals to add to the farm
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,9 +199,9 @@ namespace FarmManagement
                     {
                         //adding the animals
                         Animal animal = new Animal();
-                       // animal.AddAnimal(animalsSelected);
-                        MessageObject AnimalsToAdd = new MessageObject();                       
-                        AnimalsToAdd.Data =animalsSelected.BinarySerialization();
+                        // animal.AddAnimal(animalsSelected);
+                        MessageObject AnimalsToAdd = new MessageObject();
+                        AnimalsToAdd.Data = animalsSelected.BinarySerialization();
                         AnimalsToAdd.FormIdentifier = 4;
                         AnimalsToAdd.ObjectIdentifier = 3;
                         AnimalsToAdd.ActionIdentifier = 2;

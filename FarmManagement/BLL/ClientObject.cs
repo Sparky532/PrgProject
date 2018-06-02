@@ -122,7 +122,7 @@ namespace FarmManagement.BLL
                 case 4:
                     {
 
-                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                        Animal_Selection animalSelection = (Animal_Selection)Form.ActiveForm;
 
                         switch (message.ObjectIdentifier)
                         {
@@ -134,9 +134,11 @@ namespace FarmManagement.BLL
                                         //Select
                                         case 1:
                                             {
-                                                //Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
-                                                //farmerSelection.ReceiveFarmers(AllFarmers);
-                                                //InvokeFarmer(AllFarmers, farmerSelection);
+                                                List<Species> Species = (List<Species>)message.Data.BinaryDeserialization();
+
+                                               // Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
+                                               // animalSelection.ReceiveAnimals(Species);
+                                                InvokeAnimal(Species, animalSelection);
                                                 break;
                                             }
                                         default:
@@ -229,6 +231,21 @@ namespace FarmManagement.BLL
                     farmerSelection.Invoke(new Action<Farmer[], Farmer_Selection>(InvokeFarmer), AllFarmers, farmerSelection);
                 }
                 farmerSelection.ReceiveFarmers(AllFarmers);
+            }
+            catch (NullReferenceException)
+            {
+            }
+        }
+
+        private void InvokeAnimal(List<Species> allSpecies, Animal_Selection animalSelection)
+        {
+            try
+            {
+                if (animalSelection.InvokeRequired)
+                {
+                    animalSelection.Invoke(new Action<List<Species>, Animal_Selection> (InvokeAnimal), allSpecies, animalSelection);
+                }
+                animalSelection.ReceiveAnimals(allSpecies);
             }
             catch (NullReferenceException)
             {
