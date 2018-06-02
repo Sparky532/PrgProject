@@ -68,13 +68,11 @@
             this.txtCages = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.txtFarmName = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
             this.pblSortLists.SuspendLayout();
             this.pnlCagesSort.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstLocations
@@ -383,7 +381,7 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button7.Location = new System.Drawing.Point(822, 599);
+            this.button7.Location = new System.Drawing.Point(712, 599);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(150, 50);
             this.button7.TabIndex = 9;
@@ -596,27 +594,19 @@
             this.txtFarmName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFarmName.Enabled = false;
             this.txtFarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtFarmName.Location = new System.Drawing.Point(694, 12);
+            this.txtFarmName.Location = new System.Drawing.Point(594, 12);
             this.txtFarmName.Name = "txtFarmName";
             this.txtFarmName.Size = new System.Drawing.Size(268, 38);
             this.txtFarmName.TabIndex = 15;
             this.txtFarmName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FarmManagement.Properties.Resources.BgFarm1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(684, 661);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1290, 661);
+            this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1210, 661);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlCagesSort);
             this.Controls.Add(this.pnlSettingsSubMenu);
@@ -625,7 +615,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.btnOpenMenu);
             this.Controls.Add(this.pblSortLists);
-            this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Farm_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -642,7 +632,6 @@
             this.pblSortLists.PerformLayout();
             this.pnlCagesSort.ResumeLayout(false);
             this.pnlCagesSort.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -688,6 +677,5 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtAnimals;
         private System.Windows.Forms.TextBox txtFarmName;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
