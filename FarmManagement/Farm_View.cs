@@ -406,20 +406,16 @@ namespace FarmManagement
                         moveMenu(i, 0, pblSortLists);
                         Thread.Sleep(2);
                     }
-                });
-                openLists.Start();
-                //Thread.Sleep(70);
-                openMenu = new Thread(() =>
-                {
-                    for (int i = 0; i >= -190; i = i - 3)
+                    Thread.Sleep(70);
+                    openMenu = new Thread(() =>
                     {
-                        moveMenu(i, 50, pnlSortSubMenu);
-                        Thread.Sleep(2);
-                    }
-                });
-                openMenu.Start();
-                openLists = new Thread(() =>
-                {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlSortSubMenu);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
                     for (int i = -90; i >= -280; i = i - 3)
                     {
                         moveMenu(i, 0, pblSortLists);
@@ -687,35 +683,35 @@ namespace FarmManagement
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //if (listsOpen)
-            //{
-            //    pnlSortSubMenu.Visible = true;
-            //    openLists = new Thread(() =>
-            //    {
-            //        for (int i = 190; i >= -90; i = i - 3)
-            //        {
-            //            moveMenu(i, 0, pblSortLists);
-            //            Thread.Sleep(2);
-            //        }
-            //        Thread.Sleep(70);
-            //        openMenu = new Thread(() =>
-            //        {
-            //            for (int i = 0; i >= -190; i = i - 3)
-            //            {
-            //                moveMenu(i, 50, pnlCagesSort);
-            //                Thread.Sleep(2);
-            //            }
-            //        });
-            //        openMenu.Start();
-            //        for (int i = -90; i >= -280; i = i - 3)
-            //        {
-            //            moveMenu(i, 0, pblSortLists);
-            //            Thread.Sleep(2);
-            //        }
-            //    });
-            //    openLists.Start();
-            //    listsOpen = false;
-            //}
+            if (listsOpen)
+            {
+                pnlSortSubMenu.Visible = true;
+                openLists = new Thread(() =>
+                {
+                    for (int i = 190; i >= -90; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                    Thread.Sleep(70);
+                    openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlCagesSort);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
+                listsOpen = false;
+            }
         }
 
         private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
