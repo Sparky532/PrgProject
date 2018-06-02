@@ -57,12 +57,14 @@ namespace FarmManagement
 
         public Farmer_Selection()
         {
+            Thread.Sleep(600);
             InitializeComponent();
         }
         private void Farmer_Selection_Load(object sender, EventArgs e)
         {
             MessageObject message = new MessageObject(new byte[1], 1, 1, 1);
             co = new ClientObject(true, message);
+
             myEvent = FarmerArrayLoaded;
         }
         private void FarmerArrayLoaded()

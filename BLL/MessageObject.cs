@@ -87,7 +87,7 @@ namespace BLL
         }
         public override string ToString()
         {
-            return "Message Object ToString()";
+            return this.FormIdentifier+","+this.ObjectIdentifier+","+this.ActionIdentifier;
         }
     }
 }

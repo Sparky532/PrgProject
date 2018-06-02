@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using HelperLibrary;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace FarmManagement.BLL
 {
@@ -104,7 +105,6 @@ namespace FarmManagement.BLL
                                         case 1:
                                             {
                                                 Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
-                                                //farmerSelection.ReceiveFarmers(AllFarmers);
                                                 InvokeFarmer(AllFarmers, farmerSelection);
                                                 break;
                                             }
@@ -118,11 +118,11 @@ namespace FarmManagement.BLL
                         }
                         break;
                     }
-                    //Animal Selection
+                //Animal Selection
                 case 4:
                     {
 
-                        Animal_Selection animalSelection = (Animal_Selection)Form.ActiveForm;
+                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
 
                         switch (message.ObjectIdentifier)
                         {
@@ -134,11 +134,6 @@ namespace FarmManagement.BLL
                                         //Select
                                         case 1:
                                             {
-                                                List<Species> Species = (List<Species>)message.Data.BinaryDeserialization();
-
-                                               // Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
-                                               // animalSelection.ReceiveAnimals(Species);
-                                                InvokeAnimal(Species, animalSelection);
                                                 break;
                                             }
                                         default:
@@ -151,11 +146,11 @@ namespace FarmManagement.BLL
                         }
                         break;
                     }
-                    //Farm View
+                //Farm View
                 case 6:
                     {
 
-                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                        Farm_View farmView = (Farm_View)Form.ActiveForm;
 
                         switch (message.ObjectIdentifier)
                         {
@@ -167,9 +162,8 @@ namespace FarmManagement.BLL
                                         //Select
                                         case 1:
                                             {
-                                                //Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
-                                                //farmerSelection.ReceiveFarmers(AllFarmers);
-                                                //InvokeFarmer(AllFarmers, farmerSelection);
+                                                ArrayList farmViewData = (ArrayList)message.Data.BinaryDeserialization();
+                                                InvokeFarmView(farmViewData, farmView);
                                                 break;
                                             }
                                         default:
@@ -177,7 +171,7 @@ namespace FarmManagement.BLL
                                     }
                                     break;
                                 }
-                                //Animal
+                            //Animal
                             case 3:
                                 {
                                     switch (message.ActionIdentifier)
@@ -185,9 +179,6 @@ namespace FarmManagement.BLL
                                         //Select
                                         case 1:
                                             {
-                                                //Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
-                                                //farmerSelection.ReceiveFarmers(AllFarmers);
-                                                //InvokeFarmer(AllFarmers, farmerSelection);
                                                 break;
                                             }
                                         default:
@@ -195,7 +186,7 @@ namespace FarmManagement.BLL
                                     }
                                     break;
                                 }
-                                //Location
+                            //Location
                             case 5:
                                 {
                                     switch (message.ActionIdentifier)
@@ -203,9 +194,6 @@ namespace FarmManagement.BLL
                                         //Select
                                         case 1:
                                             {
-                                                //Farmer[] AllFarmers = (Farmer[])message.Data.BinaryDeserialization();
-                                                //farmerSelection.ReceiveFarmers(AllFarmers);
-                                                //InvokeFarmer(AllFarmers, farmerSelection);
                                                 break;
                                             }
                                         default:
@@ -222,6 +210,20 @@ namespace FarmManagement.BLL
                     break;
             }
         }
+        private void InvokeFarmView(ArrayList farmViewData, Farm_View farmView)
+        {
+            try
+            {
+                if (farmView.InvokeRequired)
+                {
+                    farmView.Invoke(new Action<ArrayList, Farm_View>(InvokeFarmView), farmViewData, farmView);
+                }
+                farmView.ReceiveData(farmViewData);
+            }
+            catch (NullReferenceException)
+            {
+            }
+        }
         private void InvokeFarmer(Farmer[] AllFarmers, Farmer_Selection farmerSelection)
         {
             try
@@ -231,21 +233,6 @@ namespace FarmManagement.BLL
                     farmerSelection.Invoke(new Action<Farmer[], Farmer_Selection>(InvokeFarmer), AllFarmers, farmerSelection);
                 }
                 farmerSelection.ReceiveFarmers(AllFarmers);
-            }
-            catch (NullReferenceException)
-            {
-            }
-        }
-
-        private void InvokeAnimal(List<Species> allSpecies, Animal_Selection animalSelection)
-        {
-            try
-            {
-                if (animalSelection.InvokeRequired)
-                {
-                    animalSelection.Invoke(new Action<List<Species>, Animal_Selection> (InvokeAnimal), allSpecies, animalSelection);
-                }
-                animalSelection.ReceiveAnimals(allSpecies);
             }
             catch (NullReferenceException)
             {
