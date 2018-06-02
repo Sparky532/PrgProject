@@ -33,24 +33,24 @@
             this.lstLocations = new System.Windows.Forms.ListBox();
             this.lstAnimals = new System.Windows.Forms.ListBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnSort = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnCloseMenu = new System.Windows.Forms.Button();
+            this.btnSort = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnOpenMenu = new System.Windows.Forms.Button();
             this.pnlSortSubMenu = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.SortLion = new System.Windows.Forms.Button();
+            this.SortTiger = new System.Windows.Forms.Button();
+            this.SortCow = new System.Windows.Forms.Button();
             this.btnBackToMenu = new System.Windows.Forms.Button();
             this.SortSheep = new System.Windows.Forms.Button();
             this.SortHorse = new System.Windows.Forms.Button();
             this.SortAll = new System.Windows.Forms.Button();
-            this.SortCow = new System.Windows.Forms.Button();
-            this.SortTiger = new System.Windows.Forms.Button();
-            this.SortLion = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSettingsSubMenu = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -105,36 +105,39 @@
             this.pnlMenu.TabIndex = 4;
             this.pnlMenu.Visible = false;
             // 
-            // btnExit
+            // panel1
             // 
-            this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnExit.Location = new System.Drawing.Point(40, 450);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(150, 50);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
-            this.btnExit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnExit_MouseMove);
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(50, 450);
+            this.panel1.TabIndex = 10;
             // 
-            // btnSettings
+            // textBox1
             // 
-            this.btnSettings.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnSettings.Location = new System.Drawing.Point(40, 400);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(150, 50);
-            this.btnSettings.TabIndex = 6;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            this.btnSettings.MouseLeave += new System.EventHandler(this.btnSettings_MouseLeave);
-            this.btnSettings.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSettings_MouseMove);
+            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBox1.Location = new System.Drawing.Point(90, 8);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 31);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "Menu ";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnCloseMenu
+            // 
+            this.btnCloseMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCloseMenu.FlatAppearance.BorderSize = 0;
+            this.btnCloseMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnCloseMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnCloseMenu.Name = "btnCloseMenu";
+            this.btnCloseMenu.Size = new System.Drawing.Size(50, 50);
+            this.btnCloseMenu.TabIndex = 8;
+            this.btnCloseMenu.Text = "≡";
+            this.btnCloseMenu.UseVisualStyleBackColor = false;
+            this.btnCloseMenu.Click += new System.EventHandler(this.btnCloseMenu_Click);
             // 
             // btnSort
             // 
@@ -152,19 +155,36 @@
             this.btnSort.MouseLeave += new System.EventHandler(this.btnSort_MouseLeave);
             this.btnSort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSort_MouseMove);
             // 
-            // btnCloseMenu
+            // btnSettings
             // 
-            this.btnCloseMenu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCloseMenu.FlatAppearance.BorderSize = 0;
-            this.btnCloseMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnCloseMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnCloseMenu.Name = "btnCloseMenu";
-            this.btnCloseMenu.Size = new System.Drawing.Size(50, 50);
-            this.btnCloseMenu.TabIndex = 8;
-            this.btnCloseMenu.Text = "≡";
-            this.btnCloseMenu.UseVisualStyleBackColor = false;
-            this.btnCloseMenu.Click += new System.EventHandler(this.btnCloseMenu_Click);
+            this.btnSettings.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnSettings.Location = new System.Drawing.Point(40, 400);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(150, 50);
+            this.btnSettings.TabIndex = 6;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettings.MouseLeave += new System.EventHandler(this.btnSettings_MouseLeave);
+            this.btnSettings.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSettings_MouseMove);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnExit.Location = new System.Drawing.Point(40, 450);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(150, 50);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
+            this.btnExit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnExit_MouseMove);
             // 
             // btnOpenMenu
             // 
@@ -172,7 +192,7 @@
             this.btnOpenMenu.FlatAppearance.BorderSize = 0;
             this.btnOpenMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnOpenMenu.Location = new System.Drawing.Point(1157, 483);
+            this.btnOpenMenu.Location = new System.Drawing.Point(0, 0);
             this.btnOpenMenu.Name = "btnOpenMenu";
             this.btnOpenMenu.Size = new System.Drawing.Size(50, 50);
             this.btnOpenMenu.TabIndex = 9;
@@ -197,6 +217,75 @@
             this.pnlSortSubMenu.Size = new System.Drawing.Size(190, 450);
             this.pnlSortSubMenu.TabIndex = 9;
             this.pnlSortSubMenu.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(204)))), ((int)(((byte)(242)))));
+            this.panel2.Location = new System.Drawing.Point(0, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(50, 400);
+            this.panel2.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBox2.Location = new System.Drawing.Point(56, 8);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(131, 31);
+            this.textBox2.TabIndex = 10;
+            this.textBox2.Text = "Sort ";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // SortLion
+            // 
+            this.SortLion.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortLion.FlatAppearance.BorderSize = 0;
+            this.SortLion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortLion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortLion.Location = new System.Drawing.Point(40, 50);
+            this.SortLion.Name = "SortLion";
+            this.SortLion.Size = new System.Drawing.Size(150, 50);
+            this.SortLion.TabIndex = 11;
+            this.SortLion.Text = "Lion";
+            this.SortLion.UseVisualStyleBackColor = false;
+            this.SortLion.Click += new System.EventHandler(this.lionToolStripMenuItem_Click);
+            this.SortLion.MouseLeave += new System.EventHandler(this.SortLion_MouseLeave);
+            this.SortLion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortLion_MouseMove);
+            // 
+            // SortTiger
+            // 
+            this.SortTiger.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortTiger.FlatAppearance.BorderSize = 0;
+            this.SortTiger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortTiger.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortTiger.Location = new System.Drawing.Point(40, 100);
+            this.SortTiger.Name = "SortTiger";
+            this.SortTiger.Size = new System.Drawing.Size(150, 50);
+            this.SortTiger.TabIndex = 10;
+            this.SortTiger.Text = "Tiger";
+            this.SortTiger.UseVisualStyleBackColor = false;
+            this.SortTiger.Click += new System.EventHandler(this.tigerToolStripMenuItem_Click);
+            this.SortTiger.MouseLeave += new System.EventHandler(this.SortTiger_MouseLeave);
+            this.SortTiger.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortTiger_MouseMove);
+            // 
+            // SortCow
+            // 
+            this.SortCow.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SortCow.FlatAppearance.BorderSize = 0;
+            this.SortCow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortCow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.SortCow.Location = new System.Drawing.Point(40, 150);
+            this.SortCow.Name = "SortCow";
+            this.SortCow.Size = new System.Drawing.Size(150, 50);
+            this.SortCow.TabIndex = 9;
+            this.SortCow.Text = "Cow";
+            this.SortCow.UseVisualStyleBackColor = false;
+            this.SortCow.Click += new System.EventHandler(this.cowToolStripMenuItem_Click);
+            this.SortCow.MouseLeave += new System.EventHandler(this.SortCow_MouseLeave);
+            this.SortCow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortCow_MouseMove);
             // 
             // btnBackToMenu
             // 
@@ -260,54 +349,6 @@
             this.SortAll.MouseLeave += new System.EventHandler(this.SortAll_MouseLeave);
             this.SortAll.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortAll_MouseMove);
             // 
-            // SortCow
-            // 
-            this.SortCow.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortCow.FlatAppearance.BorderSize = 0;
-            this.SortCow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SortCow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.SortCow.Location = new System.Drawing.Point(40, 150);
-            this.SortCow.Name = "SortCow";
-            this.SortCow.Size = new System.Drawing.Size(150, 50);
-            this.SortCow.TabIndex = 9;
-            this.SortCow.Text = "Cow";
-            this.SortCow.UseVisualStyleBackColor = false;
-            this.SortCow.Click += new System.EventHandler(this.cowToolStripMenuItem_Click);
-            this.SortCow.MouseLeave += new System.EventHandler(this.SortCow_MouseLeave);
-            this.SortCow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortCow_MouseMove);
-            // 
-            // SortTiger
-            // 
-            this.SortTiger.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortTiger.FlatAppearance.BorderSize = 0;
-            this.SortTiger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SortTiger.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.SortTiger.Location = new System.Drawing.Point(40, 100);
-            this.SortTiger.Name = "SortTiger";
-            this.SortTiger.Size = new System.Drawing.Size(150, 50);
-            this.SortTiger.TabIndex = 10;
-            this.SortTiger.Text = "Tiger";
-            this.SortTiger.UseVisualStyleBackColor = false;
-            this.SortTiger.Click += new System.EventHandler(this.tigerToolStripMenuItem_Click);
-            this.SortTiger.MouseLeave += new System.EventHandler(this.SortTiger_MouseLeave);
-            this.SortTiger.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortTiger_MouseMove);
-            // 
-            // SortLion
-            // 
-            this.SortLion.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortLion.FlatAppearance.BorderSize = 0;
-            this.SortLion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SortLion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.SortLion.Location = new System.Drawing.Point(40, 50);
-            this.SortLion.Name = "SortLion";
-            this.SortLion.Size = new System.Drawing.Size(150, 50);
-            this.SortLion.TabIndex = 11;
-            this.SortLion.Text = "Lion";
-            this.SortLion.UseVisualStyleBackColor = false;
-            this.SortLion.Click += new System.EventHandler(this.lionToolStripMenuItem_Click);
-            this.SortLion.MouseLeave += new System.EventHandler(this.SortLion_MouseLeave);
-            this.SortLion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SortLion_MouseMove);
-            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -321,47 +362,6 @@
             this.button7.Text = "Exit";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.returnToFarmerSelectionToolStripMenuItem_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBox1.Location = new System.Drawing.Point(90, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 31);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Menu ";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBox2.Location = new System.Drawing.Point(56, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 31);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.Text = "Sort ";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(0, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(50, 450);
-            this.panel1.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(204)))), ((int)(((byte)(242)))));
-            this.panel2.Location = new System.Drawing.Point(0, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(50, 400);
-            this.panel2.TabIndex = 11;
             // 
             // pnlSettingsSubMenu
             // 
@@ -497,7 +497,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 627);
+            this.ClientSize = new System.Drawing.Size(921, 627);
             this.Controls.Add(this.pnlSettingsSubMenu);
             this.Controls.Add(this.pnlSortSubMenu);
             this.Controls.Add(this.button7);

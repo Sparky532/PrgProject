@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using System.Threading;
+using FarmManagement.BLL;
+using HelperLibrary;
+using System.Collections;
 
 namespace FarmManagement
 {
@@ -17,37 +20,92 @@ namespace FarmManagement
         List<Farm> farms = new List<Farm>();
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
+        ClientObject co;
         int ID = 0;
         public Farm_View(int id)
         {
             InitializeComponent();
             this.ID = id;
-            
+
         }
         public Farm_View()
         {
             InitializeComponent();
-            pnlMenu.Location = new Point(-190, 0);
-            pnlSortSubMenu.Location = new Point(-190, 50);
-            pnlSettingsSubMenu.Location = new Point(-190, 50);
-            btnOpenMenu.Location = new Point(0,0);
+        }
 
+        delegate void MyDelegate();
+        event MyDelegate myEvent;
+
+        public void ReceiveData(ArrayList farmViewData)
+        {
+            List<Farm> farmss = (List<Farm>)farmViewData[0];
+            List<Animal> animalss = (List<Animal>)farmViewData[1];
+            List<Location> locationss = (List<Location>)farmViewData[2];
+            foreach (Location item in locationss)
+            {
+                CheckLocationReceiveMethod(item);
+            }
+            foreach (Animal item in animalss)
+            {
+                CheckAnimalReceiveMethod(item);
+            }
+            foreach (Farm item in farmss)
+            {
+                CheckFarmReceiveMethod(item);
+            }
+            myEvent.Invoke();
+        }
+        public void CheckFarmReceiveMethod(Farm farm)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<Farm>(CheckFarmReceiveMethod), farm);
+            }
+            farms.Add(farm);
+        }
+        public void CheckAnimalReceiveMethod(Animal animal)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<Animal>(CheckAnimalReceiveMethod), animal);
+            }
+            animals.Add(animal);
+        }
+        public void CheckLocationReceiveMethod(Location location)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<Location>(CheckLocationReceiveMethod), location);
+            }
+            locations.Add(location);
         }
 
         private void Farm_View_Load(object sender, EventArgs e)
         {
-            Farm f = new Farm();
-            Location l = new Location();
-            Animal a = new Animal();
-            farms = f.selectFarm(ID);
-            locations = l.selectLocation(ID);
-            animals = a.selectAnimals(ID);
+            myEvent = LoadLists;
+            co = new ClientObject();
+            MessageObject message = new MessageObject(ID.BinarySerialization(), 6, 2, 1);
+            co.SendData(message);
+
+
+            pnlMenu.Location = new Point(-190, 0);
+            pnlSortSubMenu.Location = new Point(-190, 50);
+            pnlSettingsSubMenu.Location = new Point(-190, 50);
+            btnOpenMenu.Location = new Point(0, 0);
+            //Farm f = new Farm();
+            //Location l = new Location();
+            //Animal a = new Animal();
+            //farms = f.selectFarm(ID);
+            //locations = l.selectLocation(ID);
+            //animals = a.selectAnimals(ID);
+        }
+
+        public void LoadLists()
+        {
             lstFarm.DataSource = farms;
             lstLocations.DataSource = locations;
             lstAnimals.DataSource = animals;
         }
-
-      
 
         private void returnToFarmerSelectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -61,8 +119,8 @@ namespace FarmManagement
         private void lionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Selectitem = from item in animals
-                              where item.Species.ToString() == "Lion"
-                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             where item.Species.ToString() == "Lion"
+                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
@@ -76,8 +134,8 @@ namespace FarmManagement
         private void tigerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Selectitem = from item in animals
-                              where item.Species.ToString() == "Tiger"
-                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             where item.Species.ToString() == "Tiger"
+                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -91,8 +149,8 @@ namespace FarmManagement
         private void cowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Selectitem = from item in animals
-                              where item.Species.ToString() == "Cow"
-                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             where item.Species.ToString() == "Cow"
+                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -106,8 +164,8 @@ namespace FarmManagement
         private void sheepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Selectitem = from item in animals
-                              where item.Species.ToString() == "Sheep"
-                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             where item.Species.ToString() == "Sheep"
+                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -121,8 +179,8 @@ namespace FarmManagement
         private void horseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Selectitem = from item in animals
-                              where item.Species.ToString() == "Horse"
-                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+                             where item.Species.ToString() == "Horse"
+                             select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -135,8 +193,8 @@ namespace FarmManagement
 
         private void allAnimalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var SelectAnimals = from item in animals                              
-                              select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
+            var SelectAnimals = from item in animals
+                                select item.Species.AnimalName + " " + item.MateState + " " + item.Gender + " " + item.EatingTime;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
@@ -151,10 +209,11 @@ namespace FarmManagement
         {
             btnOpenMenu.Visible = false;
             pnlMenu.Visible = true;
-            Thread openMenu = new Thread(() => {
+            Thread openMenu = new Thread(() =>
+            {
                 for (int i = -189; i <= 0; i = i + 3)
                 {
-                    moveMenu(i,0,pnlMenu);
+                    moveMenu(i, 0, pnlMenu);
                     Thread.Sleep(2);
                 }
             });
@@ -173,7 +232,8 @@ namespace FarmManagement
         {
             btnOpenMenu.Visible = true;
             pnlMenu.Visible = true;
-            Thread openMenu = new Thread(() => {
+            Thread openMenu = new Thread(() =>
+            {
                 for (int i = 0; i >= -190; i = i - 3)
                 {
                     moveMenu(i, 0, pnlMenu);
@@ -181,7 +241,8 @@ namespace FarmManagement
                 }
             });
             openMenu.Start();
-            openMenu = new Thread(() => {
+            openMenu = new Thread(() =>
+            {
                 for (int i = 0; i >= -190; i = i - 3)
                 {
                     moveMenu(i, 50, pnlSortSubMenu);
@@ -189,7 +250,8 @@ namespace FarmManagement
                 }
             });
             openMenu.Start();
-            openMenu = new Thread(() => {
+            openMenu = new Thread(() =>
+            {
                 for (int i = 0; i >= -190; i = i - 3)
                 {
                     moveMenu(i, 50, pnlSettingsSubMenu);
@@ -202,7 +264,8 @@ namespace FarmManagement
         private void btnSort_Click(object sender, EventArgs e)
         {
             pnlSortSubMenu.Visible = true;
-            Thread openMenu = new Thread(() => {
+            Thread openMenu = new Thread(() =>
+            {
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 50, pnlSortSubMenu);
@@ -215,7 +278,8 @@ namespace FarmManagement
         private void btnBackToMenu_Click(object sender, EventArgs e)
         {
             pnlSortSubMenu.Visible = true;
-            Thread openMenu = new Thread(() => {
+            Thread openMenu = new Thread(() =>
+            {
                 for (int i = 0; i >= -190; i = i - 3)
                 {
                     moveMenu(i, 50, pnlSortSubMenu);
@@ -233,7 +297,8 @@ namespace FarmManagement
         private void btnSettings_Click(object sender, EventArgs e)
         {
             pnlSettingsSubMenu.Visible = true;
-            Thread openMenu = new Thread(() => {
+            Thread openMenu = new Thread(() =>
+            {
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 50, pnlSettingsSubMenu);
@@ -246,7 +311,8 @@ namespace FarmManagement
         private void button11_Click(object sender, EventArgs e)
         {
             pnlSettingsSubMenu.Visible = true;
-            Thread openMenu = new Thread(() => {
+            Thread openMenu = new Thread(() =>
+            {
                 for (int i = 0; i >= -190; i = i - 3)
                 {
                     moveMenu(i, 50, pnlSettingsSubMenu);

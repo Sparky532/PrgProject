@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BLL;
 using HelperLibrary;
-
+using System.Collections;
 
 namespace Server.BLL
 {
@@ -123,6 +123,7 @@ namespace Server.BLL
                                         //Select
                                         case 1:
                                             {
+                                                
                                                 Farmer farmer = new Farmer();
                                                 Farmer[] AllFarmers = farmer.FarmerSelection();
                                                 message.Data = AllFarmers.BinarySerialization();
@@ -279,7 +280,7 @@ namespace Server.BLL
                     {
                         switch (message.ObjectIdentifier)
                         {
-                            //Farm
+                            //Farm, Animal and Location
                             case 2:
                                 {
                                     switch (message.ActionIdentifier)
@@ -287,10 +288,25 @@ namespace Server.BLL
                                         //Select
                                         case 1:
                                             {
+                                                ArrayList farmViewData = new ArrayList();
                                                 int id = (int)message.Data.BinaryDeserialization();
                                                 Farm farm = new Farm();
                                                 List<Farm> farms = farm.selectFarm(id);
-                                                message.Data = farms.BinarySerialization();
+                                                farmViewData.Add(farms);
+
+                                                Animal animal = new Animal();
+                                                List<Animal> animals = animal.selectAnimals(id);
+                                                farmViewData.Add(animals);
+
+
+                                                Location location = new Location();
+                                                List<Location> locations = location.selectLocation(id);
+                                                farmViewData.Add(locations);
+
+
+                                                message.Data = farmViewData.BinarySerialization();
+
+
                                                 SendData(message, client);
                                                 break;
                                             }
@@ -307,11 +323,13 @@ namespace Server.BLL
                                         //Select
                                         case 1:
                                             {
-                                                int id = (int)message.Data.BinaryDeserialization();
-                                                Animal animal = new Animal();
-                                                List<Animal> animals = animal.selectAnimals(id);
-                                                message.Data = animals.BinarySerialization();
-                                                SendData(message, client);
+                                                //int id = (int)message.Data.BinaryDeserialization();
+                                                //Console.WriteLine(id + "animal");
+                                                //Animal animal = new Animal();
+                                                //List<Animal> animals = animal.selectAnimals(id);
+                                                //message.Data = animals.BinarySerialization();
+                                                //Console.WriteLine(message.ToString() + "");
+                                                //SendData(message, client);
                                                 break;
                                             }
                                         default:
@@ -327,11 +345,13 @@ namespace Server.BLL
                                         //Select
                                         case 1:
                                             {
-                                                int id = (int)message.Data.BinaryDeserialization();
-                                                Location location = new Location();
-                                                List<Location> locations = location.selectLocation(id);
-                                                message.Data = locations.BinarySerialization();
-                                                SendData(message, client);
+                                                //int id = (int)message.Data.BinaryDeserialization();
+                                                //Console.WriteLine(id + "location");
+                                                //Location location = new Location();
+                                                //List<Location> locations = location.selectLocation(id);
+                                                //message.Data = locations.BinarySerialization();
+                                                //Console.WriteLine(message.ToString() + "");
+                                                //SendData(message, client);
                                                 break;
                                             }
                                         default:
