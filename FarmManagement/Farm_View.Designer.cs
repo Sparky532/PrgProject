@@ -97,7 +97,7 @@
             this.lstAnimals.ItemHeight = 22;
             this.lstAnimals.Location = new System.Drawing.Point(0, 100);
             this.lstAnimals.Name = "lstAnimals";
-            this.lstAnimals.Size = new System.Drawing.Size(280, 374);
+            this.lstAnimals.Size = new System.Drawing.Size(280, 396);
             this.lstAnimals.TabIndex = 2;
             this.lstAnimals.SelectedIndexChanged += new System.EventHandler(this.lstAnimals_SelectedIndexChanged);
             // 
@@ -381,7 +381,7 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button7.Location = new System.Drawing.Point(822, 599);
+            this.button7.Location = new System.Drawing.Point(712, 599);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(150, 50);
             this.button7.TabIndex = 9;
@@ -526,7 +526,7 @@
             this.pblSortLists.Controls.Add(this.lstAnimals);
             this.pblSortLists.Location = new System.Drawing.Point(190, 0);
             this.pblSortLists.Name = "pblSortLists";
-            this.pblSortLists.Size = new System.Drawing.Size(280, 477);
+            this.pblSortLists.Size = new System.Drawing.Size(280, 500);
             this.pblSortLists.TabIndex = 13;
             this.pblSortLists.Visible = false;
             // 
@@ -594,7 +594,7 @@
             this.txtFarmName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFarmName.Enabled = false;
             this.txtFarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtFarmName.Location = new System.Drawing.Point(694, 12);
+            this.txtFarmName.Location = new System.Drawing.Point(594, 12);
             this.txtFarmName.Name = "txtFarmName";
             this.txtFarmName.Size = new System.Drawing.Size(268, 38);
             this.txtFarmName.TabIndex = 15;
@@ -604,7 +604,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 661);
+            this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1210, 661);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlCagesSort);
             this.Controls.Add(this.pnlSettingsSubMenu);
@@ -613,6 +615,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.btnOpenMenu);
             this.Controls.Add(this.pblSortLists);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Farm_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

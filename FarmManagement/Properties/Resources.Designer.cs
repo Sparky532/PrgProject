@@ -223,6 +223,26 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BgFarm {
+            get {
+                object obj = ResourceManager.GetObject("BgFarm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BgFarm1 {
+            get {
+                object obj = ResourceManager.GetObject("BgFarm1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BlackBoyLayer {
             get {
                 object obj = ResourceManager.GetObject("BlackBoyLayer", resourceCulture);

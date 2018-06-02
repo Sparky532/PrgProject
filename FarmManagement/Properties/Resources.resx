@@ -262,6 +262,9 @@
   <data name="BackgroundFarmerCreation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundFarmerCreation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Ani-Sim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ani-Sim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FarmerSelectionNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FarmerSelectionNew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -270,6 +273,9 @@
   </data>
   <data name="BoyOutfit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BoyOutfit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BgFarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgFarm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GirlBrownEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>GirlBrownEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,7 +379,7 @@
   <data name="iconfarmer_5vE_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfarmer_5vE_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ani-Sim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ani-Sim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BgFarm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BgFarm1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
