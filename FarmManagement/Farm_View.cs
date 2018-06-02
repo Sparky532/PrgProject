@@ -367,7 +367,16 @@ namespace FarmManagement
                 openLists.Start();
             }
             listsOpen = false;
+            //System.Timers.Timer timer = new System.Timers.Timer(700);
+            //timer.Start();
+            //timer.Elapsed += Timer_Elapsed;
         }
+
+        //private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        //{
+        //    openLists.Abort();
+        //    openMenu.Abort();
+        //}
 
         private void btnSort_Click(object sender, EventArgs e)
         {
