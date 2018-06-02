@@ -19,7 +19,7 @@ namespace BLL
         private string mateState;
         private double eatingTime;
         private int daysGrowing;
-
+        private int locationID;
 
         public Animal(int idP, string genderP, string mateStateP, double eatingTimeP, Species speciesP, int daysGrowingP)
         {
@@ -29,6 +29,16 @@ namespace BLL
             this.EatingTime = eatingTimeP;
             this.Species = speciesP;
             this.DaysGrowing = daysGrowingP;
+        }
+        public Animal(int idP, string genderP, string mateStateP, double eatingTimeP, Species speciesP, int daysGrowingP, int locationIDP)
+        {
+            this.ID = idP;
+            this.Gender = genderP;
+            this.MateState = mateStateP;
+            this.EatingTime = eatingTimeP;
+            this.Species = speciesP;
+            this.DaysGrowing = daysGrowingP;
+            this.LocationID = locationIDP;
         }
 
         public Animal(string genderP, string mateStateP, double eatingTimeP, Species speciesP, int daysGrowingP)
@@ -43,6 +53,11 @@ namespace BLL
         public Animal()
         {
 
+        }
+        public int LocationID
+        {
+            get { return locationID; }
+            set { locationID = value; }
         }
 
         public Species Species {
@@ -196,7 +211,7 @@ namespace BLL
                 s.Animaltype = item["AnimalType"].ToString();
                 s.Space = double.Parse(item["AnimalSpaceTaken"].ToString());
                 s.Speed = double.Parse(item["AnimalBaseSpeed"].ToString());
-                animals.Add(new Animal(int.Parse(item["AnimalId"].ToString()), item["AnimalGender"].ToString(), item["AnimalMateStae"].ToString(), double.Parse(item["EatingTime"].ToString()),s,int.Parse(item["AnimalAge"].ToString())));
+                animals.Add(new Animal(int.Parse(item["AnimalId"].ToString()), item["AnimalGender"].ToString(), item["AnimalMateStae"].ToString(), double.Parse(item["EatingTime"].ToString()),s,int.Parse(item["AnimalAge"].ToString()),int.Parse(item["LocationId"].ToString())));
             }
             return animals;
         }

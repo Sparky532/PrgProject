@@ -98,8 +98,8 @@ namespace FarmManagement
             pnlSortSubMenu.Location = new Point(-190, 50);
             pnlSettingsSubMenu.Location = new Point(-190, 50);
             btnOpenMenu.Location = new Point(0, 0);
-            pblSortLists.Location = new Point(-280,0);
-            pnlCagesSort.Location = new Point(-190,50);
+            pblSortLists.Location = new Point(-280, 0);
+            pnlCagesSort.Location = new Point(-190, 50);
             //Farm f = new Farm();
             //Location l = new Location();
             //Animal a = new Animal();
@@ -294,6 +294,15 @@ namespace FarmManagement
                 {
                     for (int i = 0; i >= -190; i = i - 3)
                     {
+                        moveMenu(i, 50, pnlCagesSort);
+                        Thread.Sleep(2);
+                    }
+                });
+                openMenu.Start();
+                openMenu = new Thread(() =>
+                {
+                    for (int i = 0; i >= -190; i = i - 3)
+                    {
                         moveMenu(i, 50, pnlSettingsSubMenu);
                         Thread.Sleep(2);
                     }
@@ -333,6 +342,15 @@ namespace FarmManagement
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlSettingsSubMenu);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlCagesSort);
                             Thread.Sleep(2);
                         }
                     });
@@ -644,7 +662,7 @@ namespace FarmManagement
                 }
             });
             openMenu.Start();
-            pblSortLists.Location = new Point(-280,0);
+            pblSortLists.Location = new Point(-280, 0);
             pblSortLists.Visible = true;
             Thread openLists = new Thread(() =>
             {
@@ -655,6 +673,57 @@ namespace FarmManagement
                 }
             });
             openLists.Start();
+            listsOpen = true;
+            lstLocations.SelectedIndex = 1;
+            lstLocations.SelectedIndex = 0;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (listsOpen)
+            {
+                pnlSortSubMenu.Visible = true;
+                Thread openLists = new Thread(() =>
+                {
+                    for (int i = 190; i >= -90; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                    Thread.Sleep(70);
+                    Thread openMenu = new Thread(() =>
+                    {
+                        for (int i = 0; i >= -190; i = i - 3)
+                        {
+                            moveMenu(i, 50, pnlCagesSort);
+                            Thread.Sleep(2);
+                        }
+                    });
+                    openMenu.Start();
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
+                listsOpen = false;
+            }
+        }
+
+        private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lstLocations_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstLocations_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,6 +33,7 @@
             this.lstAnimals = new System.Windows.Forms.ListBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCages = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnCloseMenu = new System.Windows.Forms.Button();
             this.btnSort = new System.Windows.Forms.Button();
@@ -62,11 +63,11 @@
             this.button14 = new System.Windows.Forms.Button();
             this.txtFarmName = new System.Windows.Forms.Label();
             this.pblSortLists = new System.Windows.Forms.Panel();
-            this.btnCages = new System.Windows.Forms.Button();
             this.pnlCagesSort = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtCages = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.txtAnimals = new System.Windows.Forms.TextBox();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -85,6 +86,7 @@
             this.lstLocations.Name = "lstLocations";
             this.lstLocations.Size = new System.Drawing.Size(140, 396);
             this.lstLocations.TabIndex = 1;
+            this.lstLocations.SelectedIndexChanged += new System.EventHandler(this.lstLocations_SelectedIndexChanged_1);
             // 
             // lstAnimals
             // 
@@ -97,6 +99,7 @@
             this.lstAnimals.Name = "lstAnimals";
             this.lstAnimals.Size = new System.Drawing.Size(280, 374);
             this.lstAnimals.TabIndex = 2;
+            this.lstAnimals.SelectedIndexChanged += new System.EventHandler(this.lstAnimals_SelectedIndexChanged);
             // 
             // pnlMenu
             // 
@@ -121,6 +124,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 450);
             this.panel1.TabIndex = 10;
+            // 
+            // btnCages
+            // 
+            this.btnCages.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCages.FlatAppearance.BorderSize = 0;
+            this.btnCages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCages.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnCages.Location = new System.Drawing.Point(40, 300);
+            this.btnCages.Name = "btnCages";
+            this.btnCages.Size = new System.Drawing.Size(150, 50);
+            this.btnCages.TabIndex = 11;
+            this.btnCages.Text = "Cages";
+            this.btnCages.UseVisualStyleBackColor = false;
+            this.btnCages.Click += new System.EventHandler(this.btnCages_Click);
             // 
             // textBox1
             // 
@@ -514,26 +531,13 @@
             // pblSortLists
             // 
             this.pblSortLists.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pblSortLists.Controls.Add(this.txtAnimals);
             this.pblSortLists.Controls.Add(this.lstAnimals);
             this.pblSortLists.Location = new System.Drawing.Point(190, 0);
             this.pblSortLists.Name = "pblSortLists";
             this.pblSortLists.Size = new System.Drawing.Size(280, 477);
             this.pblSortLists.TabIndex = 13;
             this.pblSortLists.Visible = false;
-            // 
-            // btnCages
-            // 
-            this.btnCages.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCages.FlatAppearance.BorderSize = 0;
-            this.btnCages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCages.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnCages.Location = new System.Drawing.Point(40, 300);
-            this.btnCages.Name = "btnCages";
-            this.btnCages.Size = new System.Drawing.Size(150, 50);
-            this.btnCages.TabIndex = 11;
-            this.btnCages.Text = "Cages";
-            this.btnCages.UseVisualStyleBackColor = false;
-            this.btnCages.Click += new System.EventHandler(this.btnCages_Click);
             // 
             // pnlCagesSort
             // 
@@ -542,7 +546,7 @@
             this.pnlCagesSort.Controls.Add(this.lstLocations);
             this.pnlCagesSort.Controls.Add(this.txtCages);
             this.pnlCagesSort.Controls.Add(this.button4);
-            this.pnlCagesSort.Location = new System.Drawing.Point(533, 53);
+            this.pnlCagesSort.Location = new System.Drawing.Point(533, 50);
             this.pnlCagesSort.Name = "pnlCagesSort";
             this.pnlCagesSort.Size = new System.Drawing.Size(190, 450);
             this.pnlCagesSort.TabIndex = 12;
@@ -580,6 +584,18 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "<";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // txtAnimals
+            // 
+            this.txtAnimals.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtAnimals.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAnimals.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.txtAnimals.Location = new System.Drawing.Point(0, 58);
+            this.txtAnimals.Name = "txtAnimals";
+            this.txtAnimals.Size = new System.Drawing.Size(131, 31);
+            this.txtAnimals.TabIndex = 11;
+            this.txtAnimals.Text = " Animals ";
             // 
             // Farm_View
             // 
@@ -607,6 +623,7 @@
             this.pnlSettingsSubMenu.ResumeLayout(false);
             this.pnlSettingsSubMenu.PerformLayout();
             this.pblSortLists.ResumeLayout(false);
+            this.pblSortLists.PerformLayout();
             this.pnlCagesSort.ResumeLayout(false);
             this.pnlCagesSort.PerformLayout();
             this.ResumeLayout(false);
@@ -653,5 +670,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtCages;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtAnimals;
     }
 }
