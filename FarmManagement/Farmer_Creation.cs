@@ -278,7 +278,7 @@ namespace FarmManagement
             }
             catch (ArgumentOutOfRangeException)
             {
-                indexes[index] = skins.Count - 1;
+                indexes[index] = items.Count - 1;
                 KeyValuePair<string, Bitmap> item = items.ElementAt(indexes[index]);
                 txt.Text = item.Key;
                 pbx.Image = item.Value;

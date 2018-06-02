@@ -122,7 +122,7 @@ namespace FarmManagement.BLL
                 case 4:
                     {
 
-                        Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                        Animal_Selection animalSelection = (Animal_Selection)Form.ActiveForm;
 
                         switch (message.ObjectIdentifier)
                         {
@@ -134,6 +134,8 @@ namespace FarmManagement.BLL
                                         //Select
                                         case 1:
                                             {
+                                                List<Species> species = (List<Species>)message.Data.BinaryDeserialization();
+                                                InvokeSpecies(species, animalSelection);
                                                 break;
                                             }
                                         default:
@@ -233,6 +235,20 @@ namespace FarmManagement.BLL
                     farmerSelection.Invoke(new Action<Farmer[], Farmer_Selection>(InvokeFarmer), AllFarmers, farmerSelection);
                 }
                 farmerSelection.ReceiveFarmers(AllFarmers);
+            }
+            catch (NullReferenceException)
+            {
+            }
+        }
+        private void InvokeSpecies(List<Species> species, Animal_Selection animalSelection)
+        {
+            try
+            {
+                if (animalSelection.InvokeRequired)
+                {
+                    animalSelection.Invoke(new Action<List<Species>, Animal_Selection>(InvokeSpecies), species, animalSelection);
+                }
+                animalSelection.ReceiveSpecies(species);
             }
             catch (NullReferenceException)
             {

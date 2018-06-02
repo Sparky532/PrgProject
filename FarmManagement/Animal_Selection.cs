@@ -12,6 +12,7 @@ using System.Reflection;
 using System.IO;
 using FarmManagement.BLL;
 using HelperLibrary;
+using System.Threading;
 
 namespace FarmManagement
 {
@@ -24,7 +25,11 @@ namespace FarmManagement
         BindingSource bs2 = new BindingSource();
         bool animalsAdded = false;
         ClientObject Client = new ClientObject();
+        bool received = false;
         int ID = 0;
+
+        delegate void MyDelegate();
+        event MyDelegate myEvent;
 
         public Animal_Selection()
         {
@@ -41,54 +46,90 @@ namespace FarmManagement
         {
             InitializeComponent();
             this.ID = id;
-            loadDefaults();
+        }
+
+        public void ReceiveSpecies(List<Species> species)
+        {
+            if (!received)
+            {
+                foreach (Species item in species)
+                {
+                    CheckReceiveMethod(item);
+                }
+                myEvent.Invoke();
+                received = true;
+            }
+        }
+        public void CheckReceiveMethod(Species species)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<Species>(CheckReceiveMethod), species);
+            }
+            animalSpecies.Add(species);
         }
 
         public void loadDefaults()
         {
 
             //Select the animal species from the database
-            AnimalsSelected selects = new AnimalsSelected();
-            animalSpecies = selects.getAnimalName();
+            //AnimalsSelected selects = new AnimalsSelected();
+            //animalSpecies = selects.getAnimalName();
+            MessageObject message = new MessageObject(new byte[1], 4, 4, 1);
+            Client = new ClientObject(true, message);
+
+            myEvent = AnimalsLoaded;
+        }
+
+        private void AnimalsLoaded()
+        {
+            try
+            {
+                pbxBackground.Controls.Add(pbxAnimal);
+                txtSelectedAnimalAmount.Visible = false;
+                pbxChange.Visible = false;
+
+                //Set binding sources
+                bs2.DataSource = animalSpecies;
+                bs1.DataSource = animalsSelected;
+
+                //Link combo box
+                cbxAnimals.DataSource = bs2;
+                if (animalsSelected.Count > 0)
+                {
+                    lstAnimalsSelected.DataSource = bs1;
+                }
+                else
+                {
+                    lstAnimalsSelected.Items.Add("No animals yet");
+                }
+
+                //Link all buttons to panel
+                pbxPanel.Controls.Add(pbxPrevious);
+                pbxPanel.Controls.Add(pbxNext1);
+                pbxPanel.Controls.Add(pbxAdd);
+                pbxPanel.Controls.Add(pbxNext);
+                pbxPanel.Controls.Add(pbxAddNew);
+                pbxPanel.Controls.Add(pbxChange);
+                pbxPanel.Controls.Add(pbxRemove);
+
+                pbxPrevious.Location = new Point(75, 100);
+                pbxNext1.Location = new Point(228, 100);
+                pbxAdd.Location = new Point(104, 150);
+                pbxNext.Location = new Point(443, 150);
+                pbxAddNew.Location = new Point(443, 30);
+                pbxChange.Location = new Point(355, 60);
+                pbxRemove.Location = new Point(560, 30);
+        }
+            catch (InvalidOperationException)
+            {
+            }
+            
         }
 
         private void Animal_Selection_Load(object sender, EventArgs e)
         {
-            pbxBackground.Controls.Add(pbxAnimal);
-            txtSelectedAnimalAmount.Visible = false;
-            pbxChange.Visible = false;
-
-            //Set binding sources
-            bs2.DataSource = animalSpecies;
-            bs1.DataSource = animalsSelected;
-
-            //Link combo box
-            cbxAnimals.DataSource = bs2;
-            if (animalsSelected.Count>0)
-            {
-                lstAnimalsSelected.DataSource = bs1;
-            }
-            else
-            {
-                lstAnimalsSelected.Items.Add("No animals yet");
-            }
-
-            //Link all buttons to panel
-            pbxPanel.Controls.Add(pbxPrevious);
-            pbxPanel.Controls.Add(pbxNext1);
-            pbxPanel.Controls.Add(pbxAdd);
-            pbxPanel.Controls.Add(pbxNext);
-            pbxPanel.Controls.Add(pbxAddNew);
-            pbxPanel.Controls.Add(pbxChange);
-            pbxPanel.Controls.Add(pbxRemove);
-
-            pbxPrevious.Location = new Point(75, 100);
-            pbxNext1.Location = new Point(228, 100);
-            pbxAdd.Location = new Point(104, 150);
-            pbxNext.Location = new Point(443, 150);
-            pbxAddNew.Location = new Point(443, 30);
-            pbxChange.Location = new Point(355, 60);
-            pbxRemove.Location = new Point(560, 30);
+            loadDefaults();
         }
         //Allows the user to edit an animal already added to the list of animals to add to the farm
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -229,7 +270,7 @@ namespace FarmManagement
                         animalsSelected.Add(selects);
 
                         //Refresh the List
-                        quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
+                        //quickSortSelected(animalsSelected, 0, animalsSelected.Count - 1);
                         lstAnimalsSelected.DataSource = bs1;
                         bs1.ResetBindings(false);
                         int currentIndex = cbxAnimals.SelectedIndex;
@@ -238,7 +279,7 @@ namespace FarmManagement
                         animalSpecies.RemoveAt(currentIndex);
 
                         //Refresh the combo box
-                        quickSortSpecies(animalSpecies, 0, animalSpecies.Count - 1);
+                        //quickSortSpecies(animalSpecies, 0, animalSpecies.Count - 1);
                         bs2.ResetBindings(false);
                     }
                     else

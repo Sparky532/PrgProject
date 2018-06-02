@@ -23,19 +23,24 @@ namespace FarmManagement
         Farmer CurrentFarmer = new Farmer();
         ClientObject co;
         int index = 0;
+        bool received = false;
 
         delegate void MyDelegate();
         event MyDelegate myEvent;
 
         public void ReceiveFarmers(Farmer[] farmers)
         {
-            index = 0;
-            foreach (Farmer item in farmers)
+            if (!received)
             {
-                CheckReceiveMethod(item);
-                index++;
+                index = 0;
+                foreach (Farmer item in farmers)
+                {
+                    CheckReceiveMethod(item);
+                    index++;
+                }
+                myEvent.Invoke();
+                received = true;
             }
-            myEvent.Invoke();
         }
         public void CheckReceiveMethod(Farmer farmer)
         {
@@ -71,19 +76,7 @@ namespace FarmManagement
         {
             navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
             navFormWithoutParam += new NavFormWithoutParam(NavFarmerCreation);
-
-            //Setting the farmer pictures to default
-            //try
-            //{
-            //    foreach (Farmer item in AllFarmers)
-            //    {
-            //        MessageBox.Show(item.ToString());
-            //    }
-            //}
-            //catch (NullReferenceException)
-            //{
-
-            //}
+            
             try
             {
                 pbxFarmer1.Visible = false;
