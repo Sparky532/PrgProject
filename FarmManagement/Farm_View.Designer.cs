@@ -68,11 +68,13 @@
             this.txtCages = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.txtFarmName = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
             this.pblSortLists.SuspendLayout();
             this.pnlCagesSort.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstLocations
@@ -97,7 +99,7 @@
             this.lstAnimals.ItemHeight = 22;
             this.lstAnimals.Location = new System.Drawing.Point(0, 100);
             this.lstAnimals.Name = "lstAnimals";
-            this.lstAnimals.Size = new System.Drawing.Size(280, 374);
+            this.lstAnimals.Size = new System.Drawing.Size(280, 396);
             this.lstAnimals.TabIndex = 2;
             this.lstAnimals.SelectedIndexChanged += new System.EventHandler(this.lstAnimals_SelectedIndexChanged);
             // 
@@ -526,7 +528,7 @@
             this.pblSortLists.Controls.Add(this.lstAnimals);
             this.pblSortLists.Location = new System.Drawing.Point(190, 0);
             this.pblSortLists.Name = "pblSortLists";
-            this.pblSortLists.Size = new System.Drawing.Size(280, 477);
+            this.pblSortLists.Size = new System.Drawing.Size(280, 500);
             this.pblSortLists.TabIndex = 13;
             this.pblSortLists.Visible = false;
             // 
@@ -600,11 +602,21 @@
             this.txtFarmName.TabIndex = 15;
             this.txtFarmName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FarmManagement.Properties.Resources.BgFarm;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(684, 661);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 661);
+            this.ClientSize = new System.Drawing.Size(684, 661);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlCagesSort);
             this.Controls.Add(this.pnlSettingsSubMenu);
@@ -613,6 +625,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.btnOpenMenu);
             this.Controls.Add(this.pblSortLists);
+            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Farm_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -629,6 +642,7 @@
             this.pblSortLists.PerformLayout();
             this.pnlCagesSort.ResumeLayout(false);
             this.pnlCagesSort.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,5 +688,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtAnimals;
         private System.Windows.Forms.TextBox txtFarmName;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
