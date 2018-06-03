@@ -68,9 +68,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtFarmName = new System.Windows.Forms.TextBox();
             this.pnlUpdateName = new System.Windows.Forms.Panel();
-            this.txtUpdateName = new System.Windows.Forms.TextBox();
-            this.btnSubmitUpdate = new System.Windows.Forms.Button();
             this.lblUpdating = new System.Windows.Forms.Label();
+            this.btnSubmitUpdate = new System.Windows.Forms.Button();
+            this.txtUpdateName = new System.Windows.Forms.TextBox();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -604,13 +604,13 @@
             this.pnlUpdateName.TabIndex = 16;
             this.pnlUpdateName.Visible = false;
             // 
-            // txtUpdateName
+            // lblUpdating
             // 
-            this.txtUpdateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txtUpdateName.Location = new System.Drawing.Point(4, 4);
-            this.txtUpdateName.Name = "txtUpdateName";
-            this.txtUpdateName.Size = new System.Drawing.Size(393, 35);
-            this.txtUpdateName.TabIndex = 0;
+            this.lblUpdating.AutoSize = true;
+            this.lblUpdating.Location = new System.Drawing.Point(4, 84);
+            this.lblUpdating.Name = "lblUpdating";
+            this.lblUpdating.Size = new System.Drawing.Size(0, 13);
+            this.lblUpdating.TabIndex = 13;
             // 
             // btnSubmitUpdate
             // 
@@ -626,21 +626,21 @@
             this.btnSubmitUpdate.UseVisualStyleBackColor = false;
             this.btnSubmitUpdate.Click += new System.EventHandler(this.btnSubmitUpdate_Click);
             // 
-            // lblUpdating
+            // txtUpdateName
             // 
-            this.lblUpdating.AutoSize = true;
-            this.lblUpdating.Location = new System.Drawing.Point(4, 84);
-            this.lblUpdating.Name = "lblUpdating";
-            this.lblUpdating.Size = new System.Drawing.Size(0, 13);
-            this.lblUpdating.TabIndex = 13;
+            this.txtUpdateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtUpdateName.Location = new System.Drawing.Point(4, 4);
+            this.txtUpdateName.Name = "txtUpdateName";
+            this.txtUpdateName.Size = new System.Drawing.Size(393, 35);
+            this.txtUpdateName.TabIndex = 0;
             // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm1;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1250, 661);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(629, 661);
             this.Controls.Add(this.pnlUpdateName);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlCagesSort);

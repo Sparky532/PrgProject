@@ -327,34 +327,17 @@ namespace FarmManagement
             txtCurrentCages.Text = CagesNeeded.ToString(); 
         }
 
-        //Decreases the amount of animals
-        private void pbxPrevious_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                index--;
-                if (index < 0)
-                {
-                    throw new NegativeAnimalsException("Cannot have a negative amount of animals");
-                }
-                else
-                {
-                    txtAnimalAmount.Text = index.ToString();
-                }
-            }
-            catch (NegativeAnimalsException ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-                index++;
-            }
-        }
+        ////Decreases the amount of animals
+        //private void pbxPrevious_Click(object sender, EventArgs e)
+        //{
+            
+        //}
 
         //increases the amount of animals
-        private void pbxNext1_Click(object sender, EventArgs e)
-        {
-            index++;
-            txtAnimalAmount.Text = index.ToString();
-        }
+        //private void pbxNext1_Click(object sender, EventArgs e)
+        //{
+            
+        //}
 
         //changes the quantity of an existing animal
         private void pbxChange_Click(object sender, EventArgs e)
@@ -554,6 +537,33 @@ namespace FarmManagement
         private void cbxAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbxNext1_Click(object sender, MouseEventArgs e)
+        {
+            index++;
+            txtAnimalAmount.Text = index.ToString();
+        }
+
+        private void pbxPrevious_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                index--;
+                if (index < 0)
+                {
+                    throw new NegativeAnimalsException("Cannot have a negative amount of animals");
+                }
+                else
+                {
+                    txtAnimalAmount.Text = index.ToString();
+                }
+            }
+            catch (NegativeAnimalsException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                index++;
+            }
         }
     }
 }
