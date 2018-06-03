@@ -104,6 +104,8 @@ namespace FarmManagement
             pblSortLists.Location = new Point(-280, 0);
             pnlCagesSort.Location = new Point(-190, 50);
             pnlUpdateName.Location = new Point(190,0);
+
+
             //Farm f = new Farm();
             //Location l = new Location();
             //Animal a = new Animal();
@@ -128,7 +130,7 @@ namespace FarmManagement
             form.ShowDialog();
             this.Close();
         }
-
+        #region AnimalClickInMenu
         private void lionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pblSortLists.Visible = true;
@@ -229,6 +231,8 @@ namespace FarmManagement
                 lstAnimals.Items.Add(item);
             }
         }
+
+        #endregion
 
         private void ShiftListPanel()
         {
@@ -487,7 +491,7 @@ namespace FarmManagement
         {
             SortLion.BackColor = Color.FromArgb(125, 204, 242);
         }
-
+        #region MenuColors
         private void SortLion_MouseLeave(object sender, EventArgs e)
         {
             SortLion.BackColor = Color.WhiteSmoke;
@@ -574,6 +578,8 @@ namespace FarmManagement
             btnExit.BackColor = Color.WhiteSmoke;
             btnExit.ForeColor = Color.Black;
         }
+        #endregion
+
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
