@@ -197,6 +197,12 @@ namespace BLL
             DataHandler dbhandler = new DataHandler();
             return dbhandler.DeleteFarmer(this.ID,this.farmerStyle.StyleId);
         }
+
+        public void UpdateFarmer()
+        {
+            DataHandler handler = new DataHandler();
+            handler.UpdateFarmer(new ArrayList() {this.ID,this.Name});
+        }
     }
 
     

@@ -330,6 +330,24 @@ namespace Server.BLL
                     {
                         switch (message.ObjectIdentifier)
                         {
+                            //Farmer
+                            case 1:
+                                {
+                                    switch (message.ActionIdentifier)
+                                    {
+                                        //Update
+                                        case 4:
+                                            {
+                                                //Update farmer details
+                                                Farmer farmer = (Farmer)message.Data.BinaryDeserialization();
+                                                farmer.UpdateFarmer();
+                                                break;
+                                            }
+                                        default:
+                                            break;
+                                    }
+                                    break;
+                                }
                             //Farm, Animal and Location
                             case 2:
                                 {
@@ -358,6 +376,14 @@ namespace Server.BLL
 
 
                                                 SendData(message, client);
+                                                break;
+                                            }
+                                        //Update
+                                        case 4:
+                                            {
+                                                //Update farm details
+                                                Farm farm = (Farm)message.Data.BinaryDeserialization();
+                                                farm.UpdateFarm();
                                                 break;
                                             }
                                         default:

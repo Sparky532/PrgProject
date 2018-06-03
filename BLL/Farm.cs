@@ -115,5 +115,11 @@ namespace BLL
             }
             return farms;
         }
+
+        public void UpdateFarm()
+        {
+            DataHandler handler = new DataHandler();
+            handler.UpdateFarm(new ArrayList() { this.ID, this.FarmName });
+        }
     }
 }

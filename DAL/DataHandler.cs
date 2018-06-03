@@ -415,5 +415,59 @@ namespace DAL
             }
             return success;
         }
+
+        public int UpdateFarmer(ArrayList toUpdate)
+        {
+            int success = 0;
+            string storedProcedureName = "UpdateFarmer";
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                command = new SqlCommand(storedProcedureName, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@farmerID", toUpdate[0].ToString());
+                command.Parameters.Add("@farmerName", toUpdate[1].ToString());
+                success= command.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return success;
+        }
+
+        public int UpdateFarm(ArrayList toUpdate)
+        {
+            int success = 0;
+            string storedProcedureName = "UpdateFarm";
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                command = new SqlCommand(storedProcedureName, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@farmID", toUpdate[0].ToString());
+                command.Parameters.Add("@farmName", toUpdate[1].ToString());
+                success = command.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return success;
+        }
     }
 }

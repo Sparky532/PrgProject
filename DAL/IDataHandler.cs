@@ -23,6 +23,10 @@ namespace DAL
         int InsertFarm(ArrayList toWrite);
 
         int DeleteFarmer(int FarmerID, int StyleId);
+
+        int UpdateFarmer(ArrayList toUpdate);
+
+        int UpdateFarm(ArrayList toUpdate);
     }
 
     partial interface IDataHandler
