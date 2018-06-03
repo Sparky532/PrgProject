@@ -27,6 +27,10 @@ namespace FarmManagement
         ClientObject Client = new ClientObject();
         bool received = false;
         int ID = 0;
+        int Farmsize;
+        int CagesNeeded = 0;
+        int numcages;
+        int maxCages;
 
         delegate void MyDelegate();
         event MyDelegate myEvent;
@@ -45,10 +49,13 @@ namespace FarmManagement
             this.ID = farmerIDP;
             AnimalsLoaded();
         }
-        public Animal_Selection(int id)
+        public Animal_Selection(int id, int farmSize)
         {
             InitializeComponent();
             this.ID = id;
+            this.Farmsize = farmSize;
+            txtMaxCages.Text = Farmsize.MaxCages();
+            maxCages = int.Parse(txtMaxCages.Text);
         }
 
         public void ReceiveSpecies(List<Species> species)
@@ -75,9 +82,7 @@ namespace FarmManagement
         public void loadDefaults()
         {
 
-            //Select the animal species from the database
-            //AnimalsSelected selects = new AnimalsSelected();
-            //animalSpecies = selects.getAnimalName();
+            //Select the animal species from the database through the server            
             MessageObject message = new MessageObject(new byte[1], 4, 4, 1);
             Client = new ClientObject(true, message);
 
@@ -123,11 +128,11 @@ namespace FarmManagement
                 pbxAddNew.Location = new Point(443, 30);
                 pbxChange.Location = new Point(355, 60);
                 pbxRemove.Location = new Point(560, 30);
-        }
+            }
             catch (InvalidOperationException)
             {
             }
-            
+
         }
 
         private void Animal_Selection_Load(object sender, EventArgs e)
@@ -210,20 +215,28 @@ namespace FarmManagement
                     //Making sure there is more than 3 types of animals selected
                     if (animalsSelected.Count >= 3)
                     {
-                        //adding the animals
-                        Animal animal = new Animal();
-                       // animal.AddAnimal(animalsSelected);
-                        MessageObject AnimalsToAdd = new MessageObject();                       
-                        AnimalsToAdd.Data =animalsSelected.BinarySerialization();
-                        AnimalsToAdd.FormIdentifier = 4;
-                        AnimalsToAdd.ObjectIdentifier = 3;
-                        AnimalsToAdd.ActionIdentifier = 2;
-                        Client.SendData(AnimalsToAdd);
+                        if (maxCages >= CagesNeeded)
+                        {
+                            //adding the animals
+                            Animal animal = new Animal();
+                            // animal.AddAnimal(animalsSelected);
+                            MessageObject AnimalsToAdd = new MessageObject();
+                            AnimalsToAdd.Data = animalsSelected.BinarySerialization();
+                            AnimalsToAdd.FormIdentifier = 4;
+                            AnimalsToAdd.ObjectIdentifier = 3;
+                            AnimalsToAdd.ActionIdentifier = 2;
+                            Client.SendData(AnimalsToAdd);
 
-                        Farm_View form = new Farm_View(ID);
-                        this.Hide();
-                        form.ShowDialog();
-                        this.Close();
+                            Farm_View form = new Farm_View(ID);
+                            this.Hide();
+                            form.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            throw new CageAmountExceededException("You can only have " + maxCages + " please remove animals before continuing");
+                        }
+                       
                     }
                     else
                     {
@@ -234,6 +247,10 @@ namespace FarmManagement
                 {
                     throw new AnimalCriteriaNotMeetException("At least 1 Prey and 1 Predator needs to be selected");
                 }
+            }
+            catch(CageAmountExceededException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
             catch (AnimalCriteriaNotMeetException ex)
             {
@@ -299,6 +316,15 @@ namespace FarmManagement
             {
                 MessageBox.Show("Please ensure a number is entered!");
             }
+
+            CagesNeeded = 0;
+            foreach (AnimalsSelected item in animalsSelected)
+            {
+                double animalsDecimal = ((double)item.AnimalAmount) / 10;
+                numcages = (int)Math.Ceiling(animalsDecimal);
+                CagesNeeded += numcages;
+            }
+            txtCurrentCages.Text = CagesNeeded.ToString(); 
         }
 
         //Decreases the amount of animals
@@ -380,6 +406,19 @@ namespace FarmManagement
             {
                 MessageBox.Show("Please ensure a number is entered!");
             }
+            finally
+            {
+                CagesNeeded = 0;
+                foreach (AnimalsSelected item in animalsSelected)
+                {
+                    double animalsDecimal = ((double)item.AnimalAmount) / 10;
+                    numcages = (int)Math.Ceiling(animalsDecimal);
+                    CagesNeeded += numcages;
+                }
+                txtCurrentCages.Text = CagesNeeded.ToString();
+            }
+
+
         }
 
         //Goes to the add new species form to add a species
@@ -501,6 +540,15 @@ namespace FarmManagement
             bs2.ResetBindings(false);
 
             txtAnimalAmount.Text = "0";
+            CagesNeeded = 0;
+            foreach (AnimalsSelected item in animalsSelected)
+            {
+                double animalsDecimal = ((double)item.AnimalAmount) / 10;
+                numcages = (int)Math.Ceiling(animalsDecimal);
+                CagesNeeded += numcages;
+            }
+            txtCurrentCages.Text = CagesNeeded.ToString();
+
         }
 
         private void cbxAnimals_SelectedIndexChanged(object sender, EventArgs e)

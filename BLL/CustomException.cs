@@ -63,4 +63,16 @@ namespace BLL
           System.Runtime.Serialization.SerializationInfo info,
           System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
     }
+
+
+    [Serializable]
+    public class CageAmountExceededException : Exception
+    {
+        public CageAmountExceededException() { }
+        public CageAmountExceededException(string message) : base(message) { }
+        public CageAmountExceededException(string message, Exception inner) : base(message, inner) { }
+        protected CageAmountExceededException(
+          System.Runtime.Serialization.SerializationInfo info,
+          System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
+    }
 }

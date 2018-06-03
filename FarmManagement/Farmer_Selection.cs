@@ -575,7 +575,7 @@ namespace FarmManagement
                 }
                 else
                 {
-                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID);
+                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID,CurrentFarmer.GetFarmSize());
                     this.Hide();
                     form.ShowDialog();
                     this.Close();

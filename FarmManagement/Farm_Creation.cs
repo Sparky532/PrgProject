@@ -127,7 +127,7 @@ namespace FarmManagement
                 FarmToInsert.ObjectIdentifier = 2;
                 FarmToInsert.ActionIdentifier = 2;
                 Client.SendData(FarmToInsert);
-                Animal_Selection form = new Animal_Selection(farmer.ID);
+                Animal_Selection form = new Animal_Selection(farmer.ID,(int)size);
                 this.Hide();
                 form.ShowDialog();
                 this.Close();

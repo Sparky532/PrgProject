@@ -45,6 +45,10 @@
             this.pbxFrame = new System.Windows.Forms.PictureBox();
             this.pbxPanel = new System.Windows.Forms.PictureBox();
             this.pbxBackground = new System.Windows.Forms.PictureBox();
+            this.txtCurrentCages = new System.Windows.Forms.TextBox();
+            this.lblCurrentCages = new System.Windows.Forms.Label();
+            this.txtMaxCages = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddNew)).BeginInit();
@@ -190,7 +194,7 @@
             this.pbxNext.BackColor = System.Drawing.Color.Transparent;
             this.pbxNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNext.Image = global::FarmManagement.Properties.Resources.NextButton;
-            this.pbxNext.Location = new System.Drawing.Point(443, 468);
+            this.pbxNext.Location = new System.Drawing.Point(349, 468);
             this.pbxNext.Name = "pbxNext";
             this.pbxNext.Size = new System.Drawing.Size(178, 80);
             this.pbxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -255,12 +259,48 @@
             this.pbxBackground.TabIndex = 28;
             this.pbxBackground.TabStop = false;
             // 
+            // txtCurrentCages
+            // 
+            this.txtCurrentCages.Location = new System.Drawing.Point(642, 505);
+            this.txtCurrentCages.Name = "txtCurrentCages";
+            this.txtCurrentCages.Size = new System.Drawing.Size(100, 20);
+            this.txtCurrentCages.TabIndex = 39;
+            // 
+            // lblCurrentCages
+            // 
+            this.lblCurrentCages.AutoSize = true;
+            this.lblCurrentCages.Location = new System.Drawing.Point(556, 511);
+            this.lblCurrentCages.Name = "lblCurrentCages";
+            this.lblCurrentCages.Size = new System.Drawing.Size(74, 13);
+            this.lblCurrentCages.TabIndex = 40;
+            this.lblCurrentCages.Text = "Current Cages";
+            // 
+            // txtMaxCages
+            // 
+            this.txtMaxCages.Location = new System.Drawing.Point(642, 479);
+            this.txtMaxCages.Name = "txtMaxCages";
+            this.txtMaxCages.Size = new System.Drawing.Size(100, 20);
+            this.txtMaxCages.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(535, 482);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Max Cages For farm";
+            // 
             // Animal_Selection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(754, 568);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCurrentCages);
+            this.Controls.Add(this.txtMaxCages);
+            this.Controls.Add(this.txtCurrentCages);
             this.Controls.Add(this.pbxRemove);
             this.Controls.Add(this.pbxPrevious);
             this.Controls.Add(this.pbxAddNew);
@@ -318,5 +358,9 @@
         private System.Windows.Forms.PictureBox pbxAddNew;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.PictureBox pbxRemove;
+        private System.Windows.Forms.TextBox txtCurrentCages;
+        private System.Windows.Forms.Label lblCurrentCages;
+        private System.Windows.Forms.TextBox txtMaxCages;
+        private System.Windows.Forms.Label label2;
     }
 }
