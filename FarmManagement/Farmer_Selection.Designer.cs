@@ -723,7 +723,7 @@
             this.pbxHairOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxHairOne.TabIndex = 72;
             this.pbxHairOne.TabStop = false;
-            this.pbxHairOne.Click += new System.EventHandler(this.pbxFarmer1_Click);
+            this.pbxHairOne.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxFarmer1_Click);
             // 
             // pbxBodyOne
             // 
@@ -759,7 +759,7 @@
             this.pbxFarmer5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFarmer5.TabIndex = 40;
             this.pbxFarmer5.TabStop = false;
-            this.pbxFarmer5.Click += new System.EventHandler(this.pbxFarmer5_Click);
+            this.pbxFarmer5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxFarmer5_Click);
             // 
             // pbxFarmer4
             // 
@@ -771,7 +771,7 @@
             this.pbxFarmer4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFarmer4.TabIndex = 33;
             this.pbxFarmer4.TabStop = false;
-            this.pbxFarmer4.Click += new System.EventHandler(this.pbxFarmer4_Click);
+            this.pbxFarmer4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxFarmer4_Click);
             // 
             // pbxFarmer1
             // 
@@ -795,7 +795,7 @@
             this.pbxFarmer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFarmer2.TabIndex = 19;
             this.pbxFarmer2.TabStop = false;
-            this.pbxFarmer2.Click += new System.EventHandler(this.pbxFarmer2_Click);
+            this.pbxFarmer2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxFarmer2_Click);
             // 
             // pbxFarmer3
             // 
@@ -807,7 +807,7 @@
             this.pbxFarmer3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFarmer3.TabIndex = 14;
             this.pbxFarmer3.TabStop = false;
-            this.pbxFarmer3.Click += new System.EventHandler(this.pbxFarmer3_Click);
+            this.pbxFarmer3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxFarmer3_Click);
             // 
             // pbxNewFarmer5
             // 

@@ -22,7 +22,7 @@ namespace FarmManagement
         Farmer farmer = new Farmer();
         Farmer CurrentFarmer = new Farmer();
         ClientObject co = new ClientObject();
-        
+
         int index = 0;
         bool received = false;
         bool FirstRun = false;
@@ -64,7 +64,7 @@ namespace FarmManagement
 
         public Farmer_Selection()
         {
-           // Thread.Sleep(1600);
+            // Thread.Sleep(1600);
             InitializeComponent();
         }
         public Farmer_Selection(Farmer[] Farmers)
@@ -84,13 +84,13 @@ namespace FarmManagement
                 co = new ClientObject(true, message);
                 myEvent = FarmerArrayLoaded;
             }
-          
+
         }
         private void FarmerArrayLoaded()
         {
             navFormwithParam += new NavFormsWithParam(NavResumeOrFarmView);
             navFormWithoutParam += new NavFormWithoutParam(NavFarmerCreation);
-            
+
             try
             {
                 pbxFarmer1.Visible = false;
@@ -257,9 +257,9 @@ namespace FarmManagement
             }
             catch (InvalidOperationException)
             {
-                
+
             }
-            
+
         }
 
         #region NewFarmer_Click
@@ -575,7 +575,7 @@ namespace FarmManagement
                 }
                 else
                 {
-                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID,CurrentFarmer.GetFarmSize());
+                    Animal_Selection form = new Animal_Selection(CurrentFarmer.ID, CurrentFarmer.GetFarmSize());
                     this.Hide();
                     form.ShowDialog();
                     this.Close();
