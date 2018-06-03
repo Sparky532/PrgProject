@@ -440,7 +440,7 @@
             // pbxCross1
             // 
             this.pbxCross1.BackColor = System.Drawing.Color.Transparent;
-            this.pbxCross1.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross1.Image = global::FarmManagement.Properties.Resources.Cross;
             this.pbxCross1.Location = new System.Drawing.Point(532, 17);
             this.pbxCross1.Name = "pbxCross1";
             this.pbxCross1.Size = new System.Drawing.Size(35, 32);
@@ -872,7 +872,7 @@
             // pbxCross2
             // 
             this.pbxCross2.BackColor = System.Drawing.Color.Transparent;
-            this.pbxCross2.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross2.Image = global::FarmManagement.Properties.Resources.Cross;
             this.pbxCross2.Location = new System.Drawing.Point(530, 148);
             this.pbxCross2.Name = "pbxCross2";
             this.pbxCross2.Size = new System.Drawing.Size(35, 32);
@@ -884,7 +884,7 @@
             // pbxCross3
             // 
             this.pbxCross3.BackColor = System.Drawing.Color.Transparent;
-            this.pbxCross3.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross3.Image = global::FarmManagement.Properties.Resources.Cross;
             this.pbxCross3.Location = new System.Drawing.Point(531, 271);
             this.pbxCross3.Name = "pbxCross3";
             this.pbxCross3.Size = new System.Drawing.Size(35, 32);
@@ -896,7 +896,7 @@
             // pbxCross4
             // 
             this.pbxCross4.BackColor = System.Drawing.Color.Transparent;
-            this.pbxCross4.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross4.Image = global::FarmManagement.Properties.Resources.Cross;
             this.pbxCross4.Location = new System.Drawing.Point(530, 393);
             this.pbxCross4.Name = "pbxCross4";
             this.pbxCross4.Size = new System.Drawing.Size(35, 32);
@@ -908,7 +908,7 @@
             // pbxCross5
             // 
             this.pbxCross5.BackColor = System.Drawing.Color.Transparent;
-            this.pbxCross5.Image = global::FarmManagement.Properties.Resources.Cross1;
+            this.pbxCross5.Image = global::FarmManagement.Properties.Resources.Cross;
             this.pbxCross5.Location = new System.Drawing.Point(533, 516);
             this.pbxCross5.Name = "pbxCross5";
             this.pbxCross5.Size = new System.Drawing.Size(35, 32);

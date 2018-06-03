@@ -184,7 +184,7 @@
             // pbxBrowse
             // 
             this.pbxBrowse.BackColor = System.Drawing.Color.Transparent;
-            this.pbxBrowse.Image = global::FarmManagement.Properties.Resources.DotDotDotBtn1;
+            this.pbxBrowse.Image = global::FarmManagement.Properties.Resources.DotDotDotBtn;
             this.pbxBrowse.Location = new System.Drawing.Point(521, 310);
             this.pbxBrowse.Name = "pbxBrowse";
             this.pbxBrowse.Size = new System.Drawing.Size(79, 55);

@@ -235,49 +235,13 @@
     <None Include="Resources\OkButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NewFarmerSelection.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\NewFarmerSelection1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ExistingFarmerSelection.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ExistingFarmerSelection1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ExistingFarmerSelection2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IconFarmer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iconfarmer_5vE_1.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BackgroundFarmerCreaton.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FarmerCreation.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Previous.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Next.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BackgroundFarmerCreaton.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\BackgroundFarmerCreaton1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BackgroundFarmerCreation.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BackgroundFarmerCreation1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NextButton.png" />
@@ -286,49 +250,25 @@
     <None Include="Resources\FarmerSelectionNew.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Cow.png" />
+    <None Include="Resources\Cow.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Horse.png" />
+    <None Include="Resources\Horse.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Lion.png" />
+    <None Include="Resources\Lion.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Tiger.png" />
+    <None Include="Resources\Tiger.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Sheep.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BarnPictureBG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BarnPictureBG1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BarnBGNew.png" />
+    <None Include="Resources\Sheep.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BarnBGNew1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AnimalCreationBG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FrameBG.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\FrameBGNew.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PanelFarmerSelection.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PanelFarmerSelection1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PanelFarmerSelection2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AddButton.png" />
@@ -349,16 +289,10 @@
     <None Include="Resources\Cross.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Cross1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\BackButton.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DotDotDotBtn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DotDotDotBtn1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AddSpecies.png" />
@@ -374,12 +308,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MediumFarmChoiceClicked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SmallFarmChoice.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SmallFarmChoiceClicked.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SmallFarmChoice1.png" />
@@ -412,7 +340,31 @@
     <None Include="Resources\BgFarm.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BgFarm1.png" />
+    <None Include="Resources\CowsCage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FeedingCage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenericCage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HorseCage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LionsCage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NextN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreviousN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SheepCage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TigerCage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

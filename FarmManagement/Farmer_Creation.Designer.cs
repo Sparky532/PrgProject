@@ -165,7 +165,7 @@
             // 
             this.pbxPrevious4.BackColor = System.Drawing.Color.Transparent;
             this.pbxPrevious4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxPrevious4.Image = global::FarmManagement.Properties.Resources.Previous;
+            this.pbxPrevious4.Image = global::FarmManagement.Properties.Resources.PreviousN;
             this.pbxPrevious4.Location = new System.Drawing.Point(738, 467);
             this.pbxPrevious4.Name = "pbxPrevious4";
             this.pbxPrevious4.Size = new System.Drawing.Size(64, 50);
@@ -178,7 +178,7 @@
             // 
             this.pbxPrevious3.BackColor = System.Drawing.Color.Transparent;
             this.pbxPrevious3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxPrevious3.Image = global::FarmManagement.Properties.Resources.Previous;
+            this.pbxPrevious3.Image = global::FarmManagement.Properties.Resources.PreviousN;
             this.pbxPrevious3.Location = new System.Drawing.Point(738, 386);
             this.pbxPrevious3.Name = "pbxPrevious3";
             this.pbxPrevious3.Size = new System.Drawing.Size(64, 50);
@@ -191,7 +191,7 @@
             // 
             this.pbxPrevious2.BackColor = System.Drawing.Color.Transparent;
             this.pbxPrevious2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxPrevious2.Image = global::FarmManagement.Properties.Resources.Previous;
+            this.pbxPrevious2.Image = global::FarmManagement.Properties.Resources.PreviousN;
             this.pbxPrevious2.Location = new System.Drawing.Point(738, 315);
             this.pbxPrevious2.Name = "pbxPrevious2";
             this.pbxPrevious2.Size = new System.Drawing.Size(64, 50);
@@ -204,7 +204,7 @@
             // 
             this.pbxNext4.BackColor = System.Drawing.Color.Transparent;
             this.pbxNext4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxNext4.Image = global::FarmManagement.Properties.Resources.Next;
+            this.pbxNext4.Image = global::FarmManagement.Properties.Resources.NextN;
             this.pbxNext4.Location = new System.Drawing.Point(1088, 467);
             this.pbxNext4.Name = "pbxNext4";
             this.pbxNext4.Size = new System.Drawing.Size(64, 50);
@@ -217,7 +217,7 @@
             // 
             this.pbxNext3.BackColor = System.Drawing.Color.Transparent;
             this.pbxNext3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxNext3.Image = global::FarmManagement.Properties.Resources.Next;
+            this.pbxNext3.Image = global::FarmManagement.Properties.Resources.NextN;
             this.pbxNext3.Location = new System.Drawing.Point(1088, 396);
             this.pbxNext3.Name = "pbxNext3";
             this.pbxNext3.Size = new System.Drawing.Size(64, 50);
@@ -230,7 +230,7 @@
             // 
             this.pbxNext2.BackColor = System.Drawing.Color.Transparent;
             this.pbxNext2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxNext2.Image = global::FarmManagement.Properties.Resources.Next;
+            this.pbxNext2.Image = global::FarmManagement.Properties.Resources.NextN;
             this.pbxNext2.Location = new System.Drawing.Point(1088, 315);
             this.pbxNext2.Name = "pbxNext2";
             this.pbxNext2.Size = new System.Drawing.Size(64, 50);
@@ -243,7 +243,7 @@
             // 
             this.pbxNext1.BackColor = System.Drawing.Color.Transparent;
             this.pbxNext1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxNext1.Image = global::FarmManagement.Properties.Resources.Next;
+            this.pbxNext1.Image = global::FarmManagement.Properties.Resources.NextN;
             this.pbxNext1.Location = new System.Drawing.Point(1088, 238);
             this.pbxNext1.Name = "pbxNext1";
             this.pbxNext1.Size = new System.Drawing.Size(64, 50);
@@ -256,7 +256,7 @@
             // 
             this.pbxPrevious1.BackColor = System.Drawing.Color.Transparent;
             this.pbxPrevious1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxPrevious1.Image = global::FarmManagement.Properties.Resources.Previous;
+            this.pbxPrevious1.Image = global::FarmManagement.Properties.Resources.PreviousN;
             this.pbxPrevious1.Location = new System.Drawing.Point(738, 238);
             this.pbxPrevious1.Name = "pbxPrevious1";
             this.pbxPrevious1.Size = new System.Drawing.Size(64, 50);
@@ -306,7 +306,7 @@
             // 
             // pbxBackground
             // 
-            this.pbxBackground.Image = global::FarmManagement.Properties.Resources.BackgroundFarmerCreation1;
+            this.pbxBackground.Image = global::FarmManagement.Properties.Resources.BackgroundFarmerCreaton1;
             this.pbxBackground.Location = new System.Drawing.Point(0, 0);
             this.pbxBackground.Name = "pbxBackground";
             this.pbxBackground.Size = new System.Drawing.Size(439, 657);

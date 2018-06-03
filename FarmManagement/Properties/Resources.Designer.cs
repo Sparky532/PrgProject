@@ -105,17 +105,7 @@ namespace FarmManagement.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ani_Sim {
             get {
-                object obj = ResourceManager.GetObject("Ani-Sim", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AnimalCreationBG {
-            get {
-                object obj = ResourceManager.GetObject("AnimalCreationBG", resourceCulture);
+                object obj = ResourceManager.GetObject("Ani_Sim", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,59 +123,9 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BackgroundFarmerCreation {
-            get {
-                object obj = ResourceManager.GetObject("BackgroundFarmerCreation", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BackgroundFarmerCreation1 {
-            get {
-                object obj = ResourceManager.GetObject("BackgroundFarmerCreation1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BackgroundFarmerCreaton {
-            get {
-                object obj = ResourceManager.GetObject("BackgroundFarmerCreaton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BackgroundFarmerCreaton1 {
             get {
                 object obj = ResourceManager.GetObject("BackgroundFarmerCreaton1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BackgroundFarmerCreaton2 {
-            get {
-                object obj = ResourceManager.GetObject("BackgroundFarmerCreaton2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BarnBGNew {
-            get {
-                object obj = ResourceManager.GetObject("BarnBGNew", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,39 +143,9 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BarnPictureBG {
-            get {
-                object obj = ResourceManager.GetObject("BarnPictureBG", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BarnPictureBG1 {
-            get {
-                object obj = ResourceManager.GetObject("BarnPictureBG1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BgFarm {
             get {
                 object obj = ResourceManager.GetObject("BgFarm", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BgFarm1 {
-            get {
-                object obj = ResourceManager.GetObject("BgFarm1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,6 +313,16 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CowsCage {
+            get {
+                object obj = ResourceManager.GetObject("CowsCage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CreateButton {
             get {
                 object obj = ResourceManager.GetObject("CreateButton", resourceCulture);
@@ -423,16 +343,6 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cross1 {
-            get {
-                object obj = ResourceManager.GetObject("Cross1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DotDotDotBtn {
             get {
                 object obj = ResourceManager.GetObject("DotDotDotBtn", resourceCulture);
@@ -443,49 +353,9 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DotDotDotBtn1 {
-            get {
-                object obj = ResourceManager.GetObject("DotDotDotBtn1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap EnterButton {
             get {
                 object obj = ResourceManager.GetObject("EnterButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ExistingFarmerSelection {
-            get {
-                object obj = ResourceManager.GetObject("ExistingFarmerSelection", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ExistingFarmerSelection1 {
-            get {
-                object obj = ResourceManager.GetObject("ExistingFarmerSelection1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ExistingFarmerSelection2 {
-            get {
-                object obj = ResourceManager.GetObject("ExistingFarmerSelection2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,29 +393,9 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FrameBG {
+        internal static System.Drawing.Bitmap FeedingCage {
             get {
-                object obj = ResourceManager.GetObject("FrameBG", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FrameBG1 {
-            get {
-                object obj = ResourceManager.GetObject("FrameBG1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FrameBG2 {
-            get {
-                object obj = ResourceManager.GetObject("FrameBG2", resourceCulture);
+                object obj = ResourceManager.GetObject("FeedingCage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -556,6 +406,16 @@ namespace FarmManagement.Properties {
         internal static System.Drawing.Bitmap FrameBGNew {
             get {
                 object obj = ResourceManager.GetObject("FrameBGNew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GenericCage {
+            get {
+                object obj = ResourceManager.GetObject("GenericCage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -643,19 +503,9 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IconFarmer {
+        internal static System.Drawing.Bitmap HorseCage {
             get {
-                object obj = ResourceManager.GetObject("IconFarmer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap iconfarmer_5vE_1 {
-            get {
-                object obj = ResourceManager.GetObject("iconfarmer_5vE_1", resourceCulture);
+                object obj = ResourceManager.GetObject("HorseCage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -703,6 +553,16 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LionsCage {
+            get {
+                object obj = ResourceManager.GetObject("LionsCage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MediumFarmChoice {
             get {
                 object obj = ResourceManager.GetObject("MediumFarmChoice", resourceCulture);
@@ -733,29 +593,9 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NewFarmerSelection {
-            get {
-                object obj = ResourceManager.GetObject("NewFarmerSelection", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap NewFarmerSelection1 {
             get {
                 object obj = ResourceManager.GetObject("NewFarmerSelection1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Next {
-            get {
-                object obj = ResourceManager.GetObject("Next", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -773,39 +613,19 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NextN {
+            get {
+                object obj = ResourceManager.GetObject("NextN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OkButton {
             get {
                 object obj = ResourceManager.GetObject("OkButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PanelFarmerSelection {
-            get {
-                object obj = ResourceManager.GetObject("PanelFarmerSelection", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PanelFarmerSelection1 {
-            get {
-                object obj = ResourceManager.GetObject("PanelFarmerSelection1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PanelFarmerSelection2 {
-            get {
-                object obj = ResourceManager.GetObject("PanelFarmerSelection2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -823,9 +643,9 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Previous {
+        internal static System.Drawing.Bitmap PreviousN {
             get {
-                object obj = ResourceManager.GetObject("Previous", resourceCulture);
+                object obj = ResourceManager.GetObject("PreviousN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -863,9 +683,9 @@ namespace FarmManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SmallFarmChoice {
+        internal static System.Drawing.Bitmap SheepCage {
             get {
-                object obj = ResourceManager.GetObject("SmallFarmChoice", resourceCulture);
+                object obj = ResourceManager.GetObject("SheepCage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -876,16 +696,6 @@ namespace FarmManagement.Properties {
         internal static System.Drawing.Bitmap SmallFarmChoice1 {
             get {
                 object obj = ResourceManager.GetObject("SmallFarmChoice1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SmallFarmChoiceClicked {
-            get {
-                object obj = ResourceManager.GetObject("SmallFarmChoiceClicked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -916,6 +726,16 @@ namespace FarmManagement.Properties {
         internal static System.Drawing.Bitmap Tiger {
             get {
                 object obj = ResourceManager.GetObject("Tiger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TigerCage {
+            get {
+                object obj = ResourceManager.GetObject("TigerCage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

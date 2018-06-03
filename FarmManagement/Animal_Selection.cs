@@ -168,20 +168,19 @@ namespace FarmManagement
         {
             if (cbxAnimals.Text != "")
             {
-                Species speciesSelected = (Species)cbxAnimals.SelectedItem;
-                string streamText = "FarmManagement.Resources." + speciesSelected.AnimalName + ".png";
-                Assembly assembly = Assembly.GetExecutingAssembly();
-                Stream AnimalImage = assembly.GetManifestResourceStream(streamText);
-                if (AnimalImage != null)
+                Species speciesSelected = (Species)cbxAnimals.SelectedItem;               
+                string directoryPath = Environment.CurrentDirectory;              
+                try
                 {
-                    pbxAnimal.Image = (Image)new Bitmap(AnimalImage);
+                    directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources";                   
+                    pbxAnimal.Image = Image.FromFile(directoryPath + @"\" + speciesSelected.AnimalName + ".png");
                 }
-                else
+                catch (Exception)
                 {
-                    String DirectoryPath = Environment.CurrentDirectory;
-                    Image NewAnimal = Image.FromFile(DirectoryPath + @"\" + speciesSelected.AnimalName + ".png");
-                    pbxAnimal.Image = NewAnimal;
+                    directoryPath = Environment.CurrentDirectory;
+                    pbxAnimal.Image = Image.FromFile(directoryPath + @"\" + speciesSelected.AnimalName + ".png");                    
                 }
+               
             }
             else
             {
