@@ -58,9 +58,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnUpdateFarmerName = new System.Windows.Forms.Button();
+            this.btnUpdateFarmName = new System.Windows.Forms.Button();
             this.pblSortLists = new System.Windows.Forms.Panel();
             this.txtAnimals = new System.Windows.Forms.TextBox();
             this.pnlCagesSort = new System.Windows.Forms.Panel();
@@ -68,11 +67,16 @@
             this.txtCages = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.txtFarmName = new System.Windows.Forms.TextBox();
+            this.pnlUpdateName = new System.Windows.Forms.Panel();
+            this.txtUpdateName = new System.Windows.Forms.TextBox();
+            this.btnSubmitUpdate = new System.Windows.Forms.Button();
+            this.lblUpdating = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
             this.pblSortLists.SuspendLayout();
             this.pnlCagesSort.SuspendLayout();
+            this.pnlUpdateName.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstLocations
@@ -111,7 +115,7 @@
             this.pnlMenu.Controls.Add(this.btnSort);
             this.pnlMenu.Controls.Add(this.btnSettings);
             this.pnlMenu.Controls.Add(this.btnExit);
-            this.pnlMenu.Location = new System.Drawing.Point(961, 27);
+            this.pnlMenu.Location = new System.Drawing.Point(1392, 8);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(190, 500);
             this.pnlMenu.TabIndex = 4;
@@ -191,7 +195,7 @@
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(150, 50);
             this.btnSettings.TabIndex = 6;
-            this.btnSettings.Text = "Settings";
+            this.btnSettings.Text = "Update";
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             this.btnSettings.MouseLeave += new System.EventHandler(this.btnSettings_MouseLeave);
@@ -238,7 +242,7 @@
             this.pnlSortSubMenu.Controls.Add(this.SortSheep);
             this.pnlSortSubMenu.Controls.Add(this.SortHorse);
             this.pnlSortSubMenu.Controls.Add(this.SortAll);
-            this.pnlSortSubMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlSortSubMenu.Location = new System.Drawing.Point(1588, 12);
             this.pnlSortSubMenu.Name = "pnlSortSubMenu";
             this.pnlSortSubMenu.Size = new System.Drawing.Size(190, 450);
             this.pnlSortSubMenu.TabIndex = 9;
@@ -398,10 +402,9 @@
             this.pnlSettingsSubMenu.Controls.Add(this.button9);
             this.pnlSettingsSubMenu.Controls.Add(this.button10);
             this.pnlSettingsSubMenu.Controls.Add(this.button11);
-            this.pnlSettingsSubMenu.Controls.Add(this.button12);
-            this.pnlSettingsSubMenu.Controls.Add(this.button13);
-            this.pnlSettingsSubMenu.Controls.Add(this.button14);
-            this.pnlSettingsSubMenu.Location = new System.Drawing.Point(1353, 27);
+            this.pnlSettingsSubMenu.Controls.Add(this.btnUpdateFarmerName);
+            this.pnlSettingsSubMenu.Controls.Add(this.btnUpdateFarmName);
+            this.pnlSettingsSubMenu.Location = new System.Drawing.Point(1784, 12);
             this.pnlSettingsSubMenu.Name = "pnlSettingsSubMenu";
             this.pnlSettingsSubMenu.Size = new System.Drawing.Size(190, 450);
             this.pnlSettingsSubMenu.TabIndex = 12;
@@ -424,7 +427,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(131, 31);
             this.textBox3.TabIndex = 10;
-            this.textBox3.Text = "Settings ";
+            this.textBox3.Text = "Update";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button8
@@ -437,7 +440,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(150, 50);
             this.button8.TabIndex = 11;
-            this.button8.Text = "Lion";
+            this.button8.Text = "?";
             this.button8.UseVisualStyleBackColor = false;
             // 
             // button9
@@ -450,7 +453,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(150, 50);
             this.button9.TabIndex = 10;
-            this.button9.Text = "Tiger";
+            this.button9.Text = "?";
             this.button9.UseVisualStyleBackColor = false;
             // 
             // button10
@@ -463,7 +466,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(150, 50);
             this.button10.TabIndex = 9;
-            this.button10.Text = "Cow";
+            this.button10.Text = "?";
             this.button10.UseVisualStyleBackColor = false;
             // 
             // button11
@@ -480,51 +483,40 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // button12
+            // btnUpdateFarmerName
             // 
-            this.button12.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button12.Location = new System.Drawing.Point(40, 200);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(150, 50);
-            this.button12.TabIndex = 7;
-            this.button12.Text = "Sheep";
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnUpdateFarmerName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdateFarmerName.FlatAppearance.BorderSize = 0;
+            this.btnUpdateFarmerName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateFarmerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnUpdateFarmerName.Location = new System.Drawing.Point(40, 200);
+            this.btnUpdateFarmerName.Name = "btnUpdateFarmerName";
+            this.btnUpdateFarmerName.Size = new System.Drawing.Size(150, 100);
+            this.btnUpdateFarmerName.TabIndex = 6;
+            this.btnUpdateFarmerName.Text = "Farmer Name";
+            this.btnUpdateFarmerName.UseVisualStyleBackColor = false;
+            this.btnUpdateFarmerName.Click += new System.EventHandler(this.btnUpdateFarmerName_Click);
             // 
-            // button13
+            // btnUpdateFarmName
             // 
-            this.button13.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button13.Location = new System.Drawing.Point(40, 250);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(150, 50);
-            this.button13.TabIndex = 6;
-            this.button13.Text = "Horse";
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button14.Location = new System.Drawing.Point(40, 300);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(150, 50);
-            this.button14.TabIndex = 5;
-            this.button14.Text = " All Animals";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnUpdateFarmName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdateFarmName.FlatAppearance.BorderSize = 0;
+            this.btnUpdateFarmName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateFarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnUpdateFarmName.Location = new System.Drawing.Point(40, 300);
+            this.btnUpdateFarmName.Name = "btnUpdateFarmName";
+            this.btnUpdateFarmName.Size = new System.Drawing.Size(150, 50);
+            this.btnUpdateFarmName.TabIndex = 5;
+            this.btnUpdateFarmName.Text = "Farm Name";
+            this.btnUpdateFarmName.UseVisualStyleBackColor = false;
+            this.btnUpdateFarmName.Click += new System.EventHandler(this.btnUpdateFarmName_Click);
             // 
             // pblSortLists
             // 
             this.pblSortLists.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pblSortLists.Controls.Add(this.txtAnimals);
             this.pblSortLists.Controls.Add(this.lstAnimals);
-            this.pblSortLists.Location = new System.Drawing.Point(190, 0);
+            this.pblSortLists.Location = new System.Drawing.Point(1302, 532);
             this.pblSortLists.Name = "pblSortLists";
             this.pblSortLists.Size = new System.Drawing.Size(280, 500);
             this.pblSortLists.TabIndex = 13;
@@ -548,7 +540,7 @@
             this.pnlCagesSort.Controls.Add(this.lstLocations);
             this.pnlCagesSort.Controls.Add(this.txtCages);
             this.pnlCagesSort.Controls.Add(this.button4);
-            this.pnlCagesSort.Location = new System.Drawing.Point(533, 50);
+            this.pnlCagesSort.Location = new System.Drawing.Point(1588, 468);
             this.pnlCagesSort.Name = "pnlCagesSort";
             this.pnlCagesSort.Size = new System.Drawing.Size(190, 450);
             this.pnlCagesSort.TabIndex = 12;
@@ -600,13 +592,56 @@
             this.txtFarmName.TabIndex = 15;
             this.txtFarmName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // pnlUpdateName
+            // 
+            this.pnlUpdateName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlUpdateName.Controls.Add(this.lblUpdating);
+            this.pnlUpdateName.Controls.Add(this.btnSubmitUpdate);
+            this.pnlUpdateName.Controls.Add(this.txtUpdateName);
+            this.pnlUpdateName.Location = new System.Drawing.Point(1784, 468);
+            this.pnlUpdateName.Name = "pnlUpdateName";
+            this.pnlUpdateName.Size = new System.Drawing.Size(400, 100);
+            this.pnlUpdateName.TabIndex = 16;
+            this.pnlUpdateName.Visible = false;
+            // 
+            // txtUpdateName
+            // 
+            this.txtUpdateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtUpdateName.Location = new System.Drawing.Point(4, 4);
+            this.txtUpdateName.Name = "txtUpdateName";
+            this.txtUpdateName.Size = new System.Drawing.Size(393, 35);
+            this.txtUpdateName.TabIndex = 0;
+            // 
+            // btnSubmitUpdate
+            // 
+            this.btnSubmitUpdate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSubmitUpdate.FlatAppearance.BorderSize = 0;
+            this.btnSubmitUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmitUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnSubmitUpdate.Location = new System.Drawing.Point(247, 47);
+            this.btnSubmitUpdate.Name = "btnSubmitUpdate";
+            this.btnSubmitUpdate.Size = new System.Drawing.Size(150, 50);
+            this.btnSubmitUpdate.TabIndex = 12;
+            this.btnSubmitUpdate.Text = "Submit";
+            this.btnSubmitUpdate.UseVisualStyleBackColor = false;
+            this.btnSubmitUpdate.Click += new System.EventHandler(this.btnSubmitUpdate_Click);
+            // 
+            // lblUpdating
+            // 
+            this.lblUpdating.AutoSize = true;
+            this.lblUpdating.Location = new System.Drawing.Point(4, 84);
+            this.lblUpdating.Name = "lblUpdating";
+            this.lblUpdating.Size = new System.Drawing.Size(0, 13);
+            this.lblUpdating.TabIndex = 13;
+            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1210, 661);
+            this.ClientSize = new System.Drawing.Size(1250, 661);
+            this.Controls.Add(this.pnlUpdateName);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlCagesSort);
             this.Controls.Add(this.pnlSettingsSubMenu);
@@ -632,6 +667,8 @@
             this.pblSortLists.PerformLayout();
             this.pnlCagesSort.ResumeLayout(false);
             this.pnlCagesSort.PerformLayout();
+            this.pnlUpdateName.ResumeLayout(false);
+            this.pnlUpdateName.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,9 +703,8 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnUpdateFarmerName;
+        private System.Windows.Forms.Button btnUpdateFarmName;
         private System.Windows.Forms.Panel pblSortLists;
         private System.Windows.Forms.Button btnCages;
         private System.Windows.Forms.Panel pnlCagesSort;
@@ -677,5 +713,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtAnimals;
         private System.Windows.Forms.TextBox txtFarmName;
+        private System.Windows.Forms.Panel pnlUpdateName;
+        private System.Windows.Forms.Button btnSubmitUpdate;
+        private System.Windows.Forms.TextBox txtUpdateName;
+        private System.Windows.Forms.Label lblUpdating;
     }
 }

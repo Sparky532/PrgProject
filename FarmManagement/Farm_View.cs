@@ -26,6 +26,7 @@ namespace FarmManagement
         bool received = false;
         bool listsOpen = false;
         int ID = 0;
+        string updating = "";
         public Farm_View(int id)
         {
             InitializeComponent();
@@ -102,6 +103,7 @@ namespace FarmManagement
             btnOpenMenu.Location = new Point(0, 0);
             pblSortLists.Location = new Point(-280, 0);
             pnlCagesSort.Location = new Point(-190, 50);
+            pnlUpdateName.Location = new Point(190,0);
             //Farm f = new Farm();
             //Location l = new Location();
             //Animal a = new Animal();
@@ -747,6 +749,44 @@ namespace FarmManagement
             {
                 lstAnimals.Items.Add(item);
             }
+        }
+
+        private void btnUpdateFarmerName_Click(object sender, EventArgs e)
+        {
+            updating = "Farmer";
+            lblUpdating.Text = "Farmer";
+            pnlUpdateName.Visible = true;
+        }
+
+        private void btnUpdateFarmName_Click(object sender, EventArgs e)
+        {
+            updating = "Farm";
+            lblUpdating.Text = "Farm";
+            pnlUpdateName.Visible = true;
+        }
+
+        private void btnSubmitUpdate_Click(object sender, EventArgs e)
+        {
+            if (updating.Equals("Farmer"))
+            {
+                Farmer farmer = new Farmer();
+                farmer.ID = ID;
+                farmer.Name = txtUpdateName.Text;
+                MessageObject message = new MessageObject(farmer.BinarySerialization(), 6, 1, 4);
+                co.SendData(message);
+                txtUpdateName.Text = "";
+            }
+            else if (updating.Equals("Farm"))
+            {
+                farms[0].FarmName = txtUpdateName.Text;
+                MessageObject message = new MessageObject(farms[0].BinarySerialization(), 6, 2, 4);
+                co.SendData(message);
+                txtFarmName.Text = farms[0].FarmName;
+                txtUpdateName.Text = "";
+            }
+            updating = "";
+            lblUpdating.Text = "";
+            pnlUpdateName.Visible = false;
         }
     }
 }
