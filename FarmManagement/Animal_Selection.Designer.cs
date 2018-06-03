@@ -144,7 +144,7 @@
             this.pbxPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxPrevious.TabIndex = 32;
             this.pbxPrevious.TabStop = false;
-            this.pbxPrevious.Click += new System.EventHandler(this.pbxPrevious_Click);
+            this.pbxPrevious.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxPrevious_MouseDown);
             // 
             // pbxAddNew
             // 
@@ -209,7 +209,7 @@
             this.pbxNext1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxNext1.TabIndex = 31;
             this.pbxNext1.TabStop = false;
-            this.pbxNext1.Click += new System.EventHandler(this.pbxNext1_Click);
+            this.pbxNext1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbxNext1_Click);
             // 
             // pbxAnimal
             // 
