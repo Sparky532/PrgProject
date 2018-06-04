@@ -33,6 +33,7 @@
             this.lstAnimals = new System.Windows.Forms.ListBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnCages = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnCloseMenu = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@
             this.btnUpdateFarmerName = new System.Windows.Forms.Button();
             this.btnUpdateFarmName = new System.Windows.Forms.Button();
             this.pblSortLists = new System.Windows.Forms.Panel();
+            this.btnDeleteClick = new System.Windows.Forms.Button();
             this.txtAnimals = new System.Windows.Forms.TextBox();
             this.pnlCagesSort = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -104,10 +106,14 @@
             this.pbxLarge2 = new System.Windows.Forms.PictureBox();
             this.pbxLarge1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDeleteClick = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.pnlActions = new System.Windows.Forms.Panel();
             this.lstActions = new System.Windows.Forms.ListBox();
+            this.pnlAddAnimals = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddAnimalsSelected = new System.Windows.Forms.Button();
+            this.cbxSpecies = new System.Windows.Forms.ComboBox();
+            this.txtAnimalAmount = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -148,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlActions.SuspendLayout();
+            this.pnlAddAnimals.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstLocations
@@ -200,6 +207,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 450);
             this.panel1.TabIndex = 10;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnAdd.Location = new System.Drawing.Point(40, 250);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(150, 50);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCages
             // 
@@ -285,6 +306,7 @@
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
             this.btnExit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnExit_MouseMove);
             // 
@@ -595,6 +617,21 @@
             this.pblSortLists.TabIndex = 13;
             this.pblSortLists.Visible = false;
             // 
+            // btnDeleteClick
+            // 
+            this.btnDeleteClick.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDeleteClick.FlatAppearance.BorderSize = 0;
+            this.btnDeleteClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteClick.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteClick.ForeColor = System.Drawing.Color.Red;
+            this.btnDeleteClick.Location = new System.Drawing.Point(3, 3);
+            this.btnDeleteClick.Name = "btnDeleteClick";
+            this.btnDeleteClick.Size = new System.Drawing.Size(50, 50);
+            this.btnDeleteClick.TabIndex = 12;
+            this.btnDeleteClick.Text = "X";
+            this.btnDeleteClick.UseVisualStyleBackColor = false;
+            this.btnDeleteClick.Click += new System.EventHandler(this.btnDeleteClick_Click);
+            // 
             // txtAnimals
             // 
             this.txtAnimals.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -671,7 +708,7 @@
             this.pnlUpdateName.Controls.Add(this.lblUpdating);
             this.pnlUpdateName.Controls.Add(this.btnSubmitUpdate);
             this.pnlUpdateName.Controls.Add(this.txtUpdateName);
-            this.pnlUpdateName.Location = new System.Drawing.Point(1784, 468);
+            this.pnlUpdateName.Location = new System.Drawing.Point(1781, 468);
             this.pnlUpdateName.Name = "pnlUpdateName";
             this.pnlUpdateName.Size = new System.Drawing.Size(400, 100);
             this.pnlUpdateName.TabIndex = 16;
@@ -680,9 +717,10 @@
             // lblUpdating
             // 
             this.lblUpdating.AutoSize = true;
-            this.lblUpdating.Location = new System.Drawing.Point(4, 84);
+            this.lblUpdating.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdating.Location = new System.Drawing.Point(3, 73);
             this.lblUpdating.Name = "lblUpdating";
-            this.lblUpdating.Size = new System.Drawing.Size(0, 13);
+            this.lblUpdating.Size = new System.Drawing.Size(0, 24);
             this.lblUpdating.TabIndex = 13;
             // 
             // btnSubmitUpdate
@@ -1019,34 +1057,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnDeleteClick
-            // 
-            this.btnDeleteClick.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDeleteClick.FlatAppearance.BorderSize = 0;
-            this.btnDeleteClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteClick.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteClick.ForeColor = System.Drawing.Color.Red;
-            this.btnDeleteClick.Location = new System.Drawing.Point(3, 3);
-            this.btnDeleteClick.Name = "btnDeleteClick";
-            this.btnDeleteClick.Size = new System.Drawing.Size(50, 50);
-            this.btnDeleteClick.TabIndex = 12;
-            this.btnDeleteClick.Text = "X";
-            this.btnDeleteClick.UseVisualStyleBackColor = false;
-            this.btnDeleteClick.Click += new System.EventHandler(this.btnDeleteClick_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnAdd.Location = new System.Drawing.Point(40, 250);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 50);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
             // pnlActions
             // 
             this.pnlActions.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -1064,13 +1074,80 @@
             this.lstActions.Size = new System.Drawing.Size(464, 693);
             this.lstActions.TabIndex = 0;
             // 
+            // pnlAddAnimals
+            // 
+            this.pnlAddAnimals.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlAddAnimals.Controls.Add(this.txtAnimalAmount);
+            this.pnlAddAnimals.Controls.Add(this.label2);
+            this.pnlAddAnimals.Controls.Add(this.cbxSpecies);
+            this.pnlAddAnimals.Controls.Add(this.label1);
+            this.pnlAddAnimals.Controls.Add(this.btnAddAnimalsSelected);
+            this.pnlAddAnimals.Location = new System.Drawing.Point(1778, 571);
+            this.pnlAddAnimals.Name = "pnlAddAnimals";
+            this.pnlAddAnimals.Size = new System.Drawing.Size(400, 100);
+            this.pnlAddAnimals.TabIndex = 17;
+            this.pnlAddAnimals.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 24);
+            this.label1.TabIndex = 13;
+            // 
+            // btnAddAnimalsSelected
+            // 
+            this.btnAddAnimalsSelected.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAddAnimalsSelected.FlatAppearance.BorderSize = 0;
+            this.btnAddAnimalsSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAnimalsSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnAddAnimalsSelected.Location = new System.Drawing.Point(247, 47);
+            this.btnAddAnimalsSelected.Name = "btnAddAnimalsSelected";
+            this.btnAddAnimalsSelected.Size = new System.Drawing.Size(150, 50);
+            this.btnAddAnimalsSelected.TabIndex = 12;
+            this.btnAddAnimalsSelected.Text = "Submit";
+            this.btnAddAnimalsSelected.UseVisualStyleBackColor = false;
+            this.btnAddAnimalsSelected.Click += new System.EventHandler(this.btnAddAnimalsSelected_Click);
+            // 
+            // cbxSpecies
+            // 
+            this.cbxSpecies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxSpecies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.cbxSpecies.FormattingEnabled = true;
+            this.cbxSpecies.Location = new System.Drawing.Point(4, 4);
+            this.cbxSpecies.Name = "cbxSpecies";
+            this.cbxSpecies.Size = new System.Drawing.Size(393, 37);
+            this.cbxSpecies.TabIndex = 14;
+            // 
+            // txtAnimalAmount
+            // 
+            this.txtAnimalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtAnimalAmount.Location = new System.Drawing.Point(4, 55);
+            this.txtAnimalAmount.Name = "txtAnimalAmount";
+            this.txtAnimalAmount.Size = new System.Drawing.Size(100, 35);
+            this.txtAnimalAmount.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(102, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 18);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Amount";
+            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1751, 711);
+            this.ClientSize = new System.Drawing.Size(1854, 711);
+            this.Controls.Add(this.pnlAddAnimals);
             this.Controls.Add(this.pnlLarge);
             this.Controls.Add(this.pnlUpdateName);
             this.Controls.Add(this.txtFarmName);
@@ -1135,6 +1212,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlActions.ResumeLayout(false);
+            this.pnlAddAnimals.ResumeLayout(false);
+            this.pnlAddAnimals.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1220,5 +1299,11 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel pnlActions;
         private System.Windows.Forms.ListBox lstActions;
+        private System.Windows.Forms.Panel pnlAddAnimals;
+        private System.Windows.Forms.ComboBox cbxSpecies;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAddAnimalsSelected;
+        private System.Windows.Forms.TextBox txtAnimalAmount;
+        private System.Windows.Forms.Label label2;
     }
 }

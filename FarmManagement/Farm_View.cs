@@ -27,6 +27,7 @@ namespace FarmManagement
         List<Farm> farms = new List<Farm>();
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
+        List<Species> species = new List<Species>();
         ClientObject co;
         Thread openLists;
         Thread openMenu;
@@ -162,7 +163,8 @@ namespace FarmManagement
             pblSortLists.Location = new Point(-280, 0);
             pnlCagesSort.Location = new Point(-190, 50);
             pnlUpdateName.Location = new Point(190, 0);
-
+            pnlAddAnimals.Location = new Point(190, 0);
+            btnDeleteClick.Visible = false;
 
 
 
@@ -174,6 +176,16 @@ namespace FarmManagement
             txtFarmName.Text = farms[0].FarmName;
             lstLocations.DataSource = locations;
             lstAnimals.DataSource = animals;
+
+            var speciess = animals.GroupBy(animal => animal.Species)
+                                .Select(group => group.First().Species)
+                                .ToList();
+
+            foreach (Species item in speciess)
+            {
+                species.Add(item);
+            }
+
             //while (farms[0].FarmName == "")
             //{
             if (farms.Count != 0)
@@ -379,6 +391,15 @@ namespace FarmManagement
                     }
                 });
                 openMenu.Start();
+                openLists = new Thread(() =>
+                {
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
             }
             else
             {
@@ -435,6 +456,8 @@ namespace FarmManagement
                 openLists.Start();
             }
             listsOpen = false;
+            pnlUpdateName.Visible = false;
+            pnlAddAnimals.Visible = false;
             //System.Timers.Timer timer = new System.Timers.Timer(700);
             //timer.Start();
             //timer.Elapsed += Timer_Elapsed;
@@ -448,6 +471,7 @@ namespace FarmManagement
 
         private void btnSort_Click(object sender, EventArgs e)
         {
+            pnlAddAnimals.Visible = false;
             lstLocations.Visible = false;
             pnlSortSubMenu.Visible = true;
             pblSortLists.Visible = true;
@@ -512,6 +536,15 @@ namespace FarmManagement
                     }
                 });
                 openMenu.Start();
+                openLists = new Thread(() =>
+                {
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
             }
             listsOpen = false;
         }
@@ -523,6 +556,7 @@ namespace FarmManagement
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            pnlAddAnimals.Visible = false;
             pnlSettingsSubMenu.Visible = true;
             openMenu = new Thread(() =>
             {
@@ -547,6 +581,7 @@ namespace FarmManagement
                 }
             });
             openMenu.Start();
+            pnlUpdateName.Visible = false;
         }
 
         private void SortLion_MouseMove(object sender, MouseEventArgs e)
@@ -732,6 +767,7 @@ namespace FarmManagement
 
         private void btnCages_Click(object sender, EventArgs e)
         {
+            pnlAddAnimals.Visible = false;
             lstLocations.Visible = true;
             pnlCagesSort.Visible = true;
             pblSortLists.Visible = true;
@@ -874,6 +910,118 @@ namespace FarmManagement
                 btnDeleteClick.Visible = false;
 
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            pnlAddAnimals.Visible = true;
+            cbxSpecies.DataSource = species;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            pnlAddAnimals.Visible = false;
+        }
+
+        private void btnAddAnimalsSelected_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int amount = int.Parse(txtAnimalAmount.Text);
+                Species specie = (Species)cbxSpecies.SelectedItem;
+                int counter = animals.Where(ani => ani.Species.Equals(specie)).Count();
+                if (counter % 2 == 0)
+                {
+                    //No extra cages
+                }
+                else
+                {
+                    //Cages available
+                    var cageIds = from loc in locations
+                                  where !(loc.Cage.Equals(null))
+                                  select loc;
+                    List<Location> tempLoc = new List<Location>();
+                    foreach (Location item in cageIds)
+                    {
+                        tempLoc.Add(item);
+                    }
+                    int counters = 0;
+                    Species[] space = new Species[tempLoc.Count];
+                    foreach (Location item in tempLoc)
+                    {
+                        foreach (Animal item2 in animals)
+                        {
+                            if (item.ID == item2.LocationID)
+                            {
+                                space[counters] = item2.Species;
+                            }
+                        }
+                        counters++;
+                    }
+                    for (int i = 0; i < space.Length; i++)
+                    {
+                        if (space[i].Equals(specie))
+                        {
+                            int animalAmount = 0;
+                            foreach (Animal item in animals)
+                            {
+                                if (item.LocationID==tempLoc[i].ID)
+                                {
+                                    animalAmount++;
+                                }
+                            }
+                            if (animalAmount<10)
+                            {
+                                //Insert Singular Animal Here
+                                ArrayList AnimalToAdd = new ArrayList();
+                                AnimalToAdd.Add(specie.AnimalName);
+
+                                //Generate Gender
+                                Random rnd = new Random();
+                                int genderChance = rnd.Next(0, 7);
+                                string gender = "";
+                                if (genderChance <= 3)
+                                {
+                                    gender = "Female";
+                                    AnimalToAdd.Add(gender);
+                                }
+                                else
+                                {
+                                    gender = "Male";
+                                    AnimalToAdd.Add(gender);
+                                }
+                                int age = rnd.Next(0, 2556);
+                                string mate = "";
+                                if ((gender.Equals("Male") || gender.Equals("Female")) && age > 474)
+                                {
+                                    mate = "Ready";
+                                }
+                                else
+                                {
+                                    mate = "Not Ready";
+                                }
+                                AnimalToAdd.Add(mate);
+                                AnimalToAdd.Add(age);
+                                double eatTime = 0;
+                                if (age < 365 || age > 2920)
+                                {
+                                    eatTime += 1.5;
+                                }
+                                AnimalToAdd.Add(eatTime);
+                                Animal ani = new Animal(gender,mate,eatTime,specie,age,tempLoc[i].ID);
+                                animals.Add(ani);
+                                //SendData
+                                amount--;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please enter a number for Amount!");
+            }
+            
         }
     }
 }
