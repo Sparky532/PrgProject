@@ -190,9 +190,10 @@ namespace BLL
                 int toAdd = 0;
                 Random rnd = new Random();
 
-                int predatorRandom = rnd.Next(-1, 4);
+                int predatorRandom;
                 int LionCurrentCage = 0;
                 int otherAnimalCurrentCage = 1;
+
 
 
                 for (int i = 0; i < timesToRun; i += 10)
@@ -209,13 +210,149 @@ namespace BLL
                     switch (farmSize)
                     {
                         case 400:
+                            int[] lionCagesSmall = { 1, 3 };
+                             predatorRandom = rnd.Next(-1, 2);
+                            if (item.Animaal.AnimalName == "Lion" && i == 0)
+                            {
+                                while (predatorRandom == -1|| predatorRandom == 2)
+                                {
+                                    predatorRandom = rnd.Next(-1, 2);
+
+                                }
+                                l.XCoord = lionCagesSmall[predatorRandom];
+                                if (SmallFarm[lionCagesSmall[predatorRandom]] == false)
+                                {
+                                    SmallFarm[lionCagesSmall[predatorRandom]] = true;
+
+                                }
+                                else
+                                {
+                                    int tempKey = 0;
+                                    bool flag = false;
+                                    foreach (KeyValuePair<int, bool> SmallFarmTester in SmallFarm)
+                                    {
+                                        if (SmallFarmTester.Value == false && flag == false)
+                                        {
+                                            tempKey = SmallFarmTester.Key;
+                                            l.XCoord = SmallFarmTester.Key;
+                                            flag = true;
+                                        }
+                                    }
+                                    SmallFarm[tempKey] = true;
+                                }
+                                Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+                                SmallFarm[l.XCoord + 1] = true;
+                                feeding.InsertLocation();
+                                LionCurrentCage = l.XCoord;
+                            }
+                            else if (item.Animaal.AnimalName == "Lion")
+                            {
+                                LionCurrentCage += 1;
+                                if (SmallFarm[LionCurrentCage] == true)
+                                {
+                                    LionCurrentCage += 1;
+                                    l.XCoord = LionCurrentCage;
+                                    SmallFarm[LionCurrentCage] = true;
+
+                                }
+                                else
+                                {
+                                    l.XCoord = LionCurrentCage;
+                                    SmallFarm[LionCurrentCage] = true;
+
+                                }
+                            }
+
+                            if (item.Animaal.AnimalName != "Lion")
+                            {
+                                int tempKey = 0;
+                                bool flag = false;
+                                foreach (KeyValuePair<int, bool> SmallFarmTester in SmallFarm)
+                                {
+                                    if (SmallFarmTester.Value == false && flag == false)
+                                    {
+                                        tempKey = SmallFarmTester.Key;
+                                        l.XCoord = SmallFarmTester.Key;
+                                        flag = true;
+                                    }
+                                }
+                                SmallFarm[tempKey] = true;
+                            }
                             break;
                         case 900:
+                            int[] lionCagesMedium = { 1, 4, 7 };
+                             predatorRandom = rnd.Next(-1, 3);
+                            if (item.Animaal.AnimalName == "Lion" && i == 0)
+                            {
+                                while (predatorRandom == -1)
+                                {
+                                    predatorRandom = rnd.Next(-1, 3);
+
+                                }
+
+                                l.XCoord = lionCagesMedium[predatorRandom];
+                                if (MediumFarm[lionCagesMedium[predatorRandom]] == false)
+                                {
+                                    MediumFarm[lionCagesMedium[predatorRandom]] = true;
+                                }
+                                else
+                                {
+                                    int tempKey = 0;
+                                    bool flag = false;
+                                    foreach (KeyValuePair<int, bool> mediumFarmTester in MediumFarm)
+                                    {
+                                        if (mediumFarmTester.Value == false && flag == false)
+                                        {
+                                            tempKey = mediumFarmTester.Key;
+                                            l.XCoord = mediumFarmTester.Key;
+                                            flag = true;
+                                        }
+                                    }
+                                    MediumFarm[tempKey] = true;
+                                }
+
+                                Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+                                MediumFarm[l.XCoord + 1] = true;
+                                feeding.InsertLocation();
+                                LionCurrentCage = l.XCoord;
+                            }
+                            else if (item.Animaal.AnimalName == "Lion")
+                            {
+                                LionCurrentCage += 1;
+                                if (MediumFarm[LionCurrentCage] == true)
+                                {
+                                    LionCurrentCage += 1;
+                                    l.XCoord = LionCurrentCage;
+                                    MediumFarm[LionCurrentCage] = true;
+
+                                }
+                                else
+                                {
+                                    l.XCoord = LionCurrentCage;
+                                    MediumFarm[LionCurrentCage] = true;
+
+                                }
+                            }
+
+                            if (item.Animaal.AnimalName != "Lion")
+                            {
+                                int tempKey = 0;
+                                bool flag = false;
+                                foreach (KeyValuePair<int, bool> mediumFarmTester in MediumFarm)
+                                {
+                                    if (mediumFarmTester.Value == false && flag == false)
+                                    {
+                                        tempKey = mediumFarmTester.Key;
+                                        l.XCoord = mediumFarmTester.Key;
+                                        flag = true;
+                                    }
+                                }
+                                MediumFarm[tempKey] = true;
+                            }
                             break;
                         case 1600:
-                            //  System.Windows.Forms.MessageBox.Show(l.XCoord.ToString());
-
-                            int[] lionCages = { 1, 5, 9, 13 };
+                             predatorRandom = rnd.Next(-1, 4);
+                            int[] lionCagesLarge = { 1, 5, 9, 13 };
                             if (item.Animaal.AnimalName == "Lion" && i == 0)
                             {
                                 while (predatorRandom == -1)
@@ -223,8 +360,8 @@ namespace BLL
                                     predatorRandom = rnd.Next(-1, 4);
 
                                 }
-                                l.XCoord = lionCages[predatorRandom];
-                                LargeFarm[lionCages[predatorRandom]] = true;
+                                l.XCoord = lionCagesLarge[predatorRandom];
+                                LargeFarm[lionCagesLarge[predatorRandom]] = true;
                                 Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
                                 LargeFarm[l.XCoord + 1] = true;
                                 feeding.InsertLocation();
@@ -250,8 +387,6 @@ namespace BLL
 
                             if (item.Animaal.AnimalName != "Lion")
                             {
-
-                                //Dictionary<int, bool> tempLargeFarm = LargeFarm;
                                 int tempKey = 0;
                                 bool flag = false;
                                 foreach (KeyValuePair<int, bool> largeFarmTester in LargeFarm)
