@@ -17,6 +17,13 @@ namespace FarmManagement
 {
     public partial class Farm_View : Form
     {
+        Dictionary<int, PictureBox> LargeFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> MediumFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> SmallFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> ActiveDictionary = new Dictionary<int, PictureBox>();
+        PictureBox AnimalPbx;
+        PictureBox feedingPbx;
+        PictureBox animal2Pbx;
         List<Farm> farms = new List<Farm>();
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
@@ -27,6 +34,11 @@ namespace FarmManagement
         bool listsOpen = false;
         int ID = 0;
         string updating = "";
+        int CagesNeeded;
+        int numcages;
+
+
+
         public Farm_View(int id)
         {
             InitializeComponent();
@@ -64,6 +76,7 @@ namespace FarmManagement
                 received = true;
             }
         }
+        #region ReceiveData
         public void CheckFarmReceiveMethod(Farm farm)
         {
             if (InvokeRequired)
@@ -88,15 +101,60 @@ namespace FarmManagement
             }
             locations.Add(location);
         }
+        #endregion
+
 
         private void Farm_View_Load(object sender, EventArgs e)
         {
+            pnlSmall.Visible = false;
+            pnlMedium.Visible = false;
+            pnlLarge.Visible = false;
+
+
+           
+
             myEvent = LoadLists;
             co = new ClientObject();
             MessageObject message = new MessageObject(ID.BinarySerialization(), 6, 2, 1);
             co.SendData(message);
+            //Thread.Sleep(1000);
+            #region LargeDictionary
+            LargeFarm.Add(1, pbxLarge1);
+            LargeFarm.Add(2, pbxLarge2);
+            LargeFarm.Add(3, pbxLarge3);
+            LargeFarm.Add(4, pbxLarge4);
+            LargeFarm.Add(5, pbxLarge5);
+            LargeFarm.Add(6, pbxLarge6);
+            LargeFarm.Add(7, pbxLarge7);
+            LargeFarm.Add(8, pbxLarge8);
+            LargeFarm.Add(9, pbxLarge9);
+            LargeFarm.Add(10, pbxLarge10);
+            LargeFarm.Add(11, pbxLarge11);
+            LargeFarm.Add(12, pbxLarge12);
+            LargeFarm.Add(13, pbxLarge13);
+            LargeFarm.Add(14, pbxLarge14);
+            LargeFarm.Add(15, pbxLarge15);
+            LargeFarm.Add(16, pbxLarge16);
+            #endregion
+            #region MediumDictionary
+            MediumFarm.Add(1, pbxMedium1);
+            MediumFarm.Add(2, pbxMedium2);
+            MediumFarm.Add(3, pbxMedium3);
+            MediumFarm.Add(4, pbxMedium4);
+            MediumFarm.Add(5, pbxMedium5);
+            MediumFarm.Add(6, pbxMedium6);
+            MediumFarm.Add(7, pbxMedium7);
+            MediumFarm.Add(8, pbxMedium8);
+            MediumFarm.Add(9, pbxMedium9);
+            #endregion
+            #region SmallDictionary
+            SmallFarm.Add(1, pbxSmall1);
+            SmallFarm.Add(2, pbxSmall2);
+            SmallFarm.Add(3, pbxSmall3);
+            SmallFarm.Add(4, pbxSmall4);
 
-
+            #endregion
+           
             pnlMenu.Location = new Point(-190, 0);
             pnlSortSubMenu.Location = new Point(-190, 50);
             pnlSettingsSubMenu.Location = new Point(-190, 50);
@@ -104,14 +162,10 @@ namespace FarmManagement
             pblSortLists.Location = new Point(-280, 0);
             pnlCagesSort.Location = new Point(-190, 50);
             pnlUpdateName.Location = new Point(190,0);
+           
+           
 
 
-            //Farm f = new Farm();
-            //Location l = new Location();
-            //Animal a = new Animal();
-            //farms = f.selectFarm(ID);
-            //locations = l.selectLocation(ID);
-            //animals = a.selectAnimals(ID);
         }
 
         public void LoadLists()
@@ -120,6 +174,14 @@ namespace FarmManagement
             txtFarmName.Text = farms[0].FarmName;
             lstLocations.DataSource = locations;
             lstAnimals.DataSource = animals;
+            //while (farms[0].FarmName == "")
+            //{
+                if (farms.Count != 0)
+                {
+
+                  
+                
+            }
         }
 
         private void returnToFarmerSelectionToolStripMenuItem_Click(object sender, EventArgs e)
