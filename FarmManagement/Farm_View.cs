@@ -20,6 +20,7 @@ namespace FarmManagement
         List<Farm> farms = new List<Farm>();
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
+        List<Species> species = new List<Species>();
         ClientObject co;
         Thread openLists;
         Thread openMenu;
@@ -60,6 +61,9 @@ namespace FarmManagement
                 {
                     CheckFarmReceiveMethod(item);
                 }
+                //var species = from animal in animals
+                //              select animal.Species;
+                
                 myEvent.Invoke();
                 received = true;
             }
@@ -113,7 +117,15 @@ namespace FarmManagement
             //locations = l.selectLocation(ID);
             //animals = a.selectAnimals(ID);
 
-            
+            var species = animals.GroupBy(animal => animal.Species)
+                    .Select(group => group.First().Species)
+                    .ToList();
+
+            foreach (Species item in species)
+            {
+                species.Add(item);
+            }
+
         }
 
         public void LoadLists()
@@ -139,11 +151,11 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Lion"
-                             select item.ToString();
+                             select item;
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -156,12 +168,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Tiger"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -173,12 +185,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Cow"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -190,12 +202,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Sheep"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -207,12 +219,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Horse"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -223,12 +235,12 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             ShiftListPanel();
             var SelectAnimals = from item in animals
-                                select item.ToString();
+                                select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in SelectAnimals)
+            foreach (Animal item in SelectAnimals)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -772,12 +784,12 @@ namespace FarmManagement
             int id = ((Location)lstLocations.SelectedItem).ID;
             var Selectitem = from item in animals
                              where item.LocationID == id
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -826,6 +838,11 @@ namespace FarmManagement
 
         private void btnDeleteAnimal_Click(object sender, EventArgs e)
         {
+            Animal animal = ((Animal)lstAnimals.SelectedItem);
+            animals.Remove(animal);
+            MessageObject message = new MessageObject(animal.BinarySerialization(), 6,3,3);
+            co.SendData(message);
+            lstAnimals.Items.Remove(animal);
             btnDeleteAnimal.Visible = false;
         }
     }

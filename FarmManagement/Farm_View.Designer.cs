@@ -106,6 +106,8 @@
             this.pbxLarge1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lstActions = new System.Windows.Forms.ListBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -145,6 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstLocations
@@ -185,6 +188,7 @@
             this.pnlMenu.Controls.Add(this.btnSort);
             this.pnlMenu.Controls.Add(this.btnSettings);
             this.pnlMenu.Controls.Add(this.btnExit);
+            this.pnlMenu.Controls.Add(this.btnAdd);
             this.pnlMenu.Location = new System.Drawing.Point(1392, 8);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(190, 500);
@@ -1055,10 +1059,33 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel7.Controls.Add(this.lstActions);
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(470, 717);
             this.panel7.TabIndex = 18;
+            // 
+            // lstActions
+            // 
+            this.lstActions.FormattingEnabled = true;
+            this.lstActions.Location = new System.Drawing.Point(0, 0);
+            this.lstActions.Name = "lstActions";
+            this.lstActions.Size = new System.Drawing.Size(467, 563);
+            this.lstActions.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnAdd.Location = new System.Drawing.Point(40, 250);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(150, 50);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // Farm_View
             // 
@@ -1066,7 +1093,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1508, 711);
+            this.ClientSize = new System.Drawing.Size(1784, 711);
             this.Controls.Add(this.pnlUpdateName);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlCagesSort);
@@ -1130,6 +1157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1213,5 +1241,7 @@
         private System.Windows.Forms.PictureBox pbxMedium1;
         private System.Windows.Forms.Button btnDeleteAnimal;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ListBox lstActions;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

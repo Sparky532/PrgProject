@@ -408,6 +408,22 @@ namespace Server.BLL
                                                 //SendData(message, client);
                                                 break;
                                             }
+                                        //Insert
+                                        case 2:
+                                            {
+                                                Animal animal = (Animal)message.Data.BinaryDeserialization();
+                                                Console.WriteLine("INSERT IS STILL COMMENTED OU!!!!!!!!!!!!");
+                                                //animal.InsertAnimal();
+                                                break;
+                                            }
+                                        //Delete
+                                        case 3:
+                                            {
+                                                Animal animal = (Animal)message.Data.BinaryDeserialization();
+                                                Console.WriteLine("DELETE IS STILL COMMENTED OU!!!!!!!!!!!!");
+                                                //animal.DeleteAnimal();
+                                                break;
+                                            }
                                         default:
                                             break;
                                     }

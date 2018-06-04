@@ -27,6 +27,8 @@ namespace DAL
         int UpdateFarmer(ArrayList toUpdate);
 
         int UpdateFarm(ArrayList toUpdate);
+        int InsertAnimal(ArrayList toUpdate);
+        int DeleteAnimal(int animalID);
     }
 
     partial interface IDataHandler
