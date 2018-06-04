@@ -28,16 +28,18 @@ namespace FarmManagement
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
         List<Species> species = new List<Species>();
+        List<Location> tempLoc = new List<Location>();
+
         ClientObject co;
         Thread openLists;
         Thread openMenu;
-        Thread killAnAnimal;
         bool received = false;
         bool listsOpen = false;
         int ID = 0;
         string updating = "";
         int CagesNeeded;
         int numcages;
+        int FarmSize;
 
 
 
@@ -175,17 +177,9 @@ namespace FarmManagement
         {
             //lstFarm.DataSource = farms;
             txtFarmName.Text = farms[0].FarmName;
-            foreach (Location item in locations)
-            {
-                if (item.LocationType.Equals("Cage"))
-                {
-                    lstLocations.Items.Add(item);
-                }
-            }
-            foreach (Animal item in animals)
-            {
-                lstAnimals.Items.Add(item);
-            }
+            lstLocations.DataSource = locations;
+            lstAnimals.DataSource = animals;
+
             var speciess = animals.GroupBy(animal => animal.Species)
                                 .Select(group => group.First().Species)
                                 .ToList();
@@ -194,49 +188,110 @@ namespace FarmManagement
             {
                 species.Add(item);
             }
+            List<Location> CageLocaitons = new List<Location>();
+            Dictionary<int, Species> speciesIdentifier = new Dictionary<int, Species>();
+            //var specieswiithCage = from itemspecieswithcage in animals
+            //                       where itemspecieswithcage.LocationID = 
 
-            killAnAnimal = new Thread(() =>
+            foreach (Farm item in farms)
             {
-                while (true)
+                FarmSize = (int)item.Size;
+            }
+
+            var cageIds = from loc in locations
+                          where !(loc.Cage.Equals(null))
+                          select loc;
+            foreach (Location item in cageIds)
+            {
+                CageLocaitons.Add(item);
+            }
+
+            foreach (Location item in locations)
+            {
+                //    var specieswiithCage = from itemspecieswithcage in locations
+                //                           where itemspecieswithcage.ID == item.LocationID
+                //                           select itemspecieswithcage.XCoord;
+                var species = animals.Where(n => n.LocationID == item.ID).Select(n => n.Species);
+            }
+
+            foreach (Species itemspecies in species)
+            {
+                foreach (Location item in CageLocaitons)
                 {
-                    Thread.Sleep(10000);
-                    Random rnd = new Random();
-                    int happen = rnd.Next(0, 10);
-                    if (happen == 6)
+
+                    if (!speciesIdentifier.ContainsKey(item.YCoord))
                     {
-                        rnd = new Random();
-                        int animalTK = rnd.Next(0, animals.Count);
-                        Animal animal = animals[animalTK];
-                        animals.Remove(animal);
-                        MessageObject message = new MessageObject(animal.BinarySerialization(), 6, 3, 3);
-                        co.SendData(message);
-                        lstAnimals.Items.Remove(animal);
-                        int newMessage = rnd.Next(0, 5);
-                        switch (newMessage)
+                        if (!speciesIdentifier.ContainsValue(itemspecies))
                         {
-                            case 1:
-                                addToActionsLst("Animal " + animal.ID + " jumped off a cliff that does not exist");
-                                break;
-                            case 2:
-                                addToActionsLst("Animal " + animal.ID + " was eaten by a sheep that turned Canabal");
-                                break;
-                            case 3:
-                                addToActionsLst("Animal " + animal.ID + " was shot by a hunter");
-                                break;
-                            case 4:
-                                addToActionsLst("Animal " + animal.ID + " died due to natural causes");
-                                break;
-                            case 5:
-                                addToActionsLst("Animal " + animal.ID + " was abducted by aliens");
-                                break;
-                            default:
-                                addToActionsLst("An animal has died");
-                                break;
+                            speciesIdentifier.Add(item.YCoord, itemspecies);
+
                         }
+                        
+
                     }
                 }
-            });
-            killAnAnimal.Start();
+            }
+            switch (FarmSize)
+            {
+                case 400:
+                    foreach (KeyValuePair<int, Species> item in speciesIdentifier)
+                    {
+                        pnlSmall.Location = new Point(555, 212);
+                        pnlSmall.Visible = true;
+                        string directoryPath = Environment.CurrentDirectory;
+                        directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
+                        if (item.Value.AnimalName == "Sheep" || item.Value.AnimalName == "Tiger" || item.Value.AnimalName == "Horse")
+                        {
+                            SmallFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "Cage.png");
+
+                        }
+                        else
+                        {
+                            SmallFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "sCage.png");
+                        }
+                    }
+                    break;
+                case 900:
+                    foreach (KeyValuePair<int, Species> item in speciesIdentifier)
+                    {
+                        pnlMedium.Location = new Point(555, 212);
+                        pnlMedium.Visible = true;
+                        string directoryPath = Environment.CurrentDirectory;
+                        directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
+                        if (item.Value.AnimalName == "Sheep" || item.Value.AnimalName == "Tiger" || item.Value.AnimalName == "Horse")
+                        {
+                            MediumFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "Cage.png");
+
+                        }
+                        else
+                        {
+                            MediumFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "sCage.png");
+                        }
+                    }
+                    break;
+                case 1600:
+                    foreach (KeyValuePair<int, Species> item in speciesIdentifier)
+                    {
+                        pnlLarge.Location = new Point(555, 212);
+                        pnlLarge.Visible = true;
+                        string directoryPath = Environment.CurrentDirectory;
+                        directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
+                        if (item.Value.AnimalName == "Sheep" || item.Value.AnimalName == "Tiger" || item.Value.AnimalName == "Horse")
+                        {
+                            LargeFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "Cage.png");
+
+                        }
+                        else
+                        {
+                            LargeFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "sCage.png");
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+            
+          //  MessageBox.Show("");
             //while (farms[0].FarmName == "")
             //{
             if (farms.Count != 0)
@@ -843,10 +898,10 @@ namespace FarmManagement
             });
             openLists.Start();
             listsOpen = true;
-            //lstLocations.SelectedIndex = 1;
-            //lstLocations.SelectedIndex = 0;
-            //lstAnimals.SelectedIndex = 1;
-            //lstAnimals.SelectedIndex = 0;
+            lstLocations.SelectedIndex = 1;
+            lstLocations.SelectedIndex = 0;
+            lstAnimals.SelectedIndex = 1;
+            lstAnimals.SelectedIndex = 0;
 
         }
 
@@ -907,6 +962,8 @@ namespace FarmManagement
             {
                 lstAnimals.Items.Add(item);
             }
+            lstAnimals.SelectedIndex = 1;
+            lstAnimals.SelectedIndex = 0;
 
         }
 
@@ -952,6 +1009,7 @@ namespace FarmManagement
         {
             {
                 Animal animal = ((Animal)lstAnimals.SelectedItem);
+                MessageBox.Show(animal.ID + "");
                 animals.Remove(animal);
                 MessageObject message = new MessageObject(animal.BinarySerialization(), 6, 3, 3);
                 co.SendData(message);
@@ -989,7 +1047,6 @@ namespace FarmManagement
                     var cageIds = from loc in locations
                                   where !(loc.Cage.Equals(null))
                                   select loc;
-                    List<Location> tempLoc = new List<Location>();
                     foreach (Location item in cageIds)
                     {
                         tempLoc.Add(item);
@@ -1092,116 +1149,7 @@ namespace FarmManagement
 
         private void btnRunSim_Click(object sender, EventArgs e)
         {
-            lstActions.Items.Clear();
-            #region species
-            var cageIds = from loc in locations
-                          where !(loc.Cage.Equals(null))
-                          select loc;
-            List<Location> tempLoc = new List<Location>();
-            foreach (Location item in cageIds)
-            {
-                tempLoc.Add(item);
-            }
-            int counters = 0;
-            Species[] spacess = new Species[tempLoc.Count];
-            int counting = 0;
-            foreach (Location item in tempLoc)
-            {
-                foreach (Animal item2 in animals)
-                {
-                    if (item.ID == item2.LocationID&&(!spacess.Contains(item2.Species)))
-                    {
-                        spacess[counting] = item2.Species;
-                        counting++;
-                    }
-                }
-                counters++;
-            }
-            Species[] space = new Species[counting];
-            for (int i = 0; i < counting; i++)
-            {
-                space[i] = spacess[i];
-            }
-            double[] slowestAnimalEat = new double[counting];
-            for (int i = 0; i < slowestAnimalEat.Length; i++)
-            {
-                foreach (Animal item in animals)
-                {
-                    if (item.Species.Equals(species[i]) && item.EatingTime > slowestAnimalEat[i])
-                    {
-                        slowestAnimalEat[i] = item.EatingTime;
-                    }
-                }
-            }
-            #endregion
-            Thread runSim = new Thread(() =>
-            {
-                addToActionsLst("Running Simulation...");
-                addToActionsLst("All Gates Opened...");
-                #region sort
-                for (int pass = 1; pass <= space.Length - 2; pass++)
-                {
-                    for (int i = 0; i <= space.Length - 2; i++)
-                    {
-                        if (slowestAnimalEat[i] > slowestAnimalEat[i + 1])
-                        {
-                            double temp = slowestAnimalEat[i + 1];
-                            Species spec = space[i + 1];
-                            slowestAnimalEat[i + 1] = slowestAnimalEat[i];
-                            space[i + 1] = space[i];
-                            slowestAnimalEat[i] = temp;
-                            space[i] = spec;
-                        }
 
-                    }
-
-                }
-                #endregion
-                for (int i = 0; i < space.Length; i++)
-                {
-                    addToActionsLst("");
-                    for (int j = 0; j < space.Length; j++)
-                    {
-                        if (i==j)
-                        {
-                            addToActionsLst(space[j].AnimalName+"s are walking to the Feeding Area");
-                        }
-                        else
-                        {
-                            addToActionsLst(space[j].AnimalName + "s have been diverted");
-                        }
-                    }
-                    Thread.Sleep((int)((10- space[i].Speed) *1000));
-                    addToActionsLst("");
-                    addToActionsLst(space[i].AnimalName + "s are eating");
-                    Thread.Sleep((int)slowestAnimalEat[i]*2000);
-                    addToActionsLst("");
-                    addToActionsLst(space[i].AnimalName + "s are walking back");
-                    Thread.Sleep((int)((10 - space[i].Speed) * 1000));
-                }
-                addToActionsLst("");
-                addToActionsLst("All animals have eaten and are back in their respective Cages");
-                addToActionsLst("");
-                addToActionsLst("...All gates Closed");
-            });
-            runSim.Start();
-
-        }
-
-        private void addToActionsLst(string val)
-        {
-            if (InvokeRequired)
-            {
-                this.Invoke(new Action<string>(addToActionsLst), val);
-            }
-            try
-            {
-                lstActions.Items.Add(val);
-            }
-            catch (InvalidOperationException)
-            {
-
-            }
         }
     }
 }

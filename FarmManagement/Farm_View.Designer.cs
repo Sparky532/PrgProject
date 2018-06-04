@@ -710,15 +710,17 @@
             // 
             // txtFarmName
             // 
-            this.txtFarmName.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFarmName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFarmName.BackColor = System.Drawing.Color.White;
+            this.txtFarmName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFarmName.Enabled = false;
-            this.txtFarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtFarmName.Location = new System.Drawing.Point(473, 3);
+            this.txtFarmName.Font = new System.Drawing.Font("Franklin Gothic Heavy", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFarmName.ForeColor = System.Drawing.Color.Black;
+            this.txtFarmName.Location = new System.Drawing.Point(699, 20);
             this.txtFarmName.Name = "txtFarmName";
-            this.txtFarmName.Size = new System.Drawing.Size(268, 38);
+            this.txtFarmName.ReadOnly = true;
+            this.txtFarmName.Size = new System.Drawing.Size(268, 49);
             this.txtFarmName.TabIndex = 15;
-            this.txtFarmName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFarmName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pnlUpdateName
             // 
@@ -766,7 +768,6 @@
             // pnlLarge
             // 
             this.pnlLarge.BackColor = System.Drawing.Color.Maroon;
-            this.pnlLarge.Controls.Add(this.pnlMedium);
             this.pnlLarge.Controls.Add(this.pbxLarge15);
             this.pnlLarge.Controls.Add(this.pbxLarge16);
             this.pnlLarge.Controls.Add(this.pbxLarge14);
@@ -784,7 +785,7 @@
             this.pnlLarge.Controls.Add(this.pbxLarge2);
             this.pnlLarge.Controls.Add(this.pbxLarge1);
             this.pnlLarge.Controls.Add(this.pictureBox1);
-            this.pnlLarge.Location = new System.Drawing.Point(473, 8);
+            this.pnlLarge.Location = new System.Drawing.Point(486, 699);
             this.pnlLarge.Name = "pnlLarge";
             this.pnlLarge.Size = new System.Drawing.Size(700, 700);
             this.pnlLarge.TabIndex = 17;
@@ -792,7 +793,6 @@
             // pnlMedium
             // 
             this.pnlMedium.BackColor = System.Drawing.Color.Yellow;
-            this.pnlMedium.Controls.Add(this.pnlSmall);
             this.pnlMedium.Controls.Add(this.pbxMedium9);
             this.pnlMedium.Controls.Add(this.pbxMedium8);
             this.pnlMedium.Controls.Add(this.pbxMedium7);
@@ -802,52 +802,56 @@
             this.pnlMedium.Controls.Add(this.pbxMedium3);
             this.pnlMedium.Controls.Add(this.pbxMedium2);
             this.pnlMedium.Controls.Add(this.pbxMedium1);
-            this.pnlMedium.Location = new System.Drawing.Point(110, 104);
+            this.pnlMedium.Location = new System.Drawing.Point(771, 112);
             this.pnlMedium.Name = "pnlMedium";
             this.pnlMedium.Size = new System.Drawing.Size(525, 525);
             this.pnlMedium.TabIndex = 16;
             // 
             // pnlSmall
             // 
-            this.pnlSmall.BackColor = System.Drawing.Color.LawnGreen;
+            this.pnlSmall.BackColor = System.Drawing.Color.Transparent;
             this.pnlSmall.Controls.Add(this.pbxSmall4);
             this.pnlSmall.Controls.Add(this.pbxSmall3);
             this.pnlSmall.Controls.Add(this.pbxSmall2);
             this.pnlSmall.Controls.Add(this.pbxSmall1);
-            this.pnlSmall.Location = new System.Drawing.Point(112, 100);
+            this.pnlSmall.Location = new System.Drawing.Point(581, 126);
             this.pnlSmall.Name = "pnlSmall";
-            this.pnlSmall.Size = new System.Drawing.Size(350, 350);
+            this.pnlSmall.Size = new System.Drawing.Size(500, 471);
             this.pnlSmall.TabIndex = 9;
             // 
             // pbxSmall4
             // 
-            this.pbxSmall4.Location = new System.Drawing.Point(172, 175);
+            this.pbxSmall4.Location = new System.Drawing.Point(244, 239);
             this.pbxSmall4.Name = "pbxSmall4";
-            this.pbxSmall4.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall4.Size = new System.Drawing.Size(256, 231);
+            this.pbxSmall4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSmall4.TabIndex = 3;
             this.pbxSmall4.TabStop = false;
             // 
             // pbxSmall3
             // 
-            this.pbxSmall3.Location = new System.Drawing.Point(3, 172);
+            this.pbxSmall3.Location = new System.Drawing.Point(0, 240);
             this.pbxSmall3.Name = "pbxSmall3";
-            this.pbxSmall3.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall3.Size = new System.Drawing.Size(245, 231);
+            this.pbxSmall3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSmall3.TabIndex = 2;
             this.pbxSmall3.TabStop = false;
             // 
             // pbxSmall2
             // 
-            this.pbxSmall2.Location = new System.Drawing.Point(175, 0);
+            this.pbxSmall2.Location = new System.Drawing.Point(244, 0);
             this.pbxSmall2.Name = "pbxSmall2";
-            this.pbxSmall2.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall2.Size = new System.Drawing.Size(256, 241);
+            this.pbxSmall2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSmall2.TabIndex = 1;
             this.pbxSmall2.TabStop = false;
             // 
             // pbxSmall1
             // 
-            this.pbxSmall1.Location = new System.Drawing.Point(3, 3);
+            this.pbxSmall1.Location = new System.Drawing.Point(0, 0);
             this.pbxSmall1.Name = "pbxSmall1";
-            this.pbxSmall1.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall1.Size = new System.Drawing.Size(245, 241);
+            this.pbxSmall1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSmall1.TabIndex = 0;
             this.pbxSmall1.TabStop = false;
             // 
@@ -1168,6 +1172,8 @@
             this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1854, 711);
+            this.Controls.Add(this.pnlMedium);
+            this.Controls.Add(this.pnlSmall);
             this.Controls.Add(this.pnlAddAnimals);
             this.Controls.Add(this.pnlLarge);
             this.Controls.Add(this.pnlUpdateName);
