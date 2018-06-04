@@ -106,6 +106,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDeleteClick = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.pnlActions = new System.Windows.Forms.Panel();
+            this.lstActions = new System.Windows.Forms.ListBox();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -145,6 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlActions.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstLocations
@@ -656,7 +659,7 @@
             this.txtFarmName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFarmName.Enabled = false;
             this.txtFarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtFarmName.Location = new System.Drawing.Point(328, 12);
+            this.txtFarmName.Location = new System.Drawing.Point(383, 8);
             this.txtFarmName.Name = "txtFarmName";
             this.txtFarmName.Size = new System.Drawing.Size(268, 38);
             this.txtFarmName.TabIndex = 15;
@@ -725,7 +728,7 @@
             this.pnlLarge.Controls.Add(this.pbxLarge2);
             this.pnlLarge.Controls.Add(this.pbxLarge1);
             this.pnlLarge.Controls.Add(this.pictureBox1);
-            this.pnlLarge.Location = new System.Drawing.Point(168, 8);
+            this.pnlLarge.Location = new System.Drawing.Point(383, 3);
             this.pnlLarge.Name = "pnlLarge";
             this.pnlLarge.Size = new System.Drawing.Size(700, 700);
             this.pnlLarge.TabIndex = 17;
@@ -1044,6 +1047,23 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
+            // pnlActions
+            // 
+            this.pnlActions.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlActions.Controls.Add(this.lstActions);
+            this.pnlActions.Location = new System.Drawing.Point(0, 0);
+            this.pnlActions.Name = "pnlActions";
+            this.pnlActions.Size = new System.Drawing.Size(380, 700);
+            this.pnlActions.TabIndex = 18;
+            // 
+            // lstActions
+            // 
+            this.lstActions.FormattingEnabled = true;
+            this.lstActions.Location = new System.Drawing.Point(3, 3);
+            this.lstActions.Name = "lstActions";
+            this.lstActions.Size = new System.Drawing.Size(374, 693);
+            this.lstActions.TabIndex = 0;
+            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1061,6 +1081,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.btnOpenMenu);
             this.Controls.Add(this.pblSortLists);
+            this.Controls.Add(this.pnlActions);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Farm_View";
@@ -1113,6 +1134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlActions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1196,5 +1218,7 @@
         private System.Windows.Forms.PictureBox pbxMedium1;
         private System.Windows.Forms.Button btnDeleteClick;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Panel pnlActions;
+        private System.Windows.Forms.ListBox lstActions;
     }
 }
