@@ -31,6 +31,7 @@ namespace FarmManagement
         ClientObject co;
         Thread openLists;
         Thread openMenu;
+        Thread killAnAnimal;
         bool received = false;
         bool listsOpen = false;
         int ID = 0;
@@ -174,9 +175,17 @@ namespace FarmManagement
         {
             //lstFarm.DataSource = farms;
             txtFarmName.Text = farms[0].FarmName;
-            lstLocations.DataSource = locations;
-            lstAnimals.DataSource = animals;
-
+            foreach (Location item in locations)
+            {
+                if (item.LocationType.Equals("Cage"))
+                {
+                    lstLocations.Items.Add(item);
+                }
+            }
+            foreach (Animal item in animals)
+            {
+                lstAnimals.Items.Add(item);
+            }
             var speciess = animals.GroupBy(animal => animal.Species)
                                 .Select(group => group.First().Species)
                                 .ToList();
@@ -186,6 +195,48 @@ namespace FarmManagement
                 species.Add(item);
             }
 
+            killAnAnimal = new Thread(() =>
+            {
+                while (true)
+                {
+                    Thread.Sleep(10000);
+                    Random rnd = new Random();
+                    int happen = rnd.Next(0, 10);
+                    if (happen == 6)
+                    {
+                        rnd = new Random();
+                        int animalTK = rnd.Next(0, animals.Count);
+                        Animal animal = animals[animalTK];
+                        animals.Remove(animal);
+                        MessageObject message = new MessageObject(animal.BinarySerialization(), 6, 3, 3);
+                        co.SendData(message);
+                        lstAnimals.Items.Remove(animal);
+                        int newMessage = rnd.Next(0, 5);
+                        switch (newMessage)
+                        {
+                            case 1:
+                                addToActionsLst("Animal " + animal.ID + " jumped off a cliff that does not exist");
+                                break;
+                            case 2:
+                                addToActionsLst("Animal " + animal.ID + " was eaten by a sheep that turned Canabal");
+                                break;
+                            case 3:
+                                addToActionsLst("Animal " + animal.ID + " was shot by a hunter");
+                                break;
+                            case 4:
+                                addToActionsLst("Animal " + animal.ID + " died due to natural causes");
+                                break;
+                            case 5:
+                                addToActionsLst("Animal " + animal.ID + " was abducted by aliens");
+                                break;
+                            default:
+                                addToActionsLst("An animal has died");
+                                break;
+                        }
+                    }
+                }
+            });
+            killAnAnimal.Start();
             //while (farms[0].FarmName == "")
             //{
             if (farms.Count != 0)
@@ -792,10 +843,10 @@ namespace FarmManagement
             });
             openLists.Start();
             listsOpen = true;
-            lstLocations.SelectedIndex = 1;
-            lstLocations.SelectedIndex = 0;
-            lstAnimals.SelectedIndex = 1;
-            lstAnimals.SelectedIndex = 0;
+            //lstLocations.SelectedIndex = 1;
+            //lstLocations.SelectedIndex = 0;
+            //lstAnimals.SelectedIndex = 1;
+            //lstAnimals.SelectedIndex = 0;
 
         }
 
@@ -856,8 +907,6 @@ namespace FarmManagement
             {
                 lstAnimals.Items.Add(item);
             }
-            lstAnimals.SelectedIndex = 1;
-            lstAnimals.SelectedIndex = 0;
 
         }
 
@@ -903,7 +952,6 @@ namespace FarmManagement
         {
             {
                 Animal animal = ((Animal)lstAnimals.SelectedItem);
-                MessageBox.Show(animal.ID+"");
                 animals.Remove(animal);
                 MessageObject message = new MessageObject(animal.BinarySerialization(), 6, 3, 3);
                 co.SendData(message);
@@ -966,12 +1014,12 @@ namespace FarmManagement
                             int animalAmount = 0;
                             foreach (Animal item in animals)
                             {
-                                if (item.LocationID==tempLoc[i].ID)
+                                if (item.LocationID == tempLoc[i].ID)
                                 {
                                     animalAmount++;
                                 }
                             }
-                            for (int j = 0; j < amount+1; j++)
+                            for (int j = 0; j < amount + 1; j++)
                             {
                                 if (animalAmount < 10)
                                 {
@@ -1027,7 +1075,7 @@ namespace FarmManagement
             {
                 MessageBox.Show("Please enter a number for Amount!");
             }
-            
+
         }
 
         private void btnRunSim_MouseMove(object sender, MouseEventArgs e)
@@ -1044,7 +1092,116 @@ namespace FarmManagement
 
         private void btnRunSim_Click(object sender, EventArgs e)
         {
+            lstActions.Items.Clear();
+            #region species
+            var cageIds = from loc in locations
+                          where !(loc.Cage.Equals(null))
+                          select loc;
+            List<Location> tempLoc = new List<Location>();
+            foreach (Location item in cageIds)
+            {
+                tempLoc.Add(item);
+            }
+            int counters = 0;
+            Species[] spacess = new Species[tempLoc.Count];
+            int counting = 0;
+            foreach (Location item in tempLoc)
+            {
+                foreach (Animal item2 in animals)
+                {
+                    if (item.ID == item2.LocationID&&(!spacess.Contains(item2.Species)))
+                    {
+                        spacess[counting] = item2.Species;
+                        counting++;
+                    }
+                }
+                counters++;
+            }
+            Species[] space = new Species[counting];
+            for (int i = 0; i < counting; i++)
+            {
+                space[i] = spacess[i];
+            }
+            double[] slowestAnimalEat = new double[counting];
+            for (int i = 0; i < slowestAnimalEat.Length; i++)
+            {
+                foreach (Animal item in animals)
+                {
+                    if (item.Species.Equals(species[i]) && item.EatingTime > slowestAnimalEat[i])
+                    {
+                        slowestAnimalEat[i] = item.EatingTime;
+                    }
+                }
+            }
+            #endregion
+            Thread runSim = new Thread(() =>
+            {
+                addToActionsLst("Running Simulation...");
+                addToActionsLst("All Gates Opened...");
+                #region sort
+                for (int pass = 1; pass <= space.Length - 2; pass++)
+                {
+                    for (int i = 0; i <= space.Length - 2; i++)
+                    {
+                        if (slowestAnimalEat[i] > slowestAnimalEat[i + 1])
+                        {
+                            double temp = slowestAnimalEat[i + 1];
+                            Species spec = space[i + 1];
+                            slowestAnimalEat[i + 1] = slowestAnimalEat[i];
+                            space[i + 1] = space[i];
+                            slowestAnimalEat[i] = temp;
+                            space[i] = spec;
+                        }
 
+                    }
+
+                }
+                #endregion
+                for (int i = 0; i < space.Length; i++)
+                {
+                    addToActionsLst("");
+                    for (int j = 0; j < space.Length; j++)
+                    {
+                        if (i==j)
+                        {
+                            addToActionsLst(space[j].AnimalName+"s are walking to the Feeding Area");
+                        }
+                        else
+                        {
+                            addToActionsLst(space[j].AnimalName + "s have been diverted");
+                        }
+                    }
+                    Thread.Sleep((int)((10- space[i].Speed) *1000));
+                    addToActionsLst("");
+                    addToActionsLst(space[i].AnimalName + "s are eating");
+                    Thread.Sleep((int)slowestAnimalEat[i]*2000);
+                    addToActionsLst("");
+                    addToActionsLst(space[i].AnimalName + "s are walking back");
+                    Thread.Sleep((int)((10 - space[i].Speed) * 1000));
+                }
+                addToActionsLst("");
+                addToActionsLst("All animals have eaten and are back in their respective Cages");
+                addToActionsLst("");
+                addToActionsLst("...All gates Closed");
+            });
+            runSim.Start();
+
+        }
+
+        private void addToActionsLst(string val)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<string>(addToActionsLst), val);
+            }
+            try
+            {
+                lstActions.Items.Add(val);
+            }
+            catch (InvalidOperationException)
+            {
+
+            }
         }
     }
 }

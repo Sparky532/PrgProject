@@ -33,6 +33,7 @@
             this.lstAnimals = new System.Windows.Forms.ListBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRunSim = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCages = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -109,12 +110,11 @@
             this.pnlActions = new System.Windows.Forms.Panel();
             this.lstActions = new System.Windows.Forms.ListBox();
             this.pnlAddAnimals = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddAnimalsSelected = new System.Windows.Forms.Button();
-            this.cbxSpecies = new System.Windows.Forms.ComboBox();
             this.txtAnimalAmount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRunSim = new System.Windows.Forms.Button();
+            this.cbxSpecies = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddAnimalsSelected = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -209,6 +209,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 450);
             this.panel1.TabIndex = 10;
+            // 
+            // btnRunSim
+            // 
+            this.btnRunSim.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRunSim.FlatAppearance.BorderSize = 0;
+            this.btnRunSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnRunSim.Location = new System.Drawing.Point(40, 150);
+            this.btnRunSim.Name = "btnRunSim";
+            this.btnRunSim.Size = new System.Drawing.Size(150, 100);
+            this.btnRunSim.TabIndex = 13;
+            this.btnRunSim.Text = "Run Simulation";
+            this.btnRunSim.UseVisualStyleBackColor = false;
+            this.btnRunSim.Click += new System.EventHandler(this.btnRunSim_Click);
+            this.btnRunSim.MouseLeave += new System.EventHandler(this.btnRunSim_MouseLeave);
+            this.btnRunSim.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRunSim_MouseMove);
             // 
             // btnAdd
             // 
@@ -1065,16 +1081,18 @@
             this.pnlActions.Controls.Add(this.lstActions);
             this.pnlActions.Location = new System.Drawing.Point(0, 0);
             this.pnlActions.Name = "pnlActions";
-            this.pnlActions.Size = new System.Drawing.Size(470, 700);
+            this.pnlActions.Size = new System.Drawing.Size(470, 585);
             this.pnlActions.TabIndex = 18;
             // 
             // lstActions
             // 
             this.lstActions.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstActions.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstActions.FormattingEnabled = true;
+            this.lstActions.ItemHeight = 20;
             this.lstActions.Location = new System.Drawing.Point(3, 55);
             this.lstActions.Name = "lstActions";
-            this.lstActions.Size = new System.Drawing.Size(464, 637);
+            this.lstActions.Size = new System.Drawing.Size(464, 520);
             this.lstActions.TabIndex = 0;
             // 
             // pnlAddAnimals
@@ -1090,6 +1108,35 @@
             this.pnlAddAnimals.Size = new System.Drawing.Size(400, 100);
             this.pnlAddAnimals.TabIndex = 17;
             this.pnlAddAnimals.Visible = false;
+            // 
+            // txtAnimalAmount
+            // 
+            this.txtAnimalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtAnimalAmount.Location = new System.Drawing.Point(4, 55);
+            this.txtAnimalAmount.Name = "txtAnimalAmount";
+            this.txtAnimalAmount.Size = new System.Drawing.Size(100, 35);
+            this.txtAnimalAmount.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(102, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 18);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Amount";
+            // 
+            // cbxSpecies
+            // 
+            this.cbxSpecies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxSpecies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.cbxSpecies.FormattingEnabled = true;
+            this.cbxSpecies.Location = new System.Drawing.Point(4, 4);
+            this.cbxSpecies.Name = "cbxSpecies";
+            this.cbxSpecies.Size = new System.Drawing.Size(393, 37);
+            this.cbxSpecies.TabIndex = 14;
             // 
             // label1
             // 
@@ -1113,51 +1160,6 @@
             this.btnAddAnimalsSelected.Text = "Submit";
             this.btnAddAnimalsSelected.UseVisualStyleBackColor = false;
             this.btnAddAnimalsSelected.Click += new System.EventHandler(this.btnAddAnimalsSelected_Click);
-            // 
-            // cbxSpecies
-            // 
-            this.cbxSpecies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxSpecies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.cbxSpecies.FormattingEnabled = true;
-            this.cbxSpecies.Location = new System.Drawing.Point(4, 4);
-            this.cbxSpecies.Name = "cbxSpecies";
-            this.cbxSpecies.Size = new System.Drawing.Size(393, 37);
-            this.cbxSpecies.TabIndex = 14;
-            // 
-            // txtAnimalAmount
-            // 
-            this.txtAnimalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txtAnimalAmount.Location = new System.Drawing.Point(4, 55);
-            this.txtAnimalAmount.Name = "txtAnimalAmount";
-            this.txtAnimalAmount.Size = new System.Drawing.Size(100, 35);
-            this.txtAnimalAmount.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 18);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Amount";
-            // 
-            // btnRunSim
-            // 
-            this.btnRunSim.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRunSim.FlatAppearance.BorderSize = 0;
-            this.btnRunSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRunSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnRunSim.Location = new System.Drawing.Point(40, 150);
-            this.btnRunSim.Name = "btnRunSim";
-            this.btnRunSim.Size = new System.Drawing.Size(150, 100);
-            this.btnRunSim.TabIndex = 13;
-            this.btnRunSim.Text = "Run Simulation";
-            this.btnRunSim.UseVisualStyleBackColor = false;
-            this.btnRunSim.Click += new System.EventHandler(this.btnRunSim_Click);
-            this.btnRunSim.MouseLeave += new System.EventHandler(this.btnRunSim_MouseLeave);
-            this.btnRunSim.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRunSim_MouseMove);
             // 
             // Farm_View
             // 
