@@ -104,7 +104,7 @@ namespace FarmManagement
             pblSortLists.Location = new Point(-280, 0);
             pnlCagesSort.Location = new Point(-190, 50);
             pnlUpdateName.Location = new Point(190,0);
-
+            btnDeleteAnimal.Visible = false;
 
             //Farm f = new Farm();
             //Location l = new Location();
@@ -112,6 +112,8 @@ namespace FarmManagement
             //farms = f.selectFarm(ID);
             //locations = l.selectLocation(ID);
             //animals = a.selectAnimals(ID);
+
+            
         }
 
         public void LoadLists()
@@ -696,6 +698,8 @@ namespace FarmManagement
             listsOpen = true;
             lstLocations.SelectedIndex = 1;
             lstLocations.SelectedIndex = 0;
+            lstAnimals.SelectedIndex = 1;
+            lstAnimals.SelectedIndex = 0;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -705,14 +709,16 @@ namespace FarmManagement
                 pnlSortSubMenu.Visible = true;
                 openLists = new Thread(() =>
                 {
+                    openLists.Priority = ThreadPriority.Highest;
                     for (int i = 190; i >= -90; i = i - 3)
                     {
                         moveMenu(i, 0, pblSortLists);
-                        Thread.Sleep(2);
+                        Thread.Sleep(1);
                     }
                     Thread.Sleep(70);
                     openMenu = new Thread(() =>
                     {
+                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlCagesSort);
@@ -733,7 +739,7 @@ namespace FarmManagement
 
         private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            btnDeleteAnimal.Visible = true;
         }
 
         private void lstLocations_SelectedIndexChanged(object sender, EventArgs e)
@@ -755,6 +761,9 @@ namespace FarmManagement
             {
                 lstAnimals.Items.Add(item);
             }
+
+            lstAnimals.SelectedIndex = 1;
+            lstAnimals.SelectedIndex = 0;
         }
 
         private void btnUpdateFarmerName_Click(object sender, EventArgs e)
@@ -793,6 +802,11 @@ namespace FarmManagement
             updating = "";
             lblUpdating.Text = "";
             pnlUpdateName.Visible = false;
+        }
+
+        private void btnDeleteAnimal_Click(object sender, EventArgs e)
+        {
+            btnDeleteAnimal.Visible = false;
         }
     }
 }
