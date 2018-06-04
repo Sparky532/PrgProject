@@ -33,6 +33,7 @@
             this.lstAnimals = new System.Windows.Forms.ListBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRunSim = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCages = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -109,12 +110,11 @@
             this.pnlActions = new System.Windows.Forms.Panel();
             this.lstActions = new System.Windows.Forms.ListBox();
             this.pnlAddAnimals = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddAnimalsSelected = new System.Windows.Forms.Button();
-            this.cbxSpecies = new System.Windows.Forms.ComboBox();
             this.txtAnimalAmount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRunSim = new System.Windows.Forms.Button();
+            this.cbxSpecies = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddAnimalsSelected = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -209,6 +209,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 450);
             this.panel1.TabIndex = 10;
+            // 
+            // btnRunSim
+            // 
+            this.btnRunSim.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRunSim.FlatAppearance.BorderSize = 0;
+            this.btnRunSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnRunSim.Location = new System.Drawing.Point(40, 150);
+            this.btnRunSim.Name = "btnRunSim";
+            this.btnRunSim.Size = new System.Drawing.Size(150, 100);
+            this.btnRunSim.TabIndex = 13;
+            this.btnRunSim.Text = "Run Simulation";
+            this.btnRunSim.UseVisualStyleBackColor = false;
+            this.btnRunSim.Click += new System.EventHandler(this.btnRunSim_Click);
+            this.btnRunSim.MouseLeave += new System.EventHandler(this.btnRunSim_MouseLeave);
+            this.btnRunSim.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRunSim_MouseMove);
             // 
             // btnAdd
             // 
@@ -694,15 +710,17 @@
             // 
             // txtFarmName
             // 
-            this.txtFarmName.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFarmName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFarmName.BackColor = System.Drawing.Color.White;
+            this.txtFarmName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFarmName.Enabled = false;
-            this.txtFarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtFarmName.Location = new System.Drawing.Point(473, 3);
+            this.txtFarmName.Font = new System.Drawing.Font("Franklin Gothic Heavy", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFarmName.ForeColor = System.Drawing.Color.Black;
+            this.txtFarmName.Location = new System.Drawing.Point(699, 20);
             this.txtFarmName.Name = "txtFarmName";
-            this.txtFarmName.Size = new System.Drawing.Size(268, 38);
+            this.txtFarmName.ReadOnly = true;
+            this.txtFarmName.Size = new System.Drawing.Size(268, 49);
             this.txtFarmName.TabIndex = 15;
-            this.txtFarmName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFarmName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pnlUpdateName
             // 
@@ -750,7 +768,6 @@
             // pnlLarge
             // 
             this.pnlLarge.BackColor = System.Drawing.Color.Maroon;
-            this.pnlLarge.Controls.Add(this.pnlMedium);
             this.pnlLarge.Controls.Add(this.pbxLarge15);
             this.pnlLarge.Controls.Add(this.pbxLarge16);
             this.pnlLarge.Controls.Add(this.pbxLarge14);
@@ -768,7 +785,7 @@
             this.pnlLarge.Controls.Add(this.pbxLarge2);
             this.pnlLarge.Controls.Add(this.pbxLarge1);
             this.pnlLarge.Controls.Add(this.pictureBox1);
-            this.pnlLarge.Location = new System.Drawing.Point(473, 8);
+            this.pnlLarge.Location = new System.Drawing.Point(486, 699);
             this.pnlLarge.Name = "pnlLarge";
             this.pnlLarge.Size = new System.Drawing.Size(700, 700);
             this.pnlLarge.TabIndex = 17;
@@ -776,7 +793,6 @@
             // pnlMedium
             // 
             this.pnlMedium.BackColor = System.Drawing.Color.Yellow;
-            this.pnlMedium.Controls.Add(this.pnlSmall);
             this.pnlMedium.Controls.Add(this.pbxMedium9);
             this.pnlMedium.Controls.Add(this.pbxMedium8);
             this.pnlMedium.Controls.Add(this.pbxMedium7);
@@ -786,52 +802,56 @@
             this.pnlMedium.Controls.Add(this.pbxMedium3);
             this.pnlMedium.Controls.Add(this.pbxMedium2);
             this.pnlMedium.Controls.Add(this.pbxMedium1);
-            this.pnlMedium.Location = new System.Drawing.Point(110, 104);
+            this.pnlMedium.Location = new System.Drawing.Point(1332, 16);
             this.pnlMedium.Name = "pnlMedium";
             this.pnlMedium.Size = new System.Drawing.Size(525, 525);
             this.pnlMedium.TabIndex = 16;
             // 
             // pnlSmall
             // 
-            this.pnlSmall.BackColor = System.Drawing.Color.LawnGreen;
+            this.pnlSmall.BackColor = System.Drawing.Color.Transparent;
             this.pnlSmall.Controls.Add(this.pbxSmall4);
             this.pnlSmall.Controls.Add(this.pbxSmall3);
             this.pnlSmall.Controls.Add(this.pbxSmall2);
             this.pnlSmall.Controls.Add(this.pbxSmall1);
-            this.pnlSmall.Location = new System.Drawing.Point(112, 100);
+            this.pnlSmall.Location = new System.Drawing.Point(581, 126);
             this.pnlSmall.Name = "pnlSmall";
-            this.pnlSmall.Size = new System.Drawing.Size(350, 350);
+            this.pnlSmall.Size = new System.Drawing.Size(500, 471);
             this.pnlSmall.TabIndex = 9;
             // 
             // pbxSmall4
             // 
-            this.pbxSmall4.Location = new System.Drawing.Point(172, 175);
+            this.pbxSmall4.Location = new System.Drawing.Point(244, 239);
             this.pbxSmall4.Name = "pbxSmall4";
-            this.pbxSmall4.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall4.Size = new System.Drawing.Size(256, 231);
+            this.pbxSmall4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSmall4.TabIndex = 3;
             this.pbxSmall4.TabStop = false;
             // 
             // pbxSmall3
             // 
-            this.pbxSmall3.Location = new System.Drawing.Point(3, 172);
+            this.pbxSmall3.Location = new System.Drawing.Point(0, 240);
             this.pbxSmall3.Name = "pbxSmall3";
-            this.pbxSmall3.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall3.Size = new System.Drawing.Size(245, 231);
+            this.pbxSmall3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSmall3.TabIndex = 2;
             this.pbxSmall3.TabStop = false;
             // 
             // pbxSmall2
             // 
-            this.pbxSmall2.Location = new System.Drawing.Point(175, 0);
+            this.pbxSmall2.Location = new System.Drawing.Point(244, 0);
             this.pbxSmall2.Name = "pbxSmall2";
-            this.pbxSmall2.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall2.Size = new System.Drawing.Size(256, 241);
+            this.pbxSmall2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSmall2.TabIndex = 1;
             this.pbxSmall2.TabStop = false;
             // 
             // pbxSmall1
             // 
-            this.pbxSmall1.Location = new System.Drawing.Point(3, 3);
+            this.pbxSmall1.Location = new System.Drawing.Point(0, 0);
             this.pbxSmall1.Name = "pbxSmall1";
-            this.pbxSmall1.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall1.Size = new System.Drawing.Size(245, 241);
+            this.pbxSmall1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSmall1.TabIndex = 0;
             this.pbxSmall1.TabStop = false;
             // 
@@ -1091,6 +1111,35 @@
             this.pnlAddAnimals.TabIndex = 17;
             this.pnlAddAnimals.Visible = false;
             // 
+            // txtAnimalAmount
+            // 
+            this.txtAnimalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtAnimalAmount.Location = new System.Drawing.Point(4, 55);
+            this.txtAnimalAmount.Name = "txtAnimalAmount";
+            this.txtAnimalAmount.Size = new System.Drawing.Size(100, 35);
+            this.txtAnimalAmount.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(102, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 18);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Amount";
+            // 
+            // cbxSpecies
+            // 
+            this.cbxSpecies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxSpecies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.cbxSpecies.FormattingEnabled = true;
+            this.cbxSpecies.Location = new System.Drawing.Point(4, 4);
+            this.cbxSpecies.Name = "cbxSpecies";
+            this.cbxSpecies.Size = new System.Drawing.Size(393, 37);
+            this.cbxSpecies.TabIndex = 14;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1114,51 +1163,6 @@
             this.btnAddAnimalsSelected.UseVisualStyleBackColor = false;
             this.btnAddAnimalsSelected.Click += new System.EventHandler(this.btnAddAnimalsSelected_Click);
             // 
-            // cbxSpecies
-            // 
-            this.cbxSpecies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxSpecies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.cbxSpecies.FormattingEnabled = true;
-            this.cbxSpecies.Location = new System.Drawing.Point(4, 4);
-            this.cbxSpecies.Name = "cbxSpecies";
-            this.cbxSpecies.Size = new System.Drawing.Size(393, 37);
-            this.cbxSpecies.TabIndex = 14;
-            // 
-            // txtAnimalAmount
-            // 
-            this.txtAnimalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txtAnimalAmount.Location = new System.Drawing.Point(4, 55);
-            this.txtAnimalAmount.Name = "txtAnimalAmount";
-            this.txtAnimalAmount.Size = new System.Drawing.Size(100, 35);
-            this.txtAnimalAmount.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 18);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Amount";
-            // 
-            // btnRunSim
-            // 
-            this.btnRunSim.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRunSim.FlatAppearance.BorderSize = 0;
-            this.btnRunSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRunSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnRunSim.Location = new System.Drawing.Point(40, 150);
-            this.btnRunSim.Name = "btnRunSim";
-            this.btnRunSim.Size = new System.Drawing.Size(150, 100);
-            this.btnRunSim.TabIndex = 13;
-            this.btnRunSim.Text = "Run Simulation";
-            this.btnRunSim.UseVisualStyleBackColor = false;
-            this.btnRunSim.Click += new System.EventHandler(this.btnRunSim_Click);
-            this.btnRunSim.MouseLeave += new System.EventHandler(this.btnRunSim_MouseLeave);
-            this.btnRunSim.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRunSim_MouseMove);
-            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1166,6 +1170,8 @@
             this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1854, 711);
+            this.Controls.Add(this.pnlMedium);
+            this.Controls.Add(this.pnlSmall);
             this.Controls.Add(this.pnlAddAnimals);
             this.Controls.Add(this.pnlLarge);
             this.Controls.Add(this.pnlUpdateName);
