@@ -89,7 +89,7 @@ namespace Server.BLL
                     //client.Dispose();
                     running = false;
                     client.Disconnect(false);
-                    throw;
+                   // throw;
                 }
                 
 
