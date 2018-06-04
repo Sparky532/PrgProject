@@ -49,6 +49,8 @@
             this.lblCurrentCages = new System.Windows.Forms.Label();
             this.txtMaxCages = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnlStats = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAddNew)).BeginInit();
@@ -60,13 +62,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).BeginInit();
+            this.pnlStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtAnimalAmount
             // 
             this.txtAnimalAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAnimalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.txtAnimalAmount.Location = new System.Drawing.Point(148, 404);
+            this.txtAnimalAmount.Location = new System.Drawing.Point(131, 404);
             this.txtAnimalAmount.Name = "txtAnimalAmount";
             this.txtAnimalAmount.Size = new System.Drawing.Size(70, 45);
             this.txtAnimalAmount.TabIndex = 10;
@@ -79,7 +82,7 @@
             this.cbxAnimals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAnimals.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.cbxAnimals.FormattingEnabled = true;
-            this.cbxAnimals.Location = new System.Drawing.Point(83, 329);
+            this.cbxAnimals.Location = new System.Drawing.Point(67, 341);
             this.cbxAnimals.Name = "cbxAnimals";
             this.cbxAnimals.Size = new System.Drawing.Size(194, 46);
             this.cbxAnimals.TabIndex = 21;
@@ -142,7 +145,7 @@
             this.pbxPrevious.BackColor = System.Drawing.Color.Transparent;
             this.pbxPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxPrevious.Image = global::FarmManagement.Properties.Resources.PreviousN;
-            this.pbxPrevious.Location = new System.Drawing.Point(75, 401);
+            this.pbxPrevious.Location = new System.Drawing.Point(51, 401);
             this.pbxPrevious.Name = "pbxPrevious";
             this.pbxPrevious.Size = new System.Drawing.Size(64, 50);
             this.pbxPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -155,7 +158,7 @@
             this.pbxAddNew.BackColor = System.Drawing.Color.Transparent;
             this.pbxAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxAddNew.Image = global::FarmManagement.Properties.Resources.AddNewSpeciesButton;
-            this.pbxAddNew.Location = new System.Drawing.Point(349, 341);
+            this.pbxAddNew.Location = new System.Drawing.Point(305, 350);
             this.pbxAddNew.Name = "pbxAddNew";
             this.pbxAddNew.Size = new System.Drawing.Size(201, 97);
             this.pbxAddNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -194,7 +197,7 @@
             this.pbxNext.BackColor = System.Drawing.Color.Transparent;
             this.pbxNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNext.Image = global::FarmManagement.Properties.Resources.NextButton;
-            this.pbxNext.Location = new System.Drawing.Point(349, 468);
+            this.pbxNext.Location = new System.Drawing.Point(418, 468);
             this.pbxNext.Name = "pbxNext";
             this.pbxNext.Size = new System.Drawing.Size(178, 80);
             this.pbxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -207,7 +210,7 @@
             this.pbxNext1.BackColor = System.Drawing.Color.Transparent;
             this.pbxNext1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxNext1.Image = global::FarmManagement.Properties.Resources.NextN;
-            this.pbxNext1.Location = new System.Drawing.Point(228, 401);
+            this.pbxNext1.Location = new System.Drawing.Point(197, 401);
             this.pbxNext1.Name = "pbxNext1";
             this.pbxNext1.Size = new System.Drawing.Size(64, 50);
             this.pbxNext1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -261,35 +264,73 @@
             // 
             // txtCurrentCages
             // 
-            this.txtCurrentCages.Location = new System.Drawing.Point(642, 505);
+            this.txtCurrentCages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(209)))), ((int)(((byte)(225)))));
+            this.txtCurrentCages.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCurrentCages.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurrentCages.Location = new System.Drawing.Point(114, 69);
             this.txtCurrentCages.Name = "txtCurrentCages";
-            this.txtCurrentCages.Size = new System.Drawing.Size(100, 20);
+            this.txtCurrentCages.ReadOnly = true;
+            this.txtCurrentCages.Size = new System.Drawing.Size(100, 17);
             this.txtCurrentCages.TabIndex = 39;
+            this.txtCurrentCages.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCurrentCages
             // 
             this.lblCurrentCages.AutoSize = true;
-            this.lblCurrentCages.Location = new System.Drawing.Point(556, 511);
+            this.lblCurrentCages.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentCages.Location = new System.Drawing.Point(7, 69);
             this.lblCurrentCages.Name = "lblCurrentCages";
-            this.lblCurrentCages.Size = new System.Drawing.Size(74, 13);
+            this.lblCurrentCages.Size = new System.Drawing.Size(101, 20);
             this.lblCurrentCages.TabIndex = 40;
             this.lblCurrentCages.Text = "Current Cages";
+            this.lblCurrentCages.Click += new System.EventHandler(this.lblCurrentCages_Click);
             // 
             // txtMaxCages
             // 
-            this.txtMaxCages.Location = new System.Drawing.Point(642, 479);
+            this.txtMaxCages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(209)))), ((int)(((byte)(225)))));
+            this.txtMaxCages.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaxCages.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaxCages.Location = new System.Drawing.Point(114, 32);
             this.txtMaxCages.Name = "txtMaxCages";
-            this.txtMaxCages.Size = new System.Drawing.Size(100, 20);
+            this.txtMaxCages.ReadOnly = true;
+            this.txtMaxCages.Size = new System.Drawing.Size(100, 17);
             this.txtMaxCages.TabIndex = 39;
+            this.txtMaxCages.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(535, 482);
+            this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Max Cages For farm";
+            this.label2.Text = "Max Amount";
+            // 
+            // pnlStats
+            // 
+            this.pnlStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(209)))), ((int)(((byte)(225)))));
+            this.pnlStats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlStats.Controls.Add(this.label1);
+            this.pnlStats.Controls.Add(this.txtMaxCages);
+            this.pnlStats.Controls.Add(this.label2);
+            this.pnlStats.Controls.Add(this.txtCurrentCages);
+            this.pnlStats.Controls.Add(this.lblCurrentCages);
+            this.pnlStats.Location = new System.Drawing.Point(512, 337);
+            this.pnlStats.Name = "pnlStats";
+            this.pnlStats.Size = new System.Drawing.Size(223, 110);
+            this.pnlStats.TabIndex = 41;
+            this.pnlStats.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlStats_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 21);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Cage Statistics";
             // 
             // Animal_Selection
             // 
@@ -297,10 +338,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(754, 568);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblCurrentCages);
-            this.Controls.Add(this.txtMaxCages);
-            this.Controls.Add(this.txtCurrentCages);
+            this.Controls.Add(this.pnlStats);
             this.Controls.Add(this.pbxRemove);
             this.Controls.Add(this.pbxPrevious);
             this.Controls.Add(this.pbxAddNew);
@@ -335,6 +373,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackground)).EndInit();
+            this.pnlStats.ResumeLayout(false);
+            this.pnlStats.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +402,7 @@
         private System.Windows.Forms.Label lblCurrentCages;
         private System.Windows.Forms.TextBox txtMaxCages;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnlStats;
+        private System.Windows.Forms.Label label1;
     }
 }

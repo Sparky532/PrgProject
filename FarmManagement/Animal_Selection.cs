@@ -121,11 +121,11 @@ namespace FarmManagement
                 pbxPanel.Controls.Add(pbxChange);
                 pbxPanel.Controls.Add(pbxRemove);
 
-                pbxPrevious.Location = new Point(75, 100);
-                pbxNext1.Location = new Point(228, 100);
-                pbxAdd.Location = new Point(104, 150);
-                pbxNext.Location = new Point(443, 150);
-                pbxAddNew.Location = new Point(443, 30);
+                pbxPrevious.Location = new Point(50, 100);
+                pbxNext1.Location = new Point(213, 100);
+                pbxAdd.Location = new Point(70, 150);
+                pbxNext.Location = new Point(418, 150);
+                pbxAddNew.Location = new Point(293, 30);
                 pbxChange.Location = new Point(355, 60);
                 pbxRemove.Location = new Point(560, 30);
             }
@@ -151,6 +151,7 @@ namespace FarmManagement
                     pbxChange.Visible = true;
                     pbxRemove.Visible = true;
                     pbxAddNew.Visible = false;
+                    pnlStats.Visible = false;
 
                     //Change the amount of specific species
                     txtSelectedAnimalAmount.Text = ((AnimalsSelected)lstAnimalsSelected.SelectedItem).AnimalAmount.ToString();
@@ -269,7 +270,7 @@ namespace FarmManagement
             pbxChange.Visible = false;
             pbxRemove.Visible = false;
             pbxAddNew.Visible = true;
-
+            pnlStats.Visible = true;
 
             try
             {
@@ -346,6 +347,7 @@ namespace FarmManagement
             pbxChange.Visible = false;
             pbxRemove.Visible = false;
             pbxAddNew.Visible = true;
+            pnlStats.Visible = true;
             try
             {
                 int newAmount = int.Parse(txtSelectedAnimalAmount.Text);
@@ -421,6 +423,7 @@ namespace FarmManagement
             pbxChange.Visible = false;
             pbxRemove.Visible = false;
             pbxAddNew.Visible = true;
+            pnlStats.Visible = true;
         }
 
         #region SortSelectedAnimalsRecursion
@@ -507,6 +510,7 @@ namespace FarmManagement
             pbxChange.Visible = false;
             pbxRemove.Visible = false;
             pbxAddNew.Visible = true;
+            pnlStats.Visible = true;
             AnimalsSelected assd = (AnimalsSelected)lstAnimalsSelected.SelectedItem;
             animalsSelected.Remove(assd);
             //Refresh the List
@@ -564,6 +568,16 @@ namespace FarmManagement
                 MessageBox.Show(ex.Message.ToString());
                 index++;
             }
+        }
+
+        private void lblCurrentCages_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlStats_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
