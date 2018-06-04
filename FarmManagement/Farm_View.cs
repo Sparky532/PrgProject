@@ -17,10 +17,16 @@ namespace FarmManagement
 {
     public partial class Farm_View : Form
     {
+        Dictionary<int, PictureBox> LargeFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> MediumFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> SmallFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> ActiveDictionary = new Dictionary<int, PictureBox>();
+        PictureBox AnimalPbx;
+        PictureBox feedingPbx;
+        PictureBox animal2Pbx;
         List<Farm> farms = new List<Farm>();
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
-        List<Species> species = new List<Species>();
         ClientObject co;
         Thread openLists;
         Thread openMenu;
@@ -28,6 +34,11 @@ namespace FarmManagement
         bool listsOpen = false;
         int ID = 0;
         string updating = "";
+        int CagesNeeded;
+        int numcages;
+
+
+
         public Farm_View(int id)
         {
             InitializeComponent();
@@ -61,13 +72,11 @@ namespace FarmManagement
                 {
                     CheckFarmReceiveMethod(item);
                 }
-                //var species = from animal in animals
-                //              select animal.Species;
-                
                 myEvent.Invoke();
                 received = true;
             }
         }
+        #region ReceiveData
         public void CheckFarmReceiveMethod(Farm farm)
         {
             if (InvokeRequired)
@@ -92,15 +101,60 @@ namespace FarmManagement
             }
             locations.Add(location);
         }
+        #endregion
+
 
         private void Farm_View_Load(object sender, EventArgs e)
         {
+            pnlSmall.Visible = false;
+            pnlMedium.Visible = false;
+            pnlLarge.Visible = false;
+
+
+           
+
             myEvent = LoadLists;
             co = new ClientObject();
             MessageObject message = new MessageObject(ID.BinarySerialization(), 6, 2, 1);
             co.SendData(message);
+            //Thread.Sleep(1000);
+            #region LargeDictionary
+            LargeFarm.Add(1, pbxLarge1);
+            LargeFarm.Add(2, pbxLarge2);
+            LargeFarm.Add(3, pbxLarge3);
+            LargeFarm.Add(4, pbxLarge4);
+            LargeFarm.Add(5, pbxLarge5);
+            LargeFarm.Add(6, pbxLarge6);
+            LargeFarm.Add(7, pbxLarge7);
+            LargeFarm.Add(8, pbxLarge8);
+            LargeFarm.Add(9, pbxLarge9);
+            LargeFarm.Add(10, pbxLarge10);
+            LargeFarm.Add(11, pbxLarge11);
+            LargeFarm.Add(12, pbxLarge12);
+            LargeFarm.Add(13, pbxLarge13);
+            LargeFarm.Add(14, pbxLarge14);
+            LargeFarm.Add(15, pbxLarge15);
+            LargeFarm.Add(16, pbxLarge16);
+            #endregion
+            #region MediumDictionary
+            MediumFarm.Add(1, pbxMedium1);
+            MediumFarm.Add(2, pbxMedium2);
+            MediumFarm.Add(3, pbxMedium3);
+            MediumFarm.Add(4, pbxMedium4);
+            MediumFarm.Add(5, pbxMedium5);
+            MediumFarm.Add(6, pbxMedium6);
+            MediumFarm.Add(7, pbxMedium7);
+            MediumFarm.Add(8, pbxMedium8);
+            MediumFarm.Add(9, pbxMedium9);
+            #endregion
+            #region SmallDictionary
+            SmallFarm.Add(1, pbxSmall1);
+            SmallFarm.Add(2, pbxSmall2);
+            SmallFarm.Add(3, pbxSmall3);
+            SmallFarm.Add(4, pbxSmall4);
 
-
+            #endregion
+           
             pnlMenu.Location = new Point(-190, 0);
             pnlSortSubMenu.Location = new Point(-190, 50);
             pnlSettingsSubMenu.Location = new Point(-190, 50);
@@ -108,23 +162,9 @@ namespace FarmManagement
             pblSortLists.Location = new Point(-280, 0);
             pnlCagesSort.Location = new Point(-190, 50);
             pnlUpdateName.Location = new Point(190,0);
-            btnDeleteAnimal.Visible = false;
+           
+           
 
-            //Farm f = new Farm();
-            //Location l = new Location();
-            //Animal a = new Animal();
-            //farms = f.selectFarm(ID);
-            //locations = l.selectLocation(ID);
-            //animals = a.selectAnimals(ID);
-
-            var species = animals.GroupBy(animal => animal.Species)
-                    .Select(group => group.First().Species)
-                    .ToList();
-
-            foreach (Species item in species)
-            {
-                species.Add(item);
-            }
 
         }
 
@@ -134,6 +174,14 @@ namespace FarmManagement
             txtFarmName.Text = farms[0].FarmName;
             lstLocations.DataSource = locations;
             lstAnimals.DataSource = animals;
+            //while (farms[0].FarmName == "")
+            //{
+                if (farms.Count != 0)
+                {
+
+                  
+                
+            }
         }
 
         private void returnToFarmerSelectionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,11 +199,11 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Lion"
-                             select item;
+                             select item.ToString();
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (Animal item in Selectitem)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -168,12 +216,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Tiger"
-                             select item;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (Animal item in Selectitem)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -185,12 +233,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Cow"
-                             select item;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (Animal item in Selectitem)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -202,12 +250,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Sheep"
-                             select item;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (Animal item in Selectitem)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -219,12 +267,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Horse"
-                             select item;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (Animal item in Selectitem)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -235,12 +283,12 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             ShiftListPanel();
             var SelectAnimals = from item in animals
-                                select item;
+                                select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (Animal item in SelectAnimals)
+            foreach (string item in SelectAnimals)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -254,7 +302,6 @@ namespace FarmManagement
             {
                 openLists = new Thread(() =>
                 {
-                    openLists.Priority = ThreadPriority.Highest;
                     for (int i = -90; i <= 190; i = i + 3)
                     {
                         moveMenu(i, 0, pblSortLists);
@@ -273,7 +320,6 @@ namespace FarmManagement
             pnlMenu.Visible = true;
             openMenu = new Thread(() =>
             {
-                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 0, pnlMenu);
@@ -299,7 +345,6 @@ namespace FarmManagement
             {
                 openMenu = new Thread(() =>
                 {
-                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 0, pnlMenu);
@@ -309,7 +354,6 @@ namespace FarmManagement
                 openMenu.Start();
                 openMenu = new Thread(() =>
                 {
-                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 50, pnlSortSubMenu);
@@ -319,7 +363,6 @@ namespace FarmManagement
                 openMenu.Start();
                 openMenu = new Thread(() =>
                 {
-                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 50, pnlCagesSort);
@@ -329,7 +372,6 @@ namespace FarmManagement
                 openMenu.Start();
                 openMenu = new Thread(() =>
                 {
-                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 50, pnlSettingsSubMenu);
@@ -342,7 +384,6 @@ namespace FarmManagement
             {
                 openLists = new Thread(() =>
                 {
-                    openLists.Priority = ThreadPriority.Highest;
                     for (int i = 190; i >= -90; i = i - 3)
                     {
                         moveMenu(i, 0, pblSortLists);
@@ -350,9 +391,8 @@ namespace FarmManagement
                     }
                     Thread.Sleep(70);
                     openMenu = new Thread(() =>
-                    {
-                        openMenu.Priority = ThreadPriority.Highest;
-                        for (int i = 0; i >= -190; i = i - 3)
+                {
+                    for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 0, pnlMenu);
                         Thread.Sleep(2);
@@ -361,7 +401,6 @@ namespace FarmManagement
                     openMenu.Start();
                     openMenu = new Thread(() =>
                     {
-                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlSortSubMenu);
@@ -371,7 +410,6 @@ namespace FarmManagement
                     openMenu.Start();
                     openMenu = new Thread(() =>
                     {
-                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlSettingsSubMenu);
@@ -381,7 +419,6 @@ namespace FarmManagement
                     openMenu.Start();
                     openMenu = new Thread(() =>
                     {
-                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlCagesSort);
@@ -416,7 +453,6 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             openMenu = new Thread(() =>
             {
-                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 50, pnlSortSubMenu);
@@ -426,7 +462,6 @@ namespace FarmManagement
             openMenu.Start();
             openLists = new Thread(() =>
             {
-                openLists.Priority = ThreadPriority.Highest;
                 for (int i = -280; i <= -90; i = i + 3)
                 {
                     moveMenu(i, 0, pblSortLists);
@@ -443,7 +478,6 @@ namespace FarmManagement
                 pnlSortSubMenu.Visible = true;
                 openLists = new Thread(() =>
                 {
-                    openLists.Priority = ThreadPriority.Highest;
                     for (int i = 190; i >= -90; i = i - 3)
                     {
                         moveMenu(i, 0, pblSortLists);
@@ -452,7 +486,6 @@ namespace FarmManagement
                     Thread.Sleep(70);
                     openMenu = new Thread(() =>
                     {
-                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlSortSubMenu);
@@ -472,7 +505,6 @@ namespace FarmManagement
             {
                 openMenu = new Thread(() =>
                 {
-                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 50, pnlSortSubMenu);
@@ -494,7 +526,6 @@ namespace FarmManagement
             pnlSettingsSubMenu.Visible = true;
             openMenu = new Thread(() =>
             {
-                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 50, pnlSettingsSubMenu);
@@ -509,7 +540,6 @@ namespace FarmManagement
             pnlSettingsSubMenu.Visible = true;
             openMenu = new Thread(() =>
             {
-                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = 0; i >= -190; i = i - 3)
                 {
                     moveMenu(i, 50, pnlSettingsSubMenu);
@@ -707,7 +737,6 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             openMenu = new Thread(() =>
             {
-                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 50, pnlCagesSort);
@@ -719,7 +748,6 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             openLists = new Thread(() =>
             {
-                openLists.Priority = ThreadPriority.Highest;
                 for (int i = -280; i <= 190; i = i + 3)
                 {
                     moveMenu(i, 0, pblSortLists);
@@ -730,8 +758,6 @@ namespace FarmManagement
             listsOpen = true;
             lstLocations.SelectedIndex = 1;
             lstLocations.SelectedIndex = 0;
-            lstAnimals.SelectedIndex = 1;
-            lstAnimals.SelectedIndex = 0;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -741,16 +767,14 @@ namespace FarmManagement
                 pnlSortSubMenu.Visible = true;
                 openLists = new Thread(() =>
                 {
-                    openLists.Priority = ThreadPriority.Highest;
                     for (int i = 190; i >= -90; i = i - 3)
                     {
                         moveMenu(i, 0, pblSortLists);
-                        Thread.Sleep(1);
+                        Thread.Sleep(2);
                     }
                     Thread.Sleep(70);
                     openMenu = new Thread(() =>
                     {
-                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlCagesSort);
@@ -771,7 +795,7 @@ namespace FarmManagement
 
         private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnDeleteAnimal.Visible = true;
+
         }
 
         private void lstLocations_SelectedIndexChanged(object sender, EventArgs e)
@@ -784,18 +808,15 @@ namespace FarmManagement
             int id = ((Location)lstLocations.SelectedItem).ID;
             var Selectitem = from item in animals
                              where item.LocationID == id
-                             select item;
+                             select item.ToString();
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (Animal item in Selectitem)
+            foreach (string item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
-
-            lstAnimals.SelectedIndex = 1;
-            lstAnimals.SelectedIndex = 0;
         }
 
         private void btnUpdateFarmerName_Click(object sender, EventArgs e)
@@ -834,16 +855,6 @@ namespace FarmManagement
             updating = "";
             lblUpdating.Text = "";
             pnlUpdateName.Visible = false;
-        }
-
-        private void btnDeleteAnimal_Click(object sender, EventArgs e)
-        {
-            Animal animal = ((Animal)lstAnimals.SelectedItem);
-            animals.Remove(animal);
-            MessageObject message = new MessageObject(animal.BinarySerialization(), 6,3,3);
-            co.SendData(message);
-            lstAnimals.Items.Remove(animal);
-            btnDeleteAnimal.Visible = false;
         }
     }
 }

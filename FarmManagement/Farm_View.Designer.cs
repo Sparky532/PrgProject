@@ -61,7 +61,6 @@
             this.btnUpdateFarmerName = new System.Windows.Forms.Button();
             this.btnUpdateFarmName = new System.Windows.Forms.Button();
             this.pblSortLists = new System.Windows.Forms.Panel();
-            this.btnDeleteAnimal = new System.Windows.Forms.Button();
             this.txtAnimals = new System.Windows.Forms.TextBox();
             this.pnlCagesSort = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -73,41 +72,38 @@
             this.btnSubmitUpdate = new System.Windows.Forms.Button();
             this.txtUpdateName = new System.Windows.Forms.TextBox();
             this.pnlLarge = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pbxSmall4 = new System.Windows.Forms.PictureBox();
-            this.pbxSmall3 = new System.Windows.Forms.PictureBox();
-            this.pbxSmall2 = new System.Windows.Forms.PictureBox();
-            this.pbxSmall1 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium9 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium8 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium7 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium6 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium5 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium4 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium3 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium2 = new System.Windows.Forms.PictureBox();
-            this.pbxMedium1 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge15 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge16 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge14 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge13 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge11 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge12 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge10 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge1 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge2 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge4 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge3 = new System.Windows.Forms.PictureBox();
             this.pbxLarge7 = new System.Windows.Forms.PictureBox();
             this.pbxLarge8 = new System.Windows.Forms.PictureBox();
             this.pbxLarge6 = new System.Windows.Forms.PictureBox();
             this.pbxLarge5 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge3 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge4 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge2 = new System.Windows.Forms.PictureBox();
-            this.pbxLarge1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lstActions = new System.Windows.Forms.ListBox();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.pbxLarge11 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge12 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge10 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge9 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge15 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge16 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge14 = new System.Windows.Forms.PictureBox();
+            this.pbxLarge13 = new System.Windows.Forms.PictureBox();
+            this.pnlMedium = new System.Windows.Forms.Panel();
+            this.pbxMedium1 = new System.Windows.Forms.PictureBox();
+            this.pbxMedium2 = new System.Windows.Forms.PictureBox();
+            this.pbxMedium3 = new System.Windows.Forms.PictureBox();
+            this.pbxMedium6 = new System.Windows.Forms.PictureBox();
+            this.pbxMedium5 = new System.Windows.Forms.PictureBox();
+            this.pbxMedium4 = new System.Windows.Forms.PictureBox();
+            this.pbxMedium9 = new System.Windows.Forms.PictureBox();
+            this.pbxMedium8 = new System.Windows.Forms.PictureBox();
+            this.pbxMedium7 = new System.Windows.Forms.PictureBox();
+            this.pnlSmall = new System.Windows.Forms.Panel();
+            this.pbxSmall1 = new System.Windows.Forms.PictureBox();
+            this.pbxSmall2 = new System.Windows.Forms.PictureBox();
+            this.pbxSmall3 = new System.Windows.Forms.PictureBox();
+            this.pbxSmall4 = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -115,46 +111,44 @@
             this.pnlCagesSort.SuspendLayout();
             this.pnlUpdateName.SuspendLayout();
             this.pnlLarge.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge13)).BeginInit();
+            this.pnlMedium.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium7)).BeginInit();
+            this.pnlSmall.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall4)).BeginInit();
             this.SuspendLayout();
             // 
             // lstLocations
             // 
             this.lstLocations.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lstLocations.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstLocations.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lstLocations.Font = new System.Drawing.Font("Consolas", 14.25F);
             this.lstLocations.FormattingEnabled = true;
             this.lstLocations.ItemHeight = 22;
@@ -168,7 +162,6 @@
             // 
             this.lstAnimals.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lstAnimals.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstAnimals.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lstAnimals.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstAnimals.FormattingEnabled = true;
             this.lstAnimals.ItemHeight = 22;
@@ -188,7 +181,6 @@
             this.pnlMenu.Controls.Add(this.btnSort);
             this.pnlMenu.Controls.Add(this.btnSettings);
             this.pnlMenu.Controls.Add(this.btnExit);
-            this.pnlMenu.Controls.Add(this.btnAdd);
             this.pnlMenu.Location = new System.Drawing.Point(1392, 8);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(190, 500);
@@ -206,7 +198,6 @@
             // btnCages
             // 
             this.btnCages.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCages.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCages.FlatAppearance.BorderSize = 0;
             this.btnCages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCages.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -233,7 +224,6 @@
             // btnCloseMenu
             // 
             this.btnCloseMenu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCloseMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCloseMenu.FlatAppearance.BorderSize = 0;
             this.btnCloseMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -248,7 +238,6 @@
             // btnSort
             // 
             this.btnSort.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSort.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSort.FlatAppearance.BorderSize = 0;
             this.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -265,7 +254,6 @@
             // btnSettings
             // 
             this.btnSettings.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -282,7 +270,6 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -298,7 +285,6 @@
             // btnOpenMenu
             // 
             this.btnOpenMenu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnOpenMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOpenMenu.FlatAppearance.BorderSize = 0;
             this.btnOpenMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -352,7 +338,6 @@
             // SortLion
             // 
             this.SortLion.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortLion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SortLion.FlatAppearance.BorderSize = 0;
             this.SortLion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SortLion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -369,7 +354,6 @@
             // SortTiger
             // 
             this.SortTiger.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortTiger.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SortTiger.FlatAppearance.BorderSize = 0;
             this.SortTiger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SortTiger.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -386,7 +370,6 @@
             // SortCow
             // 
             this.SortCow.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortCow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SortCow.FlatAppearance.BorderSize = 0;
             this.SortCow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SortCow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -403,7 +386,6 @@
             // btnBackToMenu
             // 
             this.btnBackToMenu.BackColor = System.Drawing.Color.Silver;
-            this.btnBackToMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBackToMenu.FlatAppearance.BorderSize = 0;
             this.btnBackToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -418,7 +400,6 @@
             // SortSheep
             // 
             this.SortSheep.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortSheep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SortSheep.FlatAppearance.BorderSize = 0;
             this.SortSheep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SortSheep.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -435,7 +416,6 @@
             // SortHorse
             // 
             this.SortHorse.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortHorse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SortHorse.FlatAppearance.BorderSize = 0;
             this.SortHorse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SortHorse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -452,7 +432,6 @@
             // SortAll
             // 
             this.SortAll.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SortAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SortAll.FlatAppearance.BorderSize = 0;
             this.SortAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SortAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -520,7 +499,6 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -534,7 +512,6 @@
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -548,7 +525,6 @@
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -562,7 +538,6 @@
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.Silver;
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -577,7 +552,6 @@
             // btnUpdateFarmerName
             // 
             this.btnUpdateFarmerName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdateFarmerName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdateFarmerName.FlatAppearance.BorderSize = 0;
             this.btnUpdateFarmerName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateFarmerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -592,7 +566,6 @@
             // btnUpdateFarmName
             // 
             this.btnUpdateFarmName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdateFarmName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdateFarmName.FlatAppearance.BorderSize = 0;
             this.btnUpdateFarmName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateFarmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -607,7 +580,6 @@
             // pblSortLists
             // 
             this.pblSortLists.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pblSortLists.Controls.Add(this.btnDeleteAnimal);
             this.pblSortLists.Controls.Add(this.txtAnimals);
             this.pblSortLists.Controls.Add(this.lstAnimals);
             this.pblSortLists.Location = new System.Drawing.Point(1302, 532);
@@ -615,21 +587,6 @@
             this.pblSortLists.Size = new System.Drawing.Size(280, 500);
             this.pblSortLists.TabIndex = 13;
             this.pblSortLists.Visible = false;
-            // 
-            // btnDeleteAnimal
-            // 
-            this.btnDeleteAnimal.FlatAppearance.BorderSize = 0;
-            this.btnDeleteAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAnimal.ForeColor = System.Drawing.Color.Red;
-            this.btnDeleteAnimal.Location = new System.Drawing.Point(3, 3);
-            this.btnDeleteAnimal.Name = "btnDeleteAnimal";
-            this.btnDeleteAnimal.Size = new System.Drawing.Size(50, 50);
-            this.btnDeleteAnimal.TabIndex = 12;
-            this.btnDeleteAnimal.Text = "X";
-            this.btnDeleteAnimal.UseVisualStyleBackColor = true;
-            this.btnDeleteAnimal.Visible = false;
-            this.btnDeleteAnimal.Click += new System.EventHandler(this.btnDeleteAnimal_Click);
             // 
             // txtAnimals
             // 
@@ -724,7 +681,6 @@
             // btnSubmitUpdate
             // 
             this.btnSubmitUpdate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSubmitUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmitUpdate.FlatAppearance.BorderSize = 0;
             this.btnSubmitUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -747,7 +703,7 @@
             // pnlLarge
             // 
             this.pnlLarge.BackColor = System.Drawing.Color.Maroon;
-            this.pnlLarge.Controls.Add(this.panel3);
+            this.pnlLarge.Controls.Add(this.pnlMedium);
             this.pnlLarge.Controls.Add(this.pbxLarge15);
             this.pnlLarge.Controls.Add(this.pbxLarge16);
             this.pnlLarge.Controls.Add(this.pbxLarge14);
@@ -765,216 +721,54 @@
             this.pnlLarge.Controls.Add(this.pbxLarge2);
             this.pnlLarge.Controls.Add(this.pbxLarge1);
             this.pnlLarge.Controls.Add(this.pictureBox1);
-            this.pnlLarge.Location = new System.Drawing.Point(476, 0);
+            this.pnlLarge.Location = new System.Drawing.Point(168, 8);
             this.pnlLarge.Name = "pnlLarge";
             this.pnlLarge.Size = new System.Drawing.Size(700, 700);
             this.pnlLarge.TabIndex = 17;
             // 
-            // panel3
+            // pictureBox1
             // 
-            this.panel3.BackColor = System.Drawing.Color.Yellow;
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.pbxMedium9);
-            this.panel3.Controls.Add(this.pbxMedium8);
-            this.panel3.Controls.Add(this.pbxMedium7);
-            this.panel3.Controls.Add(this.pbxMedium6);
-            this.panel3.Controls.Add(this.pbxMedium5);
-            this.panel3.Controls.Add(this.pbxMedium4);
-            this.panel3.Controls.Add(this.pbxMedium3);
-            this.panel3.Controls.Add(this.pbxMedium2);
-            this.panel3.Controls.Add(this.pbxMedium1);
-            this.panel3.Location = new System.Drawing.Point(110, 104);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(525, 525);
-            this.panel3.TabIndex = 16;
+            this.pictureBox1.Location = new System.Drawing.Point(-17, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // panel6
+            // pbxLarge1
             // 
-            this.panel6.BackColor = System.Drawing.Color.LawnGreen;
-            this.panel6.Controls.Add(this.pbxSmall4);
-            this.panel6.Controls.Add(this.pbxSmall3);
-            this.panel6.Controls.Add(this.pbxSmall2);
-            this.panel6.Controls.Add(this.pbxSmall1);
-            this.panel6.Location = new System.Drawing.Point(112, 100);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 350);
-            this.panel6.TabIndex = 9;
+            this.pbxLarge1.Location = new System.Drawing.Point(3, 0);
+            this.pbxLarge1.Name = "pbxLarge1";
+            this.pbxLarge1.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge1.TabIndex = 0;
+            this.pbxLarge1.TabStop = false;
             // 
-            // pbxSmall4
+            // pbxLarge2
             // 
-            this.pbxSmall4.Location = new System.Drawing.Point(172, 175);
-            this.pbxSmall4.Name = "pbxSmall4";
-            this.pbxSmall4.Size = new System.Drawing.Size(175, 175);
-            this.pbxSmall4.TabIndex = 3;
-            this.pbxSmall4.TabStop = false;
+            this.pbxLarge2.Location = new System.Drawing.Point(178, 0);
+            this.pbxLarge2.Name = "pbxLarge2";
+            this.pbxLarge2.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge2.TabIndex = 1;
+            this.pbxLarge2.TabStop = false;
             // 
-            // pbxSmall3
+            // pbxLarge4
             // 
-            this.pbxSmall3.Location = new System.Drawing.Point(3, 172);
-            this.pbxSmall3.Name = "pbxSmall3";
-            this.pbxSmall3.Size = new System.Drawing.Size(175, 175);
-            this.pbxSmall3.TabIndex = 2;
-            this.pbxSmall3.TabStop = false;
+            this.pbxLarge4.Location = new System.Drawing.Point(522, 0);
+            this.pbxLarge4.Name = "pbxLarge4";
+            this.pbxLarge4.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge4.TabIndex = 2;
+            this.pbxLarge4.TabStop = false;
             // 
-            // pbxSmall2
+            // pbxLarge3
             // 
-            this.pbxSmall2.Location = new System.Drawing.Point(175, 0);
-            this.pbxSmall2.Name = "pbxSmall2";
-            this.pbxSmall2.Size = new System.Drawing.Size(175, 175);
-            this.pbxSmall2.TabIndex = 1;
-            this.pbxSmall2.TabStop = false;
-            // 
-            // pbxSmall1
-            // 
-            this.pbxSmall1.Location = new System.Drawing.Point(3, 3);
-            this.pbxSmall1.Name = "pbxSmall1";
-            this.pbxSmall1.Size = new System.Drawing.Size(175, 175);
-            this.pbxSmall1.TabIndex = 0;
-            this.pbxSmall1.TabStop = false;
-            // 
-            // pbxMedium9
-            // 
-            this.pbxMedium9.Location = new System.Drawing.Point(348, 349);
-            this.pbxMedium9.Name = "pbxMedium9";
-            this.pbxMedium9.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium9.TabIndex = 8;
-            this.pbxMedium9.TabStop = false;
-            // 
-            // pbxMedium8
-            // 
-            this.pbxMedium8.Location = new System.Drawing.Point(173, 346);
-            this.pbxMedium8.Name = "pbxMedium8";
-            this.pbxMedium8.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium8.TabIndex = 7;
-            this.pbxMedium8.TabStop = false;
-            // 
-            // pbxMedium7
-            // 
-            this.pbxMedium7.Location = new System.Drawing.Point(1, 349);
-            this.pbxMedium7.Name = "pbxMedium7";
-            this.pbxMedium7.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium7.TabIndex = 6;
-            this.pbxMedium7.TabStop = false;
-            // 
-            // pbxMedium6
-            // 
-            this.pbxMedium6.Location = new System.Drawing.Point(348, 176);
-            this.pbxMedium6.Name = "pbxMedium6";
-            this.pbxMedium6.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium6.TabIndex = 5;
-            this.pbxMedium6.TabStop = false;
-            // 
-            // pbxMedium5
-            // 
-            this.pbxMedium5.Location = new System.Drawing.Point(173, 173);
-            this.pbxMedium5.Name = "pbxMedium5";
-            this.pbxMedium5.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium5.TabIndex = 4;
-            this.pbxMedium5.TabStop = false;
-            // 
-            // pbxMedium4
-            // 
-            this.pbxMedium4.Location = new System.Drawing.Point(1, 176);
-            this.pbxMedium4.Name = "pbxMedium4";
-            this.pbxMedium4.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium4.TabIndex = 3;
-            this.pbxMedium4.TabStop = false;
-            // 
-            // pbxMedium3
-            // 
-            this.pbxMedium3.Location = new System.Drawing.Point(350, 3);
-            this.pbxMedium3.Name = "pbxMedium3";
-            this.pbxMedium3.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium3.TabIndex = 2;
-            this.pbxMedium3.TabStop = false;
-            // 
-            // pbxMedium2
-            // 
-            this.pbxMedium2.Location = new System.Drawing.Point(175, 0);
-            this.pbxMedium2.Name = "pbxMedium2";
-            this.pbxMedium2.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium2.TabIndex = 1;
-            this.pbxMedium2.TabStop = false;
-            // 
-            // pbxMedium1
-            // 
-            this.pbxMedium1.Location = new System.Drawing.Point(3, 3);
-            this.pbxMedium1.Name = "pbxMedium1";
-            this.pbxMedium1.Size = new System.Drawing.Size(175, 175);
-            this.pbxMedium1.TabIndex = 0;
-            this.pbxMedium1.TabStop = false;
-            // 
-            // pbxLarge15
-            // 
-            this.pbxLarge15.Location = new System.Drawing.Point(349, 525);
-            this.pbxLarge15.Name = "pbxLarge15";
-            this.pbxLarge15.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge15.TabIndex = 15;
-            this.pbxLarge15.TabStop = false;
-            // 
-            // pbxLarge16
-            // 
-            this.pbxLarge16.Location = new System.Drawing.Point(522, 525);
-            this.pbxLarge16.Name = "pbxLarge16";
-            this.pbxLarge16.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge16.TabIndex = 14;
-            this.pbxLarge16.TabStop = false;
-            // 
-            // pbxLarge14
-            // 
-            this.pbxLarge14.Location = new System.Drawing.Point(178, 525);
-            this.pbxLarge14.Name = "pbxLarge14";
-            this.pbxLarge14.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge14.TabIndex = 13;
-            this.pbxLarge14.TabStop = false;
-            // 
-            // pbxLarge13
-            // 
-            this.pbxLarge13.Location = new System.Drawing.Point(3, 525);
-            this.pbxLarge13.Name = "pbxLarge13";
-            this.pbxLarge13.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge13.TabIndex = 12;
-            this.pbxLarge13.TabStop = false;
-            // 
-            // pbxLarge11
-            // 
-            this.pbxLarge11.Location = new System.Drawing.Point(349, 350);
-            this.pbxLarge11.Name = "pbxLarge11";
-            this.pbxLarge11.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge11.TabIndex = 11;
-            this.pbxLarge11.TabStop = false;
-            // 
-            // pbxLarge12
-            // 
-            this.pbxLarge12.Location = new System.Drawing.Point(522, 350);
-            this.pbxLarge12.Name = "pbxLarge12";
-            this.pbxLarge12.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge12.TabIndex = 10;
-            this.pbxLarge12.TabStop = false;
-            // 
-            // pbxLarge10
-            // 
-            this.pbxLarge10.Location = new System.Drawing.Point(178, 350);
-            this.pbxLarge10.Name = "pbxLarge10";
-            this.pbxLarge10.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge10.TabIndex = 9;
-            this.pbxLarge10.TabStop = false;
-            // 
-            // pbxLarge9
-            // 
-            this.pbxLarge9.Location = new System.Drawing.Point(3, 350);
-            this.pbxLarge9.Name = "pbxLarge9";
-            this.pbxLarge9.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge9.TabIndex = 8;
-            this.pbxLarge9.TabStop = false;
+            this.pbxLarge3.Location = new System.Drawing.Point(349, 0);
+            this.pbxLarge3.Name = "pbxLarge3";
+            this.pbxLarge3.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge3.TabIndex = 3;
+            this.pbxLarge3.TabStop = false;
             // 
             // pbxLarge7
             // 
@@ -1012,80 +806,211 @@
             this.pbxLarge5.TabIndex = 4;
             this.pbxLarge5.TabStop = false;
             // 
-            // pbxLarge3
+            // pbxLarge11
             // 
-            this.pbxLarge3.Location = new System.Drawing.Point(349, 0);
-            this.pbxLarge3.Name = "pbxLarge3";
-            this.pbxLarge3.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge3.TabIndex = 3;
-            this.pbxLarge3.TabStop = false;
+            this.pbxLarge11.Location = new System.Drawing.Point(349, 350);
+            this.pbxLarge11.Name = "pbxLarge11";
+            this.pbxLarge11.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge11.TabIndex = 11;
+            this.pbxLarge11.TabStop = false;
             // 
-            // pbxLarge4
+            // pbxLarge12
             // 
-            this.pbxLarge4.Location = new System.Drawing.Point(522, 0);
-            this.pbxLarge4.Name = "pbxLarge4";
-            this.pbxLarge4.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge4.TabIndex = 2;
-            this.pbxLarge4.TabStop = false;
+            this.pbxLarge12.Location = new System.Drawing.Point(522, 350);
+            this.pbxLarge12.Name = "pbxLarge12";
+            this.pbxLarge12.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge12.TabIndex = 10;
+            this.pbxLarge12.TabStop = false;
             // 
-            // pbxLarge2
+            // pbxLarge10
             // 
-            this.pbxLarge2.Location = new System.Drawing.Point(178, 0);
-            this.pbxLarge2.Name = "pbxLarge2";
-            this.pbxLarge2.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge2.TabIndex = 1;
-            this.pbxLarge2.TabStop = false;
+            this.pbxLarge10.Location = new System.Drawing.Point(178, 350);
+            this.pbxLarge10.Name = "pbxLarge10";
+            this.pbxLarge10.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge10.TabIndex = 9;
+            this.pbxLarge10.TabStop = false;
             // 
-            // pbxLarge1
+            // pbxLarge9
             // 
-            this.pbxLarge1.Location = new System.Drawing.Point(3, 0);
-            this.pbxLarge1.Name = "pbxLarge1";
-            this.pbxLarge1.Size = new System.Drawing.Size(175, 175);
-            this.pbxLarge1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLarge1.TabIndex = 0;
-            this.pbxLarge1.TabStop = false;
+            this.pbxLarge9.Location = new System.Drawing.Point(3, 350);
+            this.pbxLarge9.Name = "pbxLarge9";
+            this.pbxLarge9.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge9.TabIndex = 8;
+            this.pbxLarge9.TabStop = false;
             // 
-            // pictureBox1
+            // pbxLarge15
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(-17, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbxLarge15.Location = new System.Drawing.Point(349, 525);
+            this.pbxLarge15.Name = "pbxLarge15";
+            this.pbxLarge15.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge15.TabIndex = 15;
+            this.pbxLarge15.TabStop = false;
             // 
-            // panel7
+            // pbxLarge16
             // 
-            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel7.Controls.Add(this.lstActions);
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(470, 717);
-            this.panel7.TabIndex = 18;
+            this.pbxLarge16.Location = new System.Drawing.Point(522, 525);
+            this.pbxLarge16.Name = "pbxLarge16";
+            this.pbxLarge16.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge16.TabIndex = 14;
+            this.pbxLarge16.TabStop = false;
             // 
-            // lstActions
+            // pbxLarge14
             // 
-            this.lstActions.FormattingEnabled = true;
-            this.lstActions.Location = new System.Drawing.Point(0, 0);
-            this.lstActions.Name = "lstActions";
-            this.lstActions.Size = new System.Drawing.Size(467, 563);
-            this.lstActions.TabIndex = 0;
+            this.pbxLarge14.Location = new System.Drawing.Point(178, 525);
+            this.pbxLarge14.Name = "pbxLarge14";
+            this.pbxLarge14.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge14.TabIndex = 13;
+            this.pbxLarge14.TabStop = false;
             // 
-            // btnAdd
+            // pbxLarge13
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnAdd.Location = new System.Drawing.Point(40, 250);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 50);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.pbxLarge13.Location = new System.Drawing.Point(3, 525);
+            this.pbxLarge13.Name = "pbxLarge13";
+            this.pbxLarge13.Size = new System.Drawing.Size(175, 175);
+            this.pbxLarge13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLarge13.TabIndex = 12;
+            this.pbxLarge13.TabStop = false;
+            // 
+            // pnlMedium
+            // 
+            this.pnlMedium.BackColor = System.Drawing.Color.Yellow;
+            this.pnlMedium.Controls.Add(this.pnlSmall);
+            this.pnlMedium.Controls.Add(this.pbxMedium9);
+            this.pnlMedium.Controls.Add(this.pbxMedium8);
+            this.pnlMedium.Controls.Add(this.pbxMedium7);
+            this.pnlMedium.Controls.Add(this.pbxMedium6);
+            this.pnlMedium.Controls.Add(this.pbxMedium5);
+            this.pnlMedium.Controls.Add(this.pbxMedium4);
+            this.pnlMedium.Controls.Add(this.pbxMedium3);
+            this.pnlMedium.Controls.Add(this.pbxMedium2);
+            this.pnlMedium.Controls.Add(this.pbxMedium1);
+            this.pnlMedium.Location = new System.Drawing.Point(110, 104);
+            this.pnlMedium.Name = "pnlMedium";
+            this.pnlMedium.Size = new System.Drawing.Size(525, 525);
+            this.pnlMedium.TabIndex = 16;
+            // 
+            // pbxMedium1
+            // 
+            this.pbxMedium1.Location = new System.Drawing.Point(3, 3);
+            this.pbxMedium1.Name = "pbxMedium1";
+            this.pbxMedium1.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium1.TabIndex = 0;
+            this.pbxMedium1.TabStop = false;
+            // 
+            // pbxMedium2
+            // 
+            this.pbxMedium2.Location = new System.Drawing.Point(175, 0);
+            this.pbxMedium2.Name = "pbxMedium2";
+            this.pbxMedium2.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium2.TabIndex = 1;
+            this.pbxMedium2.TabStop = false;
+            // 
+            // pbxMedium3
+            // 
+            this.pbxMedium3.Location = new System.Drawing.Point(350, 3);
+            this.pbxMedium3.Name = "pbxMedium3";
+            this.pbxMedium3.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium3.TabIndex = 2;
+            this.pbxMedium3.TabStop = false;
+            // 
+            // pbxMedium6
+            // 
+            this.pbxMedium6.Location = new System.Drawing.Point(348, 176);
+            this.pbxMedium6.Name = "pbxMedium6";
+            this.pbxMedium6.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium6.TabIndex = 5;
+            this.pbxMedium6.TabStop = false;
+            // 
+            // pbxMedium5
+            // 
+            this.pbxMedium5.Location = new System.Drawing.Point(173, 173);
+            this.pbxMedium5.Name = "pbxMedium5";
+            this.pbxMedium5.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium5.TabIndex = 4;
+            this.pbxMedium5.TabStop = false;
+            // 
+            // pbxMedium4
+            // 
+            this.pbxMedium4.Location = new System.Drawing.Point(1, 176);
+            this.pbxMedium4.Name = "pbxMedium4";
+            this.pbxMedium4.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium4.TabIndex = 3;
+            this.pbxMedium4.TabStop = false;
+            // 
+            // pbxMedium9
+            // 
+            this.pbxMedium9.Location = new System.Drawing.Point(348, 349);
+            this.pbxMedium9.Name = "pbxMedium9";
+            this.pbxMedium9.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium9.TabIndex = 8;
+            this.pbxMedium9.TabStop = false;
+            // 
+            // pbxMedium8
+            // 
+            this.pbxMedium8.Location = new System.Drawing.Point(173, 346);
+            this.pbxMedium8.Name = "pbxMedium8";
+            this.pbxMedium8.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium8.TabIndex = 7;
+            this.pbxMedium8.TabStop = false;
+            // 
+            // pbxMedium7
+            // 
+            this.pbxMedium7.Location = new System.Drawing.Point(1, 349);
+            this.pbxMedium7.Name = "pbxMedium7";
+            this.pbxMedium7.Size = new System.Drawing.Size(175, 175);
+            this.pbxMedium7.TabIndex = 6;
+            this.pbxMedium7.TabStop = false;
+            // 
+            // pnlSmall
+            // 
+            this.pnlSmall.BackColor = System.Drawing.Color.LawnGreen;
+            this.pnlSmall.Controls.Add(this.pbxSmall4);
+            this.pnlSmall.Controls.Add(this.pbxSmall3);
+            this.pnlSmall.Controls.Add(this.pbxSmall2);
+            this.pnlSmall.Controls.Add(this.pbxSmall1);
+            this.pnlSmall.Location = new System.Drawing.Point(112, 100);
+            this.pnlSmall.Name = "pnlSmall";
+            this.pnlSmall.Size = new System.Drawing.Size(350, 350);
+            this.pnlSmall.TabIndex = 9;
+            // 
+            // pbxSmall1
+            // 
+            this.pbxSmall1.Location = new System.Drawing.Point(3, 3);
+            this.pbxSmall1.Name = "pbxSmall1";
+            this.pbxSmall1.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall1.TabIndex = 0;
+            this.pbxSmall1.TabStop = false;
+            // 
+            // pbxSmall2
+            // 
+            this.pbxSmall2.Location = new System.Drawing.Point(175, 0);
+            this.pbxSmall2.Name = "pbxSmall2";
+            this.pbxSmall2.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall2.TabIndex = 1;
+            this.pbxSmall2.TabStop = false;
+            // 
+            // pbxSmall3
+            // 
+            this.pbxSmall3.Location = new System.Drawing.Point(3, 172);
+            this.pbxSmall3.Name = "pbxSmall3";
+            this.pbxSmall3.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall3.TabIndex = 2;
+            this.pbxSmall3.TabStop = false;
+            // 
+            // pbxSmall4
+            // 
+            this.pbxSmall4.Location = new System.Drawing.Point(172, 175);
+            this.pbxSmall4.Name = "pbxSmall4";
+            this.pbxSmall4.Size = new System.Drawing.Size(175, 175);
+            this.pbxSmall4.TabIndex = 3;
+            this.pbxSmall4.TabStop = false;
             // 
             // Farm_View
             // 
@@ -1093,7 +1018,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1784, 711);
+            this.ClientSize = new System.Drawing.Size(874, 711);
+            this.Controls.Add(this.pnlLarge);
             this.Controls.Add(this.pnlUpdateName);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlCagesSort);
@@ -1103,8 +1029,6 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.btnOpenMenu);
             this.Controls.Add(this.pblSortLists);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.pnlLarge);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Farm_View";
@@ -1125,39 +1049,38 @@
             this.pnlUpdateName.ResumeLayout(false);
             this.pnlUpdateName.PerformLayout();
             this.pnlLarge.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLarge5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLarge13)).EndInit();
+            this.pnlMedium.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMedium7)).EndInit();
+            this.pnlSmall.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmall4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1224,8 +1147,8 @@
         private System.Windows.Forms.PictureBox pbxLarge2;
         private System.Windows.Forms.PictureBox pbxLarge1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnlMedium;
+        private System.Windows.Forms.Panel pnlSmall;
         private System.Windows.Forms.PictureBox pbxSmall4;
         private System.Windows.Forms.PictureBox pbxSmall3;
         private System.Windows.Forms.PictureBox pbxSmall2;
@@ -1239,9 +1162,5 @@
         private System.Windows.Forms.PictureBox pbxMedium3;
         private System.Windows.Forms.PictureBox pbxMedium2;
         private System.Windows.Forms.PictureBox pbxMedium1;
-        private System.Windows.Forms.Button btnDeleteAnimal;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ListBox lstActions;
-        private System.Windows.Forms.Button btnAdd;
     }
 }
