@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BLL
+﻿namespace BLL
 {
     //Animals
-     delegate int AnimalRandom();
+    delegate int AnimalRandom();
 
     delegate string DetermineMateState(int age, string gender);
 

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
 using System.Data;
 using System.Collections;
@@ -126,14 +122,9 @@ namespace BLL
                 catch (FarmerOutOfBoundException)
                 {
                     //There are more than five farmers
-
                 }
-
-
             }
-
             return ListOfFarmers;
-
         }
 
         public int InsertFarmer()
@@ -147,14 +138,11 @@ namespace BLL
         }
 
         public int numOfAnimals()
-        {
-            
+        {            
             ArrayList ParametersToCountAnimals = new ArrayList();
             ParametersToCountAnimals.Add(this.Name);
             ParametersToCountAnimals.Add(this.Gender);
-
             ParametersToCountAnimals.Add(this.Age);
-
             DataHandler dbhandler = new DataHandler();
            return dbhandler.CountNumAnimals(ParametersToCountAnimals);
         }
@@ -165,17 +153,14 @@ namespace BLL
             ArrayList ParametersToGetFarmSize = new ArrayList();
             ParametersToGetFarmSize.Add(this.Name);
             ParametersToGetFarmSize.Add(this.Gender);
-
             ParametersToGetFarmSize.Add(this.Age);
-
             DataHandler dbhandler = new DataHandler();
-           DataTable datatable = dbhandler.GetFarmSize(ParametersToGetFarmSize);
+            DataTable datatable = dbhandler.GetFarmSize(ParametersToGetFarmSize);
 
             foreach (DataRow item in datatable.Rows)
             {
                 farmsize = int.Parse(item["FarmSize"].ToString());
             }
-
             return farmsize;
         }
 
@@ -188,7 +173,6 @@ namespace BLL
             {
                  newestFarmer = new Farmer(int.Parse(item["FarmerId"].ToString()));
             }
-
             return newestFarmer;
         }
 

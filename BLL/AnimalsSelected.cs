@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
 using System.Data;
 
@@ -12,8 +9,7 @@ namespace BLL
     public struct AnimalsSelected
     {
         private int animalAmount;
-        private Species animaal;
-        
+        private Species animaal;        
 
         public Species Animaal
         {

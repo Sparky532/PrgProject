@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
 using System.Collections;
 using System.Data;
@@ -22,7 +19,7 @@ namespace BLL
         private int gateXCoord;
         private int gateYCoord;
         private Cage cage;
-        private Path path;
+       // private Path path;
         private FeedingArea feedArea;
 
 
@@ -41,16 +38,17 @@ namespace BLL
             {
                 this.Cage = new Cage();
             }
-            else if (locationTypeP.Equals("Path"))
-            {
-                this.Path = new Path();
-            }
+            //else if (locationTypeP.Equals("Path"))
+            //{
+            //    this.Path = new Path();
+            //}
             else if (locationTypeP.Equals("Feeding Area"))
             {
                 this.FeedArea = new FeedingArea();
             }
         }
-        public Location(string locationTypeP, int yCoordP, int xCoordP, double sizeP, double xLengthP, double yLengthP, int gateXCoordP, int gateYCoordP, Cage cageP, Path pathP, FeedingArea feedAreaP)
+        //Path pathP,
+        public Location(string locationTypeP, int yCoordP, int xCoordP, double sizeP, double xLengthP, double yLengthP, int gateXCoordP, int gateYCoordP, Cage cageP,  FeedingArea feedAreaP)
         {
             this.GateXCoord = gateXCoordP;
             this.GateYCoord = gateYCoordP;
@@ -62,7 +60,7 @@ namespace BLL
             this.YLength = yLengthP;
             this.FeedArea = feedAreaP;
             this.Cage = cageP;
-            this.Path = pathP;
+            //this.Path = pathP;
         }
         public Location(string locationTypeP, int yCoordP, int xCoordP, double sizeP, double xLengthP, double yLengthP, int gateXCoordP, int gateYCoordP)
         {
@@ -88,11 +86,11 @@ namespace BLL
         }
 
 
-        public Path Path
-        {
-            get { return path; }
-            set { path = value; }
-        }
+        //public Path Path
+        //{
+        //    get { return path; }
+        //    set { path = value; }
+        //}
 
 
         public Cage Cage
@@ -164,11 +162,13 @@ namespace BLL
             if (obj == null) return false;
             Location l = obj as Location;
             if ((Object)l == null) return false;
-            return ((l.Cage.Equals(this.Cage)) && (l.FeedArea.Equals(this.FeedArea)) && (l.GateXCoord == this.GateXCoord) && (l.GateYCoord == this.GateYCoord) && (l.ID == this.ID) && (l.LocationType == this.LocationType) && (l.Path.Equals(this.Path)) && (l.Size == this.Size) && (l.XCoord == this.XCoord) && (l.XLength == this.XLength) && (l.YCoord == this.YCoord) && (l.YLength == this.YLength));
+            //&& (l.Path.Equals(this.Path))
+            return ((l.Cage.Equals(this.Cage)) && (l.FeedArea.Equals(this.FeedArea)) && (l.GateXCoord == this.GateXCoord) && (l.GateYCoord == this.GateYCoord) && (l.ID == this.ID) && (l.LocationType == this.LocationType)  && (l.Size == this.Size) && (l.XCoord == this.XCoord) && (l.XLength == this.XLength) && (l.YCoord == this.YCoord) && (l.YLength == this.YLength));
         }
+        //^ this.Path.GetHashCode()
         public override int GetHashCode()
         {
-            return this.Cage.GetHashCode() ^ this.FeedArea.GetHashCode() ^ this.GateXCoord.GetHashCode() ^ this.GateYCoord.GetHashCode() ^ this.ID.GetHashCode() ^ this.LocationType.GetHashCode() ^ this.Path.GetHashCode() ^ this.Size.GetHashCode() ^ this.XCoord.GetHashCode() ^ this.XLength.GetHashCode() ^ this.YCoord.GetHashCode() ^ this.YLength.GetHashCode();
+            return this.Cage.GetHashCode() ^ this.FeedArea.GetHashCode() ^ this.GateXCoord.GetHashCode() ^ this.GateYCoord.GetHashCode() ^ this.ID.GetHashCode() ^ this.LocationType.GetHashCode()  ^ this.Size.GetHashCode() ^ this.XCoord.GetHashCode() ^ this.XLength.GetHashCode() ^ this.YCoord.GetHashCode() ^ this.YLength.GetHashCode();
         }
         public override string ToString()
         {

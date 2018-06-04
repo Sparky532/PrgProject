@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
 using System.Data;
 
@@ -145,6 +142,7 @@ namespace BLL
         public void AddAnimal(List<AnimalsSelected> ListOfAnimals, int farmerId)
         {
             int farmSize = 0;
+            #region Dictionaries
             Dictionary<int, bool> LargeFarm = new Dictionary<int, bool>();
             Dictionary<int, bool> MediumFarm = new Dictionary<int, bool>();
             Dictionary<int, bool> SmallFarm = new Dictionary<int, bool>();
@@ -184,13 +182,13 @@ namespace BLL
             SmallFarm.Add(4, false);
 
             #endregion
+            #endregion
             Farm farm = new Farm();
             List<Farm> farms = farm.selectFarm(farmerId);
             foreach (Farm item in farms)
             {
                 farmSize = (int)item.Size;
             }
-
             foreach (AnimalsSelected item in ListOfAnimals)
             {
                 double animalsDecimal = ((double)item.AnimalAmount) / 10;
@@ -198,12 +196,8 @@ namespace BLL
                 int timesToRun = numCages * 10;
                 int toAdd = 0;
                 Random rnd = new Random();
-
                 int predatorRandom;
-                int LionCurrentCage = 0;
-                int otherAnimalCurrentCage = 1;
-
-
+                int LionCurrentCage = 0; 
 
                 for (int i = 0; i < timesToRun; i += 10)
                 {
@@ -212,27 +206,26 @@ namespace BLL
                     {
                         LocationType = "Cage",
                         Cage = new Cage(),
-
                         YCoord = 0
                     };
                     l.XCoord = 0;
+
+                    #region PlacingCages
                     switch (farmSize)
                     {
                         case 400:
                             int[] lionCagesSmall = { 1, 3 };
-                             predatorRandom = rnd.Next(-1, 2);
+                            predatorRandom = rnd.Next(-1, 2);
                             if (item.Animaal.AnimalName == "Lion" && i == 0)
                             {
-                                while (predatorRandom == -1|| predatorRandom == 2)
+                                while (predatorRandom == -1 || predatorRandom == 2)
                                 {
                                     predatorRandom = rnd.Next(-1, 2);
-
                                 }
                                 l.XCoord = lionCagesSmall[predatorRandom];
                                 if (SmallFarm[lionCagesSmall[predatorRandom]] == false)
                                 {
                                     SmallFarm[lionCagesSmall[predatorRandom]] = true;
-
                                 }
                                 else
                                 {
@@ -262,13 +255,11 @@ namespace BLL
                                     LionCurrentCage += 1;
                                     l.XCoord = LionCurrentCage;
                                     SmallFarm[LionCurrentCage] = true;
-
                                 }
                                 else
                                 {
                                     l.XCoord = LionCurrentCage;
                                     SmallFarm[LionCurrentCage] = true;
-
                                 }
                             }
 
@@ -290,15 +281,13 @@ namespace BLL
                             break;
                         case 900:
                             int[] lionCagesMedium = { 1, 4, 7 };
-                             predatorRandom = rnd.Next(-1, 3);
+                            predatorRandom = rnd.Next(-1, 3);
                             if (item.Animaal.AnimalName == "Lion" && i == 0)
                             {
                                 while (predatorRandom == -1)
                                 {
                                     predatorRandom = rnd.Next(-1, 3);
-
                                 }
-
                                 l.XCoord = lionCagesMedium[predatorRandom];
                                 if (MediumFarm[lionCagesMedium[predatorRandom]] == false)
                                 {
@@ -319,7 +308,6 @@ namespace BLL
                                     }
                                     MediumFarm[tempKey] = true;
                                 }
-
                                 Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
                                 MediumFarm[l.XCoord + 1] = true;
                                 feeding.InsertLocation();
@@ -333,13 +321,11 @@ namespace BLL
                                     LionCurrentCage += 1;
                                     l.XCoord = LionCurrentCage;
                                     MediumFarm[LionCurrentCage] = true;
-
                                 }
                                 else
                                 {
                                     l.XCoord = LionCurrentCage;
                                     MediumFarm[LionCurrentCage] = true;
-
                                 }
                             }
 
@@ -360,14 +346,13 @@ namespace BLL
                             }
                             break;
                         case 1600:
-                             predatorRandom = rnd.Next(-1, 4);
+                            predatorRandom = rnd.Next(-1, 4);
                             int[] lionCagesLarge = { 1, 5, 9, 13 };
                             if (item.Animaal.AnimalName == "Lion" && i == 0)
                             {
                                 while (predatorRandom == -1)
                                 {
                                     predatorRandom = rnd.Next(-1, 4);
-
                                 }
                                 l.XCoord = lionCagesLarge[predatorRandom];
                                 LargeFarm[lionCagesLarge[predatorRandom]] = true;
@@ -384,13 +369,11 @@ namespace BLL
                                     LionCurrentCage += 1;
                                     l.XCoord = LionCurrentCage;
                                     LargeFarm[LionCurrentCage] = true;
-
                                 }
                                 else
                                 {
                                     l.XCoord = LionCurrentCage;
                                     LargeFarm[LionCurrentCage] = true;
-
                                 }
                             }
 
@@ -413,13 +396,8 @@ namespace BLL
                         default:
                             break;
                     }
-
-
-
-
-
-
-
+                    #endregion
+                    
                     if ((i + 10) >= timesToRun)
                     {
                         int leftOver = 10 - (timesToRun - item.AnimalAmount);
@@ -503,7 +481,6 @@ namespace BLL
             AnimalToAdd.Add(this.LocationID);
             int result = handler.InsertAnimal(AnimalToAdd);
             return result;
-
         }
         public int DeleteAnimal()
         {

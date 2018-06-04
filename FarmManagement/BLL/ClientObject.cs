@@ -1,12 +1,9 @@
 ﻿using BLL;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using HelperLibrary;
 using System.Windows.Forms;
 using System.Collections;
@@ -82,23 +79,18 @@ namespace FarmManagement.BLL
             if (sendingThread != null)
             {
                 sendingThread.Abort();
-
             }
-
             Thread.Sleep(1000);
-
             clientSocket.Shutdown(SocketShutdown.Both);
             clientSocket.Dispose();
             clientSocket.Close();
         }
 
         public void SendData(MessageObject message)
-        {
-            // Thread.Sleep(1000);
+        {           
             if (message != null)
             {
                 clientSocket.Send(message.BinarySerialization());
-
             }
         }
 
@@ -108,9 +100,7 @@ namespace FarmManagement.BLL
             {
                 //Loading Screen
                 case 0:
-                    {
-
-                      //  Farmer_Selection farmerSelection = (Farmer_Selection)Form.ActiveForm;
+                    {                      
                         LoadingScreen loadingscreen = (LoadingScreen)Form.ActiveForm;
                         switch (message.ObjectIdentifier)
                         {
@@ -200,9 +190,7 @@ namespace FarmManagement.BLL
                 //Farm View
                 case 6:
                     {
-
                         Farm_View farmView = (Farm_View)Form.ActiveForm;
-
                         switch (message.ObjectIdentifier)
                         {
                             //Farm

@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using BLL;
 using HelperLibrary;
 using System.Collections;
 
 namespace Server.BLL
 {
-   public class ServerObject
+    public class ServerObject
     {
         bool running = true;
         object semePhore = new object();
@@ -61,21 +58,17 @@ namespace Server.BLL
             while (running)
             {
                 Socket client = serverSocket.Accept();
-                clients.Add(client);
-               // Thread.Sleep(100);
+                clients.Add(client);              
                 receivingThread = new Thread(() => ReceiveData(client));
                 receivingThread.Start();
             }
         }
 
         private void ReceiveData(Socket client)
-        {
-            
-
+        { 
             while (running)
-            {
-               
-                    byte[] buffer = new byte[client.ReceiveBufferSize];
+            {               
+                byte[] buffer = new byte[client.ReceiveBufferSize];
                 client.Receive(buffer);
                 Console.WriteLine("Message Received From " + client.RemoteEndPoint);
                 try
@@ -85,13 +78,11 @@ namespace Server.BLL
 
                 }
                 catch (Exception)
-                {
-                    //client.Dispose();
+                {                    
                     running = false;
                     client.Disconnect(false);
                    // throw;
-                }
-                
+                }              
 
             }
         }
@@ -410,13 +401,6 @@ namespace Server.BLL
                                         //Select
                                         case 1:
                                             {
-                                                //int id = (int)message.Data.BinaryDeserialization();
-                                                //Console.WriteLine(id + "animal");
-                                                //Animal animal = new Animal();
-                                                //List<Animal> animals = animal.selectAnimals(id);
-                                                //message.Data = animals.BinarySerialization();
-                                                //Console.WriteLine(message.ToString() + "");
-                                                //SendData(message, client);
                                                 break;
                                             }
                                         //Insert
@@ -447,14 +431,7 @@ namespace Server.BLL
                                     {
                                         //Select
                                         case 1:
-                                            {
-                                                //int id = (int)message.Data.BinaryDeserialization();
-                                                //Console.WriteLine(id + "location");
-                                                //Location location = new Location();
-                                                //List<Location> locations = location.selectLocation(id);
-                                                //message.Data = locations.BinarySerialization();
-                                                //Console.WriteLine(message.ToString() + "");
-                                                //SendData(message, client);
+                                            {                                              
                                                 break;
                                             }
                                         default:

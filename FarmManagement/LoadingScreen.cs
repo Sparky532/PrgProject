@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using FarmManagement.BLL;
-using System.Threading;
 
 namespace FarmManagement
 {
@@ -19,11 +12,9 @@ namespace FarmManagement
         Farmer farmer = new Farmer();
         Farmer CurrentFarmer = new Farmer();
         ClientObject co = new ClientObject();
-
         int index = 0;
         bool received = false;
         bool FirstRun = false;
-
         delegate void MyDelegate();
         event MyDelegate myEvent;
 
@@ -50,7 +41,6 @@ namespace FarmManagement
                     Task t = Task.Delay(1);
                     t.Wait();                 
                 }             
-
                 myEvent.Invoke();
                 received = true;
             }
@@ -68,29 +58,24 @@ namespace FarmManagement
         {
             InitializeComponent();
             FormStart();
-
         }        
 
         private void FormStart()
-        {
-          
+        {          
             MessageObject message = new MessageObject(new byte[1], 0, 1, 1);
             co = new ClientObject(true, message);
-            myEvent = Complete;
-           
+            myEvent = Complete;           
         }
 
         private void Complete()
         {           
-
             if (pgbLoading.Value >= pgbLoading.Maximum)
             {
                 Farmer_Selection navToFarmerSelection = new Farmer_Selection(AllFarmers);
                 this.Hide();
                 navToFarmerSelection.ShowDialog();
                 this.Close();
-            }
-         
+            }         
         }
     }
 }
