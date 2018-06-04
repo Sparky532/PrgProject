@@ -111,7 +111,7 @@ namespace FarmManagement
             pnlLarge.Visible = false;
 
 
-           
+
 
             myEvent = LoadLists;
             co = new ClientObject();
@@ -154,16 +154,16 @@ namespace FarmManagement
             SmallFarm.Add(4, pbxSmall4);
 
             #endregion
-           
+
             pnlMenu.Location = new Point(-190, 0);
             pnlSortSubMenu.Location = new Point(-190, 50);
             pnlSettingsSubMenu.Location = new Point(-190, 50);
             btnOpenMenu.Location = new Point(0, 0);
             pblSortLists.Location = new Point(-280, 0);
             pnlCagesSort.Location = new Point(-190, 50);
-            pnlUpdateName.Location = new Point(190,0);
-           
-           
+            pnlUpdateName.Location = new Point(190, 0);
+
+
 
 
         }
@@ -176,11 +176,11 @@ namespace FarmManagement
             lstAnimals.DataSource = animals;
             //while (farms[0].FarmName == "")
             //{
-                if (farms.Count != 0)
-                {
+            if (farms.Count != 0)
+            {
 
-                  
-                
+
+
             }
         }
 
@@ -199,11 +199,11 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Lion"
-                             select item.ToString();
+                             select item;
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -216,12 +216,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Tiger"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -233,12 +233,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Cow"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -250,12 +250,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Sheep"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -267,12 +267,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Horse"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -283,12 +283,12 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             ShiftListPanel();
             var SelectAnimals = from item in animals
-                                select item.ToString();
+                                select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in SelectAnimals)
+            foreach (Animal item in SelectAnimals)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -758,6 +758,9 @@ namespace FarmManagement
             listsOpen = true;
             lstLocations.SelectedIndex = 1;
             lstLocations.SelectedIndex = 0;
+            lstAnimals.SelectedIndex = 1;
+            lstAnimals.SelectedIndex = 0;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -795,7 +798,7 @@ namespace FarmManagement
 
         private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            btnDeleteClick.Visible = true;
         }
 
         private void lstLocations_SelectedIndexChanged(object sender, EventArgs e)
@@ -808,15 +811,18 @@ namespace FarmManagement
             int id = ((Location)lstLocations.SelectedItem).ID;
             var Selectitem = from item in animals
                              where item.LocationID == id
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
+            lstAnimals.SelectedIndex = 1;
+            lstAnimals.SelectedIndex = 0;
+
         }
 
         private void btnUpdateFarmerName_Click(object sender, EventArgs e)
@@ -855,6 +861,19 @@ namespace FarmManagement
             updating = "";
             lblUpdating.Text = "";
             pnlUpdateName.Visible = false;
+        }
+
+        private void btnDeleteClick_Click(object sender, EventArgs e)
+        {
+            {
+                Animal animal = ((Animal)lstAnimals.SelectedItem);
+                animals.Remove(animal);
+                MessageObject message = new MessageObject(animal.BinarySerialization(), 6, 3, 3);
+                co.SendData(message);
+                lstAnimals.Items.Remove(animal);
+                btnDeleteClick.Visible = false;
+
+            }
         }
     }
 }
