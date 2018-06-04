@@ -105,6 +105,7 @@
             this.pbxLarge2 = new System.Windows.Forms.PictureBox();
             this.pbxLarge1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -760,7 +761,7 @@
             this.pnlLarge.Controls.Add(this.pbxLarge2);
             this.pnlLarge.Controls.Add(this.pbxLarge1);
             this.pnlLarge.Controls.Add(this.pictureBox1);
-            this.pnlLarge.Location = new System.Drawing.Point(165, 8);
+            this.pnlLarge.Location = new System.Drawing.Point(476, 0);
             this.pnlLarge.Name = "pnlLarge";
             this.pnlLarge.Size = new System.Drawing.Size(700, 700);
             this.pnlLarge.TabIndex = 17;
@@ -1051,13 +1052,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(470, 717);
+            this.panel7.TabIndex = 18;
+            // 
             // Farm_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmManagement.Properties.Resources.BgFarm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(877, 711);
+            this.ClientSize = new System.Drawing.Size(1508, 711);
             this.Controls.Add(this.pnlUpdateName);
             this.Controls.Add(this.txtFarmName);
             this.Controls.Add(this.pnlCagesSort);
@@ -1067,6 +1076,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.btnOpenMenu);
             this.Controls.Add(this.pblSortLists);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.pnlLarge);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1202,5 +1212,6 @@
         private System.Windows.Forms.PictureBox pbxMedium2;
         private System.Windows.Forms.PictureBox pbxMedium1;
         private System.Windows.Forms.Button btnDeleteAnimal;
+        private System.Windows.Forms.Panel panel7;
     }
 }

@@ -242,6 +242,7 @@ namespace FarmManagement
             {
                 openLists = new Thread(() =>
                 {
+                    openLists.Priority = ThreadPriority.Highest;
                     for (int i = -90; i <= 190; i = i + 3)
                     {
                         moveMenu(i, 0, pblSortLists);
@@ -260,6 +261,7 @@ namespace FarmManagement
             pnlMenu.Visible = true;
             openMenu = new Thread(() =>
             {
+                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 0, pnlMenu);
@@ -285,6 +287,7 @@ namespace FarmManagement
             {
                 openMenu = new Thread(() =>
                 {
+                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 0, pnlMenu);
@@ -294,6 +297,7 @@ namespace FarmManagement
                 openMenu.Start();
                 openMenu = new Thread(() =>
                 {
+                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 50, pnlSortSubMenu);
@@ -303,6 +307,7 @@ namespace FarmManagement
                 openMenu.Start();
                 openMenu = new Thread(() =>
                 {
+                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 50, pnlCagesSort);
@@ -312,6 +317,7 @@ namespace FarmManagement
                 openMenu.Start();
                 openMenu = new Thread(() =>
                 {
+                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 50, pnlSettingsSubMenu);
@@ -324,6 +330,7 @@ namespace FarmManagement
             {
                 openLists = new Thread(() =>
                 {
+                    openLists.Priority = ThreadPriority.Highest;
                     for (int i = 190; i >= -90; i = i - 3)
                     {
                         moveMenu(i, 0, pblSortLists);
@@ -331,8 +338,9 @@ namespace FarmManagement
                     }
                     Thread.Sleep(70);
                     openMenu = new Thread(() =>
-                {
-                    for (int i = 0; i >= -190; i = i - 3)
+                    {
+                        openMenu.Priority = ThreadPriority.Highest;
+                        for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 0, pnlMenu);
                         Thread.Sleep(2);
@@ -341,6 +349,7 @@ namespace FarmManagement
                     openMenu.Start();
                     openMenu = new Thread(() =>
                     {
+                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlSortSubMenu);
@@ -350,6 +359,7 @@ namespace FarmManagement
                     openMenu.Start();
                     openMenu = new Thread(() =>
                     {
+                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlSettingsSubMenu);
@@ -359,6 +369,7 @@ namespace FarmManagement
                     openMenu.Start();
                     openMenu = new Thread(() =>
                     {
+                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlCagesSort);
@@ -393,6 +404,7 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             openMenu = new Thread(() =>
             {
+                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 50, pnlSortSubMenu);
@@ -402,6 +414,7 @@ namespace FarmManagement
             openMenu.Start();
             openLists = new Thread(() =>
             {
+                openLists.Priority = ThreadPriority.Highest;
                 for (int i = -280; i <= -90; i = i + 3)
                 {
                     moveMenu(i, 0, pblSortLists);
@@ -418,6 +431,7 @@ namespace FarmManagement
                 pnlSortSubMenu.Visible = true;
                 openLists = new Thread(() =>
                 {
+                    openLists.Priority = ThreadPriority.Highest;
                     for (int i = 190; i >= -90; i = i - 3)
                     {
                         moveMenu(i, 0, pblSortLists);
@@ -426,6 +440,7 @@ namespace FarmManagement
                     Thread.Sleep(70);
                     openMenu = new Thread(() =>
                     {
+                        openMenu.Priority = ThreadPriority.Highest;
                         for (int i = 0; i >= -190; i = i - 3)
                         {
                             moveMenu(i, 50, pnlSortSubMenu);
@@ -445,6 +460,7 @@ namespace FarmManagement
             {
                 openMenu = new Thread(() =>
                 {
+                    openMenu.Priority = ThreadPriority.Highest;
                     for (int i = 0; i >= -190; i = i - 3)
                     {
                         moveMenu(i, 50, pnlSortSubMenu);
@@ -466,6 +482,7 @@ namespace FarmManagement
             pnlSettingsSubMenu.Visible = true;
             openMenu = new Thread(() =>
             {
+                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 50, pnlSettingsSubMenu);
@@ -480,6 +497,7 @@ namespace FarmManagement
             pnlSettingsSubMenu.Visible = true;
             openMenu = new Thread(() =>
             {
+                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = 0; i >= -190; i = i - 3)
                 {
                     moveMenu(i, 50, pnlSettingsSubMenu);
@@ -677,6 +695,7 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             openMenu = new Thread(() =>
             {
+                openMenu.Priority = ThreadPriority.Highest;
                 for (int i = -189; i <= 0; i = i + 3)
                 {
                     moveMenu(i, 50, pnlCagesSort);
@@ -688,6 +707,7 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             openLists = new Thread(() =>
             {
+                openLists.Priority = ThreadPriority.Highest;
                 for (int i = -280; i <= 190; i = i + 3)
                 {
                     moveMenu(i, 0, pblSortLists);
