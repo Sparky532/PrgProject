@@ -802,7 +802,7 @@
             this.pnlMedium.Controls.Add(this.pbxMedium3);
             this.pnlMedium.Controls.Add(this.pbxMedium2);
             this.pnlMedium.Controls.Add(this.pbxMedium1);
-            this.pnlMedium.Location = new System.Drawing.Point(1332, 16);
+            this.pnlMedium.Location = new System.Drawing.Point(771, 112);
             this.pnlMedium.Name = "pnlMedium";
             this.pnlMedium.Size = new System.Drawing.Size(525, 525);
             this.pnlMedium.TabIndex = 16;
