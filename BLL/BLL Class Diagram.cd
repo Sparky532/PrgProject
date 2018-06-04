@@ -3,7 +3,7 @@
   <Class Name="BLL.Animal">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAEAIAABAAAgACEgAAAgIAAAAAAAIAAQAAECABABhg=</HashCode>
+      <HashCode>AEEMAKAADAAAgACEgAAAgIAAAAAAAIAAQAAGCABABhg=</HashCode>
       <FileName>Animal.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -11,21 +11,21 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BLL.AnimalCriteriaNotMeetException">
-    <Position X="9.5" Y="6.75" Width="1.5" />
+    <Position X="11.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CustomException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BLL.NegativeAnimalsException">
-    <Position X="9.5" Y="5.5" Width="1.5" />
+    <Position X="9.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CustomException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BLL.FarmerOutOfBoundException">
-    <Position X="11" Y="6.25" Width="1.5" />
+    <Position X="11.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CustomException.cs</FileName>
@@ -34,14 +34,14 @@
   <Class Name="BLL.Farm">
     <Position X="7.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAgAAEgIAAAAAAAAAAAIAAAAAAAABAAgQ=</HashCode>
+      <HashCode>AEAAAAAAAAAAgAAEgIAAQAAAAAAAAIAAAAAAAABAAgQ=</HashCode>
       <FileName>Farm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BLL.Farmer">
     <Position X="9.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QgAAAAAAAAIAwACEAEAIgAQAAAAGBAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>QgAAAAAAAAIAwAiEgEEIgAQAAAAGBIAAAAAAAAAAAgA=</HashCode>
       <FileName>Farmer.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -51,54 +51,81 @@
   <Class Name="BLL.Location">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAgAAAgAIEgIACAAMAQAAHAMAAhACgRAAAIkQ=</HashCode>
+      <HashCode>AACAAAAAgIAAgAAEgIAAAAMAQAAHAMAAhACgRAAAIkQ=</HashCode>
       <FileName>Location.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="path" />
-      <Field Name="feedArea" />
       <Field Name="cage" />
+      <Field Name="feedArea" />
     </ShowAsAssociation>
   </Class>
-  <Struct Name="BLL.AnimalsSelected">
-    <Position X="5" Y="6.25" Width="1.5" />
+  <Class Name="BLL.AddingAnimal">
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAACAEAAAAAIACAAAAAgAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAACAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAA=</HashCode>
+      <FileName>AddingAnimal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.NoFarmerNameException">
+    <Position X="15.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.NoImageDirectoryException">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.CageAmountExceededException">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.MessageObject">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAEABgABAAAJAAAAAYAABAAAA=</HashCode>
+      <FileName>MessageObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="BLL.AnimalsSelected">
+    <Position X="13.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAACAEAAAAAIACQAAAAgAAAABAAAAAAAA=</HashCode>
       <FileName>AnimalsSelected.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="BLL.Cage">
-    <Position X="3" Y="4" Width="1.5" />
+    <Position X="3" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>Cage.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="BLL.FeedingArea">
-    <Position X="3" Y="2.25" Width="1.5" />
+    <Position X="3" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>FeedingArea.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="BLL.Path">
-    <Position X="3" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
-      <FileName>Path.cs</FileName>
-    </TypeIdentifier>
-  </Struct>
   <Struct Name="BLL.Species">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAIgAAAEAACAAAABAAAAAYAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAIgAAAEAACAAAABAAACAYAAAAAAAgAAAAA=</HashCode>
       <FileName>Species.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="BLL.Style">
     <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAgAgAA=</HashCode>
+      <HashCode>AAABQAAAAAAAAAAAgAAAAAAAAAAAAMAAAAAAAAgAgAA=</HashCode>
       <FileName>Style.cs</FileName>
     </TypeIdentifier>
   </Struct>
