@@ -930,7 +930,7 @@ namespace FarmManagement
                 int amount = int.Parse(txtAnimalAmount.Text);
                 Species specie = (Species)cbxSpecies.SelectedItem;
                 int counter = animals.Where(ani => ani.Species.Equals(specie)).Count();
-                if (counter % 2 == 0)
+                if (counter % 10 == 0)
                 {
                     //No extra cages
                 }
@@ -970,48 +970,53 @@ namespace FarmManagement
                                     animalAmount++;
                                 }
                             }
-                            if (animalAmount<10)
+                            for (int j = 0; j < amount+1; j++)
                             {
-                                //Insert Singular Animal Here
-                                ArrayList AnimalToAdd = new ArrayList();
-                                AnimalToAdd.Add(specie.AnimalName);
+                                if (animalAmount < 10)
+                                {
+                                    //Insert Singular Animal Here
+                                    ArrayList AnimalToAdd = new ArrayList();
+                                    AnimalToAdd.Add(specie.AnimalName);
 
-                                //Generate Gender
-                                Random rnd = new Random();
-                                int genderChance = rnd.Next(0, 7);
-                                string gender = "";
-                                if (genderChance <= 3)
-                                {
-                                    gender = "Female";
-                                    AnimalToAdd.Add(gender);
+                                    //Generate Gender
+                                    Random rnd = new Random();
+                                    int genderChance = rnd.Next(0, 7);
+                                    string gender = "";
+                                    if (genderChance <= 3)
+                                    {
+                                        gender = "Female";
+                                        AnimalToAdd.Add(gender);
+                                    }
+                                    else
+                                    {
+                                        gender = "Male";
+                                        AnimalToAdd.Add(gender);
+                                    }
+                                    int age = rnd.Next(0, 2556);
+                                    string mate = "";
+                                    if ((gender.Equals("Male") || gender.Equals("Female")) && age > 474)
+                                    {
+                                        mate = "Ready";
+                                    }
+                                    else
+                                    {
+                                        mate = "Not Ready";
+                                    }
+                                    AnimalToAdd.Add(mate);
+                                    AnimalToAdd.Add(age);
+                                    double eatTime = 2;
+                                    if (age < 365 || age > 2920)
+                                    {
+                                        eatTime += 1.5;
+                                    }
+                                    AnimalToAdd.Add(eatTime);
+                                    Animal ani = new Animal(gender, mate, eatTime, specie, age, tempLoc[i].ID);
+                                    animals.Add(ani);
+                                    MessageObject message = new MessageObject(ani.BinarySerialization(), 6, 3, 2);
+                                    co.SendData(message);
+                                    animalAmount++;
+                                    amount--;
                                 }
-                                else
-                                {
-                                    gender = "Male";
-                                    AnimalToAdd.Add(gender);
-                                }
-                                int age = rnd.Next(0, 2556);
-                                string mate = "";
-                                if ((gender.Equals("Male") || gender.Equals("Female")) && age > 474)
-                                {
-                                    mate = "Ready";
-                                }
-                                else
-                                {
-                                    mate = "Not Ready";
-                                }
-                                AnimalToAdd.Add(mate);
-                                AnimalToAdd.Add(age);
-                                double eatTime = 0;
-                                if (age < 365 || age > 2920)
-                                {
-                                    eatTime += 1.5;
-                                }
-                                AnimalToAdd.Add(eatTime);
-                                Animal ani = new Animal(gender,mate,eatTime,specie,age,tempLoc[i].ID);
-                                animals.Add(ani);
-                                //SendData
-                                amount--;
                             }
                         }
                     }

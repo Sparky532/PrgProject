@@ -40,6 +40,15 @@ namespace BLL
             this.DaysGrowing = daysGrowingP;
             this.LocationID = locationIDP;
         }
+        public Animal(string genderP, string mateStateP, double eatingTimeP, Species speciesP, int daysGrowingP, int locationIDP)
+        {
+            this.Gender = genderP;
+            this.MateState = mateStateP;
+            this.EatingTime = eatingTimeP;
+            this.Species = speciesP;
+            this.DaysGrowing = daysGrowingP;
+            this.LocationID = locationIDP;
+        }
 
         public Animal(string genderP, string mateStateP, double eatingTimeP, Species speciesP, int daysGrowingP)
         {
