@@ -1041,5 +1041,10 @@ namespace FarmManagement
             btnRunSim.BackColor = Color.WhiteSmoke;
             btnRunSim.ForeColor = Color.Black;
         }
+
+        private void btnRunSim_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

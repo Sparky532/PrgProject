@@ -1085,7 +1085,7 @@
             this.pnlAddAnimals.Controls.Add(this.cbxSpecies);
             this.pnlAddAnimals.Controls.Add(this.label1);
             this.pnlAddAnimals.Controls.Add(this.btnAddAnimalsSelected);
-            this.pnlAddAnimals.Location = new System.Drawing.Point(1182, 341);
+            this.pnlAddAnimals.Location = new System.Drawing.Point(1781, 571);
             this.pnlAddAnimals.Name = "pnlAddAnimals";
             this.pnlAddAnimals.Size = new System.Drawing.Size(400, 100);
             this.pnlAddAnimals.TabIndex = 17;
@@ -1155,6 +1155,7 @@
             this.btnRunSim.TabIndex = 13;
             this.btnRunSim.Text = "Run Simulation";
             this.btnRunSim.UseVisualStyleBackColor = false;
+            this.btnRunSim.Click += new System.EventHandler(this.btnRunSim_Click);
             this.btnRunSim.MouseLeave += new System.EventHandler(this.btnRunSim_MouseLeave);
             this.btnRunSim.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRunSim_MouseMove);
             // 
