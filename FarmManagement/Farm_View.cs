@@ -181,7 +181,10 @@ namespace FarmManagement
             txtFarmName.Text = farms[0].FarmName;
             foreach (Location item in locations)
             {
-                lstLocations.Items.Add(item);
+                if (item.LocationType.Equals("Cage"))
+                {
+                    lstLocations.Items.Add(item);
+                }
             }
             foreach (Animal item in animals)
             {
