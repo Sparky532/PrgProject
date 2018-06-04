@@ -15,6 +15,7 @@ namespace Server.BLL
    public class ServerObject
     {
         bool running = true;
+        object semePhore = new object();
         List<Socket> clients = new List<Socket>();
         IPAddress iPAddress;
         IPEndPoint endpoint;
@@ -69,9 +70,12 @@ namespace Server.BLL
 
         private void ReceiveData(Socket client)
         {
+            
+
             while (running)
             {
-                byte[] buffer = new byte[client.ReceiveBufferSize];
+               
+                    byte[] buffer = new byte[client.ReceiveBufferSize];
                 client.Receive(buffer);
                 Console.WriteLine("Message Received From " + client.RemoteEndPoint);
                 try
@@ -87,6 +91,7 @@ namespace Server.BLL
                     client.Disconnect(false);
                    // throw;
                 }
+                
 
             }
         }
@@ -137,6 +142,7 @@ namespace Server.BLL
                                                 Farmer farmer = new Farmer();
                                                 Farmer[] AllFarmers = farmer.FarmerSelection();
                                                 message.Data = AllFarmers.BinarySerialization();
+
                                                 SendData(message, client);
                                                 break;
                                             }                                      
@@ -264,9 +270,14 @@ namespace Server.BLL
                                         //Insert
                                         case 2:
                                             {
-                                                Animal animal = new Animal();
-                                                List<AnimalsSelected> animalsSelected = (List<AnimalsSelected>)message.Data.BinaryDeserialization();
-                                                animal.AddAnimal(animalsSelected);
+                                                lock (semePhore)
+                                                {
+                                                    Animal animal = new Animal();
+                                                    AddingAnimal animalstoadd = (AddingAnimal)message.Data.BinaryDeserialization();
+                                                    // List<AnimalsSelected> animalsSelected = (List<AnimalsSelected>)message.Data.BinaryDeserialization();
+                                                    animal.AddAnimal(animalstoadd.AnimalstoAdd, animalstoadd.FarmerId);
+                                                }
+                                               
                                                 break;
                                             }
                                         default:
@@ -406,6 +417,22 @@ namespace Server.BLL
                                                 //message.Data = animals.BinarySerialization();
                                                 //Console.WriteLine(message.ToString() + "");
                                                 //SendData(message, client);
+                                                break;
+                                            }
+                                        //Insert
+                                        case 2:
+                                            {
+                                                Animal animal = (Animal)message.Data.BinaryDeserialization();
+                                                Console.WriteLine("INSERT IS STILL COMMENTED OU!!!!!!!!!!!!");
+                                                animal.InsertAnimal();
+                                                break;
+                                            }
+                                        //Delete
+                                        case 3:
+                                            {
+                                                Animal animal = (Animal)message.Data.BinaryDeserialization();
+                                                Console.WriteLine("DELETE IS STILL COMMENTED OU!!!!!!!!!!!!");
+                                                animal.DeleteAnimal();
                                                 break;
                                             }
                                         default:

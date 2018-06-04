@@ -40,6 +40,15 @@ namespace BLL
             this.DaysGrowing = daysGrowingP;
             this.LocationID = locationIDP;
         }
+        public Animal(string genderP, string mateStateP, double eatingTimeP, Species speciesP, int daysGrowingP, int locationIDP)
+        {
+            this.Gender = genderP;
+            this.MateState = mateStateP;
+            this.EatingTime = eatingTimeP;
+            this.Species = speciesP;
+            this.DaysGrowing = daysGrowingP;
+            this.LocationID = locationIDP;
+        }
 
         public Animal(string genderP, string mateStateP, double eatingTimeP, Species speciesP, int daysGrowingP)
         {
@@ -60,32 +69,38 @@ namespace BLL
             set { locationID = value; }
         }
 
-        public Species Species {
+        public Species Species
+        {
             get { return species; }
             set { species = value; }
         }
 
-        public int DaysGrowing {
+        public int DaysGrowing
+        {
             get { return daysGrowing; }
             set { daysGrowing = value; }
         }
 
-        public double EatingTime {
+        public double EatingTime
+        {
             get { return eatingTime; }
             set { eatingTime = value; }
         }
 
-        public string MateState {
+        public string MateState
+        {
             get { return mateState; }
             set { mateState = value; }
         }
 
-        public string Gender {
+        public string Gender
+        {
             get { return gender; }
             set { gender = value; }
         }
 
-        public int ID {
+        public int ID
+        {
             get { return id; }
             set { id = value; }
         }
@@ -108,15 +123,15 @@ namespace BLL
         }
         public override string ToString()
         {
-            return Spaces(this.Species.AnimalName,6) + "" + Spaces(this.MateState,10) + "" + Spaces(this.Gender,7) + "" + Spaces(this.EatingTime+"",3);
+            return Spaces(this.Species.AnimalName, 6) + "" + Spaces(this.MateState, 10) + "" + Spaces(this.Gender, 7) + "" + Spaces(this.EatingTime + "", 3);
         }
 
-        private string Spaces(string word,int totalLength)
+        private string Spaces(string word, int totalLength)
         {
             string toReturn = word;
             for (int i = word.Length; i < totalLength; i++)
             {
-                toReturn =toReturn+" ";
+                toReturn = toReturn + " ";
             }
             return toReturn;
         }
@@ -125,15 +140,71 @@ namespace BLL
     //Methods
     public partial class Animal
     {
-        public void AddAnimal(List<AnimalsSelected> ListOfAnimals)
+
+
+        public void AddAnimal(List<AnimalsSelected> ListOfAnimals, int farmerId)
         {
+            int farmSize = 0;
+            Dictionary<int, bool> LargeFarm = new Dictionary<int, bool>();
+            Dictionary<int, bool> MediumFarm = new Dictionary<int, bool>();
+            Dictionary<int, bool> SmallFarm = new Dictionary<int, bool>();
+            #region LargeDictionary
+            LargeFarm.Add(1, false);
+            LargeFarm.Add(2, false);
+            LargeFarm.Add(3, false);
+            LargeFarm.Add(4, false);
+            LargeFarm.Add(5, false);
+            LargeFarm.Add(6, false);
+            LargeFarm.Add(7, false);
+            LargeFarm.Add(8, false);
+            LargeFarm.Add(9, false);
+            LargeFarm.Add(10, false);
+            LargeFarm.Add(11, false);
+            LargeFarm.Add(12, false);
+            LargeFarm.Add(13, false);
+            LargeFarm.Add(14, false);
+            LargeFarm.Add(15, false);
+            LargeFarm.Add(16, false);
+            #endregion
+            #region MediumDictionary
+            MediumFarm.Add(1, false);
+            MediumFarm.Add(2, false);
+            MediumFarm.Add(3, false);
+            MediumFarm.Add(4, false);
+            MediumFarm.Add(5, false);
+            MediumFarm.Add(6, false);
+            MediumFarm.Add(7, false);
+            MediumFarm.Add(8, false);
+            MediumFarm.Add(9, false);
+            #endregion
+            #region SmallDictionary
+            SmallFarm.Add(1, false);
+            SmallFarm.Add(2, false);
+            SmallFarm.Add(3, false);
+            SmallFarm.Add(4, false);
+
+            #endregion
+            Farm farm = new Farm();
+            List<Farm> farms = farm.selectFarm(farmerId);
+            foreach (Farm item in farms)
+            {
+                farmSize = (int)item.Size;
+            }
+
             foreach (AnimalsSelected item in ListOfAnimals)
             {
                 double animalsDecimal = ((double)item.AnimalAmount) / 10;
                 int numCages = (int)Math.Ceiling(animalsDecimal);
                 int timesToRun = numCages * 10;
                 int toAdd = 0;
-                
+                Random rnd = new Random();
+
+                int predatorRandom;
+                int LionCurrentCage = 0;
+                int otherAnimalCurrentCage = 1;
+
+
+
                 for (int i = 0; i < timesToRun; i += 10)
                 {
                     //Generate Location
@@ -141,9 +212,213 @@ namespace BLL
                     {
                         LocationType = "Cage",
                         Cage = new Cage(),
-                        XCoord = 0,
+
                         YCoord = 0
                     };
+                    l.XCoord = 0;
+                    switch (farmSize)
+                    {
+                        case 400:
+                            int[] lionCagesSmall = { 1, 3 };
+                             predatorRandom = rnd.Next(-1, 2);
+                            if (item.Animaal.AnimalName == "Lion" && i == 0)
+                            {
+                                while (predatorRandom == -1|| predatorRandom == 2)
+                                {
+                                    predatorRandom = rnd.Next(-1, 2);
+
+                                }
+                                l.XCoord = lionCagesSmall[predatorRandom];
+                                if (SmallFarm[lionCagesSmall[predatorRandom]] == false)
+                                {
+                                    SmallFarm[lionCagesSmall[predatorRandom]] = true;
+
+                                }
+                                else
+                                {
+                                    int tempKey = 0;
+                                    bool flag = false;
+                                    foreach (KeyValuePair<int, bool> SmallFarmTester in SmallFarm)
+                                    {
+                                        if (SmallFarmTester.Value == false && flag == false)
+                                        {
+                                            tempKey = SmallFarmTester.Key;
+                                            l.XCoord = SmallFarmTester.Key;
+                                            flag = true;
+                                        }
+                                    }
+                                    SmallFarm[tempKey] = true;
+                                }
+                                Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+                                SmallFarm[l.XCoord + 1] = true;
+                                feeding.InsertLocation();
+                                LionCurrentCage = l.XCoord;
+                            }
+                            else if (item.Animaal.AnimalName == "Lion")
+                            {
+                                LionCurrentCage += 1;
+                                if (SmallFarm[LionCurrentCage] == true)
+                                {
+                                    LionCurrentCage += 1;
+                                    l.XCoord = LionCurrentCage;
+                                    SmallFarm[LionCurrentCage] = true;
+
+                                }
+                                else
+                                {
+                                    l.XCoord = LionCurrentCage;
+                                    SmallFarm[LionCurrentCage] = true;
+
+                                }
+                            }
+
+                            if (item.Animaal.AnimalName != "Lion")
+                            {
+                                int tempKey = 0;
+                                bool flag = false;
+                                foreach (KeyValuePair<int, bool> SmallFarmTester in SmallFarm)
+                                {
+                                    if (SmallFarmTester.Value == false && flag == false)
+                                    {
+                                        tempKey = SmallFarmTester.Key;
+                                        l.XCoord = SmallFarmTester.Key;
+                                        flag = true;
+                                    }
+                                }
+                                SmallFarm[tempKey] = true;
+                            }
+                            break;
+                        case 900:
+                            int[] lionCagesMedium = { 1, 4, 7 };
+                             predatorRandom = rnd.Next(-1, 3);
+                            if (item.Animaal.AnimalName == "Lion" && i == 0)
+                            {
+                                while (predatorRandom == -1)
+                                {
+                                    predatorRandom = rnd.Next(-1, 3);
+
+                                }
+
+                                l.XCoord = lionCagesMedium[predatorRandom];
+                                if (MediumFarm[lionCagesMedium[predatorRandom]] == false)
+                                {
+                                    MediumFarm[lionCagesMedium[predatorRandom]] = true;
+                                }
+                                else
+                                {
+                                    int tempKey = 0;
+                                    bool flag = false;
+                                    foreach (KeyValuePair<int, bool> mediumFarmTester in MediumFarm)
+                                    {
+                                        if (mediumFarmTester.Value == false && flag == false)
+                                        {
+                                            tempKey = mediumFarmTester.Key;
+                                            l.XCoord = mediumFarmTester.Key;
+                                            flag = true;
+                                        }
+                                    }
+                                    MediumFarm[tempKey] = true;
+                                }
+
+                                Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+                                MediumFarm[l.XCoord + 1] = true;
+                                feeding.InsertLocation();
+                                LionCurrentCage = l.XCoord;
+                            }
+                            else if (item.Animaal.AnimalName == "Lion")
+                            {
+                                LionCurrentCage += 1;
+                                if (MediumFarm[LionCurrentCage] == true)
+                                {
+                                    LionCurrentCage += 1;
+                                    l.XCoord = LionCurrentCage;
+                                    MediumFarm[LionCurrentCage] = true;
+
+                                }
+                                else
+                                {
+                                    l.XCoord = LionCurrentCage;
+                                    MediumFarm[LionCurrentCage] = true;
+
+                                }
+                            }
+
+                            if (item.Animaal.AnimalName != "Lion")
+                            {
+                                int tempKey = 0;
+                                bool flag = false;
+                                foreach (KeyValuePair<int, bool> mediumFarmTester in MediumFarm)
+                                {
+                                    if (mediumFarmTester.Value == false && flag == false)
+                                    {
+                                        tempKey = mediumFarmTester.Key;
+                                        l.XCoord = mediumFarmTester.Key;
+                                        flag = true;
+                                    }
+                                }
+                                MediumFarm[tempKey] = true;
+                            }
+                            break;
+                        case 1600:
+                             predatorRandom = rnd.Next(-1, 4);
+                            int[] lionCagesLarge = { 1, 5, 9, 13 };
+                            if (item.Animaal.AnimalName == "Lion" && i == 0)
+                            {
+                                while (predatorRandom == -1)
+                                {
+                                    predatorRandom = rnd.Next(-1, 4);
+
+                                }
+                                l.XCoord = lionCagesLarge[predatorRandom];
+                                LargeFarm[lionCagesLarge[predatorRandom]] = true;
+                                Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+                                LargeFarm[l.XCoord + 1] = true;
+                                feeding.InsertLocation();
+                                LionCurrentCage = l.XCoord;
+                            }
+                            else if (item.Animaal.AnimalName == "Lion")
+                            {
+                                LionCurrentCage += 1;
+                                if (LargeFarm[LionCurrentCage] == true)
+                                {
+                                    LionCurrentCage += 1;
+                                    l.XCoord = LionCurrentCage;
+                                    LargeFarm[LionCurrentCage] = true;
+
+                                }
+                                else
+                                {
+                                    l.XCoord = LionCurrentCage;
+                                    LargeFarm[LionCurrentCage] = true;
+
+                                }
+                            }
+
+                            if (item.Animaal.AnimalName != "Lion")
+                            {
+                                int tempKey = 0;
+                                bool flag = false;
+                                foreach (KeyValuePair<int, bool> largeFarmTester in LargeFarm)
+                                {
+                                    if (largeFarmTester.Value == false && flag == false)
+                                    {
+                                        tempKey = largeFarmTester.Key;
+                                        l.XCoord = largeFarmTester.Key;
+                                        flag = true;
+                                    }
+                                }
+                                LargeFarm[tempKey] = true;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+
+
+
+
+
 
                     if ((i + 10) >= timesToRun)
                     {
@@ -159,13 +434,12 @@ namespace BLL
                     l.XLength = l.YLength = Math.Sqrt(l.Size);
                     l.GateXCoord = 0;
                     l.GateYCoord = 0;
-                    
                     l.InsertLocation();
                     for (int j = i; j < i + toAdd; j++)
                     {
                         ArrayList AnimalToAdd = new ArrayList();
                         AnimalToAdd.Add(item.Animaal.AnimalName);
-                        
+
                         //Generate Gender
                         int genderChance = DetermineGender();
                         string gender = "";
@@ -193,13 +467,13 @@ namespace BLL
 
                         //Give Arraylist to DAL
                         DataHandler handler = new DataHandler();
-                        int result = handler.InsertAnimals(AnimalToAdd);                       
+                        int result = handler.InsertAnimals(AnimalToAdd);
                     }
                 }
             }
         }
 
-       public List<Animal> selectAnimals(int id)
+        public List<Animal> selectAnimals(int id)
         {
             List<Animal> animals = new List<Animal>();
             DataHandler handler = new DataHandler();
@@ -211,9 +485,31 @@ namespace BLL
                 s.Animaltype = item["AnimalType"].ToString();
                 s.Space = double.Parse(item["AnimalSpaceTaken"].ToString());
                 s.Speed = double.Parse(item["AnimalBaseSpeed"].ToString());
-                animals.Add(new Animal(int.Parse(item["AnimalId"].ToString()), item["AnimalGender"].ToString(), item["AnimalMateStae"].ToString(), double.Parse(item["EatingTime"].ToString()),s,int.Parse(item["AnimalAge"].ToString()),int.Parse(item["LocationId"].ToString())));
+                animals.Add(new Animal(int.Parse(item["AnimalId"].ToString()), item["AnimalGender"].ToString(), item["AnimalMateStae"].ToString(), double.Parse(item["EatingTime"].ToString()), s, int.Parse(item["AnimalAge"].ToString()), int.Parse(item["LocationId"].ToString())));
             }
             return animals;
+        }
+
+        public int InsertAnimal()
+        {
+
+            DataHandler handler = new DataHandler();
+            ArrayList AnimalToAdd = new ArrayList();
+            AnimalToAdd.Add(this.Species.AnimalName);
+            AnimalToAdd.Add(this.Gender);
+            AnimalToAdd.Add(this.MateState);
+            AnimalToAdd.Add(this.DaysGrowing);
+            AnimalToAdd.Add(this.EatingTime);
+            AnimalToAdd.Add(this.LocationID);
+            int result = handler.InsertAnimal(AnimalToAdd);
+            return result;
+
+        }
+        public int DeleteAnimal()
+        {
+            DataHandler handler = new DataHandler();
+            int result = handler.DeleteAnimal(this.ID);
+            return result;
         }
     }
 
@@ -226,7 +522,7 @@ namespace BLL
             Random rnd = new Random();
             return rnd.Next(0, 2556);
         };
-        
+
         //Creating a random gender
         AnimalRandom DetermineGender = () =>
         {

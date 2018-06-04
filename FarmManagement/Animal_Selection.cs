@@ -221,7 +221,8 @@ namespace FarmManagement
                             Animal animal = new Animal();
                             // animal.AddAnimal(animalsSelected);
                             MessageObject AnimalsToAdd = new MessageObject();
-                            AnimalsToAdd.Data = animalsSelected.BinarySerialization();
+                            AddingAnimal addingAnimal = new AddingAnimal(animalsSelected, ID);
+                            AnimalsToAdd.Data = addingAnimal.BinarySerialization();
                             AnimalsToAdd.FormIdentifier = 4;
                             AnimalsToAdd.ObjectIdentifier = 3;
                             AnimalsToAdd.ActionIdentifier = 2;

@@ -17,9 +17,17 @@ namespace FarmManagement
 {
     public partial class Farm_View : Form
     {
+        Dictionary<int, PictureBox> LargeFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> MediumFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> SmallFarm = new Dictionary<int, PictureBox>();
+        Dictionary<int, PictureBox> ActiveDictionary = new Dictionary<int, PictureBox>();
+        PictureBox AnimalPbx;
+        PictureBox feedingPbx;
+        PictureBox animal2Pbx;
         List<Farm> farms = new List<Farm>();
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
+        List<Species> species = new List<Species>();
         ClientObject co;
         Thread openLists;
         Thread openMenu;
@@ -27,6 +35,11 @@ namespace FarmManagement
         bool listsOpen = false;
         int ID = 0;
         string updating = "";
+        int CagesNeeded;
+        int numcages;
+
+
+
         public Farm_View(int id)
         {
             InitializeComponent();
@@ -64,6 +77,7 @@ namespace FarmManagement
                 received = true;
             }
         }
+        #region ReceiveData
         public void CheckFarmReceiveMethod(Farm farm)
         {
             if (InvokeRequired)
@@ -88,14 +102,59 @@ namespace FarmManagement
             }
             locations.Add(location);
         }
+        #endregion
+
 
         private void Farm_View_Load(object sender, EventArgs e)
         {
+            pnlSmall.Visible = false;
+            pnlMedium.Visible = false;
+            pnlLarge.Visible = false;
+
+
+
+
             myEvent = LoadLists;
             co = new ClientObject();
             MessageObject message = new MessageObject(ID.BinarySerialization(), 6, 2, 1);
             co.SendData(message);
+            //Thread.Sleep(1000);
+            #region LargeDictionary
+            LargeFarm.Add(1, pbxLarge1);
+            LargeFarm.Add(2, pbxLarge2);
+            LargeFarm.Add(3, pbxLarge3);
+            LargeFarm.Add(4, pbxLarge4);
+            LargeFarm.Add(5, pbxLarge5);
+            LargeFarm.Add(6, pbxLarge6);
+            LargeFarm.Add(7, pbxLarge7);
+            LargeFarm.Add(8, pbxLarge8);
+            LargeFarm.Add(9, pbxLarge9);
+            LargeFarm.Add(10, pbxLarge10);
+            LargeFarm.Add(11, pbxLarge11);
+            LargeFarm.Add(12, pbxLarge12);
+            LargeFarm.Add(13, pbxLarge13);
+            LargeFarm.Add(14, pbxLarge14);
+            LargeFarm.Add(15, pbxLarge15);
+            LargeFarm.Add(16, pbxLarge16);
+            #endregion
+            #region MediumDictionary
+            MediumFarm.Add(1, pbxMedium1);
+            MediumFarm.Add(2, pbxMedium2);
+            MediumFarm.Add(3, pbxMedium3);
+            MediumFarm.Add(4, pbxMedium4);
+            MediumFarm.Add(5, pbxMedium5);
+            MediumFarm.Add(6, pbxMedium6);
+            MediumFarm.Add(7, pbxMedium7);
+            MediumFarm.Add(8, pbxMedium8);
+            MediumFarm.Add(9, pbxMedium9);
+            #endregion
+            #region SmallDictionary
+            SmallFarm.Add(1, pbxSmall1);
+            SmallFarm.Add(2, pbxSmall2);
+            SmallFarm.Add(3, pbxSmall3);
+            SmallFarm.Add(4, pbxSmall4);
 
+            #endregion
 
             pnlMenu.Location = new Point(-190, 0);
             pnlSortSubMenu.Location = new Point(-190, 50);
@@ -103,13 +162,12 @@ namespace FarmManagement
             btnOpenMenu.Location = new Point(0, 0);
             pblSortLists.Location = new Point(-280, 0);
             pnlCagesSort.Location = new Point(-190, 50);
-            pnlUpdateName.Location = new Point(190,0);
-            //Farm f = new Farm();
-            //Location l = new Location();
-            //Animal a = new Animal();
-            //farms = f.selectFarm(ID);
-            //locations = l.selectLocation(ID);
-            //animals = a.selectAnimals(ID);
+            pnlUpdateName.Location = new Point(190, 0);
+            pnlAddAnimals.Location = new Point(190, 0);
+            btnDeleteClick.Visible = false;
+
+
+
         }
 
         public void LoadLists()
@@ -118,6 +176,24 @@ namespace FarmManagement
             txtFarmName.Text = farms[0].FarmName;
             lstLocations.DataSource = locations;
             lstAnimals.DataSource = animals;
+
+            var speciess = animals.GroupBy(animal => animal.Species)
+                                .Select(group => group.First().Species)
+                                .ToList();
+
+            foreach (Species item in speciess)
+            {
+                species.Add(item);
+            }
+
+            //while (farms[0].FarmName == "")
+            //{
+            if (farms.Count != 0)
+            {
+
+
+
+            }
         }
 
         private void returnToFarmerSelectionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,18 +204,18 @@ namespace FarmManagement
             form.ShowDialog();
             this.Close();
         }
-
+        #region AnimalClickInMenu
         private void lionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pblSortLists.Visible = true;
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Lion"
-                             select item.ToString();
+                             select item;
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -152,12 +228,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Tiger"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -169,12 +245,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Cow"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -186,12 +262,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Sheep"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -203,12 +279,12 @@ namespace FarmManagement
             ShiftListPanel();
             var Selectitem = from item in animals
                              where item.Species.ToString() == "Horse"
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
@@ -219,16 +295,18 @@ namespace FarmManagement
             pblSortLists.Visible = true;
             ShiftListPanel();
             var SelectAnimals = from item in animals
-                                select item.ToString();
+                                select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in SelectAnimals)
+            foreach (Animal item in SelectAnimals)
             {
                 lstAnimals.Items.Add(item);
             }
         }
+
+        #endregion
 
         private void ShiftListPanel()
         {
@@ -313,6 +391,15 @@ namespace FarmManagement
                     }
                 });
                 openMenu.Start();
+                openLists = new Thread(() =>
+                {
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
             }
             else
             {
@@ -369,6 +456,8 @@ namespace FarmManagement
                 openLists.Start();
             }
             listsOpen = false;
+            pnlUpdateName.Visible = false;
+            pnlAddAnimals.Visible = false;
             //System.Timers.Timer timer = new System.Timers.Timer(700);
             //timer.Start();
             //timer.Elapsed += Timer_Elapsed;
@@ -382,6 +471,7 @@ namespace FarmManagement
 
         private void btnSort_Click(object sender, EventArgs e)
         {
+            pnlAddAnimals.Visible = false;
             lstLocations.Visible = false;
             pnlSortSubMenu.Visible = true;
             pblSortLists.Visible = true;
@@ -446,6 +536,15 @@ namespace FarmManagement
                     }
                 });
                 openMenu.Start();
+                openLists = new Thread(() =>
+                {
+                    for (int i = -90; i >= -280; i = i - 3)
+                    {
+                        moveMenu(i, 0, pblSortLists);
+                        Thread.Sleep(2);
+                    }
+                });
+                openLists.Start();
             }
             listsOpen = false;
         }
@@ -457,6 +556,7 @@ namespace FarmManagement
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            pnlAddAnimals.Visible = false;
             pnlSettingsSubMenu.Visible = true;
             openMenu = new Thread(() =>
             {
@@ -481,13 +581,14 @@ namespace FarmManagement
                 }
             });
             openMenu.Start();
+            pnlUpdateName.Visible = false;
         }
 
         private void SortLion_MouseMove(object sender, MouseEventArgs e)
         {
             SortLion.BackColor = Color.FromArgb(125, 204, 242);
         }
-
+        #region MenuColors
         private void SortLion_MouseLeave(object sender, EventArgs e)
         {
             SortLion.BackColor = Color.WhiteSmoke;
@@ -574,6 +675,8 @@ namespace FarmManagement
             btnExit.BackColor = Color.WhiteSmoke;
             btnExit.ForeColor = Color.Black;
         }
+        #endregion
+
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -664,6 +767,7 @@ namespace FarmManagement
 
         private void btnCages_Click(object sender, EventArgs e)
         {
+            pnlAddAnimals.Visible = false;
             lstLocations.Visible = true;
             pnlCagesSort.Visible = true;
             pblSortLists.Visible = true;
@@ -690,6 +794,9 @@ namespace FarmManagement
             listsOpen = true;
             lstLocations.SelectedIndex = 1;
             lstLocations.SelectedIndex = 0;
+            lstAnimals.SelectedIndex = 1;
+            lstAnimals.SelectedIndex = 0;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -727,7 +834,7 @@ namespace FarmManagement
 
         private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            btnDeleteClick.Visible = true;
         }
 
         private void lstLocations_SelectedIndexChanged(object sender, EventArgs e)
@@ -740,15 +847,18 @@ namespace FarmManagement
             int id = ((Location)lstLocations.SelectedItem).ID;
             var Selectitem = from item in animals
                              where item.LocationID == id
-                             select item.ToString();
+                             select item;
 
             lstAnimals.DataSource = null;
             lstAnimals.Items.Clear();
 
-            foreach (string item in Selectitem)
+            foreach (Animal item in Selectitem)
             {
                 lstAnimals.Items.Add(item);
             }
+            lstAnimals.SelectedIndex = 1;
+            lstAnimals.SelectedIndex = 0;
+
         }
 
         private void btnUpdateFarmerName_Click(object sender, EventArgs e)
@@ -787,6 +897,154 @@ namespace FarmManagement
             updating = "";
             lblUpdating.Text = "";
             pnlUpdateName.Visible = false;
+        }
+
+        private void btnDeleteClick_Click(object sender, EventArgs e)
+        {
+            {
+                Animal animal = ((Animal)lstAnimals.SelectedItem);
+                MessageBox.Show(animal.ID+"");
+                animals.Remove(animal);
+                MessageObject message = new MessageObject(animal.BinarySerialization(), 6, 3, 3);
+                co.SendData(message);
+                lstAnimals.Items.Remove(animal);
+                btnDeleteClick.Visible = false;
+
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            pnlAddAnimals.Visible = true;
+            cbxSpecies.DataSource = species;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            pnlAddAnimals.Visible = false;
+        }
+
+        private void btnAddAnimalsSelected_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int amount = int.Parse(txtAnimalAmount.Text);
+                Species specie = (Species)cbxSpecies.SelectedItem;
+                int counter = animals.Where(ani => ani.Species.Equals(specie)).Count();
+                if (counter % 10 == 0)
+                {
+                    //No extra cages
+                }
+                else
+                {
+                    //Cages available
+                    var cageIds = from loc in locations
+                                  where !(loc.Cage.Equals(null))
+                                  select loc;
+                    List<Location> tempLoc = new List<Location>();
+                    foreach (Location item in cageIds)
+                    {
+                        tempLoc.Add(item);
+                    }
+                    int counters = 0;
+                    Species[] space = new Species[tempLoc.Count];
+                    foreach (Location item in tempLoc)
+                    {
+                        foreach (Animal item2 in animals)
+                        {
+                            if (item.ID == item2.LocationID)
+                            {
+                                space[counters] = item2.Species;
+                            }
+                        }
+                        counters++;
+                    }
+                    for (int i = 0; i < space.Length; i++)
+                    {
+                        if (space[i].Equals(specie))
+                        {
+                            int animalAmount = 0;
+                            foreach (Animal item in animals)
+                            {
+                                if (item.LocationID==tempLoc[i].ID)
+                                {
+                                    animalAmount++;
+                                }
+                            }
+                            for (int j = 0; j < amount+1; j++)
+                            {
+                                if (animalAmount < 10)
+                                {
+                                    //Insert Singular Animal Here
+                                    ArrayList AnimalToAdd = new ArrayList();
+                                    AnimalToAdd.Add(specie.AnimalName);
+
+                                    //Generate Gender
+                                    Random rnd = new Random();
+                                    int genderChance = rnd.Next(0, 7);
+                                    string gender = "";
+                                    if (genderChance <= 3)
+                                    {
+                                        gender = "Female";
+                                        AnimalToAdd.Add(gender);
+                                    }
+                                    else
+                                    {
+                                        gender = "Male";
+                                        AnimalToAdd.Add(gender);
+                                    }
+                                    int age = rnd.Next(0, 2556);
+                                    string mate = "";
+                                    if ((gender.Equals("Male") || gender.Equals("Female")) && age > 474)
+                                    {
+                                        mate = "Ready";
+                                    }
+                                    else
+                                    {
+                                        mate = "Not Ready";
+                                    }
+                                    AnimalToAdd.Add(mate);
+                                    AnimalToAdd.Add(age);
+                                    double eatTime = 2;
+                                    if (age < 365 || age > 2920)
+                                    {
+                                        eatTime += 1.5;
+                                    }
+                                    AnimalToAdd.Add(eatTime);
+                                    Animal ani = new Animal(gender, mate, eatTime, specie, age, tempLoc[i].ID);
+                                    animals.Add(ani);
+                                    MessageObject message = new MessageObject(ani.BinarySerialization(), 6, 3, 2);
+                                    co.SendData(message);
+                                    animalAmount++;
+                                    amount--;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please enter a number for Amount!");
+            }
+            
+        }
+
+        private void btnRunSim_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnRunSim.BackColor = Color.FromArgb(97, 255, 116);
+            btnRunSim.ForeColor = Color.White;
+        }
+
+        private void btnRunSim_MouseLeave(object sender, EventArgs e)
+        {
+            btnRunSim.BackColor = Color.WhiteSmoke;
+            btnRunSim.ForeColor = Color.Black;
+        }
+
+        private void btnRunSim_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

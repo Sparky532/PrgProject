@@ -469,5 +469,64 @@ namespace DAL
             }
             return success;
         }
+
+        public int InsertAnimal(ArrayList animalToWrite)
+        {
+            int success;
+            string storedProcedureName = "InsertAnimal";
+
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                command = new SqlCommand(storedProcedureName, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@animalName", animalToWrite[0]));
+                command.Parameters.Add(new SqlParameter("@animalGender", animalToWrite[1]));
+                command.Parameters.Add(new SqlParameter("@animalMateState", animalToWrite[2]));
+                command.Parameters.Add(new SqlParameter("@animalAge", animalToWrite[3]));
+                command.Parameters.Add(new SqlParameter("@eatingTime", animalToWrite[4]));
+                command.Parameters.Add(new SqlParameter("@locationId", animalToWrite[5]));
+                success = command.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return success;
+        }
+
+        public int DeleteAnimal(int animalID)
+        {
+            int success;
+            string storedProcedureName = "DeleteAnimal";
+
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                command = new SqlCommand(storedProcedureName, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@animalID", animalID));
+                success = command.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return success;
+        }
     }
 }

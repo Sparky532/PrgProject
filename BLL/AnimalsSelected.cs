@@ -13,6 +13,7 @@ namespace BLL
     {
         private int animalAmount;
         private Species animaal;
+        
 
         public Species Animaal
         {
