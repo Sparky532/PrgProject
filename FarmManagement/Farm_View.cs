@@ -291,7 +291,7 @@ namespace FarmManagement
                 case 400:
                     foreach (KeyValuePair<int, Species> item in speciesIdentifier)
                     {
-                        pnlSmall.Location = new Point(555, 212);
+                        pnlSmall.Location = new Point(581, 126);
                         pnlSmall.Visible = true;
                         string directoryPath = Environment.CurrentDirectory;
                         directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
@@ -309,7 +309,7 @@ namespace FarmManagement
                 case 900:
                     foreach (KeyValuePair<int, Species> item in speciesIdentifier)
                     {
-                        pnlMedium.Location = new Point(555, 212);
+                        pnlMedium.Location = new Point(581, 96);
                         pnlMedium.Visible = true;
                         string directoryPath = Environment.CurrentDirectory;
                         directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
@@ -327,7 +327,7 @@ namespace FarmManagement
                 case 1600:
                     foreach (KeyValuePair<int, Species> item in speciesIdentifier)
                     {
-                        pnlLarge.Location = new Point(555, 212);
+                        pnlLarge.Location = new Point(519, 50);
                         pnlLarge.Visible = true;
                         string directoryPath = Environment.CurrentDirectory;
                         directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
@@ -1077,6 +1077,7 @@ namespace FarmManagement
         private void btnExit_Click(object sender, EventArgs e)
         {
             pnlAddAnimals.Visible = false;
+            Environment.Exit(0);
         }
 
         private void btnAddAnimalsSelected_Click(object sender, EventArgs e)
