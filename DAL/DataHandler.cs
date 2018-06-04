@@ -488,6 +488,7 @@ namespace DAL
                 command.Parameters.Add(new SqlParameter("@animalMateState", animalToWrite[2]));
                 command.Parameters.Add(new SqlParameter("@animalAge", animalToWrite[3]));
                 command.Parameters.Add(new SqlParameter("@eatingTime", animalToWrite[4]));
+                command.Parameters.Add(new SqlParameter("@locationId", animalToWrite[5]));
                 success = command.ExecuteNonQuery();
             }
             catch (SqlException)

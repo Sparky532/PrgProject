@@ -245,6 +245,39 @@ namespace DAL
         END
          * 
          * 
+         * 
+         * 
+         * 
+         * use dbFarmManagement
+
+go 
+CREATE PROCEDURE DeleteAnimal
+(@animalID int)
+AS
+BEGIN
+DELETE FROM Animal
+WHERE AnimalId=@animalID
+END
+
+
+
+
+
+        CREATE PROCEDURE InsertAnimal
+         @animalName varchar(15),
+        @animalGender varchar(6),
+        @animalMateState varchar(10),
+        @animalAge int,
+        @eatingTime decimal (18,2),
+		@locationId int
+        AS
+        BEGIN
+
+        INSERT INTO Animal
+        (AnimalName, AnimalGender, AnimalMateStae, AnimalAge, EatingTime, LocationId)
+
+        VALUES(@animalName, @animalGender, @animalMateState, @animalAge, @eatingTime, @locationId)
+        END
          * */
 
 

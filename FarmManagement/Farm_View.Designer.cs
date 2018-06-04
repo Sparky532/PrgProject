@@ -114,6 +114,7 @@
             this.cbxSpecies = new System.Windows.Forms.ComboBox();
             this.txtAnimalAmount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRunSim = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlSortSubMenu.SuspendLayout();
             this.pnlSettingsSubMenu.SuspendLayout();
@@ -187,6 +188,7 @@
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlMenu.Controls.Add(this.panel1);
+            this.pnlMenu.Controls.Add(this.btnRunSim);
             this.pnlMenu.Controls.Add(this.btnAdd);
             this.pnlMenu.Controls.Add(this.btnCages);
             this.pnlMenu.Controls.Add(this.textBox1);
@@ -1068,10 +1070,11 @@
             // 
             // lstActions
             // 
+            this.lstActions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstActions.FormattingEnabled = true;
-            this.lstActions.Location = new System.Drawing.Point(3, 3);
+            this.lstActions.Location = new System.Drawing.Point(3, 55);
             this.lstActions.Name = "lstActions";
-            this.lstActions.Size = new System.Drawing.Size(464, 693);
+            this.lstActions.Size = new System.Drawing.Size(464, 637);
             this.lstActions.TabIndex = 0;
             // 
             // pnlAddAnimals
@@ -1082,7 +1085,7 @@
             this.pnlAddAnimals.Controls.Add(this.cbxSpecies);
             this.pnlAddAnimals.Controls.Add(this.label1);
             this.pnlAddAnimals.Controls.Add(this.btnAddAnimalsSelected);
-            this.pnlAddAnimals.Location = new System.Drawing.Point(1778, 571);
+            this.pnlAddAnimals.Location = new System.Drawing.Point(1182, 341);
             this.pnlAddAnimals.Name = "pnlAddAnimals";
             this.pnlAddAnimals.Size = new System.Drawing.Size(400, 100);
             this.pnlAddAnimals.TabIndex = 17;
@@ -1139,6 +1142,21 @@
             this.label2.Size = new System.Drawing.Size(59, 18);
             this.label2.TabIndex = 16;
             this.label2.Text = "Amount";
+            // 
+            // btnRunSim
+            // 
+            this.btnRunSim.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRunSim.FlatAppearance.BorderSize = 0;
+            this.btnRunSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnRunSim.Location = new System.Drawing.Point(40, 150);
+            this.btnRunSim.Name = "btnRunSim";
+            this.btnRunSim.Size = new System.Drawing.Size(150, 100);
+            this.btnRunSim.TabIndex = 13;
+            this.btnRunSim.Text = "Run Simulation";
+            this.btnRunSim.UseVisualStyleBackColor = false;
+            this.btnRunSim.MouseLeave += new System.EventHandler(this.btnRunSim_MouseLeave);
+            this.btnRunSim.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRunSim_MouseMove);
             // 
             // Farm_View
             // 
@@ -1305,5 +1323,6 @@
         private System.Windows.Forms.Button btnAddAnimalsSelected;
         private System.Windows.Forms.TextBox txtAnimalAmount;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRunSim;
     }
 }

@@ -903,6 +903,7 @@ namespace FarmManagement
         {
             {
                 Animal animal = ((Animal)lstAnimals.SelectedItem);
+                MessageBox.Show(animal.ID+"");
                 animals.Remove(animal);
                 MessageObject message = new MessageObject(animal.BinarySerialization(), 6, 3, 3);
                 co.SendData(message);
@@ -1027,6 +1028,18 @@ namespace FarmManagement
                 MessageBox.Show("Please enter a number for Amount!");
             }
             
+        }
+
+        private void btnRunSim_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnRunSim.BackColor = Color.FromArgb(97, 255, 116);
+            btnRunSim.ForeColor = Color.White;
+        }
+
+        private void btnRunSim_MouseLeave(object sender, EventArgs e)
+        {
+            btnRunSim.BackColor = Color.WhiteSmoke;
+            btnRunSim.ForeColor = Color.Black;
         }
     }
 }

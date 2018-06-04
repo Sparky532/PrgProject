@@ -424,7 +424,7 @@ namespace Server.BLL
                                             {
                                                 Animal animal = (Animal)message.Data.BinaryDeserialization();
                                                 Console.WriteLine("INSERT IS STILL COMMENTED OU!!!!!!!!!!!!");
-                                                //animal.InsertAnimal();
+                                                animal.InsertAnimal();
                                                 break;
                                             }
                                         //Delete
@@ -432,7 +432,7 @@ namespace Server.BLL
                                             {
                                                 Animal animal = (Animal)message.Data.BinaryDeserialization();
                                                 Console.WriteLine("DELETE IS STILL COMMENTED OU!!!!!!!!!!!!");
-                                                //animal.DeleteAnimal();
+                                                animal.DeleteAnimal();
                                                 break;
                                             }
                                         default:

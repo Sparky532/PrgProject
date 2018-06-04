@@ -489,6 +489,28 @@ namespace BLL
             }
             return animals;
         }
+
+        public int InsertAnimal()
+        {
+
+            DataHandler handler = new DataHandler();
+            ArrayList AnimalToAdd = new ArrayList();
+            AnimalToAdd.Add(this.Species.AnimalName);
+            AnimalToAdd.Add(this.Gender);
+            AnimalToAdd.Add(this.MateState);
+            AnimalToAdd.Add(this.DaysGrowing);
+            AnimalToAdd.Add(this.EatingTime);
+            AnimalToAdd.Add(this.LocationID);
+            int result = handler.InsertAnimal(AnimalToAdd);
+            return result;
+
+        }
+        public int DeleteAnimal()
+        {
+            DataHandler handler = new DataHandler();
+            int result = handler.DeleteAnimal(this.ID);
+            return result;
+        }
     }
 
     //Delegates
