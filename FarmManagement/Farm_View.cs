@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using System.Threading;
@@ -20,10 +17,7 @@ namespace FarmManagement
         Dictionary<int, PictureBox> LargeFarm = new Dictionary<int, PictureBox>();
         Dictionary<int, PictureBox> MediumFarm = new Dictionary<int, PictureBox>();
         Dictionary<int, PictureBox> SmallFarm = new Dictionary<int, PictureBox>();
-        Dictionary<int, PictureBox> ActiveDictionary = new Dictionary<int, PictureBox>();
-        PictureBox AnimalPbx;
-        PictureBox feedingPbx;
-        PictureBox animal2Pbx;
+        Dictionary<int, PictureBox> ActiveDictionary = new Dictionary<int, PictureBox>();        
         List<Farm> farms = new List<Farm>();
         List<Location> locations = new List<Location>();
         List<Animal> animals = new List<Animal>();
@@ -38,18 +32,14 @@ namespace FarmManagement
         bool listsOpen = false;
         bool simRunning=false;
         int ID = 0;
-        string updating = "";
-        int CagesNeeded;
+        string updating = "";       
         int numcages;
         int FarmSize;
-
-
 
         public Farm_View(int id)
         {
             InitializeComponent();
             this.ID = id;
-
         }
         public Farm_View()
         {
@@ -115,10 +105,6 @@ namespace FarmManagement
             pnlSmall.Visible = false;
             pnlMedium.Visible = false;
             pnlLarge.Visible = false;
-
-
-
-
             myEvent = LoadLists;
             co = new ClientObject();
             MessageObject message = new MessageObject(ID.BinarySerialization(), 6, 2, 1);
@@ -170,14 +156,10 @@ namespace FarmManagement
             pnlUpdateName.Location = new Point(190, 0);
             pnlAddAnimals.Location = new Point(190, 0);
             btnDeleteClick.Visible = false;
-
-
-
         }
 
         public void LoadLists()
         {
-            //lstFarm.DataSource = farms;
             txtFarmName.Text = farms[0].FarmName;
             foreach (Location item in locations)
             {
@@ -211,19 +193,19 @@ namespace FarmManagement
                         switch (newMessage)
                         {
                             case 1:
-                                addToActionsLst("Animal " + animal.ID + " jumped off a cliff that does not exist");
+                                addToActionsLst(animal.Species.AnimalName + " " + animal.ID + " jumped off a cliff that does not exist");
                                 break;
                             case 2:
-                                addToActionsLst("Animal " + animal.ID + " was eaten by a sheep that turned Canabal");
+                                addToActionsLst(animal.Species.AnimalName + " " + animal.ID + " was eaten by a sheep that turned Canabal");
                                 break;
                             case 3:
-                                addToActionsLst("Animal " + animal.ID + " was shot by a hunter");
+                                addToActionsLst(animal.Species.AnimalName + " " + animal.ID + " was shot by a hunter");
                                 break;
                             case 4:
-                                addToActionsLst("Animal " + animal.ID + " died due to natural causes");
+                                addToActionsLst(animal.Species.AnimalName + " " + animal.ID + " died due to natural causes");
                                 break;
                             case 5:
-                                addToActionsLst("Animal " + animal.ID + " was abducted by aliens");
+                                addToActionsLst(animal.Species.AnimalName + " " + animal.ID + " was abducted by aliens");
                                 break;
                             default:
                                 addToActionsLst("An animal has died");
@@ -243,11 +225,10 @@ namespace FarmManagement
             {
                 species.Add(item);
             }
+            int FeedingCoords = 0;
             List<Location> CageLocaitons = new List<Location>();
             Dictionary<int, Species> speciesIdentifier = new Dictionary<int, Species>();
-            //var specieswiithCage = from itemspecieswithcage in animals
-            //                       where itemspecieswithcage.LocationID = 
-
+            
             foreach (Farm item in farms)
             {
                 FarmSize = (int)item.Size;
@@ -263,97 +244,111 @@ namespace FarmManagement
 
             foreach (Location item in locations)
             {
-                //    var specieswiithCage = from itemspecieswithcage in locations
-                //                           where itemspecieswithcage.ID == item.LocationID
-                //                           select itemspecieswithcage.XCoord;
-                var species = animals.Where(n => n.LocationID == item.ID).Select(n => n.Species);
-            }
-
-            foreach (Species itemspecies in species)
-            {
-                foreach (Location item in CageLocaitons)
+                if (item.LocationType.Equals("Feeding"))
                 {
-
-                    if (!speciesIdentifier.ContainsKey(item.YCoord))
+                    FeedingCoords = item.YCoord;
+                }
+            }
+            Dictionary<int, string> locat = new Dictionary<int, string>();
+            bool added = false;
+            
+            var animalLocaitonId = from itemlocationId in animals
+                                   select itemlocationId;
+            foreach (Location item in CageLocaitons)
+            {
+                added = false;
+                foreach (Animal locatonId in animalLocaitonId)
+                {
+                    if (locatonId.LocationID == item.ID)
                     {
-                        if (!speciesIdentifier.ContainsValue(itemspecies))
+                        if (added == false && item.LocationType != "Feeding" && !locat.ContainsKey(item.YCoord))
                         {
-                            speciesIdentifier.Add(item.YCoord, itemspecies);
-
+                            locat.Add(item.YCoord,locatonId.Species.AnimalName);
                         }
-                        
-
                     }
                 }
+
             }
             switch (FarmSize)
             {
                 case 400:
-                    foreach (KeyValuePair<int, Species> item in speciesIdentifier)
+                    string directoryPath = Environment.CurrentDirectory;
+
+                    directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
+                    SmallFarm[FeedingCoords].Image = Image.FromFile(directoryPath + "FeedingCage.png");
+                    
+
+                    foreach (KeyValuePair<int, string> item in locat)
                     {
                         pnlSmall.Location = new Point(581, 126);
                         pnlSmall.Visible = true;
-                        string directoryPath = Environment.CurrentDirectory;
-                        directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
-                        if (item.Value.AnimalName == "Sheep" || item.Value.AnimalName == "Tiger" || item.Value.AnimalName == "Horse")
+                        if (item.Value == "Sheep" || item.Value == "Tiger" || item.Value == "Horse")
                         {
-                            SmallFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "Cage.png");
+                            SmallFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value + "Cage.png");
 
                         }
                         else
                         {
-                            SmallFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "sCage.png");
+                            try
+                            {
+                                SmallFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value + "sCage.png");
+
+                            }
+                            catch (Exception)
+                            {
+                                SmallFarm[item.Key].Image = Image.FromFile(directoryPath + "GenericCage.png");
+                                
+                            }
                         }
                     }
                     break;
                 case 900:
-                    foreach (KeyValuePair<int, Species> item in speciesIdentifier)
+                    directoryPath = Environment.CurrentDirectory;
+                    directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
+                    MediumFarm[FeedingCoords].Image = Image.FromFile(directoryPath + "FeedingCage.png");
+
+                    foreach (KeyValuePair<int, string> item in locat)
                     {
                         pnlMedium.Location = new Point(581, 96);
                         pnlMedium.Visible = true;
-                        string directoryPath = Environment.CurrentDirectory;
-                        directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
-                        if (item.Value.AnimalName == "Sheep" || item.Value.AnimalName == "Tiger" || item.Value.AnimalName == "Horse")
+                     
+                        if (item.Value == "Sheep" || item.Value == "Tiger" || item.Value == "Horse")
                         {
-                            MediumFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "Cage.png");
+                            MediumFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value + "Cage.png");
 
                         }
                         else
                         {
-                            MediumFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "sCage.png");
+                            MediumFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value + "sCage.png");
                         }
                     }
                     break;
                 case 1600:
-                    foreach (KeyValuePair<int, Species> item in speciesIdentifier)
+                    directoryPath = Environment.CurrentDirectory;
+                    directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
+
+                    LargeFarm[FeedingCoords].Image = Image.FromFile(directoryPath + "FeedingCage.png");
+
+                    foreach (KeyValuePair<int, string> item in locat)
                     {
                         pnlLarge.Location = new Point(519, 50);
                         pnlLarge.Visible = true;
-                        string directoryPath = Environment.CurrentDirectory;
-                        directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources\\";
-                        if (item.Value.AnimalName == "Sheep" || item.Value.AnimalName == "Tiger" || item.Value.AnimalName == "Horse")
+                        if (item.Value == "Sheep" || item.Value == "Tiger" || item.Value == "Horse")
                         {
-                            LargeFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "Cage.png");
+                            LargeFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value + "Cage.png");
 
                         }
                         else
                         {
-                            LargeFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value.AnimalName + "sCage.png");
+                            LargeFarm[item.Key].Image = Image.FromFile(directoryPath + item.Value + "sCage.png");
                         }
                     }
                     break;
                 default:
                     break;
-            }
-            
-          //  MessageBox.Show("");
-            //while (farms[0].FarmName == "")
-            //{
+            }          
             if (farms.Count != 0)
             {
-
-
-
             }
         }
 
@@ -624,12 +619,6 @@ namespace FarmManagement
             //timer.Elapsed += Timer_Elapsed;
         }
 
-        //private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        //{
-        //    openLists.Abort();
-        //    openMenu.Abort();
-        //}
-
         private void btnSort_Click(object sender, EventArgs e)
         {
             pnlAddAnimals.Visible = false;
@@ -710,10 +699,7 @@ namespace FarmManagement
             listsOpen = false;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
@@ -839,92 +825,6 @@ namespace FarmManagement
         #endregion
 
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Farm_View_Click(object sender, EventArgs e)
-        {
-            //btnOpenMenu.Visible = true;
-            //pnlMenu.Visible = true;
-            //if (!listsOpen)
-            //{
-            //    Thread openMenu = new Thread(() =>
-            //    {
-            //        for (int i = 0; i >= -190; i = i - 3)
-            //        {
-            //            moveMenu(i, 0, pnlMenu);
-            //            Thread.Sleep(2);
-            //        }
-            //    });
-            //    openMenu.Start();
-            //    openMenu = new Thread(() =>
-            //    {
-            //        for (int i = 0; i >= -190; i = i - 3)
-            //        {
-            //            moveMenu(i, 50, pnlSortSubMenu);
-            //            Thread.Sleep(2);
-            //        }
-            //    });
-            //    openMenu.Start();
-            //    openMenu = new Thread(() =>
-            //    {
-            //        for (int i = 0; i >= -190; i = i - 3)
-            //        {
-            //            moveMenu(i, 50, pnlSettingsSubMenu);
-            //            Thread.Sleep(2);
-            //        }
-            //    });
-            //    openMenu.Start();
-            //}
-            //else
-            //{
-            //    Thread openLists = new Thread(() =>
-            //    {
-            //        for (int i = 190; i >= -90; i = i - 3)
-            //        {
-            //            moveMenu(i, 0, pblSortLists);
-            //            Thread.Sleep(2);
-            //        }
-            //        Thread.Sleep(70);
-            //        Thread openMenu = new Thread(() =>
-            //        {
-            //            for (int i = 0; i >= -190; i = i - 3)
-            //            {
-            //                moveMenu(i, 0, pnlMenu);
-            //                Thread.Sleep(2);
-            //            }
-            //        });
-            //        openMenu.Start();
-            //        openMenu = new Thread(() =>
-            //        {
-            //            for (int i = 0; i >= -190; i = i - 3)
-            //            {
-            //                moveMenu(i, 50, pnlSortSubMenu);
-            //                Thread.Sleep(2);
-            //            }
-            //        });
-            //        openMenu.Start();
-            //        openMenu = new Thread(() =>
-            //        {
-            //            for (int i = 0; i >= -190; i = i - 3)
-            //            {
-            //                moveMenu(i, 50, pnlSettingsSubMenu);
-            //                Thread.Sleep(2);
-            //            }
-            //        });
-            //        openMenu.Start();
-            //        for (int i = -90; i >= -280; i = i - 3)
-            //        {
-            //            moveMenu(i, 0, pblSortLists);
-            //            Thread.Sleep(2);
-            //        }
-            //    });
-            //    openLists.Start();
-            //}
-            //listsOpen = false;
-        }
 
         private void btnCages_Click(object sender, EventArgs e)
         {
@@ -992,11 +892,6 @@ namespace FarmManagement
         private void lstAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnDeleteClick.Visible = true;
-        }
-
-        private void lstLocations_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void lstLocations_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -1310,7 +1205,7 @@ namespace FarmManagement
                     addToActionsLst("...All gates Closed");
 
                     simRunning = false;
-                    btnRunSim.Text = "Run Simulation";
+                   // btnRunSim.Text = "Run Simulation";
                 });
                 runSim.Start();
             }

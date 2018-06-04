@@ -1187,7 +1187,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farm_View";
             this.Load += new System.EventHandler(this.Farm_View_Load);
-            this.Click += new System.EventHandler(this.Farm_View_Click);
+          //  this.Click += new System.EventHandler(this.Farm_View_Click);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.pnlSortSubMenu.ResumeLayout(false);

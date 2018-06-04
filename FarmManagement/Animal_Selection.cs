@@ -31,6 +31,7 @@ namespace FarmManagement
         int CagesNeeded = 0;
         int numcages;
         int maxCages;
+        System.Windows.Forms.Timer timerNew = new System.Windows.Forms.Timer();
 
         delegate void MyDelegate();
         event MyDelegate myEvent;
@@ -169,19 +170,19 @@ namespace FarmManagement
         {
             if (cbxAnimals.Text != "")
             {
-                Species speciesSelected = (Species)cbxAnimals.SelectedItem;               
-                string directoryPath = Environment.CurrentDirectory;              
+                Species speciesSelected = (Species)cbxAnimals.SelectedItem;
+                string directoryPath = Environment.CurrentDirectory;
                 try
                 {
-                    directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources";                   
+                    directoryPath = directoryPath.Substring(0, directoryPath.Length - 10) + "\\Resources";
                     pbxAnimal.Image = Image.FromFile(directoryPath + @"\" + speciesSelected.AnimalName + ".png");
                 }
                 catch (Exception)
                 {
                     directoryPath = Environment.CurrentDirectory;
-                    pbxAnimal.Image = Image.FromFile(directoryPath + @"\" + speciesSelected.AnimalName + ".png");                    
+                    pbxAnimal.Image = Image.FromFile(directoryPath + @"\" + speciesSelected.AnimalName + ".png");
                 }
-               
+
             }
             else
             {
@@ -227,17 +228,26 @@ namespace FarmManagement
                             AnimalsToAdd.ObjectIdentifier = 3;
                             AnimalsToAdd.ActionIdentifier = 2;
                             Client.SendData(AnimalsToAdd);
+                            //Task.Delay(1000);
+                            //  System.Timers.Timer timer = new System.Timers.Timer();
+                            timerNew.Interval = 8000;
+                            timerNew.Start();
+                            while (true)
+                            {
+                                Cursor.Current = Cursors.WaitCursor;
+                                // MessageBox.Show("Creating Farm");
+                                timerNew.Tick += TimerNew_Tick;
+                            }
+                           
 
-                            Farm_View form = new Farm_View(ID);
-                            this.Hide();
-                            form.ShowDialog();
-                            this.Close();
+
+
                         }
                         else
                         {
                             throw new CageAmountExceededException("You can only have " + maxCages + " please remove animals before continuing");
                         }
-                       
+
                     }
                     else
                     {
@@ -249,7 +259,7 @@ namespace FarmManagement
                     throw new AnimalCriteriaNotMeetException("At least 1 Prey and 1 Predator needs to be selected");
                 }
             }
-            catch(CageAmountExceededException ex)
+            catch (CageAmountExceededException ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
@@ -262,6 +272,24 @@ namespace FarmManagement
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void TimerNew_Tick(object sender, EventArgs e)
+        {
+            timerNew.Stop();
+            Cursor.Current = Cursors.Default;
+
+            Farm_View form = new Farm_View(ID);
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+
+            //SendKeys.SendWait("{ESC}");
+        }
+
         //Adds an animal to the list of animals to add to farm
         private void pbxAdd_Click(object sender, EventArgs e)
         {
@@ -325,19 +353,19 @@ namespace FarmManagement
                 numcages = (int)Math.Ceiling(animalsDecimal);
                 CagesNeeded += numcages;
             }
-            txtCurrentCages.Text = CagesNeeded.ToString(); 
+            txtCurrentCages.Text = CagesNeeded.ToString();
         }
 
         ////Decreases the amount of animals
         //private void pbxPrevious_Click(object sender, EventArgs e)
         //{
-            
+
         //}
 
         //increases the amount of animals
         //private void pbxNext1_Click(object sender, EventArgs e)
         //{
-            
+
         //}
 
         //changes the quantity of an existing animal

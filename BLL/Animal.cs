@@ -195,9 +195,9 @@ namespace BLL
                 int numCages = (int)Math.Ceiling(animalsDecimal);
                 int timesToRun = numCages * 10;
                 int toAdd = 0;
-                Random rnd = new Random();
+                Random rnd = new Random(DateTime.UtcNow.Millisecond);
                 int predatorRandom;
-                int LionCurrentCage = 0; 
+                int LionCurrentCage = 0;
 
                 for (int i = 0; i < timesToRun; i += 10)
                 {
@@ -280,7 +280,8 @@ namespace BLL
                             }
                             break;
                         case 900:
-                            int[] lionCagesMedium = { 1, 4, 7 };
+
+                            int[] lionCagesMedium = { 1, 3, 7 };
                             predatorRandom = rnd.Next(-1, 3);
                             if (item.Animaal.AnimalName == "Lion" && i == 0)
                             {
@@ -288,29 +289,46 @@ namespace BLL
                                 {
                                     predatorRandom = rnd.Next(-1, 3);
                                 }
-                                l.XCoord = lionCagesMedium[predatorRandom];
-                                if (MediumFarm[lionCagesMedium[predatorRandom]] == false)
+                                Location feedingmedium = new Location();
+
+                                if (MediumFarm[lionCagesMedium[predatorRandom]] == true)
                                 {
+                                    int lionCage = lionCagesMedium[predatorRandom];
+                                    while (MediumFarm[lionCage] == true)
+                                    {
+                                        lionCage++;
+                                    }
+                                    l.XCoord = lionCagesMedium[predatorRandom];
                                     MediumFarm[lionCagesMedium[predatorRandom]] = true;
+                                    if ( predatorRandom == 1)
+                                    {
+                                        feedingmedium = new Location("Feeding", 0, l.XCoord - 1, 100, 10, 10, 0, 0);
+                                        MediumFarm[l.XCoord - 1] = true;
+
+                                    }
+                                    else
+                                    {
+                                        feedingmedium = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+
+                                        MediumFarm[l.XCoord + 1] = true;
+                                    }
+                                }
+                                l.XCoord = lionCagesMedium[predatorRandom];
+                                MediumFarm[lionCagesMedium[predatorRandom]] = true;
+                                if (predatorRandom == 1)
+                                {
+                                    feedingmedium = new Location("Feeding", 0, l.XCoord - 1, 100, 10, 10, 0, 0);
+                                    MediumFarm[l.XCoord - 1] = true;
+
                                 }
                                 else
                                 {
-                                    int tempKey = 0;
-                                    bool flag = false;
-                                    foreach (KeyValuePair<int, bool> mediumFarmTester in MediumFarm)
-                                    {
-                                        if (mediumFarmTester.Value == false && flag == false)
-                                        {
-                                            tempKey = mediumFarmTester.Key;
-                                            l.XCoord = mediumFarmTester.Key;
-                                            flag = true;
-                                        }
-                                    }
-                                    MediumFarm[tempKey] = true;
+                                    feedingmedium = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+
+                                    MediumFarm[l.XCoord + 1] = true;
                                 }
-                                Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
-                                MediumFarm[l.XCoord + 1] = true;
-                                feeding.InsertLocation();
+
+                                feedingmedium.InsertLocation();
                                 LionCurrentCage = l.XCoord;
                             }
                             else if (item.Animaal.AnimalName == "Lion")
@@ -328,6 +346,7 @@ namespace BLL
                                     MediumFarm[LionCurrentCage] = true;
                                 }
                             }
+                           
 
                             if (item.Animaal.AnimalName != "Lion")
                             {
@@ -346,18 +365,54 @@ namespace BLL
                             }
                             break;
                         case 1600:
+
                             predatorRandom = rnd.Next(-1, 4);
-                            int[] lionCagesLarge = { 1, 5, 9, 13 };
+                            int[] lionCagesLarge = { 5, 4, 13, 16 };
                             if (item.Animaal.AnimalName == "Lion" && i == 0)
                             {
                                 while (predatorRandom == -1)
                                 {
                                     predatorRandom = rnd.Next(-1, 4);
                                 }
+                                Location feeding = new Location();
+
+                                if (LargeFarm[lionCagesLarge[predatorRandom]] == true)
+                                {
+                                    int lionCage = lionCagesLarge[predatorRandom];
+                                    while (LargeFarm[lionCage] == true)
+                                    {
+                                        lionCage++;
+                                    }
+                                    l.XCoord = lionCagesLarge[predatorRandom];
+                                    LargeFarm[lionCagesLarge[predatorRandom]] = true;
+                                    if (predatorRandom == 3 || predatorRandom == 1)
+                                    {
+                                        feeding = new Location("Feeding", 0, l.XCoord - 1, 100, 10, 10, 0, 0);
+                                        LargeFarm[l.XCoord - 1] = true;
+
+                                    }
+                                    else
+                                    {
+                                        feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+
+                                        LargeFarm[l.XCoord + 1] = true;
+                                    }
+                                }
                                 l.XCoord = lionCagesLarge[predatorRandom];
                                 LargeFarm[lionCagesLarge[predatorRandom]] = true;
-                                Location feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
-                                LargeFarm[l.XCoord + 1] = true;
+                                if (predatorRandom == 3 || predatorRandom == 1)
+                                {
+                                    feeding = new Location("Feeding", 0, l.XCoord - 1, 100, 10, 10, 0, 0);
+                                    LargeFarm[l.XCoord - 1] = true;
+
+                                }
+                                else
+                                {
+                                    feeding = new Location("Feeding", 0, l.XCoord + 1, 100, 10, 10, 0, 0);
+
+                                    LargeFarm[l.XCoord + 1] = true;
+                                }
+                              
                                 feeding.InsertLocation();
                                 LionCurrentCage = l.XCoord;
                             }
@@ -397,7 +452,7 @@ namespace BLL
                             break;
                     }
                     #endregion
-                    
+
                     if ((i + 10) >= timesToRun)
                     {
                         int leftOver = 10 - (timesToRun - item.AnimalAmount);
